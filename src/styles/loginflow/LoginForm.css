@@ -1,9 +1,19 @@
 .login-form {
     max-width: 300px;
+    display: block;
+    margin-left: 40%;
 }
 .login-form-forgot {
     float: right;
 }
 .login-form-button {
     width: 100%;
+}
+
+.form-container{
+    outline: 2px blue;
+}
+
+.logo-image{
+    margin-left: 40%;
 }

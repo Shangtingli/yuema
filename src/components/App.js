@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/App.css';
-import LoginForm from "./loginflow/LoginForm"
-import RegistrationForm from "./loginflow/RegistrationForm"
+import LoginForm from "./loginflow/LoginForm";
+import RegistrationForm from "./loginflow/RegistrationForm";
 import {
     BrowserRouter as Router,
     Switch,
@@ -11,12 +11,11 @@ import {
 function App() {
   return (
       <Router>
-
           <Switch>
-              <Route path="/">
+              <Route exact path="/">
                   <LoginForm/>
               </Route>
-              <Route path="/register">
+              <Route exact path="/register">
                   <RegistrationForm/>
               </Route>
           </Switch>
