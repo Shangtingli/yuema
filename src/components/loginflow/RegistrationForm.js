@@ -31,7 +31,7 @@ class RegistrationForm extends React.Component {
             if (!err) {
                 console.log('Received values of form: ', values);
             }
-            
+
         });
 
         const email = e.target.elements[0].value;
@@ -99,75 +99,80 @@ class RegistrationForm extends React.Component {
         );
 
         return (
-            <div className="form-container">
-                <img src={Logo} className="logo-image"/>
-                <Form {...formItemLayout} onSubmit={this.handleSubmit}>
-                    <Form.Item label="E-mail">
-                        {getFieldDecorator('email', {
-                            rules: [
-                                {
-                                    type: 'email',
-                                    message: 'The input is not valid E-mail!',
-                                },
-                                {
-                                    required: true,
-                                    message: 'Please input your E-mail!',
-                                },
-                            ],
-                        })(<Input />)}
-                    </Form.Item>
-                    <Form.Item label="Password" hasFeedback>
-                        {getFieldDecorator('password', {
-                            rules: [
-                                {
-                                    required: true,
-                                    message: 'Please input your password!',
-                                },
-                                {
-                                    validator: this.validateToNextPassword,
-                                },
-                            ],
-                        })(<Input.Password />)}
-                    </Form.Item>
-                    <Form.Item label="Confirm Password" hasFeedback>
-                        {getFieldDecorator('confirm', {
-                            rules: [
-                                {
-                                    required: true,
-                                    message: 'Please confirm your password!',
-                                },
-                                {
-                                    validator: this.compareToFirstPassword,
-                                },
-                            ],
-                        })(<Input.Password onBlur={this.handleConfirmBlur} />)}
-                    </Form.Item>
-                    <Form.Item
-                        label={
-                            <span>
-                  Nickname&nbsp;
-                                <Tooltip title="What do you want others to call you?">
-                    <Icon type="question-circle-o" />
-                  </Tooltip>
-                </span>
-                        }
-                    >
-                        {getFieldDecorator('nickname', {
-                            rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
-                        })(<Input />)}
-                    </Form.Item>
 
-                    <Form.Item label="Phone Number">
-                        {getFieldDecorator('phone', {
-                            rules: [{ required: true, message: 'Please input your phone number!' }],
-                        })(<Input addonBefore={prefixSelector} style={{ width: '100%' }} />)}
-                    </Form.Item>
-                    <Form.Item {...tailFormItemLayout}>
-                        <Button type="primary" htmlType="submit">
-                            Register
-                        </Button>
-                    </Form.Item>
-                </Form>
+            <div className="form-dashboard-container">
+                <img src={Logo} className="logo-image"/>
+
+                <div className="form-container">
+
+                    <Form {...formItemLayout} onSubmit={this.handleSubmit} className='initial-form'>
+                        <Form.Item label="E-mail">
+                            {getFieldDecorator('email', {
+                                rules: [
+                                    {
+                                        type: 'email',
+                                        message: 'The input is not valid E-mail!',
+                                    },
+                                    {
+                                        required: true,
+                                        message: 'Please input your E-mail!',
+                                    },
+                                ],
+                            })(<Input />)}
+                        </Form.Item>
+                        <Form.Item label="Password" hasFeedback>
+                            {getFieldDecorator('password', {
+                                rules: [
+                                    {
+                                        required: true,
+                                        message: 'Please input your password!',
+                                    },
+                                    {
+                                        validator: this.validateToNextPassword,
+                                    },
+                                ],
+                            })(<Input.Password />)}
+                        </Form.Item>
+                        <Form.Item label="Confirm Password" hasFeedback>
+                            {getFieldDecorator('confirm', {
+                                rules: [
+                                    {
+                                        required: true,
+                                        message: 'Please confirm your password!',
+                                    },
+                                    {
+                                        validator: this.compareToFirstPassword,
+                                    },
+                                ],
+                            })(<Input.Password onBlur={this.handleConfirmBlur} />)}
+                        </Form.Item>
+                        <Form.Item
+                            label={
+                                <span>
+                      Nickname&nbsp;
+                                    <Tooltip title="What do you want others to call you?">
+                        <Icon type="question-circle-o" />
+                      </Tooltip>
+                    </span>
+                            }
+                        >
+                            {getFieldDecorator('nickname', {
+                                rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
+                            })(<Input />)}
+                        </Form.Item>
+
+                        <Form.Item label="Phone Number">
+                            {getFieldDecorator('phone', {
+                                rules: [{ required: true, message: 'Please input your phone number!' }],
+                            })(<Input addonBefore={prefixSelector} style={{ width: '100%' }} />)}
+                        </Form.Item>
+                        <Form.Item {...tailFormItemLayout}>
+                            <Button type="primary" htmlType="submit">
+                                Register
+                            </Button>
+                        </Form.Item>
+                    </Form>
+                </div>
             </div>
         );
     }

@@ -7,26 +7,30 @@ class CharacteristicsForm extends React.Component {
         const formItemLayout = {labelCol: { span: 4 }, wrapperCol: { span: 14 }};
         const buttonItemLayout = {wrapperCol: { span: 14, offset: 4 }};
         return (
-            <div>
+            <div className='form-dashboard-container'>
                 <img src={Logo} className="logo-image"/>
-                <Form>
-                    <Form.Item label="Field A" {...formItemLayout}>
-                        <Input placeholder="Sexual Orientation" />
-                    </Form.Item>
-                    <Form.Item label="Field B" {...formItemLayout}>
-                        <Input placeholder="Flight Destination" />
-                    </Form.Item>
-                    <Form.Item label="Field B" {...formItemLayout}>
-                        <Input placeholder="Flight Time" />
-                    </Form.Item>
-                    <Form.Item {...buttonItemLayout}>
-                        <Button type="primary">Submit</Button>
-                    </Form.Item>
-                </Form>
+                <div className='form-container'>
 
-                <Button onClick={this.props.prevStep}>
-                    Back
-                </Button>
+                    <Form className='initial-form'>
+                        <Form.Item label="Sexual Orientation" {...formItemLayout}>
+                            <Input placeholder="Sexual Orientation" />
+                        </Form.Item>
+                        <Form.Item label="Flight Destination" {...formItemLayout}>
+                            <Input placeholder="Flight Destination" />
+                        </Form.Item>
+                        <Form.Item label="Flight Time" {...formItemLayout}>
+                            <Input placeholder="Flight Time" />
+                        </Form.Item>
+                        <Form.Item {...buttonItemLayout} id="submit-button">
+                            <Button type="primary">Submit</Button>
+                        </Form.Item>
+
+                        <Form.Item {...buttonItemLayout}>
+                            <Button onClick={this.props.prevStep} id='back-button'>Back</Button>
+                        </Form.Item>
+                    </Form>
+
+                </div>
             </div>
         );
     }

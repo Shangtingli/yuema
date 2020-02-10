@@ -1,0 +1,23 @@
+#login-form {
+    max-width: 400px;
+}
+.login-form-forgot {
+    float: right;
+}
+.login-form-button {
+    width: 100%;
+}
+
+.form-container{
+    text-align: center;
+    width: 100%;
+}
+
+.form-dashboard-container{
+    text-align: center;
+}
+
+.initial-form{
+    display: inline-block;
+    width: 40%;
+}
