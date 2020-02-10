@@ -31,15 +31,13 @@ class RegistrationForm extends React.Component {
             if (!err) {
                 console.log('Received values of form: ', values);
             }
-
+            const allvalues = {...values};
+            allvalues.phonenumber = allvalues.prefix + allvalues.phonenumber;
+            delete allvalues.prefix;
+            this.props.nextStep(allvalues);
         });
 
-        const email = e.target.elements[0].value;
-        const pw1 = e.target.elements[1].value;
-        const pw2 = e.target.elements[2].value;
-        const nickname = e.target.elements[3].value;
-        const phonenumber = e.target.elements[4].value;
-        this.props.nextStep();
+
     };
 
     handleConfirmBlur = e => {

@@ -2,12 +2,11 @@ import React from 'react';
 import '../styles/App.css';
 import LoginEntry from "./loginflow/LoginEntry";
 import RegistrationEntry from "./loginflow/RegistrationEntry";
-
+import Home from "./home/Home";
 import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
 } from "react-router-dom";
 function App() {
   return (
@@ -18,6 +17,9 @@ function App() {
               </Route>
               <Route exact path="/register">
                   <RegistrationEntry/>
+              </Route>
+              <Route exact path="/home">
+                  <Home/>
               </Route>
           </Switch>
       </Router>

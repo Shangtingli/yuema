@@ -1,39 +1,71 @@
-import { Form, Input, Button} from 'antd';
+import { submitInfo} from "../../actions";
+import { Form, Select, Input, Button } from 'antd';
 import React from 'react';
-import Logo from '../../assets/logo.png';
+import 'antd/dist/antd.css';
+import { connect } from 'react-redux';
+const { Option } = Select;
 
-class CharacteristicsForm extends React.Component {
+
+class CharacteristicForm extends React.Component {
+    handleSubmit = e => {
+        e.preventDefault();
+        this.props.form.validateFields((err, values) => {
+            if (!err) {
+                console.log('Received values of form: ', values);
+            }
+            this.props.dispatch(submitInfo(values));
+        });
+    };
+
+    handleSelectChange = value => {
+        console.log(value);
+        this.props.form.setFieldsValue({
+            note: `Hi, ${value === 'male' ? 'man' : 'lady'}!`,
+        });
+    };
+
     render() {
-        const formItemLayout = {labelCol: { span: 4 }, wrapperCol: { span: 14 }};
-        const buttonItemLayout = {wrapperCol: { span: 14, offset: 4 }};
+        const { getFieldDecorator } = this.props.form;
         return (
-            <div className='form-dashboard-container'>
-                <img src={Logo} className="logo-image"/>
-                <div className='form-container'>
-
-                    <Form className='initial-form'>
-                        <Form.Item label="Sexual Orientation" {...formItemLayout}>
-                            <Input placeholder="Sexual Orientation" />
-                        </Form.Item>
-                        <Form.Item label="Flight Destination" {...formItemLayout}>
-                            <Input placeholder="Flight Destination" />
-                        </Form.Item>
-                        <Form.Item label="Flight Time" {...formItemLayout}>
-                            <Input placeholder="Flight Time" />
-                        </Form.Item>
-                        <Form.Item {...buttonItemLayout} id="submit-button">
-                            <Button type="primary">Submit</Button>
-                        </Form.Item>
-
-                        <Form.Item {...buttonItemLayout}>
-                            <Button onClick={this.props.prevStep} id='back-button'>Back</Button>
-                        </Form.Item>
-                    </Form>
-
-                </div>
-            </div>
+            <Form labelCol={{ span: 5 }} wrapperCol={{ span: 12 }} onSubmit={this.handleSubmit}>
+                <Form.Item label="Flight time">
+                    {getFieldDecorator('flightTime', {
+                        rules: [{ required: true, message: 'Please input your flight time!' }],
+                    })(<Input />)}
+                </Form.Item>
+                <Form.Item label="Flight Destination">
+                    {getFieldDecorator('flightDest', {
+                        rules: [{ required: true, message: 'Please input your flight destination!' }],
+                    })(<Input />)}
+                </Form.Item>
+                <Form.Item label="Sexual Orientation">
+                    {getFieldDecorator('sexualOrien', {
+                        rules: [{ required: true, message: 'Please select your sexual orientation!' }],
+                    })(
+                        <Select
+                            placeholder="Enter your sexual orientation"
+                            onChange={this.handleSelectChange}
+                        >
+                            <Option value="male">male</Option>
+                            <Option value="female">female</Option>
+                            <Option value="bisexual">bisexual</Option>
+                        </Select>,
+                    )}
+                </Form.Item>
+                <Form.Item wrapperCol={{ span: 12, offset: 5 }}>
+                    <Button type="primary" htmlType="submit">
+                        Submit
+                    </Button>
+                </Form.Item>
+            </Form>
         );
     }
 }
 
-export default CharacteristicsForm;
+const WrappedCharacteristicForm= Form.create({ name: 'coordinated' })(CharacteristicForm);
+const mapStateToProps = (state) => ({
+    flightDest: state.flightDest,
+    flightTime: state.flightTime,
+    sexualOrien: state.sexualOrien,
+});
+export default connect(mapStateToProps)(WrappedCharacteristicForm)

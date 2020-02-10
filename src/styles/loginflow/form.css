@@ -18,6 +18,21 @@
 }
 
 .initial-form{
+    text-align: center;
     display: inline-block;
-    width: 40%;
+    width: 60%;
 }
+
+#button-container{
+    display: inline-block;
+    width: 60%;
+}
+
+#button-container > .submit-button{
+    float: left;
+}
+
+#button-container > .back-button{
+    float: right;
+}
+

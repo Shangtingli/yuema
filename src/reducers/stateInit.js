@@ -15,6 +15,10 @@ const initstate={
     email: '',
     nickname: '',
     phonenumber: '',
+    remember: false,
+    sexualOrien: 'undeclared',
+    flightTime: '',
+    flightDest: '',
 };
 
 export default initstate;

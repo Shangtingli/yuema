@@ -6,17 +6,15 @@ import store from '../../store';
 import { nextStep,prevStep } from '../../actions';
 
 class LoginEntry extends React.Component{
-    nextStep = () =>{
-        this.props.dispatch(nextStep('login'));
+    nextStep = (data) =>{
+        this.props.dispatch(nextStep('login',data));
     }
 
-    prevStep = () => {
-        this.props.dispatch(prevStep('login'));
+    prevStep = (data) => {
+        this.props.dispatch(prevStep('login',data));
     }
 
     render() {
-        const a = store;
-        debugger;
         const step = store.getState().loginflow;
         if (step === 'login') {
             return (
