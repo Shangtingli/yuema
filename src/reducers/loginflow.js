@@ -1,15 +1,11 @@
+
 import stateinit from './stateInit';
 const stepOperation = (state = stateinit, action) => {
-    // debugger;
     switch(action.type){
         case "NEXT_LOGIN_STEP":
-            state.loginpage= 'characteristics';
-            debugger;
-            return state;
+            return 2
         case "PREV_LOGIN_STEP":
-            // debugger;
-            state.loginpage= action.entry;
-            return state;
+            return action.entry;
         default:
             return state;
     }

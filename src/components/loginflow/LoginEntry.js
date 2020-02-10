@@ -13,25 +13,26 @@ class LoginEntry extends React.Component{
         this.prevStep = this.prevStep.bind(this);
     }
     nextStep = () =>{
+        var a = store;
         debugger;
-        this.props.dispatch(nextStep('login'));
-        const a = store;
+        this.props.dispatch(nextStep(0));
+        a = store;
         debugger;
     }
 
     prevStep = () => {
-        this.props.dispatch(prevStep('login'));
+        this.props.dispatch(prevStep(0));
     }
 
     render() {
-        const step = store.getState().loginpage;
+        const step = store.getState();
         debugger;
         switch(step){
-            case 'login':
+            case 0:
                 return (
                     <LoginForm nextStep={this.nextStep}/>
                 )
-            case 'characteristics':
+            case 2:
                 return (
                     <CharacteristicsForm prevStep={this.prevStep}/>
                 )

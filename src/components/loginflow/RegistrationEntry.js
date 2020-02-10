@@ -13,21 +13,21 @@ class RegistrationEntry extends React.Component{
         this.prevStep = this.prevStep.bind(this);
     }
     nextStep = () =>{
-        this.props.dispatch(nextStep('register'));
+        this.props.dispatch(nextStep(1));
     }
 
     prevStep = () => {
-        this.props.dispatch(prevStep('register'));
+        this.props.dispatch(prevStep(1));
     }
 
     render() {
-        const step = store.getState().loginpage;
+        const step = store.getState();
         switch(step){
-            case "register":
+            case 1:
                 return (
                     <RegistrationForm nextStep={this.nextStep}/>
                 )
-            case "characteristics":
+            case 2:
                 return (
                     <CharacteristicsForm prevStep={this.prevStep}/>
                 )
