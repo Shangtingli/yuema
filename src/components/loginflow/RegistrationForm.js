@@ -17,6 +17,7 @@ import {
 } from 'antd';
 import React from 'react';
 import Logo from "../../assets/logo.png"
+import {connect} from 'react-redux';
 
 const { Option } = Select;
 
@@ -38,6 +39,7 @@ class RegistrationForm extends React.Component {
         const pw2 = e.target.elements[2].value;
         const nickname = e.target.elements[3].value;
         const phonenumber = e.target.elements[4].value;
+        this.props.nextStep();
     };
 
     handleConfirmBlur = e => {
@@ -173,4 +175,4 @@ class RegistrationForm extends React.Component {
 
 const WrappedRegistrationForm = Form.create({ name: 'register' })(RegistrationForm);
 
-export default WrappedRegistrationForm;
+export default connect()(WrappedRegistrationForm);

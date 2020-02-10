@@ -20,6 +20,10 @@ class CharacteristicsForm extends React.Component {
                         <Button type="primary">Submit</Button>
                     </Form.Item>
                 </Form>
+
+                <Button onClick={this.props.prevStep}>
+                    Back
+                </Button>
             </div>
         );
     }

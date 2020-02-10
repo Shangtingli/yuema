@@ -1,11 +1,17 @@
-const stepOperation = (state = 0, action) => {
+import stateinit from './stateInit';
+const stepOperation = (state = stateinit, action) => {
+    // debugger;
     switch(action.type){
-        case "ADD_LOGIN_STEP":
-            return state + 1;
-        case "MINUS_LOGIN_STEP":
-            return state - 1
+        case "NEXT_LOGIN_STEP":
+            state.loginpage= 'characteristics';
+            debugger;
+            return state;
+        case "PREV_LOGIN_STEP":
+            // debugger;
+            state.loginpage= action.entry;
+            return state;
         default:
-            return state
+            return state;
     }
 }
 

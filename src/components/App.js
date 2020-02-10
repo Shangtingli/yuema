@@ -1,8 +1,8 @@
 import React from 'react';
 import '../styles/App.css';
-import LoginForm from "./loginflow/LoginForm";
-import RegistrationForm from "./loginflow/RegistrationForm";
-import CharacteristicsForm from './loginflow/CharacteristicsForm';
+import LoginEntry from "./loginflow/LoginEntry";
+import RegistrationEntry from "./loginflow/RegistrationEntry";
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -14,13 +14,10 @@ function App() {
       <Router>
           <Switch>
               <Route exact path="/">
-                  <LoginForm/>
+                  <LoginEntry/>
               </Route>
               <Route exact path="/register">
-                  <RegistrationForm/>
-              </Route>
-              <Route exact path="/characteristic">
-                  <CharacteristicsForm/>
+                  <RegistrationEntry/>
               </Route>
           </Switch>
       </Router>

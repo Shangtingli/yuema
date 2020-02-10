@@ -1,9 +1,9 @@
-export const addStep = step => ({
-    type: "ADD_LOGIN_STEP",
-    step
+export const nextStep = (entry) => ({
+    type: "NEXT_LOGIN_STEP",
+    entry:entry
 });
 
-export const minusStep = step => ({
-    type: "MINUS_LOGIN_STEP",
-    step
+export const prevStep = (entry) => ({
+    type: "PREV_LOGIN_STEP",
+    entry:entry
 })
