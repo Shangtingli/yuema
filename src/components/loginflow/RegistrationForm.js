@@ -16,8 +16,7 @@ import {
     Button,
 } from 'antd';
 import React from 'react';
-import Logo from "../../assets/logo.png"
-import {connect} from 'react-redux';
+import Logo from "../../assets/logo.png";
 
 const { Option } = Select;
 

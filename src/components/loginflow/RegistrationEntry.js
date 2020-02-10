@@ -3,7 +3,7 @@ import RegistrationForm from './RegistrationForm';
 import CharacteristicsForm from "./CharacteristicsForm";
 import {connect} from 'react-redux';
 import store from '../../store';
-import { prevStep,nextStep } from '../../actions';
+import {prevStep,  nextStep} from '../../actions';
 
 class RegistrationEntry extends React.Component{
 
@@ -13,21 +13,21 @@ class RegistrationEntry extends React.Component{
         this.prevStep = this.prevStep.bind(this);
     }
     nextStep = () =>{
-        this.props.dispatch(nextStep(1));
+        this.props.dispatch(nextStep('register'));
     }
 
     prevStep = () => {
-        this.props.dispatch(prevStep(1));
+        this.props.dispatch(prevStep('register'));
     }
 
     render() {
-        const step = store.getState();
+        const step = store.getState().registerflow;
         switch(step){
-            case 1:
+            case 'register':
                 return (
                     <RegistrationForm nextStep={this.nextStep}/>
                 )
-            case 2:
+            case 'characteristics':
                 return (
                     <CharacteristicsForm prevStep={this.prevStep}/>
                 )
@@ -38,4 +38,5 @@ class RegistrationEntry extends React.Component{
 
 }
 
-export default connect()(RegistrationEntry);
+const mapStateToProps = (state) => ({registerflow: state.registerflow});
+export default connect(mapStateToProps)(RegistrationEntry);

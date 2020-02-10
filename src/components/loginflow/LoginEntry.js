@@ -6,41 +6,34 @@ import store from '../../store';
 import { nextStep,prevStep } from '../../actions';
 
 class LoginEntry extends React.Component{
-
-    constructor(props){
-        super(props);
-        this.nextStep = this.nextStep.bind(this);
-        this.prevStep = this.prevStep.bind(this);
-    }
     nextStep = () =>{
-        var a = store;
-        debugger;
-        this.props.dispatch(nextStep(0));
-        a = store;
-        debugger;
+        this.props.dispatch(nextStep('login'));
     }
 
     prevStep = () => {
-        this.props.dispatch(prevStep(0));
+        this.props.dispatch(prevStep('login'));
     }
 
     render() {
-        const step = store.getState();
+        const a = store;
         debugger;
-        switch(step){
-            case 0:
-                return (
-                    <LoginForm nextStep={this.nextStep}/>
-                )
-            case 2:
-                return (
-                    <CharacteristicsForm prevStep={this.prevStep}/>
-                )
-            default:
-                return ("Invalid step of " + step);
+        const step = store.getState().loginflow;
+        if (step === 'login') {
+            return (
+                <LoginForm nextStep={this.nextStep}/>
+            )
+        }
+        else if (step === 'characteristics') {
+            return (
+                <CharacteristicsForm prevStep={this.prevStep}/>
+            )
+        }
+        else{
+            return "Invalid Step of " + step;
         }
     }
 
 }
 
-export default connect()(LoginEntry);
+const mapStateToProps = (state) => ({loginflow: state.loginflow});
+export default connect(mapStateToProps)(LoginEntry);

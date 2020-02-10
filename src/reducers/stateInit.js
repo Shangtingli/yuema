@@ -7,7 +7,10 @@
 //     phonenumber: '',
 // }
 
-const initstate=0;
+const initstate={
+    loginflow:'login',
+    registerflow: 'register',
+};
 //0 for login
 //1 for register
 //2 for characteristics
