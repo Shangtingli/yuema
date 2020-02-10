@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/App.css';
 import LoginForm from "./loginflow/LoginForm";
 import RegistrationForm from "./loginflow/RegistrationForm";
+import CharacteristicsForm from './loginflow/CharacteristicsForm';
 import {
     BrowserRouter as Router,
     Switch,
@@ -17,6 +18,9 @@ function App() {
               </Route>
               <Route exact path="/register">
                   <RegistrationForm/>
+              </Route>
+              <Route exact path="/characteristic">
+                  <CharacteristicsForm/>
               </Route>
           </Switch>
       </Router>
