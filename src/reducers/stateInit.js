@@ -10,8 +10,11 @@
 const initstate={
     loginflow:'login',
     registerflow: 'register',
+    firstname: '',
+    lastname: '',
+    email: '',
+    nickname: '',
+    phonenumber: '',
 };
-//0 for login
-//1 for register
-//2 for characteristics
+
 export default initstate;

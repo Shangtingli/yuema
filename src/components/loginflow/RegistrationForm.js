@@ -31,6 +31,7 @@ class RegistrationForm extends React.Component {
             if (!err) {
                 console.log('Received values of form: ', values);
             }
+            
         });
 
         const email = e.target.elements[0].value;

@@ -3,6 +3,8 @@ import initstate from './stateInit';
 const loginOperation = (state = initstate, action) => {
     // debugger;
     switch(action.type){
+        case "FILL_USER_INFO":
+            return {...action.data}
         case "NEXT_LOGIN_STEP":
             if (action.entry === 'login'){return {...state,loginflow:'characteristics'};}
             else if (action.entry === 'register'){return {...state,registerflow:'characteristics'};}
