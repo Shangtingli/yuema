@@ -20,7 +20,8 @@ const loginOperation = (state = initstate, action) => {
                 newState.firstname = 'from data source';
                 newState.lastname = 'from data source';
                 newState.phonenumber = 'from data source';
-                newState.nickname  = 'from data source'
+                newState.nickname  = 'from data source';
+                newState.isLoggedIn = true;
                 /*********************************/
                 return newState;
             }
@@ -31,6 +32,7 @@ const loginOperation = (state = initstate, action) => {
                 newState.lastname = action.data.lastname;
                 newState.nickname = action.data.nickname;
                 newState.phonenumber = action.data.phonenumber;
+                newState.isLoggedIn = true;
                 return newState;
             }
             else{return state;}

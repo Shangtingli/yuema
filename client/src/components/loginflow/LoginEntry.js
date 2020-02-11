@@ -3,7 +3,7 @@ import LoginForm from './LoginForm';
 import CharacteristicsForm from "./CharacteristicsForm";
 import {connect} from 'react-redux';
 import store from '../../store';
-import { nextStep,prevStep } from '../../actions';
+import { nextStep,prevStep } from '../../actions/index';
 
 class LoginEntry extends React.Component{
     nextStep = (data) =>{

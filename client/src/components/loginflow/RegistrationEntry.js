@@ -3,7 +3,7 @@ import RegistrationForm from './RegistrationForm';
 import CharacteristicsForm from "./CharacteristicsForm";
 import {connect} from 'react-redux';
 import store from '../../store';
-import {prevStep,  nextStep} from '../../actions';
+import {prevStep,  nextStep} from '../../actions/index';
 
 class RegistrationEntry extends React.Component{
 

@@ -4,7 +4,11 @@ import 'antd/dist/antd.css';
 import '../../styles/loginflow/form.css';
 import {Link} from "react-router-dom";
 import Logo from '../../assets/logo.png';
+import {server_host} from "../../constants";
 
+/**
+ * TODO: Complete the login logout flow
+ */
 class NormalLoginForm extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
@@ -12,7 +16,27 @@ class NormalLoginForm extends React.Component {
             if (!err) {
                 console.log('Received values of form: ', values);
             }
-            this.props.nextStep(values);
+
+            const endpoint = `/api/validateUser`;
+            fetch(endpoint, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(values)
+            }).then((response) => {
+                debugger;
+                return response.json();
+            }).then((response) =>{
+                if (response.result === true){
+                    this.props.nextStep(values);
+                }
+                else{
+                    console.log("Invalid Login");
+                }
+            });
+            //
         });
 
     };
