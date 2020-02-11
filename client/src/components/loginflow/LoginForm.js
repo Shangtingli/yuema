@@ -32,7 +32,7 @@ class NormalLoginForm extends React.Component {
                     this.props.nextStep(values);
                 }
                 else{
-                    console.log("Invalid Login");
+                    alert("Invalid Login");
                 }
             });
             //

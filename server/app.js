@@ -7,7 +7,10 @@ const bodyParser = require('body-parser')
 //require the path library
 const path    = require( 'path' );
 const fetch = require('node-fetch');
-
+const headers = {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+};
 // use the bodyparser as a middleware
 app.use(bodyParser.json())
 // set port for the app to listen on
@@ -28,13 +31,24 @@ app.post('/api/validateUser',function (req, res){
     fetch('http://localhost:8080/validateUser', {
         method: 'POST',
         body: JSON.stringify({username:username,password:password}),
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
+        headers: headers,
     }).then((response) => {
         return response.text();
     }).then((response) => {
+        res.send(response);
+    })
+});
+
+app.post('/api/addUser',function(req,res){
+    const username = req.body.username;
+    const password = req.body.password;
+    fetch('http://localhost:8080/addUser',{
+        method:'POST',
+        body: JSON.stringify({username:username, password: password}),
+        headers: headers
+    }).then((response) => {
+        return response.text();
+    }).then((response) =>{
         res.send(response);
     })
 })

@@ -1,5 +1,17 @@
 
 import initstate from './stateInit';
+
+function fillData(data,newState){
+    const keys=Object.keys(data);
+
+    for (let key of keys){
+
+        if (key in newState){
+            debugger;
+            newState[key] = data[key];
+        }
+    }
+}
 const loginOperation = (state = initstate, action) => {
     // debugger;
     switch(action.type){
@@ -15,24 +27,26 @@ const loginOperation = (state = initstate, action) => {
             const newState = {...state};
             if (action.entry === 'login'){
                 newState.loginflow += 1;
-                newState.email = action.data.username;
+
+                if ('username' in action.data){
+                    newState.email = action.data.username;
+                }
+
                 /**TODO: Add backend operations **/
                 newState.firstname = 'from data source';
                 newState.lastname = 'from data source';
                 newState.phonenumber = 'from data source';
                 newState.nickname  = 'from data source';
+                newState.sexualOrien = 'from data source';
                 newState.isLoggedIn = true;
+                fillData(action.data,newState);
                 /*********************************/
                 return newState;
             }
             else if (action.entry === 'register'){
                 newState.registerflow += 1;
-                newState.email = action.data.email;
-                newState.firstname = action.data.firstname;
-                newState.lastname = action.data.lastname;
-                newState.nickname = action.data.nickname;
-                newState.phonenumber = action.data.phonenumber;
                 newState.isLoggedIn = true;
+                fillData(action.data,newState);
                 return newState;
             }
             else{return state;}

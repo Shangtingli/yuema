@@ -31,11 +31,29 @@ class RegistrationForm extends React.Component {
             if (!err) {
                 console.log('Received values of form: ', values);
             }
-            debugger;
-            const allvalues = {...values};
-            allvalues.phonenumber = allvalues.prefix + allvalues.phonenumber;
-            delete allvalues.prefix;
-            this.props.nextStep(allvalues);
+            const endpoint = '/api/addUser';
+
+            const json = {username: values.email, password: values.password};
+            fetch(endpoint, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(json)
+            }).then((response) => {
+                return response.json();
+            }).then((response) =>{
+                if (response.result){
+                    const allvalues = {...values}
+                    allvalues.phonenumber = allvalues.prefix + allvalues.phonenumber;
+                    delete allvalues.prefix;
+                    this.props.nextStep(allvalues);
+                }
+                else{
+                    console.log("Something is wrong");
+                }
+            });
         });
 
 
@@ -161,7 +179,7 @@ class RegistrationForm extends React.Component {
                         </Form.Item>
 
                         <Form.Item label="Phone Number">
-                            {getFieldDecorator('phone', {
+                            {getFieldDecorator('phonenumber', {
                                 rules: [{ required: true, message: 'Please input your phone number!' }],
                             })(<Input addonBefore={prefixSelector} style={{ width: '100%' }} />)}
                         </Form.Item>

@@ -19,7 +19,7 @@ const initstate={
     sexualOrien: 'undeclared',
     flightTime: '',
     flightDest: '',
-    isLoggedIn: true
+    isLoggedIn: false
 };
 
 export default initstate;

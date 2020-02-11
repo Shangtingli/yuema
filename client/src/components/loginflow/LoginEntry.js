@@ -24,7 +24,7 @@ class LoginEntry extends React.Component{
                 )
             case 1:
                 return (
-                    <TodayForm prevStep={this.prevStep}/>
+                    <TodayForm nextStep={this.nextStep} prevStep={this.prevStep}/>
                 )
             case 2:
                 return (

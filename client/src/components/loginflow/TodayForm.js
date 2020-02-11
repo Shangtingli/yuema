@@ -15,7 +15,7 @@ class CharacteristicForm extends React.Component {
             if (!err) {
                 console.log('Received values of form: ', values);
             }
-            this.props.dispatch(submitInfo(values));
+            this.props.nextStep(values);
         });
     };
 
