@@ -3,9 +3,8 @@ import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import 'antd/dist/antd.css';
 import '../../styles/loginflow/form.css';
 import {Link} from "react-router-dom";
-import Logo from '../../assets/logo.png';
-import {server_host} from "../../constants";
 
+import Logo from '../../assets/logo.png';
 /**
  * TODO: Complete the login logout flow
  */
