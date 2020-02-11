@@ -31,6 +31,7 @@ class RegistrationForm extends React.Component {
             if (!err) {
                 console.log('Received values of form: ', values);
             }
+            debugger;
             const allvalues = {...values};
             allvalues.phonenumber = allvalues.prefix + allvalues.phonenumber;
             delete allvalues.prefix;
@@ -165,7 +166,7 @@ class RegistrationForm extends React.Component {
                             })(<Input addonBefore={prefixSelector} style={{ width: '100%' }} />)}
                         </Form.Item>
                         <Form.Item {...tailFormItemLayout}>
-                            <Button type="primary" htmlType="submit">
+                            <Button type="primary" htmlType="submit" onClick={this.handleSubmit}>
                                 Register
                             </Button>
                         </Form.Item>

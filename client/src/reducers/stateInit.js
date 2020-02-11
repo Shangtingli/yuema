@@ -8,8 +8,8 @@
 // }
 
 const initstate={
-    loginflow:'login',
-    registerflow: 'register',
+    loginflow:0,
+    registerflow: 0,
     firstname: '',
     lastname: '',
     email: '',

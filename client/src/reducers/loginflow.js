@@ -14,7 +14,7 @@ const loginOperation = (state = initstate, action) => {
         case "NEXT_LOGIN_STEP":
             const newState = {...state};
             if (action.entry === 'login'){
-                newState.loginflow = 'characteristics';
+                newState.loginflow += 1;
                 newState.email = action.data.username;
                 /**TODO: Add backend operations **/
                 newState.firstname = 'from data source';
@@ -26,7 +26,7 @@ const loginOperation = (state = initstate, action) => {
                 return newState;
             }
             else if (action.entry === 'register'){
-                newState.registerflow = 'characteristics';
+                newState.registerflow += 1;
                 newState.email = action.data.email;
                 newState.firstname = action.data.firstname;
                 newState.lastname = action.data.lastname;
@@ -38,7 +38,13 @@ const loginOperation = (state = initstate, action) => {
             else{return state;}
         case "PREV_LOGIN_STEP":
             if (action.entry === 'login' || action.entry === 'register'){
-                return {...initstate}
+                const newState = {...state};
+                if (action.entry ==='login')
+                {newState.loginflow-=1;}
+                else{
+                    newState.registerflow -=1;
+                }
+                return newState;
             }
             else{return state;}
         default:

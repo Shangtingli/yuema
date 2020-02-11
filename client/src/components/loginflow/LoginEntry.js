@@ -1,9 +1,10 @@
 import React from 'react';
 import LoginForm from './LoginForm';
-import CharacteristicsForm from "./CharacteristicsForm";
+import TodayForm from "./TodayForm";
 import {connect} from 'react-redux';
 import store from '../../store';
 import { nextStep,prevStep } from '../../actions/index';
+import {Redirect} from "react-router"
 
 class LoginEntry extends React.Component{
     nextStep = (data) =>{
@@ -16,18 +17,22 @@ class LoginEntry extends React.Component{
 
     render() {
         const step = store.getState().loginflow;
-        if (step === 'login') {
-            return (
-                <LoginForm nextStep={this.nextStep}/>
-            )
-        }
-        else if (step === 'characteristics') {
-            return (
-                <CharacteristicsForm prevStep={this.prevStep}/>
-            )
-        }
-        else{
-            return "Invalid Step of " + step;
+        switch(step){
+            case 0:
+                return (
+                    <LoginForm nextStep={this.nextStep}/>
+                )
+            case 1:
+                return (
+                    <TodayForm prevStep={this.prevStep}/>
+                )
+            case 2:
+                return (
+                    <Redirect to='/home'/>
+                        )
+            default:
+                return "Invalid login phase of : " +step
+
         }
     }
 

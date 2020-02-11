@@ -43,20 +43,6 @@ class CharacteristicForm extends React.Component {
                                 rules: [{ required: true, message: 'Please input your flight destination!' }],
                             })(<Input />)}
                         </Form.Item>
-                        <Form.Item label="Sexual Orientation">
-                            {getFieldDecorator('sexualOrien', {
-                                rules: [{ required: true, message: 'Please select your sexual orientation!' }],
-                            })(
-                                <Select
-                                    placeholder="Enter your sexual orientation"
-                                    onChange={this.handleSelectChange}
-                                >
-                                    <Option value="male">male</Option>
-                                    <Option value="female">female</Option>
-                                    <Option value="bisexual">bisexual</Option>
-                                </Select>,
-                            )}
-                        </Form.Item>
                         <Form.Item wrapperCol={{ span: 12, offset: 5 }}>
                             <Button type="primary" htmlType="submit">
                                 Submit
@@ -73,6 +59,5 @@ const WrappedCharacteristicForm= Form.create({ name: 'coordinated' })(Characteri
 const mapStateToProps = (state) => ({
     flightDest: state.flightDest,
     flightTime: state.flightTime,
-    sexualOrien: state.sexualOrien,
 });
 export default connect(mapStateToProps)(WrappedCharacteristicForm)

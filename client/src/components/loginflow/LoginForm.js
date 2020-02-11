@@ -28,7 +28,7 @@ class NormalLoginForm extends React.Component {
                 debugger;
                 return response.json();
             }).then((response) =>{
-                if (response.result === true){
+                if (response.result){
                     this.props.nextStep(values);
                 }
                 else{

@@ -4,45 +4,26 @@ import LoginEntry from "./loginflow/LoginEntry";
 import RegistrationEntry from "./loginflow/RegistrationEntry";
 import Home from "./home/Home";
 import store from '../store';
+import { createBrowserHistory } from "history";
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Redirect
 } from "react-router-dom";
-//
-// function PrivateRoute({ children, ...rest }) {
-//     const isLoggedIn = store.getState().isLoggedIn;
-//     return (
-//         <Route
-//             {...rest}
-//             render={({ location }) =>
-//                 isLoggedIn ? (
-//                     children
-//                 ) : (
-//                     <Redirect
-//                         to={{
-//                             pathname: "/",
-//                             state: { from: location }
-//                         }}
-//                     />
-//                 )
-//             }
-//         />
-//     );
-// }
 
+const history = createBrowserHistory();
 function App() {
   return (
       <Router>
           <Switch>
-              <Route exact path="/">
+              <Route exact path="/" history={history}>
                   <LoginEntry/>
               </Route>
-              <Route path="/register">
+              <Route path="/register" history={history}>
                   <RegistrationEntry/>
               </Route>
-              <Route path="/home">
+              <Route path="/home" history={history}>
                   <Home/>
               </Route>
           </Switch>
