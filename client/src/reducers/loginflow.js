@@ -1,5 +1,6 @@
 
-import initstate from './stateInit';
+import {initState, startState} from './stateInit';
+import {TOKEN_KEY} from "../constants"
 
 function fillData(data,newState){
     const keys=Object.keys(data);
@@ -7,30 +8,21 @@ function fillData(data,newState){
     for (let key of keys){
 
         if (key in newState){
-            debugger;
             newState[key] = data[key];
         }
     }
 }
-const loginOperation = (state = initstate, action) => {
-    // debugger;
+const loginOperation = (state = initState, action) => {
+    //
     switch(action.type){
         case "CHANGE_TAB":
-            debugger;
             return {
                 ...state,
                 currentTab: action.tab
             }
         case "LOGOUT":
-            debugger;
-            return {...initstate};
-        case "SUBMIT_ALL_INFO":
-            return {
-                ...state,
-                sexualOrien: action.data.sexualOrien,
-                flightTime: action.data.flightTime,
-                flightDest: action.data.flightDest,
-            }
+            localStorage.removeItem(TOKEN_KEY);
+            return {...startState};
 
         case "NEXT_LOGIN_STEP":
             const newState = {...state};
@@ -49,6 +41,9 @@ const loginOperation = (state = initstate, action) => {
                 newState.sexualOrien = 'from data source';
                 newState.isLoggedIn = true;
                 fillData(action.data,newState);
+                if (newState.loginflow === 2 && newState.remember){
+                    localStorage.setItem(TOKEN_KEY,JSON.stringify(newState));
+                }
                 /*********************************/
                 return newState;
             }
@@ -56,16 +51,8 @@ const loginOperation = (state = initstate, action) => {
                 newState.registerflow += 1;
                 newState.isLoggedIn = true;
                 fillData(action.data,newState);
-                return newState;
-            }
-            else{return state;}
-        case "PREV_LOGIN_STEP":
-            if (action.entry === 'login' || action.entry === 'register'){
-                const newState = {...state};
-                if (action.entry ==='login')
-                {newState.loginflow-=1;}
-                else{
-                    newState.registerflow -=1;
+                if (newState.registerflow ===3){
+                    localStorage.setItem(TOKEN_KEY,JSON.stringify(newState));
                 }
                 return newState;
             }

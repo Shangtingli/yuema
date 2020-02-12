@@ -25,7 +25,6 @@ class NormalLoginForm extends React.Component {
                 },
                 body: JSON.stringify(values)
             }).then((response) => {
-                debugger;
                 return response.json();
             }).then((response) =>{
                 if (response.result){

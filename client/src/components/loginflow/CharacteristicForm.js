@@ -34,7 +34,7 @@ class CharacteristicForm extends React.Component{
     render(){
         const { getFieldDecorator } = this.props.form;
         const a = store;
-        debugger;
+
         return (
             <div className='form-dashboard-container'>
                 <img src={Logo} className="logo-image"/>

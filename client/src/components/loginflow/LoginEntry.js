@@ -11,10 +11,6 @@ class LoginEntry extends React.Component{
         this.props.dispatch(nextStep('login',data));
     }
 
-    prevStep = (data) => {
-        this.props.dispatch(prevStep('login',data));
-    }
-
     render() {
         const step = store.getState().loginflow;
         switch(step){
@@ -24,7 +20,7 @@ class LoginEntry extends React.Component{
                 )
             case 1:
                 return (
-                    <TodayForm nextStep={this.nextStep} prevStep={this.prevStep}/>
+                    <TodayForm nextStep={this.nextStep}/>
                 )
             case 2:
                 return (

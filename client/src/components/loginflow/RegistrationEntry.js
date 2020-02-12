@@ -12,14 +12,9 @@ class RegistrationEntry extends React.Component{
     constructor(props){
         super(props);
         this.nextStep = this.nextStep.bind(this);
-        this.prevStep = this.prevStep.bind(this);
     }
     nextStep = (data) =>{
         this.props.dispatch(nextStep('register',data));
-    }
-
-    prevStep = (data) => {
-        this.props.dispatch(prevStep('register',data));
     }
 
     render() {
@@ -31,10 +26,10 @@ class RegistrationEntry extends React.Component{
                 )
             case 1:
                 return (
-                    <CharacteristicsForm prevStep={this.prevStep} nextStep={this.nextStep}/>
+                    <CharacteristicsForm nextStep={this.nextStep}/>
                 )
             case 2:
-                return (<TodayForm nextStep={this.nextStep} prevStep={this.prevStep}/>)
+                return (<TodayForm nextStep={this.nextStep}/>)
 
             case 3:
                 return <Redirect to='/home'/>

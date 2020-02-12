@@ -1,5 +1,7 @@
-const initstate={
-    loginflow:0,
+import {TOKEN_KEY} from "../constants";
+const isLoggedIn = Boolean(localStorage.getItem(TOKEN_KEY));
+export const startState = {
+    loginflow: 0,
     registerflow: 0,
     firstname: '',
     lastname: '',
@@ -7,11 +9,13 @@ const initstate={
     nickname: '',
     phonenumber: '',
     remember: false,
-    sexualOrien: 'undeclared',
+    sexualOrien: '',
     flightTime: '',
     flightDest: '',
     isLoggedIn: false,
-    currentTab: 'about'
+    currentTab: 'account'
 };
 
-export default initstate;
+export const initState= isLoggedIn ?
+    JSON.parse(localStorage.getItem(TOKEN_KEY)) : startState;
+
