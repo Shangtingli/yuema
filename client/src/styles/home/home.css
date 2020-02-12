@@ -1,0 +1,28 @@
+.home-container{
+    width: 90%;
+    height: 80%;
+    text-align:center;
+    display: inline-block;
+}
+
+.navbar-options{
+    float:left;
+}
+
+.navbar-logout-button{
+    float:right;
+}
+
+.dashboard-content-container{
+    display: inline-block;
+    border: dashed 2px black;
+    text-align: center;
+    height: 60%;
+    width: 60%;
+    margin-top: 30px;
+}
+
+
+.navbar-container{
+    height: 50px;
+}

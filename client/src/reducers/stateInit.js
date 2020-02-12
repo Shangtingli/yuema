@@ -1,12 +1,3 @@
-// const initstate = {
-//     loginpage: 'login',
-//     firstname: '',
-//     lastname: '',
-//     email: '',
-//     nickname: '',
-//     phonenumber: '',
-// }
-
 const initstate={
     loginflow:0,
     registerflow: 0,
@@ -19,7 +10,8 @@ const initstate={
     sexualOrien: 'undeclared',
     flightTime: '',
     flightDest: '',
-    isLoggedIn: false
+    isLoggedIn: false,
+    currentTab: 'about'
 };
 
 export default initstate;

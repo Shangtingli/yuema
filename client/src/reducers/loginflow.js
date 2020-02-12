@@ -15,6 +15,15 @@ function fillData(data,newState){
 const loginOperation = (state = initstate, action) => {
     // debugger;
     switch(action.type){
+        case "CHANGE_TAB":
+            debugger;
+            return {
+                ...state,
+                currentTab: action.tab
+            }
+        case "LOGOUT":
+            debugger;
+            return {...initstate};
         case "SUBMIT_ALL_INFO":
             return {
                 ...state,

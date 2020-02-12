@@ -1,14 +1,28 @@
-import React from 'react';
-import store from '../../store';
+import * as React from "react"
 import { Redirect } from "react-router"
-import AccountInfo from "./AccountInfo"
+import {connect } from 'react-redux';
+import NavBar from "./NavBar"
+import {changeTab, logout} from "../../actions"
+import store from '../../store';
+import DashBoard from "./DashBoard"
 class Home extends React.Component{
+
+    handleLogout = () => {
+        this.props.dispatch(logout);
+    }
+
+    handleChangeTab = (tab) => {
+        this.props.dispatch(changeTab(tab));
+    }
     render(){
         const data = store.getState();
-        debugger;
         if (data.isLoggedIn){
             return(
-                <AccountInfo/>
+                <div className='home-container'>
+                    <NavBar handleLogout={this.handleLogout} handleChangeTab={this.handleChangeTab}/>
+                    <DashBoard/>
+                </div>
+
             );
         }
         else{
@@ -18,4 +32,5 @@ class Home extends React.Component{
     }
 }
 
-export default Home;
+const mapStateToProps = (state) =>({isLoggedIn: state.isLoggedIn});
+export default connect(mapStateToProps)(Home);

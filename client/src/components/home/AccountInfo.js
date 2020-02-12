@@ -6,14 +6,14 @@ class AccountInfo extends React.Component{
     render(){
         const data = store.getState();
         return(
-            <div>
-                User data to deal with: <br/>
-                Email: {data.email} <br/>
-                Sexual Orientation: {data.sexualOrien} <br/>
-                Flight Time: {data.flightTime} <br/>
-                Flight Destination : {data.flightDest} <br/>
-                NickName: {data.nickname} <br/>
-                PhoneNumber: {data.phonenumber} <br/>
+            <div className="dashboard-content-container">
+                <h3> User data to deal with: </h3> <br/><br/>
+                <strong> Email </strong> : {data.email} <br/><br/>
+                <strong>Sexual Orientation</strong>: {data.sexualOrien} <br/><br/>
+                <strong>Flight Time</strong>: {data.flightTime} <br/><br/>
+                <strong>Flight Destination </strong>: {data.flightDest} <br/><br/>
+                <strong>NickName</strong>: {data.nickname} <br/><br/>
+                <strong>PhoneNumber</strong>: {data.phonenumber} <br/><br/>
             </div>
         );
     }
