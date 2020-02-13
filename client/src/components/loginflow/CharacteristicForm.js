@@ -1,4 +1,4 @@
-//TODO: Add the characteristics form
+
 
 import { Form, Select, Input, Button } from 'antd';
 import React from 'react';

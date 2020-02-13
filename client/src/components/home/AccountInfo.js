@@ -12,8 +12,8 @@ class AccountInfo extends React.Component{
                 <strong>Sexual Orientation</strong>: {data.sexualOrien} <br/><br/>
                 <strong>Flight Time</strong>: {data.flightTime} <br/><br/>
                 <strong>Flight Destination </strong>: {data.flightDest} <br/><br/>
-                <strong>NickName</strong>: {data.nickname} <br/><br/>
-                <strong>PhoneNumber</strong>: {data.phonenumber} <br/><br/>
+                <strong>NickName</strong>: {data.nickName} <br/><br/>
+                <strong>PhoneNumber</strong>: {data.phoneNumber} <br/><br/>
             </div>
         );
     }

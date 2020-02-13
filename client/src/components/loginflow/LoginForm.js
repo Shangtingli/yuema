@@ -5,9 +5,6 @@ import '../../styles/loginflow/form.css';
 import {Link} from "react-router-dom";
 
 import Logo from '../../assets/logo.png';
-/**
- * TODO: Complete the login logout flow
- */
 class NormalLoginForm extends React.Component {
     handleSubmit = e => {
         e.preventDefault();

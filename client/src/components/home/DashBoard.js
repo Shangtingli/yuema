@@ -5,24 +5,101 @@ import StoreRecommendation from "./StoreRecommendation"
 import AccountInfo from "./AccountInfo"
 import {connect} from "react-redux"
 import AboutUs from "./AboutUs"
+import Loading from "./Loading"
+import {fillFeatures} from "../../actions"
 
 class DashBoard extends React.Component{
 
-    render(){
-        const states = store.getState();
-        switch(states.currentTab){
-            case "about":
-                return (<AboutUs/>)
-            case "people":
-                return (<PeopleRecommendation/>)
-            case "store":
-                return (<StoreRecommendation/>)
-            case "account":
-                return (<AccountInfo/>)
-            default:
-                return "Invalid Tab Choice"
+    sleep = (milliseconds) => {
+        var start = new Date().getTime();
+        for (var i = 0; i < 1e7; i++) {
+            if ((new Date().getTime() - start) > milliseconds){
+                break;
+            }
         }
     }
+
+    componentDidMount() {
+        const states = store.getState();
+
+        const json = {email: states.email};
+        /**
+         * If the user comes from login entry
+         */
+        if (states.loginflow > states.registerflow) {
+            fetch('/api/getFeatures', {
+                method: 'POST',
+                body: JSON.stringify(json),
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            }).then((response) => {
+                return response.text()
+            }).then((response) => {
+                debugger;
+                const info = JSON.parse(response).content[0];
+                /**
+                 * TODO: Lets fake that this operation takes very long.....
+                 */
+                this.sleep(500000);
+                this.props.dispatch(fillFeatures(info));
+            });
+        }
+        /**
+         * Else if the user comes from register entry
+         */
+        else if (states.loginflow < states.registerflow){
+            const traveller = {email:states.email,
+                sexualOrien: states.sexualOrien,
+                nickName:states.nickName,
+                phoneNumber: states.phoneNumber
+            };
+            fetch('/api/saveFeatures',{
+                method: 'POST',
+                body: JSON.stringify(traveller),
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            }).then((response) => {
+                return response.text();
+            }).then((response) => {
+                debugger;
+                const info = JSON.parse(response);
+                /**
+                 * TODO: Lets fake that this operation takes very long.....
+                 */
+                this.sleep(500000);
+                this.props.dispatch(fillFeatures(info));
+            });
+        }
+        else{
+            alert("Something is wrong in Component Did Mount in Dashboard");
+        }
+    }
+
+    render(){
+        const states = store.getState();
+        if (states.clientDataReady){
+            switch(states.currentTab){
+                case "about":
+                    return (<AboutUs/>)
+                case "people":
+                    return (<PeopleRecommendation/>)
+                case "store":
+                    return (<StoreRecommendation/>)
+                case "account":
+                    return (<AccountInfo/>)
+                default:
+                    return "Invalid Tab Choice"
+            }
+        }
+        else{
+            return <Loading/>;
+        }
+
+    }
 }
-const mapStateToProps = (state) => ({currentTab: state.currentTab});
+const mapStateToProps = (state) => ({currentTab: state.currentTab, clientDataReady: state.clientDataReady});
 export default connect(mapStateToProps)(DashBoard);

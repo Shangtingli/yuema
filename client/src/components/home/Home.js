@@ -2,9 +2,10 @@ import * as React from "react"
 import { Redirect } from "react-router"
 import {connect } from 'react-redux';
 import NavBar from "./NavBar"
-import {changeTab, logout} from "../../actions"
+import {changeTab, fillFeatures, logout} from "../../actions"
+import DashBoard from "./DashBoard";
 import store from '../../store';
-import DashBoard from "./DashBoard"
+import Loading from "./Loading"
 class Home extends React.Component{
 
     handleLogout = () => {
@@ -14,16 +15,19 @@ class Home extends React.Component{
     handleChangeTab = (tab) => {
         this.props.dispatch(changeTab(tab));
     }
-    render(){
-        const data = store.getState();
-        if (data.isLoggedIn){
-            return(
-                <div className='home-container'>
-                    <NavBar handleLogout={this.handleLogout} handleChangeTab={this.handleChangeTab}/>
-                    <DashBoard/>
-                </div>
 
-            );
+
+    render(){
+        const states = store.getState();
+        if (states.isLoggedIn){
+                return(
+                    <div className='home-container'>
+                        <NavBar handleLogout={this.handleLogout} handleChangeTab={this.handleChangeTab}/>
+                        <DashBoard/>
+                    </div>
+
+                );
+
         }
         else{
             return (<Redirect to="/" />);

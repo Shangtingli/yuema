@@ -46,7 +46,7 @@ class RegistrationForm extends React.Component {
             }).then((response) =>{
                 if (response.result){
                     const allvalues = {...values}
-                    allvalues.phonenumber = allvalues.prefix + allvalues.phonenumber;
+                    allvalues.phoneNumber = allvalues.prefix + allvalues.phoneNumber;
                     delete allvalues.prefix;
                     this.props.nextStep(allvalues);
                 }
@@ -173,13 +173,13 @@ class RegistrationForm extends React.Component {
                     </span>
                             }
                         >
-                            {getFieldDecorator('nickname', {
-                                rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
+                            {getFieldDecorator('nickName', {
+                                rules: [{ required: true, message: 'Please input your nickName!', whitespace: true }],
                             })(<Input />)}
                         </Form.Item>
 
                         <Form.Item label="Phone Number">
-                            {getFieldDecorator('phonenumber', {
+                            {getFieldDecorator('phoneNumber', {
                                 rules: [{ required: true, message: 'Please input your phone number!' }],
                             })(<Input addonBefore={prefixSelector} style={{ width: '100%' }} />)}
                         </Form.Item>

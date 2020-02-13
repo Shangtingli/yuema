@@ -1,21 +1,24 @@
 import {TOKEN_KEY} from "../constants";
-const isLoggedIn = Boolean(localStorage.getItem(TOKEN_KEY));
+// const isLoggedIn = Boolean(localStorage.getItem(TOKEN_KEY));
 export const startState = {
     loginflow: 0,
     registerflow: 0,
-    firstname: '',
-    lastname: '',
+    firstName: '',
+    lastName: '',
     email: '',
-    nickname: '',
-    phonenumber: '',
+    nickName: '',
+    phoneNumber: '',
     remember: false,
     sexualOrien: '',
     flightTime: '',
     flightDest: '',
     isLoggedIn: false,
-    currentTab: 'account'
+    currentTab: 'account',
+    clientDataReady: false
 };
 
-export const initState= isLoggedIn ?
-    JSON.parse(localStorage.getItem(TOKEN_KEY)) : startState;
+// export const initState= isLoggedIn ?
+//     JSON.parse(localStorage.getItem(TOKEN_KEY)) : startState;
+
+export const initState= {...startState};
 

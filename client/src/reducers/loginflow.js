@@ -13,46 +13,50 @@ function fillData(data,newState){
     }
 }
 const loginOperation = (state = initState, action) => {
-    //
+    const newState = {...state};
     switch(action.type){
+        case "FILL_FEATURES":
+            debugger;
+            for (let key of Object.keys(action.data)){
+                if (key in newState){
+                    newState[key] = action.data[key];
+                }
+            }
+            newState.clientDataReady=true;
+            return newState;
         case "CHANGE_TAB":
             return {
                 ...state,
                 currentTab: action.tab
             }
         case "LOGOUT":
-            localStorage.removeItem(TOKEN_KEY);
+            // localStorage.removeItem(TOKEN_KEY);
             return {...startState};
 
         case "NEXT_LOGIN_STEP":
-            const newState = {...state};
             if (action.entry === 'login'){
                 newState.loginflow += 1;
-
                 if ('username' in action.data){
                     newState.email = action.data.username;
                 }
-
-                /**TODO: Add backend operations **/
-                newState.firstname = 'from data source';
-                newState.lastname = 'from data source';
-                newState.phonenumber = 'from data source';
-                newState.nickname  = 'from data source';
-                newState.sexualOrien = 'from data source';
-                newState.isLoggedIn = true;
                 fillData(action.data,newState);
-                if (newState.loginflow === 2 && newState.remember){
-                    localStorage.setItem(TOKEN_KEY,JSON.stringify(newState));
+                if (newState.loginflow === 2){
+                    // if (newState.remember)
+                    // {
+                    //     localStorage.setItem(TOKEN_KEY,JSON.stringify(newState));
+                    // }
+                    newState.isLoggedIn = true;
+
                 }
                 /*********************************/
                 return newState;
             }
             else if (action.entry === 'register'){
                 newState.registerflow += 1;
-                newState.isLoggedIn = true;
                 fillData(action.data,newState);
                 if (newState.registerflow ===3){
-                    localStorage.setItem(TOKEN_KEY,JSON.stringify(newState));
+                    newState.isLoggedIn = true;
+                    // localStorage.setItem(TOKEN_KEY,JSON.stringify(newState));
                 }
                 return newState;
             }

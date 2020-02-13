@@ -11,3 +11,8 @@ export const changeTab = (tab) => ({
     type: "CHANGE_TAB",
     tab : tab
 })
+
+export const fillFeatures = (data) => ({
+    type: "FILL_FEATURES",
+    data: data
+})
