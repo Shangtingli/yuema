@@ -27,6 +27,18 @@ app.use(function(req, res, next) {
 });
 
 
+app.post('/api/getUser', function(req,res){
+    const username = req.body.username;
+    fetch(HOST + '/getUser', {
+        method: 'POST',
+        body: JSON.stringify({username:username}),
+        headers: headers,
+    }).then((response) => {
+        return response.text();
+    }).then((response) => {
+        res.send(response);
+    })
+})
 app.post('/api/validateUser',function (req, res){
     const username = req.body.username;
     const password = req.body.password;
@@ -55,7 +67,7 @@ app.post('/api/addUser',function(req,res){
     })
 })
 
-app.post('/api/getFeatures',function(req,res){
+app.post('/api/getTraveller',function(req,res){
     const email = ('username' in req.body) ? req.body.username : req.body.email;
     const obj = {email:email};
     fetch(HOST + '/traveller/getTraveller', {
@@ -70,12 +82,15 @@ app.post('/api/getFeatures',function(req,res){
 });
 
 
-app.post('/api/saveFeatures',function(req,res){
+app.post('/api/addTraveller',function(req,res){
     const email = ('username' in req.body) ? req.body.username : req.body.email;
     const sexualOrien = req.body.sexualOrien;
     const nickName = req.body.nickName;
     const phoneNumber = req.body.phoneNumber;
-    const obj = {email:email, sexualOrien: sexualOrien, nickName: nickName, phoneNumber: phoneNumber};
+    const firstName = req.body.firstName;
+    const lastName = req.body.lastName;
+    const sex = req.body.sex;
+    const obj = {email:email, sex:sex, sexualOrien: sexualOrien, nickName: nickName, phoneNumber: phoneNumber, firstName: firstName, lastName: lastName};
     fetch(HOST + '/traveller/addTraveller',{
         method:'POST',
         body: JSON.stringify(obj),
