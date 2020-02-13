@@ -16,7 +16,6 @@ const loginOperation = (state = initState, action) => {
     const newState = {...state};
     switch(action.type){
         case "FILL_FEATURES":
-            debugger;
             for (let key of Object.keys(action.data)){
                 if (key in newState){
                     newState[key] = action.data[key];

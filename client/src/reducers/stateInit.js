@@ -14,7 +14,8 @@ export const startState = {
     flightDest: '',
     isLoggedIn: false,
     currentTab: 'account',
-    clientDataReady: false
+    clientDataReady: false,
+    sex: ''
 };
 
 // export const initState= isLoggedIn ?

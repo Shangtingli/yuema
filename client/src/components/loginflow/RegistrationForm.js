@@ -25,35 +25,55 @@ class RegistrationForm extends React.Component {
         confirmDirty: false,
     };
 
+    saveUserAndNextStep = (values,endpoint) => {
+        const user = {username: values.email, password: values.password};
+        fetch(endpoint, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        }).then((response) => {
+            return response.json();
+        }).then((response) =>{
+            if (response.result){
+                const allvalues = {...values}
+                allvalues.phoneNumber = allvalues.prefix + allvalues.phoneNumber;
+                delete allvalues.prefix;
+                this.props.nextStep(allvalues);
+            }
+            else{
+                console.log("Something is wrong");
+            }
+        });
+    }
     handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
                 console.log('Received values of form: ', values);
             }
-            const endpoint = '/api/addUser';
 
-            const json = {username: values.email, password: values.password};
-            fetch(endpoint, {
+            fetch('/api/getUser',{
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(json)
-            }).then((response) => {
+                body: JSON.stringify({username: values.email})
+            }).then((response)=> {
                 return response.json();
-            }).then((response) =>{
-                if (response.result){
-                    const allvalues = {...values}
-                    allvalues.phoneNumber = allvalues.prefix + allvalues.phoneNumber;
-                    delete allvalues.prefix;
-                    this.props.nextStep(allvalues);
+            }).then((response) => {
+                if (response.result === null){
+                    const endpoint = '/api/addUser';
+                    this.saveUserAndNextStep(values,endpoint)
                 }
                 else{
-                    console.log("Something is wrong");
+                    alert("User " + response.result.username + " Already Exists")
                 }
-            });
+            })
+
         });
 
 
@@ -123,6 +143,16 @@ class RegistrationForm extends React.Component {
                 <div className="form-container">
 
                     <Form {...formItemLayout} onSubmit={this.handleSubmit} className='initial-form'>
+                        <Form.Item label="FirstName">
+                            {getFieldDecorator('firstName', {
+                                rules: [{ required: true, message: 'Please enter your first name!' }],
+                            })(<Input/>)}
+                        </Form.Item>
+                        <Form.Item label="LastName">
+                            {getFieldDecorator('lastName', {
+                                rules: [{ required: true, message: 'Please enter your last name!' }],
+                            })(<Input/>)}
+                        </Form.Item>
                         <Form.Item label="E-mail">
                             {getFieldDecorator('email', {
                                 rules: [
@@ -183,6 +213,8 @@ class RegistrationForm extends React.Component {
                                 rules: [{ required: true, message: 'Please input your phone number!' }],
                             })(<Input addonBefore={prefixSelector} style={{ width: '100%' }} />)}
                         </Form.Item>
+
+
                         <Form.Item {...tailFormItemLayout}>
                             <Button type="primary" htmlType="submit" onClick={this.handleSubmit}>
                                 Register

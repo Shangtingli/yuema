@@ -40,6 +40,20 @@ class CharacteristicForm extends React.Component{
                 <img src={Logo} className="logo-image"/>
                 <div className='form-container'>
                     <Form labelCol={{ span: 5 }} wrapperCol={{ span: 12 }} onSubmit={this.handleSubmit}>
+                        <Form.Item label="Sex">
+                            {getFieldDecorator('sex', {
+                                rules: [{ required: true, message: 'Please select your sexual orientation!' }],
+                            })(
+                                <Select
+                                    placeholder="Enter your sexual orientation"
+                                    onChange={this.handleSelectChange}
+                                >
+                                    <Option value="male">male</Option>
+                                    <Option value="female">female</Option>
+                                </Select>,
+                            )}
+                        </Form.Item>
+
                         <Form.Item label="Sexual Orientation">
                             {getFieldDecorator('sexualOrien', {
                                 rules: [{ required: true, message: 'Please select your sexual orientation!' }],

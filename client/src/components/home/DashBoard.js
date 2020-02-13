@@ -27,7 +27,7 @@ class DashBoard extends React.Component{
          * If the user comes from login entry
          */
         if (states.loginflow > states.registerflow) {
-            fetch('/api/getFeatures', {
+            fetch('/api/getTraveller', {
                 method: 'POST',
                 body: JSON.stringify(json),
                 headers: {
@@ -42,7 +42,7 @@ class DashBoard extends React.Component{
                 /**
                  * TODO: Lets fake that this operation takes very long.....
                  */
-                this.sleep(500000);
+                this.sleep(5000);
                 this.props.dispatch(fillFeatures(info));
             });
         }
@@ -50,12 +50,16 @@ class DashBoard extends React.Component{
          * Else if the user comes from register entry
          */
         else if (states.loginflow < states.registerflow){
-            const traveller = {email:states.email,
+            const traveller = {
+                email:states.email,
                 sexualOrien: states.sexualOrien,
                 nickName:states.nickName,
-                phoneNumber: states.phoneNumber
+                phoneNumber: states.phoneNumber,
+                firstName: states.firstName,
+                lastName: states.lastName,
+                sex: states.sex,
             };
-            fetch('/api/saveFeatures',{
+            fetch('/api/addTraveller',{
                 method: 'POST',
                 body: JSON.stringify(traveller),
                 headers: {
@@ -70,7 +74,7 @@ class DashBoard extends React.Component{
                 /**
                  * TODO: Lets fake that this operation takes very long.....
                  */
-                this.sleep(500000);
+                this.sleep(5000);
                 this.props.dispatch(fillFeatures(info));
             });
         }
