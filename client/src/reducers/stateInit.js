@@ -15,7 +15,11 @@ export const startState = {
     isLoggedIn: false,
     currentTab: 'account',
     clientDataReady: false,
-    sex: ''
+    sex: '',
+    /**
+     * TODO: Maybe not secure... But should look into this issue when have time
+     */
+    password: ''
 };
 
 // export const initState= isLoggedIn ?

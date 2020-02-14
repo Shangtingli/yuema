@@ -19,6 +19,26 @@ class DashBoard extends React.Component{
         }
     }
 
+    saveTravellerFeatures = (traveller) => {
+        fetch('/api/addTraveller',{
+            method: 'POST',
+            body: JSON.stringify(traveller),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }).then((response) => {
+            return response.text();
+        }).then((response) => {
+            const info = JSON.parse(response);
+            /**
+             * TODO: Lets fake that this operation takes very long.....
+             */
+            this.sleep(5000);
+            this.props.dispatch(fillFeatures(info));
+        });
+    }
+
     componentDidMount() {
         const states = store.getState();
 
@@ -50,33 +70,34 @@ class DashBoard extends React.Component{
          * Else if the user comes from register entry
          */
         else if (states.loginflow < states.registerflow){
-            const traveller = {
-                email:states.email,
-                sexualOrien: states.sexualOrien,
-                nickName:states.nickName,
-                phoneNumber: states.phoneNumber,
-                firstName: states.firstName,
-                lastName: states.lastName,
-                sex: states.sex,
-            };
-            fetch('/api/addTraveller',{
+            debugger;
+            fetch('/api/addUser',{
                 method: 'POST',
-                body: JSON.stringify(traveller),
+                body: JSON.stringify({username:states.email,password:states.password}),
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 }
             }).then((response) => {
-                return response.text();
-            }).then((response) => {
-                debugger;
-                const info = JSON.parse(response);
-                /**
-                 * TODO: Lets fake that this operation takes very long.....
-                 */
-                this.sleep(5000);
-                this.props.dispatch(fillFeatures(info));
-            });
+                return response.json();
+            }).then((response)=>{
+                if (response.result){
+                    const traveller = {
+                        email:states.email,
+                        sexualOrien: states.sexualOrien,
+                        nickName:states.nickName,
+                        phoneNumber: states.phoneNumber,
+                        firstName: states.firstName,
+                        lastName: states.lastName,
+                        sex: states.sex,
+                    };
+
+                    this.saveTravellerFeatures(traveller);
+                }
+
+            })
+
+
         }
         else{
             alert("Something is wrong in Component Did Mount in Dashboard");

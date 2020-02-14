@@ -18,6 +18,9 @@ import {
 import React from 'react';
 import Logo from "../../assets/logo.png";
 
+/**
+ * TODO: Could submit the form even when two passwords does not match
+ */
 const { Option } = Select;
 
 class RegistrationForm extends React.Component {
@@ -25,29 +28,6 @@ class RegistrationForm extends React.Component {
         confirmDirty: false,
     };
 
-    saveUserAndNextStep = (values,endpoint) => {
-        const user = {username: values.email, password: values.password};
-        fetch(endpoint, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(user)
-        }).then((response) => {
-            return response.json();
-        }).then((response) =>{
-            if (response.result){
-                const allvalues = {...values}
-                allvalues.phoneNumber = allvalues.prefix + allvalues.phoneNumber;
-                delete allvalues.prefix;
-                this.props.nextStep(allvalues);
-            }
-            else{
-                console.log("Something is wrong");
-            }
-        });
-    }
     handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFieldsAndScroll((err, values) => {
@@ -66,8 +46,10 @@ class RegistrationForm extends React.Component {
                 return response.json();
             }).then((response) => {
                 if (response.result === null){
-                    const endpoint = '/api/addUser';
-                    this.saveUserAndNextStep(values,endpoint)
+                    const allvalues = {...values}
+                    allvalues.phoneNumber = allvalues.prefix + allvalues.phoneNumber;
+                    delete allvalues.prefix;
+                    this.props.nextStep(allvalues);
                 }
                 else{
                     alert("User " + response.result.username + " Already Exists")

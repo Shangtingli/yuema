@@ -39,6 +39,7 @@ class CharacteristicForm extends React.Component{
             <div className='form-dashboard-container'>
                 <img src={Logo} className="logo-image"/>
                 <div className='form-container'>
+                    <h2>Please tell us more about you: </h2>
                     <Form labelCol={{ span: 5 }} wrapperCol={{ span: 12 }} onSubmit={this.handleSubmit}>
                         <Form.Item label="Sex">
                             {getFieldDecorator('sex', {

@@ -1,6 +1,5 @@
 
 import {initState, startState} from './stateInit';
-import {TOKEN_KEY} from "../constants"
 
 function fillData(data,newState){
     const keys=Object.keys(data);
@@ -22,6 +21,8 @@ const loginOperation = (state = initState, action) => {
                 }
             }
             newState.clientDataReady=true;
+            //For security purposes
+            newState.password=''
             return newState;
         case "CHANGE_TAB":
             return {

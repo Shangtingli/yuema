@@ -7,7 +7,6 @@ import { connect } from 'react-redux';
 import Logo from '../../assets/logo.png';
 
 
-const { Option } = Select;
 class CharacteristicForm extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
@@ -19,19 +18,13 @@ class CharacteristicForm extends React.Component {
         });
     };
 
-    handleSelectChange = value => {
-        console.log(value);
-        this.props.form.setFieldsValue({
-            note: `Hi, ${value === 'male' ? 'man' : 'lady'}!`,
-        });
-    };
-
     render() {
         const { getFieldDecorator } = this.props.form;
         return (
             <div className='form-dashboard-container'>
                 <img src={Logo} className="logo-image"/>
                 <div className='form-container'>
+                    <h2>Please tell us your travel plan today: </h2>
                     <Form labelCol={{ span: 5 }} wrapperCol={{ span: 12 }} onSubmit={this.handleSubmit}>
                         <Form.Item label="Flight time">
                             {getFieldDecorator('flightTime', {
