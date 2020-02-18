@@ -1,0 +1,41 @@
+#login-form {
+    max-width: 400px;
+}
+.login-form-forgot {
+    float: right;
+}
+.login-form-button {
+    width: 100%;
+}
+
+.form-container{
+    text-align: center;
+    width: 100%;
+}
+
+.form-dashboard-container{
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    box-shadow: 0 1px 15px 5px rgba(163,163,163,.44);
+}
+
+.initial-form{
+    text-align: center;
+    display: inline-block;
+    width: 60%;
+}
+
+#button-container{
+    display: inline-block;
+    width: 60%;
+}
+
+#button-container > .submit-button{
+    float: left;
+}
+
+#button-container > .back-button{
+    float: right;
+}
+

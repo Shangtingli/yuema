@@ -1,0 +1,10 @@
+type Traveller @model {
+  id: ID!
+  email: String!
+  firstName: String!
+  lastName: String!
+  nickName: String!
+  phoneNumber: String!
+  sexualOrien: String!
+  sex: String!
+}
