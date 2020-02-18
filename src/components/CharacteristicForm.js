@@ -3,7 +3,6 @@
 import { Form, Select, Input, Button } from 'antd';
 import React from 'react';
 import 'antd/dist/antd.css';
-import store from '../store';
 
 import Logo from '../assets/logo.png';
 const { Option } = Select;
@@ -41,6 +40,20 @@ class CharacteristicForm extends React.Component{
                 <div className='form-container'>
                     <h2>Please tell us more about you: </h2>
                     <Form labelCol={{ span: 5 }} wrapperCol={{ span: 12 }} onSubmit={this.handleSubmit}>
+                        <Form.Item label="FirstName">
+                            {getFieldDecorator('firstName', {
+                                rules: [{ required: true, message: 'Please enter your first name!' }],
+                            })(
+                                <Input/>
+                            )}
+                        </Form.Item>
+                        <Form.Item label="LastName">
+                            {getFieldDecorator('lastName', {
+                                rules: [{ required: true, message: 'Please enter your last name!' }],
+                            })(
+                                <Input/>
+                            )}
+                        </Form.Item>
                         <Form.Item label="Sex">
                             {getFieldDecorator('sex', {
                                 rules: [{ required: true, message: 'Please select your sexual orientation!' }],

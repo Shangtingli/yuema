@@ -10,28 +10,14 @@ import {fillFeatures} from "../actions/index"
 import {createTraveller} from "../graphql/mutations"
 import {API, graphqlOperation} from 'aws-amplify';
 import {listTravellers} from "../graphql/queries"
-/**
- * TODO: Get Dashboard done
- */
+
 class DashBoard extends React.Component{
-
-    sleep = (milliseconds) => {
-        var start = new Date().getTime();
-        for (var i = 0; i < 1e7; i++) {
-            if ((new Date().getTime() - start) > milliseconds){
-                break;
-            }
-        }
-    }
-
     /**
      * Expects
      * @param traveller
      */
     saveTravellerFeatures = (traveller) => {
-
         API.graphql(graphqlOperation(createTraveller,{input: traveller})).then((response) =>{
-            this.sleep(5000);
             this.props.dispatch(fillFeatures(traveller));
         })
     }
@@ -44,31 +30,30 @@ class DashBoard extends React.Component{
          */
         if (states.hasFeaturesStored) {
             API.graphql(graphqlOperation(listTravellers)).then((response) => {
-                debugger;
-            }).then((response) => {
-                debugger;
-                const info = JSON.parse(response).content[0];
-                /**
-                 * Goal: Lets fake that this operation takes very long.....
-                 */
-                this.sleep(5000);
-                this.props.dispatch(fillFeatures(info));
-            });
+                var traveller = null;
+                for (let t of response.data.listTravellers.items){
+                    if (t.email === states.email){
+                        traveller = t;
+                        break;
+                    }
+                }
+                this.props.dispatch(fillFeatures(traveller));
+
+            })
         }
         /**
          * Else if the user comes from register entry
          */
         else{
-            debugger;
             var traveller = {};
             traveller["firstName"] = states.firstName;
             traveller["lastName"] = states.lastName;
             traveller["email"] = states.email;
-            traveller["nickName"] = states.nickName;
-            traveller["phoneNumber"] = states.phoneNumber;
+            // traveller["nickName"] = states.nickName;
             traveller["sex"] = states.sex;
             traveller["sexualOrien"] = states.sexualOrien;
-            debugger;
+            // traveller["id"] = "test";
+            traveller["phoneNumber"] = states.phoneNumber;
             this.saveTravellerFeatures(traveller);
         }
     }

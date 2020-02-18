@@ -8,7 +8,6 @@ export const getTraveller = /* GraphQL */ `
       email
       firstName
       lastName
-      nickName
       phoneNumber
       sexualOrien
       sex
@@ -27,7 +26,6 @@ export const listTravellers = /* GraphQL */ `
         email
         firstName
         lastName
-        nickName
         phoneNumber
         sexualOrien
         sex

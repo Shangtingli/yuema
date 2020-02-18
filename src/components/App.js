@@ -5,12 +5,7 @@ import Home from "./Home";
 import { withAuthenticator } from 'aws-amplify-react';
 import Amplify from 'aws-amplify';
 import aws_exports from '../aws-exports';
-import { createBrowserHistory } from "history";
 import {connect} from "react-redux"
-
-import {switchRegisterEntry, switchLoginEntry, nextStep} from "../actions";
-import Loading from "./Loading"
-import TodayForm from "./TodayForm"
 
 Amplify.configure(aws_exports);
 

@@ -1,5 +1,5 @@
 import { submitInfo} from "../actions/index";
-import { Form, Select, Input, Button } from 'antd';
+import { Form, Input, Button } from 'antd';
 import React from 'react';
 import 'antd/dist/antd.css';
 import { connect } from 'react-redux';

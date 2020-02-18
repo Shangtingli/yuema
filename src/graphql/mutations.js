@@ -11,7 +11,6 @@ export const createTraveller = /* GraphQL */ `
       email
       firstName
       lastName
-      nickName
       phoneNumber
       sexualOrien
       sex
@@ -28,7 +27,6 @@ export const updateTraveller = /* GraphQL */ `
       email
       firstName
       lastName
-      nickName
       phoneNumber
       sexualOrien
       sex
@@ -45,7 +43,6 @@ export const deleteTraveller = /* GraphQL */ `
       email
       firstName
       lastName
-      nickName
       phoneNumber
       sexualOrien
       sex

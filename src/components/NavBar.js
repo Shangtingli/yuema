@@ -4,17 +4,13 @@ import {changeTab,logout} from '../actions/index';
 import '../styles/home/home.css';
 import store from "../store";
 import {connect} from "react-redux"
-import Button from "antd/es/button/button"
+
 class NavBar extends React.Component {
 
     handleClickTab = e => {
         this.props.dispatch(changeTab(e.key));
     };
 
-    handleLogout = e => {
-        e.preventDefault();
-        this.props.handleLogout();
-    }
     render() {
         const current = store.getState().currentTab;
         return (
@@ -33,8 +29,6 @@ class NavBar extends React.Component {
                         About
                     </Menu.Item>
                 </Menu>
-
-                <Button className="navbar-logout-button" onClick={this.handleLogout}> Logout </Button>
             </div>
         );
     }

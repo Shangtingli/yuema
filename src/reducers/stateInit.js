@@ -6,7 +6,6 @@ export const startState = {
     firstName: '',
     lastName: '',
     email: '',
-    nickName: '',
     phoneNumber: '',
     remember: false,
     sexualOrien: '',

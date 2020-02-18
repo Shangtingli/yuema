@@ -16,40 +16,28 @@ class Home extends React.Component{
      * @param email
      * @returns {Promise<*>}
      */
-    async getTraveller(email){
-        const travellers = await API.graphql(graphqlOperation(listTravellers));
-        var traveller = null;
-        debugger;
-        for(let t of travellers.data.listTravellers.items){
-            if (t.email === email){
-                traveller = t;
-                break;
-            }
-        }
-        return traveller;
-    }
-    async getToken(){
-        const tokens = await Auth.currentSession();
-        const username = tokens.idToken.payload.email;
-        return username;
-    }
-
-    async listTravellers() {
-        const travellers = await API.graphql(graphqlOperation(listTravellers));
-        return travellers;
-    }
     componentDidMount(){
-        this.getToken().then((response) => {
-            this.getTraveller(response).then((response)=>{
-                if (response === null){
-                    this.props.dispatch(switchRegisterEntry);
-                    debugger;
+        Auth.currentSession().then((response) => {
+            const email = response.idToken.payload.email;
+            const phoneNumber = response.idToken.payload.phone_number;
+            debugger;
+            API.graphql(graphqlOperation(listTravellers)).then((response)=>{
+                var traveller = null;
+                for(let t of response.data.listTravellers.items){
+                    if (t.email === email){
+                        traveller = t;
+                        break;
+                    }
+                }
+                if (traveller === null){
+                    this.props.dispatch(switchRegisterEntry(email,phoneNumber));
                 }
                 else{
-                    this.props.dispatch(switchLoginEntry);
+                    this.props.dispatch(switchLoginEntry(email,phoneNumber));
                 }
-            });
-        });
+
+            })
+        })
     }
 
     handleLogout = () => {
@@ -66,7 +54,6 @@ class Home extends React.Component{
 
     render(){
         const states = store.getState();
-        debugger;
         if (states.flow === -1){
             return (<Loading/>)
         }
