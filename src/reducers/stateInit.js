@@ -2,6 +2,7 @@
 // const isLoggedIn = Boolean(localStorage.getItem(TOKEN_KEY));
 export const startState = {
     flow:-1,
+    hasFeaturesStored: false,
     firstName: '',
     lastName: '',
     email: '',

@@ -7,7 +7,9 @@ import {connect} from "react-redux"
 import AboutUs from "./AboutUs"
 import Loading from "./Loading"
 import {fillFeatures} from "../actions/index"
-
+import {createTraveller} from "../graphql/mutations"
+import {API, graphqlOperation} from 'aws-amplify';
+import {listTravellers} from "../graphql/queries"
 /**
  * TODO: Get Dashboard done
  */
@@ -22,43 +24,27 @@ class DashBoard extends React.Component{
         }
     }
 
+    /**
+     * Expects
+     * @param traveller
+     */
     saveTravellerFeatures = (traveller) => {
-        fetch('/api/addTraveller',{
-            method: 'POST',
-            body: JSON.stringify(traveller),
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
-        }).then((response) => {
-            return response.text();
-        }).then((response) => {
-            const info = JSON.parse(response);
-            /**
-             * Goal: Lets fake that this operation takes very long.....
-             */
+
+        API.graphql(graphqlOperation(createTraveller,{input: traveller})).then((response) =>{
             this.sleep(5000);
-            this.props.dispatch(fillFeatures(info));
-        });
+            this.props.dispatch(fillFeatures(traveller));
+        })
     }
 
     componentDidMount() {
         const states = store.getState();
 
-        const json = {email: states.email};
         /**
          * If the user comes from login entry
          */
-        if (states.loginflow > states.registerflow) {
-            fetch('/api/getTraveller', {
-                method: 'POST',
-                body: JSON.stringify(json),
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                }
-            }).then((response) => {
-                return response.text()
+        if (states.hasFeaturesStored) {
+            API.graphql(graphqlOperation(listTravellers)).then((response) => {
+                debugger;
             }).then((response) => {
                 debugger;
                 const info = JSON.parse(response).content[0];
@@ -72,38 +58,18 @@ class DashBoard extends React.Component{
         /**
          * Else if the user comes from register entry
          */
-        else if (states.loginflow < states.registerflow){
-            debugger;
-            fetch('/api/addUser',{
-                method: 'POST',
-                body: JSON.stringify({username:states.email,password:states.password}),
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                }
-            }).then((response) => {
-                return response.json();
-            }).then((response)=>{
-                if (response.result){
-                    const traveller = {
-                        email:states.email,
-                        sexualOrien: states.sexualOrien,
-                        nickName:states.nickName,
-                        phoneNumber: states.phoneNumber,
-                        firstName: states.firstName,
-                        lastName: states.lastName,
-                        sex: states.sex,
-                    };
-
-                    this.saveTravellerFeatures(traveller);
-                }
-
-            })
-
-
-        }
         else{
-            alert("Something is wrong in Component Did Mount in Dashboard");
+            debugger;
+            var traveller = {};
+            traveller["firstName"] = states.firstName;
+            traveller["lastName"] = states.lastName;
+            traveller["email"] = states.email;
+            traveller["nickName"] = states.nickName;
+            traveller["phoneNumber"] = states.phoneNumber;
+            traveller["sex"] = states.sex;
+            traveller["sexualOrien"] = states.sexualOrien;
+            debugger;
+            this.saveTravellerFeatures(traveller);
         }
     }
 
