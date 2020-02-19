@@ -1,18 +1,24 @@
 import * as React from "react"
-import { Menu, Icon } from 'antd';
+import {Menu, Icon, Button} from 'antd';
 import {changeTab,logout} from '../actions/index';
 import '../styles/home/home.css';
 import store from "../store";
 import {connect} from "react-redux"
-
+import { Auth } from 'aws-amplify';
 class NavBar extends React.Component {
 
     handleClickTab = e => {
         this.props.dispatch(changeTab(e.key));
     };
 
+    handleLogout = e => {
+        Auth.signOut();
+    }
     render() {
-        const current = store.getState().currentTab;
+        const states=  store.getState();
+        const current = states.currentTab;
+        const greetings = "Hello, " + states.firstName + " " + states.lastName;
+        debugger;
         return (
             <div className='navbar-container'>
                 <Menu onClick={this.handleClickTab} selectedKeys={[current]} mode="horizontal" className="navbar-options">
@@ -29,11 +35,12 @@ class NavBar extends React.Component {
                         About
                     </Menu.Item>
                 </Menu>
+                <Button className="navbar-logout-button" onClick={this.handleLogout}> Logout </Button>
             </div>
         );
     }
 }
 
 
-const mapStateToProps = (state) => ({currentTab: state.currentTab});
+const mapStateToProps = (state) => ({currentTab: state.currentTab,firstName: state.firstName, lastName: state.lastName});
 export default connect(mapStateToProps)(NavBar);

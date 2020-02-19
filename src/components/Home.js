@@ -9,6 +9,7 @@ import Loading from "./Loading"
 import CharacteristicForm from "./CharacteristicForm"
 import TodayForm from "./TodayForm"
 import {listTravellers} from "../graphql/queries"
+import Greetings from "./Greetings"
 class Home extends React.Component{
     /**
      * TODO: Is it that only using O(n) time to find specific traveller with specific email?
@@ -67,6 +68,7 @@ class Home extends React.Component{
             return(
                 <div className='home-container'>
                     <NavBar handleLogout={this.handleLogout} handleChangeTab={this.handleChangeTab}/>
+                    <Greetings/>
                     <DashBoard />
                 </div>
 

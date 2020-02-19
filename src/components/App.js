@@ -19,4 +19,4 @@ class App extends React.Component{
     }
 }
 
-export default withAuthenticator(connect()(App), { includeGreetings: true });
+export default withAuthenticator(connect()(App), { includeGreetings: false});

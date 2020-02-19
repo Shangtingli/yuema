@@ -26,3 +26,8 @@
 .navbar-container{
     height: 50px;
 }
+
+.navbar-greetings{
+    margin:auto;
+    width: 200px;
+}

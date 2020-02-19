@@ -38,7 +38,6 @@ class DashBoard extends React.Component{
                     }
                 }
                 this.props.dispatch(fillFeatures(traveller));
-
             })
         }
         /**

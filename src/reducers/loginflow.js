@@ -28,6 +28,7 @@ const loginOperation = (state = initState, action) => {
         case "FILL_FEATURES":
             fillData(action.data,newState);
             newState.clientDataReady=true;
+            debugger;
             return newState;
         case "CHANGE_TAB":
             return {
