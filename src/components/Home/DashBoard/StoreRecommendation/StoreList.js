@@ -1,11 +1,19 @@
-import React from "react"
-import {connect} from "react-redux"
+import React from "react";
+import {connect} from "react-redux";
 import {API, graphqlOperation} from 'aws-amplify';
 import {listStores} from "../../../../graphql/queries";
 import store from '../../../../store';
-import StoreLoading from "./StoreLoading"
-import {writeStoresFromDatabase} from "../../../../actions"
-import Store from "./Store"
+import StoreLoading from "./StoreLoading";
+import {writeStoresFromDatabase} from "../../../../actions";
+import Store from "./Store";
+import {Collapse} from "antd";
+import 'antd/dist/antd.css';
+
+const { Panel } = Collapse;
+function callback(key) {
+    console.log(key);
+}
+
 class StoreList extends React.Component{
 
 
@@ -21,9 +29,17 @@ class StoreList extends React.Component{
         }
         else{
             return(
-                <div className="store-list-container">
-                    {states.storeData.map((data) => {return <Store data={data}/>})}
-                </div>
+                <Collapse defaultActiveKey={['1']} onChange={callback}>
+                    {states.storeData.map((data) => {
+                        debugger;
+                        return(
+                        <Panel header={data.storeName} key={data.storeName}>
+                            <p>Tags : {data.tags.map((tag) => {return `${tag} || `})}</p>
+                            <p>At {`Terminal ${data.terminal} Floor ${data.floor}`}</p>
+                            <p>Exact Location (lat,lng):{`${data.lat},${data.lng}`} </p>
+                        </Panel>
+                    )})}
+                </Collapse>
             )
         }
 
