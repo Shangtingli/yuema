@@ -1,9 +1,11 @@
-type Traveller @model {
+type Todo @model {
   id: ID!
   email: String!
-  firstName: String!
+  firstName:String!
   lastName: String!
-  phoneNumber: String
-  sexualOrien: String!
   sex: String!
+  country: String!
+  ageRange: String!
+  hobbies:[String!]!
+  phoneNumber: String!
 }

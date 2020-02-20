@@ -9,11 +9,13 @@ export const createTraveller = /* GraphQL */ `
     createTraveller(input: $input, condition: $condition) {
       id
       email
+      ageRange
+      country
       firstName
       lastName
       phoneNumber
-      sexualOrien
       sex
+      hobbies
     }
   }
 `;
@@ -25,11 +27,13 @@ export const updateTraveller = /* GraphQL */ `
     updateTraveller(input: $input, condition: $condition) {
       id
       email
+      ageRange
+      country
       firstName
       lastName
       phoneNumber
-      sexualOrien
       sex
+      hobbies
     }
   }
 `;
@@ -41,11 +45,13 @@ export const deleteTraveller = /* GraphQL */ `
     deleteTraveller(input: $input, condition: $condition) {
       id
       email
+      ageRange
+      country
       firstName
       lastName
       phoneNumber
-      sexualOrien
       sex
+      hobbies
     }
   }
 `;

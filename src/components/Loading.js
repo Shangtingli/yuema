@@ -1,6 +1,6 @@
 import * as React from "react"
 import {Icon} from "antd"
-import '../styles/home/loading.css';
+import '../styles/home/loading.scss';
 export default class Loading extends React.Component{
 
     render(){

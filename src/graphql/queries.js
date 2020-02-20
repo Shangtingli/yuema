@@ -6,11 +6,13 @@ export const getTraveller = /* GraphQL */ `
     getTraveller(id: $id) {
       id
       email
+      ageRange
+      country
       firstName
       lastName
       phoneNumber
-      sexualOrien
       sex
+      hobbies
     }
   }
 `;
@@ -24,11 +26,13 @@ export const listTravellers = /* GraphQL */ `
       items {
         id
         email
+        ageRange
+        country
         firstName
         lastName
         phoneNumber
-        sexualOrien
         sex
+        hobbies
       }
       nextToken
     }

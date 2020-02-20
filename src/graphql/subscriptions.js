@@ -6,11 +6,13 @@ export const onCreateTraveller = /* GraphQL */ `
     onCreateTraveller {
       id
       email
+      ageRange
+      country
       firstName
       lastName
       phoneNumber
-      sexualOrien
       sex
+      hobbies
     }
   }
 `;
@@ -19,11 +21,13 @@ export const onUpdateTraveller = /* GraphQL */ `
     onUpdateTraveller {
       id
       email
+      ageRange
+      country
       firstName
       lastName
       phoneNumber
-      sexualOrien
       sex
+      hobbies
     }
   }
 `;
@@ -32,11 +36,13 @@ export const onDeleteTraveller = /* GraphQL */ `
     onDeleteTraveller {
       id
       email
+      ageRange
+      country
       firstName
       lastName
       phoneNumber
-      sexualOrien
       sex
+      hobbies
     }
   }
 `;

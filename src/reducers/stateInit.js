@@ -1,5 +1,13 @@
 
 // const isLoggedIn = Boolean(localStorage.getItem(TOKEN_KEY));
+
+function tagColorInit(){
+    var arr =  Array.from({ length: 12 });
+    for(let i in arr){
+        arr[i] = false;
+    }
+    return arr;
+}
 export const startState = {
     flow:-1,
     hasFeaturesStored: false,
@@ -8,13 +16,16 @@ export const startState = {
     email: '',
     phoneNumber: '',
     remember: false,
-    sexualOrien: '',
+    ageRange: '',
+    country: '',
     flightTime: '',
     flightDest: '',
     isLoggedIn: false,
     currentTab: 'account',
     clientDataReady: false,
-    sex: ''
+    sex: '',
+    hobbies: [],
+
 };
 
 // export const initState= isLoggedIn ?

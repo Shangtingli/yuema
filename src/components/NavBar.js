@@ -1,7 +1,7 @@
 import * as React from "react"
 import {Menu, Icon, Button} from 'antd';
 import {changeTab,logout} from '../actions/index';
-import '../styles/home/home.css';
+import '../styles/home/home.scss';
 import store from "../store";
 import {connect} from "react-redux"
 import { Auth } from 'aws-amplify';

@@ -12,10 +12,10 @@ class AccountInfo extends React.Component{
                 <strong> Last Name </strong> : {data.lastName} <br/><br/>
                 <strong> Email </strong> : {data.email} <br/><br/>
                 <strong> Sex </strong> : {data.sex} <br/><br/>
-                <strong>Sexual Orientation</strong>: {data.sexualOrien} <br/><br/>
                 <strong>Flight Time</strong>: {data.flightTime} <br/><br/>
                 <strong>Flight Destination </strong>: {data.flightDest} <br/><br/>
                 <strong>PhoneNumber</strong>: {data.phoneNumber} <br/><br/>
+                <strong>Hobbies</strong>: {data.hobbies} <br/><br/>
             </div>
         );
     }

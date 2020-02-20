@@ -1,9 +1,10 @@
 {
 	"auth": {
-		"amplifyyuemaff4207b1": {
+		"amplifyyuema75586df1": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
-			"dependsOn": []
+			"dependsOn": [],
+			"customAuth": false
 		}
 	},
 	"api": {
@@ -16,17 +17,11 @@
 					"defaultAuthentication": {
 						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
 						"userPoolConfig": {
-							"userPoolId": "authamplifyyuemaff4207b1"
+							"userPoolId": "authamplifyyuema75586df1"
 						}
 					}
 				}
 			}
-		}
-	},
-	"hosting": {
-		"S3AndCloudFront": {
-			"service": "S3AndCloudFront",
-			"providerPlugin": "awscloudformation"
 		}
 	}
 }

@@ -1,21 +1,19 @@
 import React from 'react';
-import '../styles/App.css';
+import '../styles/App.scss';
 
-import Home from "./Home";
 import { withAuthenticator } from 'aws-amplify-react';
 import Amplify from 'aws-amplify';
 import aws_exports from '../aws-exports';
 import {connect} from "react-redux"
+import HobbyQuestionaire from "./HobbyQuestionaire"
+import Home from "./Home"
 
 Amplify.configure(aws_exports);
 
-/**
- * TODO: Connect API With Front End, Establish the pipeline
- *       Figure out how GraphQL Custom Query Works
- */
 class App extends React.Component{
     render(){
         return (<Home/>)
+        // return <HobbyQuestionaire/>
     }
 }
 

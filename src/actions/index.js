@@ -1,4 +1,4 @@
-export const nextStep = (entry,data) => ({
+export const nextStep = (data) => ({
     type: "NEXT_LOGIN_STEP",
     data: data
 });

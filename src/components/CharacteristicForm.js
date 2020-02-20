@@ -5,6 +5,7 @@ import React from 'react';
 import 'antd/dist/antd.css';
 
 import Logo from '../assets/logo.png';
+
 const { Option } = Select;
 const tailFormItemLayout = {
     wrapperCol: {
@@ -18,6 +19,7 @@ const tailFormItemLayout = {
         },
     },
 };
+
 class CharacteristicForm extends React.Component{
     handleSubmit = e => {
         e.preventDefault();
@@ -25,15 +27,12 @@ class CharacteristicForm extends React.Component{
             if (!err) {
                 console.log('Received values of form: ', values);
             }
-
-            debugger;
             this.props.nextStep(values);
         });
 
     };
     render(){
         const { getFieldDecorator } = this.props.form;
-
         return (
             <div className='form-dashboard-container'>
                 <img src={Logo} className="logo-image"/>
@@ -54,12 +53,29 @@ class CharacteristicForm extends React.Component{
                                 <Input/>
                             )}
                         </Form.Item>
+                        <Form.Item label="ageRange">
+                            {getFieldDecorator('ageRange', {
+                                rules: [{ required: true, message: 'Please select your age range!' }],
+                            })(
+                                <Select
+                                    placeholder="Enter your age range"
+                                    onChange={this.handleSelectChange}
+                                >
+                                    <Option value="0_10">0-10</Option>
+                                    <Option value="11_20">11-20</Option>
+                                    <Option value="21_30">21-30</Option>
+                                    <Option value="31_40">31-40</Option>
+                                    <Option value="41_50">41-50</Option>
+                                    <Option value="50_">51 or older</Option>
+                                </Select>,
+                            )}
+                        </Form.Item>
                         <Form.Item label="Sex">
                             {getFieldDecorator('sex', {
                                 rules: [{ required: true, message: 'Please select your sexual orientation!' }],
                             })(
                                 <Select
-                                    placeholder="Enter your sexual orientation"
+                                    placeholder="Enter your gender"
                                     onChange={this.handleSelectChange}
                                 >
                                     <Option value="male">male</Option>
@@ -67,28 +83,21 @@ class CharacteristicForm extends React.Component{
                                 </Select>,
                             )}
                         </Form.Item>
-
-                        <Form.Item label="Sexual Orientation">
-                            {getFieldDecorator('sexualOrien', {
-                                rules: [{ required: true, message: 'Please select your sexual orientation!' }],
+                        <Form.Item label="Country">
+                            {getFieldDecorator('country', {
+                                rules: [{ required: true, message: 'Please select your country!' }],
                             })(
-                                <Select
-                                    placeholder="Enter your sexual orientation"
-                                    onChange={this.handleSelectChange}
-                                >
-                                    <Option value="male">male</Option>
-                                    <Option value="female">female</Option>
-                                    <Option value="bisexual">bisexual</Option>
-                                </Select>,
+                                <Input/>
                             )}
                         </Form.Item>
-
 
                         <Form.Item {...tailFormItemLayout}>
                             <Button type="primary" htmlType="submit" onClick={this.handleSubmit}>
                                 Submit
                             </Button>
                         </Form.Item>
+
+
                     </Form>
                 </div>
             </div>

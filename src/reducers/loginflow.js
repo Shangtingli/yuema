@@ -15,7 +15,7 @@ const loginOperation = (state = initState, action) => {
         default:
             return state;
         case "SWITCH_TO_LOGIN":
-            newState.flow = 1;
+            newState.flow = 2;
             newState.hasFeaturesStored = true;
             newState.email = action.email;
             newState.phoneNumber = action.phoneNumber;
