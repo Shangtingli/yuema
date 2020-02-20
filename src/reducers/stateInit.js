@@ -1,30 +1,46 @@
 
-// const isLoggedIn = Boolean(localStorage.getItem(TOKEN_KEY));
-
-function tagColorInit(){
-    var arr =  Array.from({ length: 12 });
-    for(let i in arr){
-        arr[i] = false;
-    }
-    return arr;
-}
 export const startState = {
+
+    /**
+     * Login/Register Webflow and features
+     */
     flow:-1,
+    remember: false,
     hasFeaturesStored: false,
+    isLoggedIn: false,
+    /**
+     * Features
+     */
+    sex: '',
     firstName: '',
     lastName: '',
     email: '',
     phoneNumber: '',
-    remember: false,
     ageRange: '',
     country: '',
     flightTime: '',
     flightDest: '',
-    isLoggedIn: false,
-    currentTab: 'account',
-    clientDataReady: false,
-    sex: '',
     hobbies: [],
+    /**
+     * NavBar
+     */
+    currentTab: 'account',
+
+    /**
+     * Dashboard
+     */
+    clientDataReady: false,
+
+    /**
+     * Admin Roles Related
+     */
+    isAdmin: false,
+
+    /**
+     * StoreRecommendation
+     */
+    storeData: null
+
 
 };
 

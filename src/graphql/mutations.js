@@ -8,14 +8,23 @@ export const createTraveller = /* GraphQL */ `
   ) {
     createTraveller(input: $input, condition: $condition) {
       id
-      email
-      ageRange
-      country
       firstName
       lastName
+      email
       phoneNumber
-      sex
       hobbies
+      sex
+      ageRange
+      country
+      macid
+      comments {
+        items {
+          id
+          content
+          rate
+        }
+        nextToken
+      }
     }
   }
 `;
@@ -26,14 +35,23 @@ export const updateTraveller = /* GraphQL */ `
   ) {
     updateTraveller(input: $input, condition: $condition) {
       id
-      email
-      ageRange
-      country
       firstName
       lastName
+      email
       phoneNumber
-      sex
       hobbies
+      sex
+      ageRange
+      country
+      macid
+      comments {
+        items {
+          id
+          content
+          rate
+        }
+        nextToken
+      }
     }
   }
 `;
@@ -44,14 +62,212 @@ export const deleteTraveller = /* GraphQL */ `
   ) {
     deleteTraveller(input: $input, condition: $condition) {
       id
-      email
-      ageRange
-      country
       firstName
       lastName
+      email
       phoneNumber
-      sex
       hobbies
+      sex
+      ageRange
+      country
+      macid
+      comments {
+        items {
+          id
+          content
+          rate
+        }
+        nextToken
+      }
+    }
+  }
+`;
+export const createComment = /* GraphQL */ `
+  mutation CreateComment(
+    $input: CreateCommentInput!
+    $condition: ModelCommentConditionInput
+  ) {
+    createComment(input: $input, condition: $condition) {
+      id
+      store {
+        id
+        storeName
+        tags
+        lat
+        lng
+        floor
+        terminal
+        comments {
+          nextToken
+        }
+      }
+      content
+      rate
+      traveller {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        hobbies
+        sex
+        ageRange
+        country
+        macid
+        comments {
+          nextToken
+        }
+      }
+    }
+  }
+`;
+export const updateComment = /* GraphQL */ `
+  mutation UpdateComment(
+    $input: UpdateCommentInput!
+    $condition: ModelCommentConditionInput
+  ) {
+    updateComment(input: $input, condition: $condition) {
+      id
+      store {
+        id
+        storeName
+        tags
+        lat
+        lng
+        floor
+        terminal
+        comments {
+          nextToken
+        }
+      }
+      content
+      rate
+      traveller {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        hobbies
+        sex
+        ageRange
+        country
+        macid
+        comments {
+          nextToken
+        }
+      }
+    }
+  }
+`;
+export const deleteComment = /* GraphQL */ `
+  mutation DeleteComment(
+    $input: DeleteCommentInput!
+    $condition: ModelCommentConditionInput
+  ) {
+    deleteComment(input: $input, condition: $condition) {
+      id
+      store {
+        id
+        storeName
+        tags
+        lat
+        lng
+        floor
+        terminal
+        comments {
+          nextToken
+        }
+      }
+      content
+      rate
+      traveller {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        hobbies
+        sex
+        ageRange
+        country
+        macid
+        comments {
+          nextToken
+        }
+      }
+    }
+  }
+`;
+export const createStore = /* GraphQL */ `
+  mutation CreateStore(
+    $input: CreateStoreInput!
+    $condition: ModelStoreConditionInput
+  ) {
+    createStore(input: $input, condition: $condition) {
+      id
+      storeName
+      tags
+      lat
+      lng
+      floor
+      terminal
+      comments {
+        items {
+          id
+          content
+          rate
+        }
+        nextToken
+      }
+    }
+  }
+`;
+export const updateStore = /* GraphQL */ `
+  mutation UpdateStore(
+    $input: UpdateStoreInput!
+    $condition: ModelStoreConditionInput
+  ) {
+    updateStore(input: $input, condition: $condition) {
+      id
+      storeName
+      tags
+      lat
+      lng
+      floor
+      terminal
+      comments {
+        items {
+          id
+          content
+          rate
+        }
+        nextToken
+      }
+    }
+  }
+`;
+export const deleteStore = /* GraphQL */ `
+  mutation DeleteStore(
+    $input: DeleteStoreInput!
+    $condition: ModelStoreConditionInput
+  ) {
+    deleteStore(input: $input, condition: $condition) {
+      id
+      storeName
+      tags
+      lat
+      lng
+      floor
+      terminal
+      comments {
+        items {
+          id
+          content
+          rate
+        }
+        nextToken
+      }
     }
   }
 `;

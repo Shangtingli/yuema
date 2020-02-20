@@ -1,8 +1,8 @@
 import * as React from "react"
 import {Menu, Icon, Button} from 'antd';
-import {changeTab,logout} from '../actions/index';
-import '../styles/home/home.scss';
-import store from "../store";
+import {changeTab,logout} from '../../actions/index';
+import '../../styles/home/home.scss';
+import store from "../../store";
 import {connect} from "react-redux"
 import { Auth } from 'aws-amplify';
 class NavBar extends React.Component {
@@ -16,6 +16,7 @@ class NavBar extends React.Component {
     }
     render() {
         const states=  store.getState();
+        debugger;
         const current = states.currentTab;
         const greetings = "Hello, " + states.firstName + " " + states.lastName;
         debugger;
@@ -33,6 +34,9 @@ class NavBar extends React.Component {
                     </Menu.Item>
                     <Menu.Item key="about">
                         About
+                    </Menu.Item>
+                    <Menu.Item key="addStore" className='admin-role-element' style={{display : states.isAdmin ? "block":"none"}}>
+                        Add Store
                     </Menu.Item>
                 </Menu>
                 <Button className="navbar-logout-button" onClick={this.handleLogout}> Logout </Button>

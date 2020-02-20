@@ -1,16 +1,17 @@
 import * as React from "react"
-import store from '../store';
-import PeopleRecommendation from "./PeopleRecommendation"
-import StoreRecommendation from "./StoreRecommendation"
-import AccountInfo from "./AccountInfo"
+import store from '../../store';
+import PeopleRecommendation from "./DashBoard/PeopleRecommendation"
+import StoreRecommendation from "./DashBoard/StoreRecommendation"
+import AccountInfo from "./DashBoard/AccountInfo"
 import {connect} from "react-redux"
-import AboutUs from "./AboutUs"
-import Loading from "./Loading"
-import {fillFeatures} from "../actions/index"
-import {createTraveller} from "../graphql/mutations"
+import AboutUs from "./DashBoard/AboutUs"
+import Loading from "./DashBoard/Loading"
+import {fillFeatures} from "../../actions/index"
+import {createTraveller} from "../../graphql/mutations"
 import {API, graphqlOperation} from 'aws-amplify';
-import {listTravellers} from "../graphql/queries"
-
+import {listTravellers} from "../../graphql/queries"
+import AddStorePage from "./DashBoard/Admin/AddStorePage"
+import '../../styles/home/dashboard.scss';
 class DashBoard extends React.Component{
     /**
      * Expects
@@ -49,16 +50,16 @@ class DashBoard extends React.Component{
             traveller["firstName"] = states.firstName;
             traveller["lastName"] = states.lastName;
             traveller["email"] = states.email;
-            // traveller["nickName"] = states.nickName;
             traveller["sex"] = states.sex;
-            traveller["sexualOrien"] = states.sexualOrien;
-            // traveller["id"] = "test";
             traveller["phoneNumber"] = states.phoneNumber;
             traveller["hobbies"] = states.hobbies;
+            traveller["country"] = states.country;
+            traveller["ageRange"] = states.ageRange;
             debugger;
             this.saveTravellerFeatures(traveller);
         }
     }
+
 
     render(){
         const states = store.getState();
@@ -72,6 +73,8 @@ class DashBoard extends React.Component{
                     return (<StoreRecommendation/>)
                 case "account":
                     return (<AccountInfo/>)
+                case "addStore":
+                    return (<AddStorePage/>)
                 default:
                     return "Invalid Tab Choice"
             }
@@ -82,5 +85,6 @@ class DashBoard extends React.Component{
 
     }
 }
+
 const mapStateToProps = (state) => ({currentTab: state.currentTab, clientDataReady: state.clientDataReady});
 export default connect(mapStateToProps)(DashBoard);

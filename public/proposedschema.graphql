@@ -9,26 +9,19 @@ type Traveller @model {
   ageRange: String!
   country: String!
   macid: String
-  comments: [Comment!] @connection(name: "TravellerComments")
+  history: [History!] @connection(name: "TravellerHistory")
+}
+
+type History @model{
+    id: ID!
+    store: String!
+    time: Int!
+    traveller: Traveller! @connection(name: "TravellerHistory")
 }
 
 type Comment @model{
     id: ID!
-    store: Store! @connection(name: "CommentStore")
     content: String!
     rate: Int!
     traveller: Traveller! @connection(name: "TravellerComments")
 }
-
-type Store @model{
-    id: ID!
-    storeName: String!
-    tags: [String!]
-    lat: String
-    lng: String
-    floor: Int
-    terminal: Int
-    comments: [Comment!] @connection(name: "CommentStore")
-}
-
-

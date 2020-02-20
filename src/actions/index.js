@@ -28,3 +28,8 @@ export const fillFeatures = (data) => ({
     type: "FILL_FEATURES",
     data: data
 })
+
+export const writeStoresFromDatabase = (data) => ({
+    type: "WRITE_STORES_FROM_DATABASE",
+    data: data
+})

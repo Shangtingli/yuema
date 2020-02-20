@@ -4,7 +4,7 @@ import { Form, Select, Input, Button } from 'antd';
 import React from 'react';
 import 'antd/dist/antd.css';
 
-import Logo from '../assets/logo.png';
+import Logo from '../../assets/logo.png';
 
 const { Option } = Select;
 const tailFormItemLayout = {
@@ -61,12 +61,12 @@ class CharacteristicForm extends React.Component{
                                     placeholder="Enter your age range"
                                     onChange={this.handleSelectChange}
                                 >
-                                    <Option value="0_10">0-10</Option>
-                                    <Option value="11_20">11-20</Option>
-                                    <Option value="21_30">21-30</Option>
-                                    <Option value="31_40">31-40</Option>
-                                    <Option value="41_50">41-50</Option>
-                                    <Option value="50_">51 or older</Option>
+                                    <Option value="0-10">0-10</Option>
+                                    <Option value="11-20">11-20</Option>
+                                    <Option value="21-30">21-30</Option>
+                                    <Option value="31-40">31-40</Option>
+                                    <Option value="41-50">41-50</Option>
+                                    <Option value="51 or older">51 or older</Option>
                                 </Select>,
                             )}
                         </Form.Item>
@@ -108,3 +108,4 @@ class CharacteristicForm extends React.Component{
 const WrappedCharacteristicForm = Form.create({ name: 'characteristic' })(CharacteristicForm);
 
 export default WrappedCharacteristicForm;
+

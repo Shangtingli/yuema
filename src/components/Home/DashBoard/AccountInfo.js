@@ -1,5 +1,5 @@
 import * as React from "react"
-import store from "../store"
+import store from "../../../store"
 
 class AccountInfo extends React.Component{
 
@@ -12,10 +12,12 @@ class AccountInfo extends React.Component{
                 <strong> Last Name </strong> : {data.lastName} <br/><br/>
                 <strong> Email </strong> : {data.email} <br/><br/>
                 <strong> Sex </strong> : {data.sex} <br/><br/>
+                <strong> Age </strong> : {data.ageRange} <br/><br/>
+                <strong> Country </strong> : {data.country} <br/><br/>
                 <strong>Flight Time</strong>: {data.flightTime} <br/><br/>
                 <strong>Flight Destination </strong>: {data.flightDest} <br/><br/>
                 <strong>PhoneNumber</strong>: {data.phoneNumber} <br/><br/>
-                <strong>Hobbies</strong>: {data.hobbies} <br/><br/>
+                <strong>Hobbies</strong>: {data.hobbies.map((hobby) => {return `${hobby} || `})} <br/><br/>
             </div>
         );
     }

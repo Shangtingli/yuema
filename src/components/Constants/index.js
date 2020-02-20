@@ -1,0 +1,1 @@
+export const ADMIN_ROLES = ["shangtingli@outlook.com","shangtingli@gmail.com"]

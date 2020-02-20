@@ -2,15 +2,15 @@ import * as React from "react"
 import {Auth,API, graphqlOperation} from 'aws-amplify';
 import {connect } from 'react-redux';
 import NavBar from "./NavBar"
-import {changeTab, logout, nextStep, switchLoginEntry, switchRegisterEntry} from "../actions/index"
+import {changeTab, logout, nextStep, switchLoginEntry, switchRegisterEntry} from "../../actions/index"
 import DashBoard from "./DashBoard";
-import store from '../store';
-import Loading from "./Loading"
-import CharacteristicForm from "./CharacteristicForm"
-import TodayForm from "./TodayForm"
-import {listTravellers} from "../graphql/queries"
-import Greetings from "./Greetings"
-import HobbyQuestionaire from "./HobbyQuestionaire"
+import store from '../../store';
+import Loading from "./DashBoard/Loading"
+import CharacteristicForm from "../Forms/CharacteristicForm"
+import TodayForm from "../Forms/TodayForm"
+import {listTravellers} from "../../graphql/queries"
+import Greetings from "./DashBoard/Greetings"
+import HobbyForm from "../Forms/HobbyForm"
 class Home extends React.Component{
     /**
      * TODO: Is it that only using O(n) time to find specific traveller with specific email?
@@ -22,11 +22,7 @@ class Home extends React.Component{
         Auth.currentSession().then((response) => {
             const email = response.idToken.payload.email;
             const phoneNumber = response.idToken.payload.phone_number;
-
-
-            debugger;
             API.graphql(graphqlOperation(listTravellers)).then((response)=>{
-                debugger;
                 var traveller = null;
                 for(let t of response.data.listTravellers.items){
                     if (t.email === email){
@@ -35,11 +31,9 @@ class Home extends React.Component{
                     }
                 }
                 if (traveller === null){
-                    debugger;
                     this.props.dispatch(switchRegisterEntry(email,phoneNumber));
                 }
                 else{
-                    debugger;
                     this.props.dispatch(switchLoginEntry(email,phoneNumber));
                 }
 
@@ -68,7 +62,7 @@ class Home extends React.Component{
             return (<CharacteristicForm nextStep={this.nextStep}/>);
         }
         else if (states.flow === 1){
-            return (<HobbyQuestionaire nextStep = {this.nextStep}/>)
+            return (<HobbyForm nextStep = {this.nextStep}/>)
         }
         else if (states.flow === 2){
             return (<TodayForm nextStep={this.nextStep}/>);

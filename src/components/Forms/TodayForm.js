@@ -1,10 +1,10 @@
-import { submitInfo} from "../actions/index";
+import { submitInfo} from "../../actions/index";
 import { Form, Input, Button } from 'antd';
 import React from 'react';
 import 'antd/dist/antd.css';
 import { connect } from 'react-redux';
 
-import Logo from '../assets/logo.png';
+import Logo from '../../assets/logo.png';
 
 
 class CharacteristicForm extends React.Component {

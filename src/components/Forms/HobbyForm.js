@@ -1,15 +1,15 @@
 import React from 'react';
 import {Button, Cascader} from 'antd';
 import 'antd/dist/antd.css';
-import Logo from "../assets/logo.png"
-class HobbyQuestionaire extends React.Component{
+import Logo from "../../assets/logo.png"
+class HobbyForm extends React.Component{
 
     handleSubmit = (e) => {
         e.preventDefault();
         const elements = document.getElementsByClassName('hobby-options');
-        var hobbies = []
+        const hobbies = []
         for (let ele of elements){
-            hobbies.push(ele.innerHTML);
+            hobbies.push(ele.innerText);
         }
         this.props.nextStep({hobbies: hobbies});
     }
@@ -34,7 +34,7 @@ class HobbyQuestionaire extends React.Component{
     }
 }
 
-export default HobbyQuestionaire;
+export default HobbyForm;
 
 const options = [
     {
