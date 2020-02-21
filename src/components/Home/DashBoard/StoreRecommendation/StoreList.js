@@ -1,10 +1,9 @@
 import React from "react"
 import {STORE_EACH_PAGE} from "../../../Constants"
 import {Pagination} from "antd"
-import store from "../../../../store"
 import Store from "./Store"
 
-class StoreList2 extends React.Component{
+class StoreList extends React.Component{
 
     constructor(props){
         super(props);
@@ -39,4 +38,4 @@ class StoreList2 extends React.Component{
     }
 }
 
-export default StoreList2;
+export default StoreList;

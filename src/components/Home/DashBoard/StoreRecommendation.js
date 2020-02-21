@@ -7,7 +7,7 @@ import {listStores} from "../../../graphql/queries";
 import store from '../../../store';
 import StoreLoading from "./StoreRecommendation/StoreLoading"
 import {connect} from "react-redux"
-import StoreList2 from "./StoreRecommendation/StoreList2"
+import StoreList from "./StoreRecommendation/StoreList"
 
 class StoreRecommendation extends React.Component{
 
@@ -27,7 +27,7 @@ class StoreRecommendation extends React.Component{
 
             return(
                 <div className="dashboard-content-container">
-                    <StoreList2 storeData={states.storeData} traveller={this.props.traveller}/>
+                    <StoreList storeData={states.storeData} traveller={this.props.traveller}/>
                 </div>
             );
         }

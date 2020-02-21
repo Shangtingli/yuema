@@ -16,16 +16,17 @@ class Comments extends React.Component {
             this.props.dispatch(writeCommentsFromDatabase(storeComments));
         })
     }
-
-    handleOnClick = (e) => {
-
-    }
-
     createComments(){
         const comments= store.getState().commentsData;
-        return (comments).map((data) => {
-
-            return <Comment data={data}/>
+        const commentsFiltered = [];
+        for(let comment of comments){
+            if (comment.store.id === this.props.store.id){
+                commentsFiltered.push(comment);
+            }
+        }
+        return (commentsFiltered).map((data) => {
+            debugger;
+            return <Comment data={data} key={data.id}/>
         });
     }
 

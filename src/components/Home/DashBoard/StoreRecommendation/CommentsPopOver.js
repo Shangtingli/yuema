@@ -21,7 +21,7 @@ class CommentsPopOver extends React.Component {
     render() {
         return (
                 <Popover
-                    content={<Comments/>}
+                    content={<Comments store={this.props.store}/>}
                     title="People's Comments"
                     trigger="click"
                     visible={this.state.visible}

@@ -15,7 +15,7 @@ class Store extends React.Component{
                     <p>Tags : {data.tags.map((tag) => {return `${tag} || `})}</p>
                     <p>At {`Terminal ${data.terminal} Floor ${data.floor}`}</p>
                     <p>Exact Location (lat,lng):{`${data.lat},${data.lng}`} </p>
-                    <CommentsPopOver/>
+                    <CommentsPopOver store={data}/>
                     <AddCommentPopOver traveller={this.props.traveller} store={data}/>
                 </Panel>
             </Collapse>
