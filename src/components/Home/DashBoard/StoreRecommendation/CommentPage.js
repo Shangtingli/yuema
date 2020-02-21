@@ -1,12 +1,6 @@
 import React from "react"
-import {connect} from 'react-redux';
-import {Popover, Button, Input, Pagination} from 'antd';
-import {changeCommentsVisibility, hideComments, writeCommentsFromDatabase} from "../../../../actions"
-import store from '../../../../store';
-import {API, graphqlOperation} from 'aws-amplify';
-import {listComments} from "../../../../graphql/queries"
+import { Pagination} from 'antd';
 import Comment from './Comment';
-import Loading from "../Loading"
 import {COMMENTS_EACH_PAGE} from "../../../Constants"
 
 export default class CommentList extends React.Component {
