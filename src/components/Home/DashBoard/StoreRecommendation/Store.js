@@ -1,26 +1,26 @@
 import React from "react"
-import {Card,Collapse} from "antd"
+import {Collapse, Popover} from "antd"
+import CommentsPopOver from "./CommentsPopOver"
+import AddCommentPopOver from "./AddCommentPopOver"
 
 const { Panel } = Collapse;
 class Store extends React.Component{
 
     render(){
         const data = this.props.data;
+
         return(
-            <Panel header={data.storeName} key={data.storeName}>
-                <p>Tags : {data.tags.map((tag) => {return `${tag} || `})}</p>
-                <p>At {`Terminal ${data.terminal} Floor ${data.floor}`}</p>
-                <p>Exact Location (lat,lng):{`${data.lat},${data.lng}`} </p>
-            </Panel>
+            <Collapse>
+                <Panel header={data.storeName} key={data.storeName}>
+                    <p>Tags : {data.tags.map((tag) => {return `${tag} || `})}</p>
+                    <p>At {`Terminal ${data.terminal} Floor ${data.floor}`}</p>
+                    <p>Exact Location (lat,lng):{`${data.lat},${data.lng}`} </p>
+                    <CommentsPopOver/>
+                    <AddCommentPopOver traveller={this.props.traveller} store={data}/>
+                </Panel>
+            </Collapse>
         )
-
-
     }
 }
 
-{/*<Card style={{ width: 400 }} className="store-card">*/}
-{/*<strong> {data.storeName}</strong>*/}
-{/*<p>Tags : {data.tags.map((tag) => {return `${tag} || `})}</p>*/}
-{/*<p>At {`Terminal ${data.terminal} Floor ${data.floor}`}</p>*/}
-{/*</Card>*/}
 export default Store;

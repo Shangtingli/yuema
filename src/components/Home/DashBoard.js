@@ -12,14 +12,15 @@ import {API, graphqlOperation} from 'aws-amplify';
 import {listTravellers} from "../../graphql/queries"
 import AddStorePage from "./DashBoard/Admin/AddStorePage"
 import '../../styles/home/dashboard.scss';
+
 class DashBoard extends React.Component{
     /**
      * Expects
      * @param traveller
      */
     saveTravellerFeatures = (traveller) => {
+
         API.graphql(graphqlOperation(createTraveller,{input: traveller})).then((response) =>{
-            debugger;
             this.props.dispatch(fillFeatures(traveller));
         })
     }
@@ -39,6 +40,7 @@ class DashBoard extends React.Component{
                         break;
                     }
                 }
+
                 this.props.dispatch(fillFeatures(traveller));
             })
         }
@@ -46,7 +48,7 @@ class DashBoard extends React.Component{
          * Else if the user comes from register entry
          */
         else{
-            var traveller = {};
+            const traveller = {};
             traveller["firstName"] = states.firstName;
             traveller["lastName"] = states.lastName;
             traveller["email"] = states.email;
@@ -55,7 +57,6 @@ class DashBoard extends React.Component{
             traveller["hobbies"] = states.hobbies;
             traveller["country"] = states.country;
             traveller["ageRange"] = states.ageRange;
-            debugger;
             this.saveTravellerFeatures(traveller);
         }
     }
@@ -63,6 +64,16 @@ class DashBoard extends React.Component{
 
     render(){
         const states = store.getState();
+        const traveller = {};
+        traveller["firstName"] = states.firstName;
+        traveller["lastName"] = states.lastName;
+        traveller["email"] = states.email;
+        traveller["sex"] = states.sex;
+        traveller["phoneNumber"] = states.phoneNumber;
+        traveller["hobbies"] = states.hobbies;
+        traveller["country"] = states.country;
+        traveller["ageRange"] = states.ageRange;
+        traveller["id"] = states.id;
         if (states.clientDataReady){
             switch(states.currentTab){
                 case "about":
@@ -70,7 +81,7 @@ class DashBoard extends React.Component{
                 case "people":
                     return (<PeopleRecommendation/>)
                 case "store":
-                    return (<StoreRecommendation/>)
+                    return (<StoreRecommendation traveller={traveller}/>)
                 case "account":
                     return (<AccountInfo/>)
                 case "addStore":

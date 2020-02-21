@@ -13,6 +13,18 @@ function fillData(data,newState){
 const operations = (state = initState, action) => {
     const newState = {...state};
     switch(action.type){
+        case "CHANGE_ADD_FORM_VISIBILITY":
+            newState.isAddCommentsVisible = action.visibility
+            return newState;
+        case "WRITE_COMMENTS_FROM_DATABASE":
+            newState.commentsData = action.data;
+            return newState;
+        case "CHANGE_COMMENTS_VISIBILITY":
+            newState.isCommentsVisible = action.visibility;
+            return newState;
+        case "HIDE_COMMENTS":
+            newState.isCommentsVisible = false;
+            return newState;
         case "WRITE_STORES_FROM_DATABASE":
             newState.storeData = action.data;
             return newState;
@@ -36,7 +48,7 @@ const operations = (state = initState, action) => {
         case "FILL_FEATURES":
             fillData(action.data,newState);
             newState.clientDataReady=true;
-            debugger;
+
             return newState;
         case "CHANGE_TAB":
             return {

@@ -11,6 +11,7 @@ export const startState = {
     /**
      * Features
      */
+    id: '',
     sex: '',
     firstName: '',
     lastName: '',
@@ -39,8 +40,13 @@ export const startState = {
     /**
      * StoreRecommendation
      */
-    storeData: null
-
+    storeData: null,
+    /**
+     * Comments
+     */
+    isCommentsVisible: false,
+    commentsData: null,
+    isAddCommentsVisible:false
 
 };
 

@@ -14,10 +14,10 @@ type Traveller @model {
 
 type Comment @model{
     id: ID!
-    store: Store! @connection(name: "CommentStore")
+    store: Store @connection(name: "CommentStore")
     content: String!
     rate: Int!
-    traveller: Traveller! @connection(name: "TravellerComments")
+    traveller: Traveller @connection(name: "TravellerComments")
 }
 
 type Store @model{

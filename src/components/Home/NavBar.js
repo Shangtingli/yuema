@@ -4,7 +4,7 @@ import {changeTab,logout} from '../../actions/index';
 import '../../styles/home/home.scss';
 import store from "../../store";
 import {connect} from "react-redux"
-import { Auth } from 'aws-amplify';
+import { Auth} from 'aws-amplify';
 class NavBar extends React.Component {
 
     handleClickTab = e => {
@@ -12,14 +12,17 @@ class NavBar extends React.Component {
     };
 
     handleLogout = e => {
+        /**
+         * TODO: Auth.signOut() might not be enough for clearing session and cookies
+         */
         Auth.signOut();
     }
     render() {
         const states=  store.getState();
-        debugger;
+
         const current = states.currentTab;
         const greetings = "Hello, " + states.firstName + " " + states.lastName;
-        debugger;
+
         return (
             <div className='navbar-container'>
                 <Menu onClick={this.handleClickTab} selectedKeys={[current]} mode="horizontal" className="navbar-options">

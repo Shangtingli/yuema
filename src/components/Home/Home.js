@@ -18,6 +18,13 @@ class Home extends React.Component{
      * @param email
      * @returns {Promise<*>}
      */
+    /**
+     * type Order @model @key(fields: ["customerEmail", "createdAt"]) {
+    customerEmail: String!
+    createdAt: String!
+    orderId: ID!
+}
+     */
     componentDidMount(){
         Auth.currentSession().then((response) => {
             const email = response.idToken.payload.email;
