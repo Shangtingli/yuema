@@ -44,9 +44,7 @@ export const startState = {
     /**
      * Comments
      */
-    isCommentsVisible: false,
     commentsData: null,
-    isAddCommentsVisible:false
 
 };
 

@@ -77,9 +77,12 @@ class Home extends React.Component{
         else if (states.flow ===3){
             return(
                 <div className='home-container'>
-                    <NavBar handleLogout={this.handleLogout} handleChangeTab={this.handleChangeTab}/>
-                    <Greetings/>
-                    <DashBoard />
+                    <NavBar handleLogout={this.handleLogout} handleChangeTab={this.handleChangeTab} />
+                    <div className='working-area'>
+                        {/*<div className={'ads-area-left'}> Ads Area </div>*/}
+                        <DashBoard className={'main-dashboard'}/>
+                        {/*<div className={'ads-area-right'}> Ads Area </div>*/}
+                    </div>
                 </div>
 
             );

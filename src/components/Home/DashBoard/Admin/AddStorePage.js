@@ -1,5 +1,5 @@
 import React from "react"
-import Logo from "../../../../assets/logo.png"
+import Logo from "../../../../assets/logo.svg"
 import { Form, Select, Input, Button } from 'antd';
 import {connect} from "react-redux"
 import {createStore} from "../../../../graphql/mutations"

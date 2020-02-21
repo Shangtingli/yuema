@@ -21,11 +21,10 @@ class NavBar extends React.Component {
         const states=  store.getState();
 
         const current = states.currentTab;
-        const greetings = "Hello, " + states.firstName + " " + states.lastName;
 
         return (
             <div className='navbar-container'>
-                <Menu onClick={this.handleClickTab} selectedKeys={[current]} mode="horizontal" className="navbar-options">
+                <Menu onClick={this.handleClickTab} selectedKeys={[current]} mode="horizontal" style={{float:'left'}}>
                     <Menu.Item key="account">
                         My Account
                     </Menu.Item>
@@ -42,7 +41,10 @@ class NavBar extends React.Component {
                         Add Store
                     </Menu.Item>
                 </Menu>
-                <Button className="navbar-logout-button" onClick={this.handleLogout}> Logout </Button>
+                <div style={{float:'right', width: '15%',marginTop:"10px"}}>
+                    <h3 style={{float:'left',marginTop:"5px"}}> {`Hello,${states.firstName}`}</h3>
+                    <Button className="navbar-logout-button" onClick={this.handleLogout} style={{float:'right'}}> Logout </Button>
+                </div>
             </div>
         );
     }

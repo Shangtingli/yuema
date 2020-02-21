@@ -4,11 +4,11 @@ class AboutUs extends React.Component{
     render(){
         return(
             <div className="dashboard-content-container">
-                <h3> Shangting Li</h3>
-                <h3> Yanchen Zhou</h3>
-                <h3> Runze Liu</h3>
-                <h3> Zhifeng Liu</h3>
-                <h3> Yufei Hu</h3>
+                <h3> <span> Shangting Li </span></h3>
+                <h3>  <span>Yanchen Zhou</span></h3>
+                <h3>  <span>Runze Liu</span></h3>
+                <h3>  <span>Zhifeng Liu</span></h3>
+                <h3>  <span>Yufei Hu</span></h3>
 
             </div>
         )

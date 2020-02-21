@@ -29,7 +29,7 @@ class AddCommentPopOver extends React.Component{
                 onVisibleChange={this.handleVisibleChange}
                 placement="right"
             >
-                <Button type="primary">Add Comment</Button>
+                <Button type="primary" className={"button-inside-store-rec"}>Add Comment</Button>
             </Popover>
         )
     }

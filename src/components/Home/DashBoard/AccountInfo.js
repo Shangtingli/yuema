@@ -7,17 +7,17 @@ class AccountInfo extends React.Component{
         const data = store.getState();
         return(
             <div className="dashboard-content-container">
-                <h3> User data to deal with: </h3> <br/><br/>
-                <strong> First Name </strong> : {data.firstName} <br/><br/>
-                <strong> Last Name </strong> : {data.lastName} <br/><br/>
-                <strong> Email </strong> : {data.email} <br/><br/>
-                <strong> Sex </strong> : {data.sex} <br/><br/>
-                <strong> Age </strong> : {data.ageRange} <br/><br/>
-                <strong> Country </strong> : {data.country} <br/><br/>
-                <strong>Flight Time</strong>: {data.flightTime} <br/><br/>
-                <strong>Flight Destination </strong>: {data.flightDest} <br/><br/>
-                <strong>PhoneNumber</strong>: {data.phoneNumber} <br/><br/>
-                <strong>Hobbies</strong>: {data.hobbies.map((hobby) => {return `${hobby} || `})} <br/><br/>
+                <h3> <span> User data to deal with:</span> </h3> <br/><br/>
+                <strong> First Name </strong> : <span> {data.firstName}</span> <br/><br/>
+                <strong> Last Name </strong> :<span>  {data.lastName}</span> <br/><br/>
+                <strong> Email </strong> : <span> {data.email}</span> <br/><br/>
+                <strong> Sex </strong> : <span> {data.sex}</span> <br/><br/>
+                <strong> Age </strong> : <span> {data.ageRange}</span> <br/><br/>
+                <strong> Country </strong> :<span>  {data.country}</span> <br/><br/>
+                <strong>Flight Time</strong>: <span> {data.flightTime}</span> <br/><br/>
+                <strong>Flight Destination </strong>: <span> {data.flightDest}</span> <br/><br/>
+                <strong>PhoneNumber</strong>: <span> {data.phoneNumber}</span> <br/><br/>
+                <strong>Hobbies</strong>: <span> {data.hobbies.map((hobby) => {return `${hobby} || `})}</span> <br/><br/>
             </div>
         );
     }

@@ -50,7 +50,14 @@ class Comment extends React.Component{
 
     getRemoveButton(userEmail,trallerEmail,commentId){
         if (userEmail === trallerEmail){
-            return <Button onClick={this.handleRemove} related={commentId}> Remove </Button>
+            return (
+                <Button
+                onClick={this.handleRemove}
+                related={commentId}
+                style={{float:'right'}}>
+                    Remove
+                </Button>
+            )
         }
         else{
             return <br/>
@@ -64,8 +71,8 @@ class Comment extends React.Component{
         const content = commentData.content;
         const commentId = commentData.id;
         return(
-            <div id={`comment-${commentId}`}>
-                <Card title={travellerName} bordered={false} size="small" className="comment-card">
+            <div id={`comment-${commentId}`} >
+                <Card title={travellerName} size="small" className="comment-card">
                     {this.createDarkStars(rate)}
                     {this.createLightStars(rate)}
                     <br/>

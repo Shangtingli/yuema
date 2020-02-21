@@ -1,4 +1,8 @@
 @import 'styles/home/dashboard.scss';
+@import 'styles/home/home.scss';
+@import 'styles/home/loading.scss';
+@import 'styles/loginflow/form.scss';
+@import 'styles/App.scss';
 
 body {
   margin: 0;

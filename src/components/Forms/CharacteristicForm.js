@@ -3,8 +3,8 @@
 import { Form, Select, Input, Button } from 'antd';
 import React from 'react';
 import 'antd/dist/antd.css';
-
-import Logo from '../../assets/logo.png';
+import '../../styles/loginflow/form.scss';
+import Logo from '../../assets/logo.svg';
 
 const { Option } = Select;
 const tailFormItemLayout = {

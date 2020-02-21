@@ -21,6 +21,7 @@ export default class CommentList extends React.Component {
                 data={data} key={data.id}
                 traveller={this.props.traveller}
                 writeAPIDataToState={this.props.writeAPIDataToState}
+                style={{height:'25%'}}
             />)
         });
     }
@@ -35,10 +36,14 @@ export default class CommentList extends React.Component {
             }
         }
         const pageComments = filteredData.slice((start - 1) * COMMENTS_EACH_PAGE, start * COMMENTS_EACH_PAGE);
+        const totalPage= pageComments.length/COMMENTS_EACH_PAGE + (pageComments.length % COMMENTS_EACH_PAGE===0 ? 0 : 1);
+        debugger;
         return(
-            <div>
-                {this.createComments(pageComments)}
-                <Pagination defaultCurrent={this.state.currPage} total={9} defaultPageSize={COMMENTS_EACH_PAGE} onChange={this.onChange}/>
+            <div className="comments-container">
+                <div style={{height:'80%'}}>
+                    {this.createComments(pageComments)}
+                </div>
+                <Pagination defaultCurrent={this.state.currPage} total={totalPage} defaultPageSize={COMMENTS_EACH_PAGE} onChange={this.onChange}/>
             </div>
         )
     }

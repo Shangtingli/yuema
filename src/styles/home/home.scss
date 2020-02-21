@@ -1,24 +1,23 @@
 .home-container{
-    width: 90%;
-    height: 90%;
+    width: 95%;
+    height: 95%;
     text-align:center;
     display: inline-block;
+    //flex:auto;
 }
 
-.navbar-options{
-    float:left;
-}
 
-.navbar-logout-button{
-    float:right;
+.working-area{
+    height: 100%;
 }
 
 .dashboard-content-container{
     display: inline-block;
-    border: dashed 2px black;
+    //border: dashed 2px black;
+    box-shadow: 0 1px 15px 5px rgba(163,163,163,.44);
     text-align: center;
     height: 90%;
-    width: 60%;
+    width: 70%;
     margin-top: 30px;
 }
 
@@ -30,4 +29,18 @@
 .navbar-greetings{
     margin:auto;
     width: 200px;
+}
+
+.ads-area-left{
+    float: left;
+    border: dashed 2px black;
+    height: 90%;
+    width: 10%;
+}
+
+.ads-area-right{
+    float:right;
+    border: dashed 2px black;
+    height: 90%;
+    width: 10%;
 }

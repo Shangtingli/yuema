@@ -28,15 +28,13 @@ class CommentList extends React.Component {
         const states = store.getState();
         if (states.commentsData !== null){
             return (
-                <div className="comments-container">
-                    {/*{this.createComments()}*/}
+
                     <CommentPage
                         store={this.props.store}
                         commentsData={states.commentsData}
                         traveller={this.props.traveller}
                         writeAPIDataToState={this.writeAPIDataToState}
                     />
-                </div>
 
             );
         }

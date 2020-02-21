@@ -1,7 +1,8 @@
 import React from 'react';
 import {Button, Cascader} from 'antd';
 import 'antd/dist/antd.css';
-import Logo from "../../assets/logo.png"
+import Logo from "../../assets/logo.svg";
+import '../../styles/loginflow/form.scss';
 class HobbyForm extends React.Component{
 
     handleSubmit = (e) => {
