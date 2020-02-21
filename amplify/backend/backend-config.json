@@ -1,6 +1,6 @@
 {
 	"auth": {
-		"amplifyyuema0f87fafb": {
+		"amplifyyuemabbdfcc8d": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": []
@@ -16,7 +16,7 @@
 					"defaultAuthentication": {
 						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
 						"userPoolConfig": {
-							"userPoolId": "authamplifyyuema0f87fafb"
+							"userPoolId": "authamplifyyuemabbdfcc8d"
 						}
 					}
 				}

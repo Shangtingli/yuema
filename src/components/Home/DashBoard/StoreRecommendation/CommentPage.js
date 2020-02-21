@@ -4,7 +4,6 @@ import Comment from './Comment';
 import {COMMENTS_EACH_PAGE} from "../../../Constants"
 
 export default class CommentList extends React.Component {
-
     state={
         currPage:1
     }
@@ -36,14 +35,14 @@ export default class CommentList extends React.Component {
             }
         }
         const pageComments = filteredData.slice((start - 1) * COMMENTS_EACH_PAGE, start * COMMENTS_EACH_PAGE);
-        const totalPage= pageComments.length/COMMENTS_EACH_PAGE + (pageComments.length % COMMENTS_EACH_PAGE===0 ? 0 : 1);
+
         debugger;
         return(
             <div className="comments-container">
                 <div style={{height:'80%'}}>
                     {this.createComments(pageComments)}
                 </div>
-                <Pagination defaultCurrent={this.state.currPage} total={totalPage} defaultPageSize={COMMENTS_EACH_PAGE} onChange={this.onChange}/>
+                <Pagination defaultCurrent={this.state.currPage} total={pageComments.length} defaultPageSize={COMMENTS_EACH_PAGE} onChange={this.onChange}/>
             </div>
         )
     }

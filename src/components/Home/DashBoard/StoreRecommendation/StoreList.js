@@ -26,14 +26,14 @@ class StoreList extends React.Component{
         const start = this.state.currPage;
         const storeData = this.props.storeData;
         const storePageData = storeData.slice((start - 1) * STORES_EACH_PAGE, start * STORES_EACH_PAGE);
-        const totalPage = storeData.length/STORES_EACH_PAGE + (storeData.length % STORES_EACH_PAGE === 0 ? 0: 1);
+        // const totalPage = storeData.length/STORES_EACH_PAGE + (storeData.length % STORES_EACH_PAGE === 0 ? 0: 1);
 
         return (
             <div style={{height: "100%", width: "100%"}}>
                 <div style={{height: "80%", width: "100%",display: 'flex'}}>
                 {storePageData.map(this.createStores)}
                 </div>
-                <Pagination defaultCurrent={this.state.currPage} total={totalPage} defaultPageSize={STORES_EACH_PAGE} onChange={this.onChange} style={{display:'inline-block'}}/>
+                <Pagination defaultCurrent={this.state.currPage} total={storeData.length} defaultPageSize={STORES_EACH_PAGE} onChange={this.onChange} style={{display:'inline-block'}}/>
             </div>
         )
 

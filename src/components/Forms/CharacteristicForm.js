@@ -5,6 +5,8 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import '../../styles/loginflow/form.scss';
 import Logo from '../../assets/logo.svg';
+import ImageUpload from "./ImageUpload"
+import ImageUpload2 from "./ImageUpload2"
 
 const { Option } = Select;
 const tailFormItemLayout = {
@@ -24,6 +26,7 @@ class CharacteristicForm extends React.Component{
     handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
+            debugger;
             if (!err) {
                 console.log('Received values of form: ', values);
             }
@@ -36,9 +39,18 @@ class CharacteristicForm extends React.Component{
         return (
             <div className='form-dashboard-container'>
                 <img src={Logo} className="logo-image"/>
+
                 <div className='form-container'>
                     <h2>Please tell us more about you: </h2>
                     <Form labelCol={{ span: 5 }} wrapperCol={{ span: 12 }} onSubmit={this.handleSubmit}>
+                        <Form.Item label="Avatar">
+                            {getFieldDecorator('avatar', {
+                                rules: [{ required: false, message: 'Please select an avatar!' }],
+                            })(
+                                <ImageUpload/>
+                            )}
+
+                        </Form.Item>
                         <Form.Item label="FirstName">
                             {getFieldDecorator('firstName', {
                                 rules: [{ required: true, message: 'Please enter your first name!' }],

@@ -30,5 +30,3 @@ type Store @model{
     terminal: Int
     comments: [Comment!] @connection(name: "CommentStore")
 }
-
-
