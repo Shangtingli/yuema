@@ -17,7 +17,6 @@ class AddCommentForm extends React.Component{
             store: this.props.store,
             traveller: this.props.traveller,
         }
-
     }
 
     handleOnClick = (e)=>{
@@ -28,7 +27,8 @@ class AddCommentForm extends React.Component{
         comment['commentStoreId'] = this.state.store.id;
         comment['commentTravellerId'] = this.state.traveller.id;
         API.graphql(graphqlOperation(createComment,{input: comment})).then((response) => {
-
+            alert("Comment successfully added");
+            this.setState({rate:0});
         })
 
     }
@@ -64,7 +64,7 @@ class AddCommentForm extends React.Component{
                 {this.createDarkStars()}
                 {this.createLightStars()}
 
-                <TextArea rows={6} className="add-comment-form-input"/> <br/><br/>
+                <TextArea rows={6} className="add-comment-form-input" onPressEnter={this.handleOnClick}/> <br/><br/>
                 <Button type="primary" onClick={this.handleOnClick}>Add Comment</Button>
             </div>
         )

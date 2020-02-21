@@ -1,6 +1,4 @@
 import * as React from "react"
-import {STORE_EACH_PAGE} from '../../Constants';
-import { Pagination } from 'antd';
 import {writeStoresFromDatabase} from "../../../actions"
 import {API, graphqlOperation} from 'aws-amplify';
 import {listStores} from "../../../graphql/queries";
