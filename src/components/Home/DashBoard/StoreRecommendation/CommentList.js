@@ -7,35 +7,35 @@ import {API, graphqlOperation} from 'aws-amplify';
 import {listComments} from "../../../../graphql/queries"
 import Comment from './Comment';
 import Loading from "../Loading"
+import CommentPage from "./CommentPage"
 
-class Comments extends React.Component {
+class CommentList extends React.Component {
+
 
     componentDidMount(){
         API.graphql(graphqlOperation(listComments)).then((response) => {
-            const storeComments = response.data.listComments.items;
-            this.props.dispatch(writeCommentsFromDatabase(storeComments));
+            this.writeAPIDataToState(response);
         })
     }
-    createComments(){
-        const comments= store.getState().commentsData;
-        const commentsFiltered = [];
-        for(let comment of comments){
-            if (comment.store.id === this.props.store.id){
-                commentsFiltered.push(comment);
-            }
-        }
-        return (commentsFiltered).map((data) => {
-            debugger;
-            return <Comment data={data} key={data.id}/>
-        });
+
+    writeAPIDataToState = (response) => {
+        const storeComments = response.data.listComments.items;
+        this.props.dispatch(writeCommentsFromDatabase(storeComments));
     }
+
 
     render() {
         const states = store.getState();
         if (states.commentsData !== null){
             return (
                 <div className="comments-container">
-                    {this.createComments()}
+                    {/*{this.createComments()}*/}
+                    <CommentPage
+                        store={this.props.store}
+                        commentsData={states.commentsData}
+                        traveller={this.props.traveller}
+                        writeAPIDataToState={this.writeAPIDataToState}
+                    />
                 </div>
 
             );
@@ -48,4 +48,4 @@ class Comments extends React.Component {
 }
 
 const mapStateToProps = (state) => ({commentsData: state.commentsData});
-export default connect(mapStateToProps)(Comments);
+export default connect(mapStateToProps)(CommentList);

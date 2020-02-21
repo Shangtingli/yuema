@@ -1,10 +1,31 @@
 import React from 'react';
-import {Card} from "antd";
+import {Button, Card} from "antd";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faStar as darkStar} from "@fortawesome/free-solid-svg-icons"
 import {faStar as lightStar} from "@fortawesome/free-regular-svg-icons"
 import '../../../../styles/home/dashboard.scss';
+import {listComments} from "../../../../graphql/queries"
+
+import {API, graphqlOperation} from 'aws-amplify';
+import {deleteComment} from "../../../../graphql/mutations"
+
+/**
+ * TODO: Possible linkage errors at backend ??
+ */
 class Comment extends React.Component{
+    handleRemove = (e) => {
+        e.preventDefault();
+        const commentid=e.target.getAttribute('related');
+        const comment = {}
+        comment['id'] = commentid;
+        // comment['commentStoreId'] = this.props.store.id;
+        // comment['commentTravellerId'] = this.props.traveller.id;
+        API.graphql(graphqlOperation(deleteComment,{input:comment})).then((response) => {
+            API.graphql(graphqlOperation(listComments)).then((response) => {
+                this.props.writeAPIDataToState(response);
+            })
+        })
+    }
     createDarkStars = (rate) => {
         const arr = new Array(rate);
         for(let i=0; i < rate; ++i){
@@ -25,18 +46,31 @@ class Comment extends React.Component{
         })
     }
 
+
+
+    getRemoveButton(userEmail,trallerEmail,commentId){
+        if (userEmail === trallerEmail){
+            return <Button onClick={this.handleRemove} related={commentId}> Remove </Button>
+        }
+        else{
+            return <br/>
+        }
+    }
     render(){
-        const data = this.props.data;
-        const traveller = data.traveller.firstName + " " + data.traveller.lastName;
-        const rate = data.rate;
-        const content = data.content;
+        const commentData = this.props.data;
+        const travellerName = commentData.traveller.firstName + " " + commentData.traveller.lastName;
+        const userEmail = this.props.traveller.email;
+        const rate = commentData.rate;
+        const content = commentData.content;
+        const commentId = commentData.id;
         return(
-            <div>
-                <Card title={traveller} bordered={false} size="small" className="comment-card">
+            <div id={`comment-${commentId}`}>
+                <Card title={travellerName} bordered={false} size="small" className="comment-card">
                     {this.createDarkStars(rate)}
                     {this.createLightStars(rate)}
                     <br/>
-                    {content}
+                    <p> {content} </p>
+                    {this.getRemoveButton(commentData.traveller.email,userEmail, commentId)}
                 </Card>
             </div>
         )

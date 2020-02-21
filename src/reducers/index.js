@@ -46,7 +46,7 @@ const operations = (state = initState, action) => {
             }
             return newState;
         case "FILL_FEATURES":
-            debugger;
+
             fillData(action.data,newState);
             newState.clientDataReady=true;
 

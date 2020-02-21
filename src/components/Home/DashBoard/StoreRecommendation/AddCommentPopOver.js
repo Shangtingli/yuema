@@ -1,5 +1,5 @@
 import React from 'react';
-import Comments from "./Comments"
+import Comments from "./CommentList"
 import {Button, Popover} from "antd"
 import AddCommentForm from "./AddCommentForm"
 

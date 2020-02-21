@@ -1,7 +1,7 @@
 import React from "react"
 
 import { Popover, Button } from 'antd';
-import Comments from "./Comments"
+import CommentList from "./CommentList"
 
 class CommentsPopOver extends React.Component {
     state = {
@@ -21,7 +21,7 @@ class CommentsPopOver extends React.Component {
     render() {
         return (
                 <Popover
-                    content={<Comments store={this.props.store}/>}
+                    content={<CommentList store={this.props.store} traveller={this.props.traveller}/>}
                     title="People's Comments"
                     trigger="click"
                     visible={this.state.visible}

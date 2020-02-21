@@ -1,5 +1,5 @@
 import React from "react"
-import {STORE_EACH_PAGE} from "../../../Constants"
+import {STORES_EACH_PAGE,COMMENTS_EACH_PAGE} from "../../../Constants"
 import {Pagination} from "antd"
 import Store from "./Store"
 
@@ -14,7 +14,6 @@ class StoreList extends React.Component{
 
 
     createStores = (data) => {
-
         return <Store data={data} key={data.storeName} traveller={this.props.traveller}/>
     }
     onChange = (e) => {
@@ -25,12 +24,12 @@ class StoreList extends React.Component{
         // const states = store.getState();
         const start = this.state.currPage;
         const storeData = this.props.storeData;
-        const storePageData = storeData.slice((start - 1) * STORE_EACH_PAGE, start * STORE_EACH_PAGE);
+        const storePageData = storeData.slice((start - 1) * STORES_EACH_PAGE, start * STORES_EACH_PAGE);
 
         return (
             <div>
                 {storePageData.map(this.createStores)}
-                <Pagination defaultCurrent={this.state.currPage} total={9} defaultPageSize={STORE_EACH_PAGE} onChange={this.onChange}/>
+                <Pagination defaultCurrent={this.state.currPage} total={9} defaultPageSize={STORES_EACH_PAGE} onChange={this.onChange}/>
             </div>
         )
 
