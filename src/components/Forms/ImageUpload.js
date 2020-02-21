@@ -1,5 +1,6 @@
 import { Upload, Icon, message } from 'antd';
 import React from "react"
+import {Storage} from 'aws-amplify';
 
 function getBase64(img, callback) {
     const reader = new FileReader();
@@ -8,7 +9,6 @@ function getBase64(img, callback) {
 }
 
 function beforeUpload(file) {
-    debugger;
     const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
     if (!isJpgOrPng) {
         message.error('You can only upload JPG/PNG file!');
@@ -23,6 +23,7 @@ function beforeUpload(file) {
 export default class ImageUpload extends React.Component {
     state = {
         loading: false,
+        file: null,
     };
 
     handleChange = info => {
@@ -36,10 +37,19 @@ export default class ImageUpload extends React.Component {
                 this.setState({
                     imageUrl,
                     loading: false,
+                    file: info.file.originFileObj
                 }),
             );
         }
     };
+
+    async handleUpload(){
+        const response = await Storage.put('example.png', this.state.file, {
+            contentType: 'image/png'
+        })
+
+        return response;
+    }
 
     render() {
         const uploadButton = (
@@ -49,19 +59,18 @@ export default class ImageUpload extends React.Component {
             </div>
         );
         const { imageUrl } = this.state;
-        debugger;
         return (
-            <Upload
-                name="avatar"
-                listType="picture-card"
-                className="avatar-uploader"
-                showUploadList={false}
-                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                beforeUpload={beforeUpload}
-                onChange={this.handleChange}
-            >
-                {imageUrl ? <img className="avatar-real" src={imageUrl} alt="avatar" style={{ width: '100%' }} /> : uploadButton}
-            </Upload>
+                <Upload
+                    name="avatar"
+                    listType="picture-card"
+                    className="avatar-uploader"
+                    showUploadList={false}
+                    action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                    beforeUpload={beforeUpload}
+                    onChange={this.handleChange}
+                >
+                    {imageUrl ? <img className="avatar-real" src={imageUrl} alt="avatar" style={{ width: '100%' }} /> : uploadButton}
+                </Upload>
         );
     }
 }

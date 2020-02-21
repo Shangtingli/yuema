@@ -1,7 +1,7 @@
 import React from "react"
 import {connect} from 'react-redux';
 import {Popover, Button, Input} from 'antd';
-import {changeCommentsVisibility, hideComments, writeCommentsFromDatabase} from "../../../../actions"
+import {writeCommentsFromDatabase} from "../../../../actions"
 import store from '../../../../store';
 import {API, graphqlOperation} from 'aws-amplify';
 import {listComments} from "../../../../graphql/queries"

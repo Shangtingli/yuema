@@ -15,21 +15,41 @@ import {Button} from "antd"
 Amplify.configure(aws_exports);
 
 class App extends React.Component{
-
-    handleOnClick = () => {
-        // const url = document.getElementsByClassName('avatar-real')[0].getAttribute('src');
-        Storage.put('example.png', '/Users/shangtingli/Desktop/PROJECT/YUEMA/amplify-yuema/src/assets/background.jpeg', {
-            contentType: 'image/png'
-        }).then (result => console.log(result))
-    }
-
-    get = () => {
-        Storage.get('example.png')
-            .then(result => console.log(result))
-    }
     render(){
         return <Home/>;
     }
 }
 
 export default withAuthenticator(connect()(App), { includeGreetings: false});
+// Amplify.configure(aws_exports);
+//
+// export default class App extends React.Component {
+//     onChange(e) {
+//         const file = e.target.files[0];
+//         Storage.put('example.png', file, {
+//             contentType: 'image/png'
+//         })
+//             .then ((result) => {debugger;console.log("Result: " + result)})
+//             .catch(err => console.log(err));
+//     }
+//
+//     handleOnClick = (e) => {
+//         Storage.get('example.png')
+//             .then(result => console.log(result))
+//             .catch(err => console.log(err));
+//     }
+//
+//     render() {
+//         return (
+//             <div>
+//                 {/*<ImageUpload/>*/}
+//             <input
+//                 type="file" accept='image/png'
+//                 onChange={(e) => this.onChange(e)}
+//             />
+//                 {/*<button onClick={this.onChange}> Upload </button>*/}
+//                 <button onClick={this.handleOnClick}> Click Me</button>
+//             </div>
+//         )
+//     }
+// }

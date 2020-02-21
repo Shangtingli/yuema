@@ -6,7 +6,6 @@ import 'antd/dist/antd.css';
 import '../../styles/loginflow/form.scss';
 import Logo from '../../assets/logo.svg';
 import ImageUpload from "./ImageUpload"
-import ImageUpload2 from "./ImageUpload2"
 
 const { Option } = Select;
 const tailFormItemLayout = {
@@ -23,6 +22,11 @@ const tailFormItemLayout = {
 };
 
 class CharacteristicForm extends React.Component{
+
+    constructor(props){
+        super(props);
+        this.child = React.createRef();
+    }
     handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
@@ -30,7 +34,13 @@ class CharacteristicForm extends React.Component{
             if (!err) {
                 console.log('Received values of form: ', values);
             }
-            this.props.nextStep(values);
+            const newValues = {...values};
+
+            this.child.current.handleUpload().then((response)=>{
+                newValues['avatarKey'] = response.key;
+                this.props.nextStep(newValues);
+            });
+
         });
 
     };
@@ -47,7 +57,7 @@ class CharacteristicForm extends React.Component{
                             {getFieldDecorator('avatar', {
                                 rules: [{ required: false, message: 'Please select an avatar!' }],
                             })(
-                                <ImageUpload/>
+                                <ImageUpload ref={this.child}/>
                             )}
 
                         </Form.Item>

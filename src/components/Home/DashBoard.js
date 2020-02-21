@@ -8,7 +8,7 @@ import AboutUs from "./DashBoard/AboutUs"
 import Loading from "./DashBoard/Loading"
 import {fillFeatures} from "../../actions/index"
 import {createTraveller} from "../../graphql/mutations"
-import {API, graphqlOperation} from 'aws-amplify';
+import {API, graphqlOperation,Storage} from 'aws-amplify';
 import {listTravellers} from "../../graphql/queries"
 import AddStorePage from "./DashBoard/Admin/AddStorePage"
 import '../../styles/home/dashboard.scss';
@@ -21,6 +21,7 @@ class DashBoard extends React.Component{
     saveTravellerFeatures = (traveller) => {
 
         API.graphql(graphqlOperation(createTraveller,{input: traveller})).then((response) =>{
+
             this.props.dispatch(fillFeatures(traveller));
         })
     }
@@ -57,7 +58,11 @@ class DashBoard extends React.Component{
             traveller["hobbies"] = states.hobbies;
             traveller["country"] = states.country;
             traveller["ageRange"] = states.ageRange;
-            this.saveTravellerFeatures(traveller);
+            traveller["avatarKey"]=states.avatarKey;
+            Storage.get(states.avatarKey).then((response) => {
+                traveller["avatarUrl"]=response;
+                this.saveTravellerFeatures(traveller);
+            })
         }
     }
 
@@ -74,6 +79,8 @@ class DashBoard extends React.Component{
         traveller["country"] = states.country;
         traveller["ageRange"] = states.ageRange;
         traveller["id"] = states.id;
+        traveller["avatarKey"]=states.avatarKey;
+        traveller["avatarUrl"]=states.avatarUrl;
         if (states.clientDataReady){
             switch(states.currentTab){
                 case "about":

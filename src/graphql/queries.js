@@ -14,6 +14,8 @@ export const getTraveller = /* GraphQL */ `
       ageRange
       country
       macid
+      avatarKey
+      avatarUrl
       comments {
         items {
           id
@@ -43,6 +45,8 @@ export const listTravellers = /* GraphQL */ `
         ageRange
         country
         macid
+        avatarKey
+        avatarUrl
         comments {
           nextToken
         }
@@ -80,6 +84,8 @@ export const getComment = /* GraphQL */ `
         ageRange
         country
         macid
+        avatarKey
+        avatarUrl
         comments {
           nextToken
         }
@@ -118,6 +124,8 @@ export const listComments = /* GraphQL */ `
           ageRange
           country
           macid
+          avatarKey
+          avatarUrl
         }
       }
       nextToken

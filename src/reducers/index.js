@@ -13,17 +13,8 @@ function fillData(data,newState){
 const operations = (state = initState, action) => {
     const newState = {...state};
     switch(action.type){
-        case "CHANGE_ADD_FORM_VISIBILITY":
-            newState.isAddCommentsVisible = action.visibility
-            return newState;
         case "WRITE_COMMENTS_FROM_DATABASE":
             newState.commentsData = action.data;
-            return newState;
-        case "CHANGE_COMMENTS_VISIBILITY":
-            newState.isCommentsVisible = action.visibility;
-            return newState;
-        case "HIDE_COMMENTS":
-            newState.isCommentsVisible = false;
             return newState;
         case "WRITE_STORES_FROM_DATABASE":
             newState.storeData = action.data;
@@ -59,7 +50,7 @@ const operations = (state = initState, action) => {
         case "LOGOUT":
             // localStorage.removeItem(TOKEN_KEY);
             return {...startState};
-        case "NEXT_LOGIN_STEP":
+        case "NEXT_STEP":
             newState.flow = newState.flow + 1;
             if ('username' in action.data){
                 newState.email = action.data.username;

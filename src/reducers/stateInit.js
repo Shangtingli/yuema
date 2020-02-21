@@ -11,6 +11,7 @@ export const startState = {
     /**
      * Features
      */
+
     id: '',
     sex: '',
     firstName: '',
@@ -22,6 +23,13 @@ export const startState = {
     flightTime: '',
     flightDest: '',
     hobbies: [],
+    avatarUrl: null,
+    avatarKey: null,
+    /**
+     * Avatar
+     */
+    // avatarFile: null,
+    // isAvatarLoading: false,
     /**
      * NavBar
      */

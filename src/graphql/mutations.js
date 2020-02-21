@@ -17,6 +17,8 @@ export const createTraveller = /* GraphQL */ `
       ageRange
       country
       macid
+      avatarKey
+      avatarUrl
       comments {
         items {
           id
@@ -44,6 +46,8 @@ export const updateTraveller = /* GraphQL */ `
       ageRange
       country
       macid
+      avatarKey
+      avatarUrl
       comments {
         items {
           id
@@ -71,6 +75,8 @@ export const deleteTraveller = /* GraphQL */ `
       ageRange
       country
       macid
+      avatarKey
+      avatarUrl
       comments {
         items {
           id
@@ -114,6 +120,8 @@ export const createComment = /* GraphQL */ `
         ageRange
         country
         macid
+        avatarKey
+        avatarUrl
         comments {
           nextToken
         }
@@ -153,6 +161,8 @@ export const updateComment = /* GraphQL */ `
         ageRange
         country
         macid
+        avatarKey
+        avatarUrl
         comments {
           nextToken
         }
@@ -192,6 +202,8 @@ export const deleteComment = /* GraphQL */ `
         ageRange
         country
         macid
+        avatarKey
+        avatarUrl
         comments {
           nextToken
         }
