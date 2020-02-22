@@ -4,6 +4,7 @@
 @import 'styles/loginflow/form.scss';
 @import 'styles/App.scss';
 @import 'styles/loginflow/tag.scss';
+@import 'styles/ratingstar.scss';
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

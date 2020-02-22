@@ -7,6 +7,7 @@ import AddCommentPopOver from "./AddCommentPopOver"
 const { Panel } = Collapse;
 class Store2 extends React.Component{
 
+
     render(){
         const data = this.props.data;
 
