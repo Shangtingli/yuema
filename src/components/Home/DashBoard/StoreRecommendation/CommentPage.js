@@ -27,7 +27,7 @@ export default class CommentList extends React.Component {
     render(){
         const start = this.state.currPage;
         const commentsData = this.props.commentsData;
-        debugger;
+
         const filteredData = [];
         for (let data of commentsData){
             if (data.store.id === this.props.store.id){
@@ -36,7 +36,7 @@ export default class CommentList extends React.Component {
         }
         const pageComments = filteredData.slice((start - 1) * COMMENTS_EACH_PAGE, start * COMMENTS_EACH_PAGE);
 
-        debugger;
+
         return(
             <div className="comments-container">
                 <div style={{height:'80%'}}>

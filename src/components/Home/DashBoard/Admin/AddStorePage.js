@@ -6,6 +6,7 @@ import {createStore} from "../../../../graphql/mutations"
 import {API, graphqlOperation} from 'aws-amplify';
 
 const { Option } = Select;
+const { TextArea } = Input;
 class AddStorePage extends React.Component{
     handleSubmit = e => {
         e.preventDefault();
@@ -19,7 +20,8 @@ class AddStorePage extends React.Component{
             store['terminal'] = parseInt(values['terminal']);
             store['lat'] = values['lat'];
             store['lng'] = values['lng'];
-            store['tags'] = []
+            store['description'] = values['description'];
+            store['tags'] = [];
             for (let i =1; i < 4; ++i){
                 if (values['tag' + i] !== undefined){
                     store['tags'].push(values['tag' + i]);
@@ -91,6 +93,14 @@ class AddStorePage extends React.Component{
                                 rules: [{ required: false, message: 'Please enter store exact longitude!' }],
                             })(
                                 <Input/>
+                            )}
+                        </Form.Item>
+
+                        <Form.Item label="Description">
+                            {getFieldDecorator('description', {
+                                rules: [{ required: true, message: 'Please enter store exact longitude!' }],
+                            })(
+                                <TextArea rows={4}/>
                             )}
                         </Form.Item>
 

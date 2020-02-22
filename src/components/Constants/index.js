@@ -3,6 +3,71 @@ export const STORES_EACH_PAGE = 3;
 export const COMMENTS_EACH_PAGE = 4;
 export const HOURS_CONSIDERED = 12
 export const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+export const COLOR_SCHEMES1 = ['#fdae6b','#fd8d3c','#f16913','#d94801','#a63603','#7f2704']
+export const COLOR_SCHEMES2 = ['#99d8c9','#66c2a4','#41ae76','#238b45','#006d2c','#00441b']
+export const COLOR_SCHEMES3 = ['#c994c7','#df65b0','#e7298a','#ce1256','#980043','#67001f']
+export const COLOR_SCHEMES=[];
+for(let i=0; i< COLOR_SCHEMES1.length; ++i){
+    COLOR_SCHEMES.push(COLOR_SCHEMES1[i]);
+    COLOR_SCHEMES.push(COLOR_SCHEMES2[i]);
+    COLOR_SCHEMES.push(COLOR_SCHEMES3[i]);
+}
+/**
+ * Reference : http://www.notsoboringlife.com/popular-hobbies/
+ * @type {string[]}
+ */
+export const ALL_HOBBIES = [
+    'Reading',
+    'Watching TV',
+    'Family Time',
+    'Movies',
+    'Fishing',
+    'Computer',
+    'Gardening',
+    'Walking',
+    'Exercise',
+    'Music',
+    'Entertaining',
+    'Hunting',
+    'Team Sports',
+    'Shopping',
+    'Traveling',
+    'Sleeping',
+    'Socializing',
+    'Sewing',
+    'Golf',
+    'Church Activities',
+    'Relaxing',
+    'Playing Music',
+    'Housework',
+    'Crafts',
+    'Watching Sports',
+    'Bicycling',
+    'Playing Cards',
+    'Hiking',
+    'Cooking',
+    'Eating Out',
+    'Dating Online',
+    'Swimming',
+    'Camping',
+    'Skiing',
+    'Working on Cars',
+    'Writing',
+    'Boating',
+    'Motorcycling',
+    'Animal Care',
+    'Bowling',
+    'Painting',
+    'Running',
+    'Dancing',
+    'Horseback Riding',
+    'Tennis',
+    'Theater',
+    'Billiards',
+    'Beach',
+    'Volunteer Work',
+]
+export const MAXIMUM_HOBBIES_SELECTED = 20;
 export const ALL_IATA = ['ABE',
     'ABI',
     'ABQ',

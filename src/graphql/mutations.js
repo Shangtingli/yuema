@@ -17,8 +17,7 @@ export const createTraveller = /* GraphQL */ `
       ageRange
       country
       macid
-      avatarKey
-      avatarUrl
+      intro
       comments {
         items {
           id
@@ -27,6 +26,8 @@ export const createTraveller = /* GraphQL */ `
         }
         nextToken
       }
+      avatarKey
+      avatarUrl
     }
   }
 `;
@@ -46,8 +47,7 @@ export const updateTraveller = /* GraphQL */ `
       ageRange
       country
       macid
-      avatarKey
-      avatarUrl
+      intro
       comments {
         items {
           id
@@ -56,6 +56,8 @@ export const updateTraveller = /* GraphQL */ `
         }
         nextToken
       }
+      avatarKey
+      avatarUrl
     }
   }
 `;
@@ -75,8 +77,7 @@ export const deleteTraveller = /* GraphQL */ `
       ageRange
       country
       macid
-      avatarKey
-      avatarUrl
+      intro
       comments {
         items {
           id
@@ -85,6 +86,8 @@ export const deleteTraveller = /* GraphQL */ `
         }
         nextToken
       }
+      avatarKey
+      avatarUrl
     }
   }
 `;
@@ -98,6 +101,7 @@ export const createComment = /* GraphQL */ `
       store {
         id
         storeName
+        description
         tags
         lat
         lng
@@ -120,11 +124,12 @@ export const createComment = /* GraphQL */ `
         ageRange
         country
         macid
-        avatarKey
-        avatarUrl
+        intro
         comments {
           nextToken
         }
+        avatarKey
+        avatarUrl
       }
     }
   }
@@ -139,6 +144,7 @@ export const updateComment = /* GraphQL */ `
       store {
         id
         storeName
+        description
         tags
         lat
         lng
@@ -161,11 +167,12 @@ export const updateComment = /* GraphQL */ `
         ageRange
         country
         macid
-        avatarKey
-        avatarUrl
+        intro
         comments {
           nextToken
         }
+        avatarKey
+        avatarUrl
       }
     }
   }
@@ -180,6 +187,7 @@ export const deleteComment = /* GraphQL */ `
       store {
         id
         storeName
+        description
         tags
         lat
         lng
@@ -202,11 +210,12 @@ export const deleteComment = /* GraphQL */ `
         ageRange
         country
         macid
-        avatarKey
-        avatarUrl
+        intro
         comments {
           nextToken
         }
+        avatarKey
+        avatarUrl
       }
     }
   }
@@ -219,6 +228,7 @@ export const createStore = /* GraphQL */ `
     createStore(input: $input, condition: $condition) {
       id
       storeName
+      description
       tags
       lat
       lng
@@ -243,6 +253,7 @@ export const updateStore = /* GraphQL */ `
     updateStore(input: $input, condition: $condition) {
       id
       storeName
+      description
       tags
       lat
       lng
@@ -267,6 +278,7 @@ export const deleteStore = /* GraphQL */ `
     deleteStore(input: $input, condition: $condition) {
       id
       storeName
+      description
       tags
       lat
       lng

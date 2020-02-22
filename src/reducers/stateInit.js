@@ -25,6 +25,7 @@ export const startState = {
     hobbies: [],
     avatarUrl: null,
     avatarKey: null,
+    intro: null,
     /**
      * Avatar
      */

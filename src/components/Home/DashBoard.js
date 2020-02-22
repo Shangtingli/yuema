@@ -21,7 +21,6 @@ class DashBoard extends React.Component{
     saveTravellerFeatures = (traveller) => {
 
         API.graphql(graphqlOperation(createTraveller,{input: traveller})).then((response) =>{
-
             this.props.dispatch(fillFeatures(traveller));
         })
     }
@@ -59,6 +58,7 @@ class DashBoard extends React.Component{
             traveller["country"] = states.country;
             traveller["ageRange"] = states.ageRange;
             traveller["avatarKey"]=states.avatarKey;
+            traveller['intro'] = states.intro;
             Storage.get(states.avatarKey).then((response) => {
                 traveller["avatarUrl"]=response;
                 this.saveTravellerFeatures(traveller);
@@ -79,6 +79,7 @@ class DashBoard extends React.Component{
         traveller["country"] = states.country;
         traveller["ageRange"] = states.ageRange;
         traveller["id"] = states.id;
+        traveller['intro'] = states.intro;
         traveller["avatarKey"]=states.avatarKey;
         traveller["avatarUrl"]=states.avatarUrl;
         if (states.clientDataReady){

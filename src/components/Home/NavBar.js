@@ -43,7 +43,7 @@ class NavBar extends React.Component {
                         Add Store
                     </Menu.Item>
                 </Menu>
-                <div style={{float:'right', width: '15%',marginTop:"10px"}}>
+                <div style={{float:'right', width: '20%',marginTop:"10px"}}>
                     <h3 style={{float:'left',marginTop:"5px"}}> {`Hello,${states.firstName}`}</h3>
                     <Button className="navbar-logout-button" onClick={this.handleLogout} style={{float:'right'}}> Logout </Button>
                 </div>

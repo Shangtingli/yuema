@@ -21,6 +21,7 @@ const tailFormItemLayout = {
     },
 };
 
+const {TextArea} = Input;
 class CharacteristicForm extends React.Component{
 
     constructor(props){
@@ -30,13 +31,13 @@ class CharacteristicForm extends React.Component{
     handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
-            debugger;
+
             if (!err) {
                 console.log('Received values of form: ', values);
             }
             const newValues = {...values};
 
-            this.child.current.handleUpload().then((response)=>{
+            this.child.current.handleUpload(this.props.email).then((response)=>{
                 newValues['avatarKey'] = response.key;
                 this.props.nextStep(newValues);
             });
@@ -110,6 +111,14 @@ class CharacteristicForm extends React.Component{
                                 rules: [{ required: true, message: 'Please select your country!' }],
                             })(
                                 <Input/>
+                            )}
+                        </Form.Item>
+
+                        <Form.Item label="Intro">
+                            {getFieldDecorator('intro', {
+                                rules: [{ required: false, message: 'Please use one sentence to describe yourself!' }],
+                            })(
+                                <TextArea rows={4} maxLength={100}/>
                             )}
                         </Form.Item>
 

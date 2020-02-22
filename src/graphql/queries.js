@@ -14,8 +14,7 @@ export const getTraveller = /* GraphQL */ `
       ageRange
       country
       macid
-      avatarKey
-      avatarUrl
+      intro
       comments {
         items {
           id
@@ -24,6 +23,8 @@ export const getTraveller = /* GraphQL */ `
         }
         nextToken
       }
+      avatarKey
+      avatarUrl
     }
   }
 `;
@@ -45,11 +46,12 @@ export const listTravellers = /* GraphQL */ `
         ageRange
         country
         macid
-        avatarKey
-        avatarUrl
+        intro
         comments {
           nextToken
         }
+        avatarKey
+        avatarUrl
       }
       nextToken
     }
@@ -62,6 +64,7 @@ export const getComment = /* GraphQL */ `
       store {
         id
         storeName
+        description
         tags
         lat
         lng
@@ -84,11 +87,12 @@ export const getComment = /* GraphQL */ `
         ageRange
         country
         macid
-        avatarKey
-        avatarUrl
+        intro
         comments {
           nextToken
         }
+        avatarKey
+        avatarUrl
       }
     }
   }
@@ -105,6 +109,7 @@ export const listComments = /* GraphQL */ `
         store {
           id
           storeName
+          description
           tags
           lat
           lng
@@ -124,6 +129,7 @@ export const listComments = /* GraphQL */ `
           ageRange
           country
           macid
+          intro
           avatarKey
           avatarUrl
         }
@@ -137,6 +143,7 @@ export const getStore = /* GraphQL */ `
     getStore(id: $id) {
       id
       storeName
+      description
       tags
       lat
       lng
@@ -163,6 +170,7 @@ export const listStores = /* GraphQL */ `
       items {
         id
         storeName
+        description
         tags
         lat
         lng

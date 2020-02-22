@@ -10,7 +10,7 @@ import CharacteristicForm from "../Forms/CharacteristicForm"
 import TodayForm from "../Forms/TodayForm"
 import {listTravellers} from "../../graphql/queries"
 import Greetings from "./DashBoard/Greetings"
-import HobbyForm from "../Forms/HobbyForm"
+import HobbyForm2 from "../Forms/HobbyForm2"
 class Home extends React.Component{
     /**
      * TODO: Is it that only using O(n) time to find specific traveller with specific email?
@@ -66,10 +66,10 @@ class Home extends React.Component{
             return (<Loading/>)
         }
         else if (states.flow === 0){
-            return (<CharacteristicForm nextStep={this.nextStep}/>);
+            return (<CharacteristicForm nextStep={this.nextStep} email={states.email}/>);
         }
         else if (states.flow === 1){
-            return (<HobbyForm nextStep = {this.nextStep}/>)
+            return (<HobbyForm2 nextStep = {this.nextStep}/>)
         }
         else if (states.flow === 2){
             return (<TodayForm nextStep={this.nextStep}/>);
@@ -78,6 +78,7 @@ class Home extends React.Component{
             return(
                 <div className='home-container'>
                     <NavBar handleLogout={this.handleLogout} handleChangeTab={this.handleChangeTab} />
+                    <br/><br/>
                     <div className='working-area'>
                         {/*<div className={'ads-area-left'}> Ads Area </div>*/}
                         <DashBoard className={'main-dashboard'}/>
