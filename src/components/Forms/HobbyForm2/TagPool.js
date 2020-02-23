@@ -12,7 +12,7 @@ export default class TagPool extends React.Component{
     createTag = (entry) => {
         const index = entry[0] % COLOR_SCHEMES.length;
         const tag = entry[1];
-        debugger;
+
         return(
                 <Tag
                     color={COLOR_SCHEMES[index]}

@@ -9,7 +9,6 @@ import Loading from "./DashBoard/Loading"
 import CharacteristicForm from "../Forms/CharacteristicForm"
 import TodayForm from "../Forms/TodayForm"
 import {listTravellers} from "../../graphql/queries"
-import Greetings from "./DashBoard/Greetings"
 import HobbyForm2 from "../Forms/HobbyForm2"
 class Home extends React.Component{
     /**

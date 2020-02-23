@@ -1,16 +1,36 @@
 import * as React from "react"
-
-
+import {listTravellers} from "../../../graphql/queries";
+import {writeTravellersFromDatabase} from "../../../actions";
+import {API, graphqlOperation} from 'aws-amplify';
+import store from '../../../store';
+import StoreLoading from "./StoreRecommendation/StoreLoading";
+import TravellerList from "./PeopleRecommendation/TravellerList";
+import {connect} from "react-redux";
 class PeopleRecommendation extends React.Component{
 
+    componentDidMount() {
+        API.graphql(graphqlOperation(listTravellers)).then((response) =>{
+            const allTravellersData = response.data.listTravellers.items;
+            this.props.dispatch(writeTravellersFromDatabase(allTravellersData));
+        });
+    }
+
     render(){
-        return(
-            <div className="dashboard-content-container">
-                <h3>  HERE SHOULD BE PEOPLE RECOMMENDATION MODULE </h3> <br/><br/>
-                <h3>  UNDER DEVELOPMENT </h3> <br/><br/>
-            </div>
-        );
+        const states= store.getState();
+        const travellers= states.travellerData;
+        if (travellers === null){
+            return <StoreLoading/>
+        }
+        else{
+            return(
+                <div className="dashboard-content-container">
+                    <TravellerList travellerData={travellers}/>
+                </div>
+            );
+        }
+
     }
 }
 
-export default PeopleRecommendation;
+const mapStateToProps = (state) => ({travellerData: state.travellerData});
+export default connect(mapStateToProps)(PeopleRecommendation);

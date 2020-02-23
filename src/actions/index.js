@@ -39,3 +39,8 @@ export const writeCommentsFromDatabase = (data) => ({
     type: "WRITE_COMMENTS_FROM_DATABASE",
     data: data
 })
+
+export const writeTravellersFromDatabase = (data) => ({
+    type: "WRITE_TRAVELLERS_FROM_DATABASE",
+    data: data
+})

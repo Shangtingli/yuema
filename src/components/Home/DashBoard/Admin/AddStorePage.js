@@ -4,6 +4,7 @@ import { Form, Select, Input, Button } from 'antd';
 import {connect} from "react-redux"
 import {createStore} from "../../../../graphql/mutations"
 import {API, graphqlOperation} from 'aws-amplify';
+import TagsInput from "./TagsInput";
 
 const { Option } = Select;
 const { TextArea } = Input;
@@ -104,50 +105,13 @@ class AddStorePage extends React.Component{
                             )}
                         </Form.Item>
 
-                        <Form.Item label="Tag1">
-                            {getFieldDecorator('tag1', {
-                                rules: [{ required: true, message: 'Please select a tag for the store' }],
-                            })(
-                                <Select
-                                    placeholder="Select a store tag"
-                                    onChange={this.handleSelectChange}
-                                >
-                                    {options.map((val) => {
-                                        return <Option value={val} key={val} > {val} </Option>
-                                    })}
-                                </Select>,
-                            )}
-                        </Form.Item>
-
-                        <Form.Item label="Tag2">
-                            {getFieldDecorator('tag2', {
-                                rules: [{ required: false, message: 'Please select a tag for the store' }],
-                            })(
-                                <Select
-                                    placeholder="Select a store tag"
-                                    onChange={this.handleSelectChange}
-                                >
-                                    {options.map((val) => {
-                                        return <Option value={val} key={val} > {val} </Option>
-                                    })}
-                                </Select>,
-                            )}
-                        </Form.Item>
-
-                        <Form.Item label="Tag3">
-                            {getFieldDecorator('tag3', {
-                                rules: [{ required: false, message: 'Please select a tag for the store' }],
-                            })(
-                                <Select
-                                    placeholder="Select a store tag"
-                                    onChange={this.handleSelectChange}
-                                >
-                                    {options.map((val) => {
-                                        return <Option value={val} key={val} > {val} </Option>
-                                    })}
-                                </Select>,
-                            )}
-                        </Form.Item>
+                        {/*<Form.Item label="Tags">*/}
+                        {/*    {getFieldDecorator('tags', {*/}
+                        {/*        rules: [{ required: true, message: 'Please enter tags for this store' }],*/}
+                        {/*    })(*/}
+                        {/*        <TagsInput/>*/}
+                        {/*    )}*/}
+                        {/*</Form.Item>*/}
                         <Form.Item {...tailFormItemLayout}>
                             <Button type="primary" htmlType="submit" onClick={this.handleSubmit}>
                                 Submit

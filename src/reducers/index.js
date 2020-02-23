@@ -13,6 +13,9 @@ function fillData(data,newState){
 const operations = (state = initState, action) => {
     const newState = {...state};
     switch(action.type){
+        case "WRITE_TRAVELLERS_FROM_DATABASE":
+            newState.travellerData= action.data;
+            return newState;
         case "WRITE_COMMENTS_FROM_DATABASE":
             newState.commentsData = action.data;
             return newState;

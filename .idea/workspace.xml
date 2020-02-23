@@ -10,8 +10,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -91,7 +91,9 @@
       <workItem from="1582160602409" duration="3410000" />
       <workItem from="1582176763294" duration="60361000" />
       <workItem from="1582350863498" duration="2294000" />
-      <workItem from="1582355975066" duration="14618000" />
+      <workItem from="1582355975066" duration="14730000" />
+      <workItem from="1582390511980" duration="4967000" />
+      <workItem from="1582408641412" duration="1651000" />
     </task>
     <servers />
   </component>
@@ -117,18 +119,22 @@
       <screen x="0" y="23" width="1280" height="709" />
     </state>
     <state x="357" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1280.709@0.23.1280.709" timestamp="1582351959021" />
+    <state x="388" y="151" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1582391494584">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state x="388" y="151" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1280.709@0.23.1280.709" timestamp="1582391494584" />
     <state x="329" y="190" key="com.intellij.ide.util.TipDialog" timestamp="1582355977392">
       <screen x="0" y="23" width="1280" height="709" />
     </state>
     <state x="329" y="190" key="com.intellij.ide.util.TipDialog/0.23.1280.709@0.23.1280.709" timestamp="1582355977392" />
-    <state x="226" y="23" width="816" height="709" key="find.popup" timestamp="1582374173143">
+    <state x="226" y="23" width="816" height="709" key="find.popup" timestamp="1582478952547">
       <screen x="0" y="23" width="1280" height="709" />
     </state>
-    <state x="226" y="23" width="816" height="709" key="find.popup/0.23.1280.709@0.23.1280.709" timestamp="1582374173143" />
-    <state x="315" y="56" width="670" height="676" key="search.everywhere.popup" timestamp="1582357669228">
+    <state x="226" y="23" width="816" height="709" key="find.popup/0.23.1280.709@0.23.1280.709" timestamp="1582478952547" />
+    <state x="315" y="56" width="670" height="676" key="search.everywhere.popup" timestamp="1582477959593">
       <screen x="0" y="23" width="1280" height="709" />
     </state>
-    <state x="315" y="56" width="670" height="676" key="search.everywhere.popup/0.23.1280.709@0.23.1280.709" timestamp="1582357669228" />
+    <state x="315" y="56" width="670" height="676" key="search.everywhere.popup/0.23.1280.709@0.23.1280.709" timestamp="1582477959593" />
   </component>
   <component name="masterDetails">
     <states>

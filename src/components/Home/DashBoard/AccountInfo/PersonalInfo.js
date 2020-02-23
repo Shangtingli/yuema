@@ -5,7 +5,6 @@ export default class PersonalInfo extends React.Component{
     render(){
         return(
             <div style={{textAlign: 'center',margin:"auto"}}>
-                <h3> Peronal Information: </h3>
                 <div style={{border: "1px dashed black", height: "250px", width:"400px",margin:"auto"}}>
                     <div style={{float:'left'}}>
                         <img src={this.props.avatarUrl} style={{width:"100px",height:"100px"}}/><br/><br/>

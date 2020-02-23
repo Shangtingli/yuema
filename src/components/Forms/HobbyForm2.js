@@ -7,7 +7,6 @@ import Logo from "../../assets/logo.svg";
 
 export default class HobbyForm2 extends React.Component{
 
-
     constructor(props) {
         super(props);
         this.state={
@@ -40,7 +39,7 @@ export default class HobbyForm2 extends React.Component{
         }
         const newHobbies = new Set(this.state.hobbies);
         newHobbies.add(hobby);
-        debugger;
+
         this.setState({hobbies:newHobbies});
     }
 
@@ -53,7 +52,7 @@ export default class HobbyForm2 extends React.Component{
         const hobbies=Array.from(this.state.hobbies);
         const list = [];
         for (let i=0; i < hobbies.length; ++i){
-            debugger;
+
             list.push([i,hobbies[i]]);
         }
 

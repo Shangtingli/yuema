@@ -55,6 +55,10 @@ export const startState = {
      */
     commentsData: null,
 
+    /**
+     * People Recommendation
+     */
+    travellerData: null,
 };
 
 // export const initState= isLoggedIn ?

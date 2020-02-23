@@ -127,8 +127,6 @@ class CharacteristicForm extends React.Component{
                                 Submit
                             </Button>
                         </Form.Item>
-
-
                     </Form>
                 </div>
             </div>
