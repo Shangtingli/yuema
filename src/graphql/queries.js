@@ -2,9 +2,8 @@
 // this is an auto generated file. This will be overwritten
 
 export const getTraveller = /* GraphQL */ `
-  query GetTraveller($id: ID!) {
-    getTraveller(id: $id) {
-      id
+  query GetTraveller($email: String!) {
+    getTraveller(email: $email) {
       firstName
       lastName
       email
@@ -25,18 +24,27 @@ export const getTraveller = /* GraphQL */ `
       }
       avatarKey
       avatarUrl
+      flightDest
+      flightTime
     }
   }
 `;
 export const listTravellers = /* GraphQL */ `
   query ListTravellers(
+    $email: String
     $filter: ModelTravellerFilterInput
     $limit: Int
     $nextToken: String
+    $sortDirection: ModelSortDirection
   ) {
-    listTravellers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listTravellers(
+      email: $email
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      sortDirection: $sortDirection
+    ) {
       items {
-        id
         firstName
         lastName
         email
@@ -52,6 +60,8 @@ export const listTravellers = /* GraphQL */ `
         }
         avatarKey
         avatarUrl
+        flightDest
+        flightTime
       }
       nextToken
     }
@@ -77,7 +87,6 @@ export const getComment = /* GraphQL */ `
       content
       rate
       traveller {
-        id
         firstName
         lastName
         email
@@ -93,6 +102,8 @@ export const getComment = /* GraphQL */ `
         }
         avatarKey
         avatarUrl
+        flightDest
+        flightTime
       }
     }
   }
@@ -119,7 +130,6 @@ export const listComments = /* GraphQL */ `
         content
         rate
         traveller {
-          id
           firstName
           lastName
           email
@@ -132,6 +142,8 @@ export const listComments = /* GraphQL */ `
           intro
           avatarKey
           avatarUrl
+          flightDest
+          flightTime
         }
       }
       nextToken

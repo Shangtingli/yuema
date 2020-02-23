@@ -4,7 +4,6 @@
 export const onCreateTraveller = /* GraphQL */ `
   subscription OnCreateTraveller {
     onCreateTraveller {
-      id
       firstName
       lastName
       email
@@ -25,13 +24,14 @@ export const onCreateTraveller = /* GraphQL */ `
       }
       avatarKey
       avatarUrl
+      flightDest
+      flightTime
     }
   }
 `;
 export const onUpdateTraveller = /* GraphQL */ `
   subscription OnUpdateTraveller {
     onUpdateTraveller {
-      id
       firstName
       lastName
       email
@@ -52,13 +52,14 @@ export const onUpdateTraveller = /* GraphQL */ `
       }
       avatarKey
       avatarUrl
+      flightDest
+      flightTime
     }
   }
 `;
 export const onDeleteTraveller = /* GraphQL */ `
   subscription OnDeleteTraveller {
     onDeleteTraveller {
-      id
       firstName
       lastName
       email
@@ -79,6 +80,8 @@ export const onDeleteTraveller = /* GraphQL */ `
       }
       avatarKey
       avatarUrl
+      flightDest
+      flightTime
     }
   }
 `;
@@ -102,7 +105,6 @@ export const onCreateComment = /* GraphQL */ `
       content
       rate
       traveller {
-        id
         firstName
         lastName
         email
@@ -118,6 +120,8 @@ export const onCreateComment = /* GraphQL */ `
         }
         avatarKey
         avatarUrl
+        flightDest
+        flightTime
       }
     }
   }
@@ -142,7 +146,6 @@ export const onUpdateComment = /* GraphQL */ `
       content
       rate
       traveller {
-        id
         firstName
         lastName
         email
@@ -158,6 +161,8 @@ export const onUpdateComment = /* GraphQL */ `
         }
         avatarKey
         avatarUrl
+        flightDest
+        flightTime
       }
     }
   }
@@ -182,7 +187,6 @@ export const onDeleteComment = /* GraphQL */ `
       content
       rate
       traveller {
-        id
         firstName
         lastName
         email
@@ -198,6 +202,8 @@ export const onDeleteComment = /* GraphQL */ `
         }
         avatarKey
         avatarUrl
+        flightDest
+        flightTime
       }
     }
   }

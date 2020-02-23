@@ -1,5 +1,4 @@
-type Traveller @model {
-  id: ID!
+type Traveller @model @key(fields: ["email"]) {
   firstName: String!
   lastName: String!
   email: String!
@@ -13,6 +12,8 @@ type Traveller @model {
   comments: [Comment!] @connection(name: "TravellerComments")
   avatarKey: String
   avatarUrl: String
+  flightDest: String!
+  flightTime: String!
 }
 
 type Comment @model{

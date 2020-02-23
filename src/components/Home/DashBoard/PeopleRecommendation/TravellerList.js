@@ -12,7 +12,9 @@ export default class TravellerList extends React.Component{
     }
 
     createTraveller = (data) => {
-        return <Traveller data={data} key={data.id}/>
+        return (
+            <Traveller data={data} key={data.id}/>
+        )
     }
 
     onChange = (e) => {
@@ -27,8 +29,8 @@ export default class TravellerList extends React.Component{
         // const totalPage = storeData.length/STORES_EACH_PAGE + (storeData.length % STORES_EACH_PAGE === 0 ? 0: 1);
 
         return (
-            <div style={{height: "100%", width: "100%"}}>
-                <div style={{height: "80%", width: "100%",display: 'flex'}}>
+            <div style={{height: "100%", width: "100%",textAlgin:"center"}}>
+                <div style={{height: "80%", width: "100%",display: 'flex',margin:"auto"}}>
                     {travellerPageData.map(this.createTraveller)}
                 </div>
                 <Pagination defaultCurrent={this.state.currPage} total={travellerData.length} defaultPageSize={TRAVELLERS_EACH_PAGE} onChange={this.onChange} style={{display:'inline-block'}}/>

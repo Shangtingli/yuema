@@ -11,7 +11,7 @@ class AccountInfo extends React.Component{
 
         return(
             <div className="dashboard-content-container" style={{textAlign:"center"}}>
-                <h3> Peronal Information: </h3>
+                <h3> Personal Information: </h3>
                 <PersonalInfo
                     avatarUrl={data.avatarUrl}
                     intro={data.intro}

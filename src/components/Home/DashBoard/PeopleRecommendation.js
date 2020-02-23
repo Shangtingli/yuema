@@ -24,6 +24,7 @@ class PeopleRecommendation extends React.Component{
         else{
             return(
                 <div className="dashboard-content-container">
+                    <h3> Some interesting people you might like to chat with: </h3>
                     <TravellerList travellerData={travellers}/>
                 </div>
             );

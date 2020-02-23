@@ -9,7 +9,8 @@ import Loading from "./DashBoard/Loading"
 import {fillFeatures} from "../../actions/index"
 import {createTraveller} from "../../graphql/mutations"
 import {API, graphqlOperation,Storage} from 'aws-amplify';
-import {listTravellers} from "../../graphql/queries"
+import {getTraveller} from "../../graphql/queries"
+import { updateTraveller} from "../../graphql/mutations";
 import AddStorePage from "./DashBoard/Admin/AddStorePage"
 import '../../styles/home/dashboard.scss';
 
@@ -19,7 +20,6 @@ class DashBoard extends React.Component{
      * @param traveller
      */
     saveTravellerFeatures = (traveller) => {
-
         API.graphql(graphqlOperation(createTraveller,{input: traveller})).then((response) =>{
             this.props.dispatch(fillFeatures(traveller));
         })
@@ -32,15 +32,16 @@ class DashBoard extends React.Component{
          * If the user comes from login entry
          */
         if (states.hasFeaturesStored) {
-            API.graphql(graphqlOperation(listTravellers)).then((response) => {
-                var traveller = null;
-                for (let t of response.data.listTravellers.items){
-                    if (t.email === states.email){
-                        traveller = t;
-                        break;
-                    }
-                }
-
+            const travellerUpdate = {};
+            travellerUpdate['email'] = states.email;
+            travellerUpdate['flightTime'] = states.flightTime;
+            travellerUpdate['flightDest'] = states.flightDest;
+            /**
+             * GraphQL Update: Could only provide part that is being updated.
+             */
+            API.graphql(graphqlOperation(updateTraveller,{input:travellerUpdate})).then((response) => {
+                const traveller = response.data.updateTraveller;
+                debugger;
                 this.props.dispatch(fillFeatures(traveller));
             })
         }
@@ -59,6 +60,8 @@ class DashBoard extends React.Component{
             traveller["ageRange"] = states.ageRange;
             traveller["avatarKey"]=states.avatarKey;
             traveller['intro'] = states.intro;
+            traveller["flightTime"] =states.flightTime;
+            traveller["flightDest"] = states.flightDest;
             Storage.get(states.avatarKey).then((response) => {
                 traveller["avatarUrl"]=response;
                 this.saveTravellerFeatures(traveller);
@@ -82,6 +85,8 @@ class DashBoard extends React.Component{
         traveller['intro'] = states.intro;
         traveller["avatarKey"]=states.avatarKey;
         traveller["avatarUrl"]=states.avatarUrl;
+        traveller["flightTime"] =states.flightTime;
+        traveller["flightDest"] = states.flightDest;
         if (states.clientDataReady){
             switch(states.currentTab){
                 case "about":

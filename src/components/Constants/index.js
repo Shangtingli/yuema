@@ -1,7 +1,7 @@
 export const ADMIN_ROLES = ["shangtingli@outlook.com","shangtingli@gmail.com","yenchenc@usc.edu","liuzhife@usc.edu"]
 export const STORES_EACH_PAGE = 3;
 export const COMMENTS_EACH_PAGE = 4;
-export const TRAVELLERS_EACH_PAGE = 3;
+export const TRAVELLERS_EACH_PAGE = 2;
 export const HOURS_CONSIDERED = 12
 export const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 export const COLOR_SCHEMES1 = ['#fdae6b','#fd8d3c','#f16913','#d94801','#a63603','#7f2704']

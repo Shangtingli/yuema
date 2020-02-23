@@ -1,5 +1,4 @@
-type Traveller @model {
-  id: ID!
+type Traveller @model @key(fields: ["email"]) {
   firstName: String!
   lastName: String!
   email: String!
@@ -9,19 +8,28 @@ type Traveller @model {
   ageRange: String!
   country: String!
   macid: String
-  history: [History!] @connection(name: "TravellerHistory")
-}
-
-type History @model{
-    id: ID!
-    store: String!
-    time: Int!
-    traveller: Traveller! @connection(name: "TravellerHistory")
+  intro: String
+  comments: [Comment!] @connection(name: "TravellerComments")
+  avatarKey: String
+  avatarUrl: String
 }
 
 type Comment @model{
     id: ID!
+    store: Store @connection(name: "CommentStore")
     content: String!
     rate: Int!
-    traveller: Traveller! @connection(name: "TravellerComments")
+    traveller: Traveller @connection(name: "TravellerComments")
+}
+
+type Store @model{
+    id: ID!
+    storeName: String!
+    description: String!
+    tags: [String!]
+    lat: String
+    lng: String
+    floor: Int
+    terminal: Int
+    comments: [Comment!] @connection(name: "CommentStore")
 }

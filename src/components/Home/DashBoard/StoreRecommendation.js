@@ -25,6 +25,7 @@ class StoreRecommendation extends React.Component{
 
             return(
                 <div className="dashboard-content-container">
+                    <h3> Some interesting stores you might like: </h3>
                     <StoreList storeData={states.storeData} traveller={this.props.traveller}/>
                 </div>
             );

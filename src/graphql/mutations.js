@@ -7,7 +7,6 @@ export const createTraveller = /* GraphQL */ `
     $condition: ModelTravellerConditionInput
   ) {
     createTraveller(input: $input, condition: $condition) {
-      id
       firstName
       lastName
       email
@@ -28,6 +27,8 @@ export const createTraveller = /* GraphQL */ `
       }
       avatarKey
       avatarUrl
+      flightDest
+      flightTime
     }
   }
 `;
@@ -37,7 +38,6 @@ export const updateTraveller = /* GraphQL */ `
     $condition: ModelTravellerConditionInput
   ) {
     updateTraveller(input: $input, condition: $condition) {
-      id
       firstName
       lastName
       email
@@ -58,6 +58,8 @@ export const updateTraveller = /* GraphQL */ `
       }
       avatarKey
       avatarUrl
+      flightDest
+      flightTime
     }
   }
 `;
@@ -67,7 +69,6 @@ export const deleteTraveller = /* GraphQL */ `
     $condition: ModelTravellerConditionInput
   ) {
     deleteTraveller(input: $input, condition: $condition) {
-      id
       firstName
       lastName
       email
@@ -88,6 +89,8 @@ export const deleteTraveller = /* GraphQL */ `
       }
       avatarKey
       avatarUrl
+      flightDest
+      flightTime
     }
   }
 `;
@@ -114,7 +117,6 @@ export const createComment = /* GraphQL */ `
       content
       rate
       traveller {
-        id
         firstName
         lastName
         email
@@ -130,6 +132,8 @@ export const createComment = /* GraphQL */ `
         }
         avatarKey
         avatarUrl
+        flightDest
+        flightTime
       }
     }
   }
@@ -157,7 +161,6 @@ export const updateComment = /* GraphQL */ `
       content
       rate
       traveller {
-        id
         firstName
         lastName
         email
@@ -173,6 +176,8 @@ export const updateComment = /* GraphQL */ `
         }
         avatarKey
         avatarUrl
+        flightDest
+        flightTime
       }
     }
   }
@@ -200,7 +205,6 @@ export const deleteComment = /* GraphQL */ `
       content
       rate
       traveller {
-        id
         firstName
         lastName
         email
@@ -216,6 +220,8 @@ export const deleteComment = /* GraphQL */ `
         }
         avatarKey
         avatarUrl
+        flightDest
+        flightTime
       }
     }
   }
