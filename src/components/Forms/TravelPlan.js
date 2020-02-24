@@ -1,5 +1,4 @@
-import { submitInfo} from "../../actions/index";
-import {Form, Input, Button, Select} from 'antd';
+import {Form, Button, Select} from 'antd';
 import React from 'react';
 import 'antd/dist/antd.css';
 import { connect } from 'react-redux';
@@ -10,12 +9,11 @@ import '../../styles/loginflow/form.scss';
 const { Option } = Select;
 
 function toString(time){
-    const month = MONTHS[time.getMonth()-1];
+    const month = MONTHS[time.getMonth()];
     const date = time.getDate();
     const hour = time.getHours();
     return month + " " + date + " " + hour + ":00";
 }
-
 
 class CharacteristicForm extends React.Component {
     handleSubmit = e => {
@@ -34,9 +32,11 @@ class CharacteristicForm extends React.Component {
         {
             var start =new Date();
             start.setHours(start.getHours() + i + 1);
+            debugger;
             times[i] = toString(start);
         }
         const { getFieldDecorator } = this.props.form;
+        debugger;
         return (
             <div className='form-dashboard-container'>
                 <img src={Logo} className="logo-image"/>
@@ -63,6 +63,7 @@ class CharacteristicForm extends React.Component {
                                 onChange={this.handleSelectChange}
                             >
                                 {times.map((time) => {
+                                    debugger;
                                     return <Option value={time} key={time}>{time}</Option>
                                 })}
                             </Select>

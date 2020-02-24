@@ -7,7 +7,7 @@
 		}
 	},
 	"api": {
-		"yuemaAPI": {
+		"yuema": {
 			"service": "AppSync",
 			"providerPlugin": "awscloudformation",
 			"output": {
@@ -24,7 +24,7 @@
 		}
 	},
 	"storage": {
-		"s32130e5d0": {
+		"s3248e553a": {
 			"service": "S3",
 			"providerPlugin": "awscloudformation"
 		}

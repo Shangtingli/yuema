@@ -13,7 +13,7 @@ export default class TravellerList extends React.Component{
 
     createTraveller = (data) => {
         return (
-            <Traveller data={data} key={data.id}/>
+            <Traveller data={data} key={data.email}/>
         )
     }
 

@@ -8,10 +8,10 @@ export const startState = {
     remember: false,
     hasFeaturesStored: false,
     isLoggedIn: false,
+    shouldUpdateTravelPlan: true,
     /**
      * Features
      */
-
     id: '',
     sex: '',
     firstName: '',

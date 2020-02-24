@@ -3,6 +3,7 @@ import * as React from "react";
 export default class PersonalInfo extends React.Component{
 
     render(){
+        debugger;
         return(
             <div style={{textAlign: 'center',margin:"auto"}}>
                 <div style={{border: "1px dashed black", height: "250px", width:"400px",margin:"auto"}}>

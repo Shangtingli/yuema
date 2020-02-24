@@ -5,7 +5,7 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import '../../styles/loginflow/form.scss';
 import Logo from '../../assets/logo.svg';
-import ImageUpload from "./ImageUpload"
+import ImageUpload from "./ImageUpload";
 
 const { Option } = Select;
 const tailFormItemLayout = {
@@ -37,6 +37,10 @@ class CharacteristicForm extends React.Component{
             }
             const newValues = {...values};
 
+            /**
+             * TODO: Obviously not safe since if the registration flow abrupts then rubbish
+             * avatar would be stored in S3 buckets
+             */
             this.child.current.handleUpload(this.props.email).then((response)=>{
                 newValues['avatarKey'] = response.key;
                 this.props.nextStep(newValues);
@@ -76,7 +80,7 @@ class CharacteristicForm extends React.Component{
                                 <Input/>
                             )}
                         </Form.Item>
-                        <Form.Item label="ageRange">
+                        <Form.Item label="AgeRange">
                             {getFieldDecorator('ageRange', {
                                 rules: [{ required: true, message: 'Please select your age range!' }],
                             })(

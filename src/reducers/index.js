@@ -23,14 +23,15 @@ const operations = (state = initState, action) => {
             newState.storeData = action.data;
             return newState;
         case "SWITCH_TO_LOGIN":
-            newState.flow = 2;
             newState.hasFeaturesStored = true;
             newState.email = action.email;
             newState.phoneNumber = action.phoneNumber;
             if (ADMIN_ROLES.includes(action.email)){
                 newState.isAdmin = true;
             }
+            newState.flow = 2;
             return newState;
+
         case "SWITCH_TO_REGISTER":
             newState.flow = 0;
             newState.email = action.email;
@@ -40,16 +41,14 @@ const operations = (state = initState, action) => {
             }
             return newState;
         case "FILL_FEATURES":
-
             fillData(action.data,newState);
             newState.clientDataReady=true;
-
             return newState;
         case "CHANGE_TAB":
             return {
                 ...state,
                 currentTab: action.tab
-            }
+            };
         case "LOGOUT":
             // localStorage.removeItem(TOKEN_KEY);
             return {...startState};

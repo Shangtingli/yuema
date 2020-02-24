@@ -1,6 +1,6 @@
 {
     "identityPoolName": "yuema37e49813_identitypool_37e49813",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "yuema37e49813",
     "userPoolName": "yuema37e49813_userpool_37e49813",
     "autoVerifiedAttributes": [

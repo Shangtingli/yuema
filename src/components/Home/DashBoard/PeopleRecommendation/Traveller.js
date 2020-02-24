@@ -21,7 +21,6 @@ export default class Traveller extends React.Component{
                 phoneNumber={data.phoneNumber}
                 sex={data.sex}
                 age={data.ageRange}
-
             />
             <br/><br/>
             <TravelPlan

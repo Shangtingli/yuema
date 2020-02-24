@@ -7,16 +7,10 @@ import DashBoard from "./DashBoard";
 import store from '../../store';
 import Loading from "./DashBoard/Loading"
 import CharacteristicForm from "../Forms/CharacteristicForm"
-import TodayForm from "../Forms/TodayForm"
-import {listTravellers} from "../../graphql/queries"
+import TodayForm from "../Forms/TravelPlan"
+import {getTraveller} from "../../graphql/queries"
 import HobbyForm2 from "../Forms/HobbyForm2"
 class Home extends React.Component{
-    /**
-     * TODO: Is it that only using O(n) time to find specific traveller with specific email?
-     * Or could we just modify the query
-     * @param email
-     * @returns {Promise<*>}
-     */
     /**
      * type Order @model @key(fields: ["customerEmail", "createdAt"]) {
     customerEmail: String!
@@ -28,14 +22,8 @@ class Home extends React.Component{
         Auth.currentSession().then((response) => {
             const email = response.idToken.payload.email;
             const phoneNumber = response.idToken.payload.phone_number;
-            API.graphql(graphqlOperation(listTravellers)).then((response)=>{
-                var traveller = null;
-                for(let t of response.data.listTravellers.items){
-                    if (t.email === email){
-                        traveller = t;
-                        break;
-                    }
-                }
+            API.graphql(graphqlOperation(getTraveller,{email:email})).then((response)=>{
+                const traveller = response.data.getTraveller;
                 if (traveller === null){
                     this.props.dispatch(switchRegisterEntry(email,phoneNumber));
                 }
