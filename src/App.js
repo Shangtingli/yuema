@@ -6,7 +6,7 @@ import Amplify,{Storage} from 'aws-amplify';
 import aws_exports from './aws-exports';
 import {connect} from "react-redux"
 import Home from "./components/Home/Home"
-import TagsInput from "./components/Home/DashBoard/Admin/TagsInput";
+import SimpleMap from "./components/GoogleMap/SimpleMap";
 
 
 
@@ -18,7 +18,7 @@ Amplify.configure(aws_exports);
 class App extends React.Component{
     render(){
         return <Home/>;
-        // return <TagsInput/>
+        // return <SimpleMap/>
     }
 }
 

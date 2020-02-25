@@ -19,6 +19,7 @@ function constructTraveller(states){
     traveller["lastName"] = states.lastName;
     traveller["email"] = states.email;
     traveller["sex"] = states.sex;
+    traveller["intro"] = states.intro;
     traveller["phoneNumber"] = states.phoneNumber;
     traveller["hobbies"] = states.hobbies;
     traveller["country"] = states.country;
@@ -57,6 +58,7 @@ class DashBoard extends React.Component{
             travellerUpdate['flightTime'] = states.flightTime;
             travellerUpdate['flightDest'] = states.flightDest;
             API.graphql(graphqlOperation(updateTraveller,{input:travellerUpdate})).then((response) => {
+                debugger;
                 const traveller = response.data.updateTraveller;
                 this.props.dispatch(fillFeatures(traveller));
             });
