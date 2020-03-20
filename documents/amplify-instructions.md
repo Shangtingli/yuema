@@ -7,8 +7,9 @@
     Stick with default configuration for creating the user.
   * Download the accessKeyId, SecretAccessKeyId for future references and copy them to console prompts
   * Profile Name: Any name, suggested name --> dev.
-  * Till now **amplify configure** done, could check using **amplify status** and you would see there are currently no resources attached.
-  
+
+* Delete amplify directory and Run **amplify init**, till now could check using **amplify status** and you would see there are currently no resources attached.
+
 * Type **amplify add api** in root directory (The addition of AWS DynamoDB to store user features, store features, and comments)
   * Select GraphQL
   * Provide API Name: Any name
