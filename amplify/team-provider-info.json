@@ -1,20 +1,15 @@
 {
     "dev": {
         "awscloudformation": {
-            "AuthRoleName": "amplify-yuema-dev-220257-authRole",
-            "UnauthRoleArn": "arn:aws:iam::811625891868:role/amplify-yuema-dev-220257-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::811625891868:role/amplify-yuema-dev-220257-authRole",
+            "AuthRoleName": "amplify-yuema-frontend-dev-154456-authRole",
+            "UnauthRoleArn": "arn:aws:iam::811625891868:role/amplify-yuema-frontend-dev-154456-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::811625891868:role/amplify-yuema-frontend-dev-154456-authRole",
             "Region": "us-east-1",
-            "DeploymentBucketName": "amplify-yuema-dev-220257-deployment",
-            "UnauthRoleName": "amplify-yuema-dev-220257-unauthRole",
-            "StackName": "amplify-yuema-dev-220257",
-            "StackId": "arn:aws:cloudformation:us-east-1:811625891868:stack/amplify-yuema-dev-220257/031f6f30-5539-11ea-a24a-1208f0f76cbf",
-            "AmplifyAppId": "d1d5tsodv4msu7"
-        },
-        "categories": {
-            "auth": {
-                "yuema37e49813": {}
-            }
+            "DeploymentBucketName": "amplify-yuema-frontend-dev-154456-deployment",
+            "UnauthRoleName": "amplify-yuema-frontend-dev-154456-unauthRole",
+            "StackName": "amplify-yuema-frontend-dev-154456",
+            "StackId": "arn:aws:cloudformation:us-east-1:811625891868:stack/amplify-yuema-frontend-dev-154456/6d813ab0-6afc-11ea-adfe-1225390e8313",
+            "AmplifyAppId": "d29xc9if4ugu9y"
         }
     }
 }
