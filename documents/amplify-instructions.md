@@ -19,9 +19,9 @@
   * Do you have an annotated GraphQL schema? --> No
   * Do you want a guided schema creation --> No
   * Provide a custom type name --> MyType
-  * Copy contents in *public/proposedschema.graphql* to *⁨amplify⁩/⁨backend⁩/api⁩/yuema/schema.graphql*
+  * Copy contents in *public/proposedschema.graphql* to *⁨amplify⁩/⁨backend⁩/api⁩/yuema/schema.graphql* lol
   
-*⁩ Type **amplify add storage** in root directory (The AWS S3 Storage for Multimedia files, for example, Avatar image):
+* Type **amplify add storage** in root directory (The AWS S3 Storage for Multimedia files, for example, Avatar image):
   * Select Service --> Content
   * Provide a friendly name : Type any name
   * Bucket Name: Default
