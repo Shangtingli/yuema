@@ -6,6 +6,8 @@ export const onCreateTraveller = /* GraphQL */ `
     onCreateTraveller {
       firstName
       lastName
+      flightDest
+      flightTime
       email
       phoneNumber
       hobbies
@@ -24,8 +26,6 @@ export const onCreateTraveller = /* GraphQL */ `
       }
       avatarKey
       avatarUrl
-      flightDest
-      flightTime
     }
   }
 `;
@@ -34,6 +34,8 @@ export const onUpdateTraveller = /* GraphQL */ `
     onUpdateTraveller {
       firstName
       lastName
+      flightDest
+      flightTime
       email
       phoneNumber
       hobbies
@@ -52,8 +54,6 @@ export const onUpdateTraveller = /* GraphQL */ `
       }
       avatarKey
       avatarUrl
-      flightDest
-      flightTime
     }
   }
 `;
@@ -62,6 +62,8 @@ export const onDeleteTraveller = /* GraphQL */ `
     onDeleteTraveller {
       firstName
       lastName
+      flightDest
+      flightTime
       email
       phoneNumber
       hobbies
@@ -80,8 +82,6 @@ export const onDeleteTraveller = /* GraphQL */ `
       }
       avatarKey
       avatarUrl
-      flightDest
-      flightTime
     }
   }
 `;
@@ -107,6 +107,8 @@ export const onCreateComment = /* GraphQL */ `
       traveller {
         firstName
         lastName
+        flightDest
+        flightTime
         email
         phoneNumber
         hobbies
@@ -120,8 +122,6 @@ export const onCreateComment = /* GraphQL */ `
         }
         avatarKey
         avatarUrl
-        flightDest
-        flightTime
       }
     }
   }
@@ -148,6 +148,8 @@ export const onUpdateComment = /* GraphQL */ `
       traveller {
         firstName
         lastName
+        flightDest
+        flightTime
         email
         phoneNumber
         hobbies
@@ -161,8 +163,6 @@ export const onUpdateComment = /* GraphQL */ `
         }
         avatarKey
         avatarUrl
-        flightDest
-        flightTime
       }
     }
   }
@@ -189,6 +189,8 @@ export const onDeleteComment = /* GraphQL */ `
       traveller {
         firstName
         lastName
+        flightDest
+        flightTime
         email
         phoneNumber
         hobbies
@@ -202,8 +204,6 @@ export const onDeleteComment = /* GraphQL */ `
         }
         avatarKey
         avatarUrl
-        flightDest
-        flightTime
       }
     }
   }

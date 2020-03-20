@@ -10,6 +10,11 @@
             "StackName": "amplify-yuema-frontend-dev-154456",
             "StackId": "arn:aws:cloudformation:us-east-1:811625891868:stack/amplify-yuema-frontend-dev-154456/6d813ab0-6afc-11ea-adfe-1225390e8313",
             "AmplifyAppId": "d29xc9if4ugu9y"
+        },
+        "categories": {
+            "auth": {
+                "yuemafrontend55e09b3b": {}
+            }
         }
     }
 }

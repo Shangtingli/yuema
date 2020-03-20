@@ -6,6 +6,8 @@ export const getTraveller = /* GraphQL */ `
     getTraveller(email: $email) {
       firstName
       lastName
+      flightDest
+      flightTime
       email
       phoneNumber
       hobbies
@@ -24,8 +26,6 @@ export const getTraveller = /* GraphQL */ `
       }
       avatarKey
       avatarUrl
-      flightDest
-      flightTime
     }
   }
 `;
@@ -47,6 +47,8 @@ export const listTravellers = /* GraphQL */ `
       items {
         firstName
         lastName
+        flightDest
+        flightTime
         email
         phoneNumber
         hobbies
@@ -60,8 +62,6 @@ export const listTravellers = /* GraphQL */ `
         }
         avatarKey
         avatarUrl
-        flightDest
-        flightTime
       }
       nextToken
     }
@@ -89,6 +89,8 @@ export const getComment = /* GraphQL */ `
       traveller {
         firstName
         lastName
+        flightDest
+        flightTime
         email
         phoneNumber
         hobbies
@@ -102,8 +104,6 @@ export const getComment = /* GraphQL */ `
         }
         avatarKey
         avatarUrl
-        flightDest
-        flightTime
       }
     }
   }
@@ -132,6 +132,8 @@ export const listComments = /* GraphQL */ `
         traveller {
           firstName
           lastName
+          flightDest
+          flightTime
           email
           phoneNumber
           hobbies
@@ -142,8 +144,6 @@ export const listComments = /* GraphQL */ `
           intro
           avatarKey
           avatarUrl
-          flightDest
-          flightTime
         }
       }
       nextToken

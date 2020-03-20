@@ -9,6 +9,8 @@ export const createTraveller = /* GraphQL */ `
     createTraveller(input: $input, condition: $condition) {
       firstName
       lastName
+      flightDest
+      flightTime
       email
       phoneNumber
       hobbies
@@ -27,8 +29,6 @@ export const createTraveller = /* GraphQL */ `
       }
       avatarKey
       avatarUrl
-      flightDest
-      flightTime
     }
   }
 `;
@@ -40,6 +40,8 @@ export const updateTraveller = /* GraphQL */ `
     updateTraveller(input: $input, condition: $condition) {
       firstName
       lastName
+      flightDest
+      flightTime
       email
       phoneNumber
       hobbies
@@ -58,8 +60,6 @@ export const updateTraveller = /* GraphQL */ `
       }
       avatarKey
       avatarUrl
-      flightDest
-      flightTime
     }
   }
 `;
@@ -71,6 +71,8 @@ export const deleteTraveller = /* GraphQL */ `
     deleteTraveller(input: $input, condition: $condition) {
       firstName
       lastName
+      flightDest
+      flightTime
       email
       phoneNumber
       hobbies
@@ -89,8 +91,6 @@ export const deleteTraveller = /* GraphQL */ `
       }
       avatarKey
       avatarUrl
-      flightDest
-      flightTime
     }
   }
 `;
@@ -119,6 +119,8 @@ export const createComment = /* GraphQL */ `
       traveller {
         firstName
         lastName
+        flightDest
+        flightTime
         email
         phoneNumber
         hobbies
@@ -132,8 +134,6 @@ export const createComment = /* GraphQL */ `
         }
         avatarKey
         avatarUrl
-        flightDest
-        flightTime
       }
     }
   }
@@ -163,6 +163,8 @@ export const updateComment = /* GraphQL */ `
       traveller {
         firstName
         lastName
+        flightDest
+        flightTime
         email
         phoneNumber
         hobbies
@@ -176,8 +178,6 @@ export const updateComment = /* GraphQL */ `
         }
         avatarKey
         avatarUrl
-        flightDest
-        flightTime
       }
     }
   }
@@ -207,6 +207,8 @@ export const deleteComment = /* GraphQL */ `
       traveller {
         firstName
         lastName
+        flightDest
+        flightTime
         email
         phoneNumber
         hobbies
@@ -220,8 +222,6 @@ export const deleteComment = /* GraphQL */ `
         }
         avatarKey
         avatarUrl
-        flightDest
-        flightTime
       }
     }
   }
