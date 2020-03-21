@@ -32,11 +32,11 @@ class CharacteristicForm extends React.Component {
         {
             var start =new Date();
             start.setHours(start.getHours() + i + 1);
-            debugger;
+            ;
             times[i] = toString(start);
         }
         const { getFieldDecorator } = this.props.form;
-        debugger;
+        ;
         return (
             <div className='form-dashboard-container'>
                 <img src={Logo} className="logo-image"/>
@@ -63,7 +63,7 @@ class CharacteristicForm extends React.Component {
                                 onChange={this.handleSelectChange}
                             >
                                 {times.map((time) => {
-                                    debugger;
+                                    ;
                                     return <Option value={time} key={time}>{time}</Option>
                                 })}
                             </Select>

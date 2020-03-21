@@ -10,6 +10,8 @@ import CharacteristicForm from "../Forms/CharacteristicForm"
 import TodayForm from "../Forms/TravelPlan"
 import {getTraveller} from "../../graphql/queries"
 import HobbyForm2 from "../Forms/HobbyForm2"
+import Queue from 'aws-amplify';
+
 class Home extends React.Component{
     /**
      * type Order @model @key(fields: ["customerEmail", "createdAt"]) {
@@ -48,6 +50,7 @@ class Home extends React.Component{
     }
 
     render(){
+        console.log(Queue);
         const states = store.getState();
         if (states.flow === -1){
             return (<Loading/>)

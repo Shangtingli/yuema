@@ -10,7 +10,7 @@ export default class Traveller extends React.Component{
 
     render(){
         const data = this.props.data;
-        debugger;
+        ;
         return(
             <div style={{marginLeft:"5px", marginRight:"5px", textAlign:"center"}}>
             <PersonalInfo

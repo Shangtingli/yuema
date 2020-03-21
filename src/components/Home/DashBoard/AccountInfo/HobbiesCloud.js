@@ -1,7 +1,7 @@
 import * as React from "react";
 import {COLOR_SCHEMES} from "../../../Constants";
 import {Tag} from "antd";
-
+import Queue from 'aws-amplify';
 
 export default class HobbiesCloud extends React.Component{
 

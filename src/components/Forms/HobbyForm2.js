@@ -43,7 +43,7 @@ export default class HobbyForm2 extends React.Component{
         const newHobbiesPool = new Set(this.state.hobbiesPool);
         newHobbies.add(hobby);
         newHobbiesPool.delete(hobby);
-        debugger;
+        ;
         this.setState({hobbies:newHobbies, hobbiesPool : newHobbiesPool});
     };
 
