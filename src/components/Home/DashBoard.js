@@ -34,8 +34,10 @@ class DashBoard extends React.Component{
      * @param traveller
      */
 
-    saveTravellerFeatures = (traveller) => {
+    saveTravellerFeatures = (traveller, lat, long) => {
         API.graphql(graphqlOperation(createTraveller,{input: traveller})).then((response) =>{
+            traveller['lat'] = lat;
+            traveller['long'] = long;
             this.props.dispatch(fillFeatures(traveller));
         })
     }
@@ -61,7 +63,6 @@ class DashBoard extends React.Component{
                     navigator.geolocation.getCurrentPosition((position) => {
                         traveller['lat'] = position.coords.latitude;
                         traveller['long'] = position.coords.longitude;
-                        debugger;
                         this.props.dispatch(fillFeatures(traveller));
                     })
                 }
@@ -82,15 +83,11 @@ class DashBoard extends React.Component{
                 traveller["avatarUrl"]=response;
                 if (states.lat === undefined || states.long === undefined){
                     navigator.geolocation.getCurrentPosition((position) => {
-                        traveller['lat'] = position.coords.latitude;
-                        traveller['long'] = position.coords.longitude;
-                        this.saveTravellerFeatures(traveller);
+                        this.saveTravellerFeatures(traveller,position.coords.latitude,position.coords.longitude);
                     })
                 }
                 else{
-                    traveller['lat'] = states.lat;
-                    traveller['long'] = states.long;
-                    this.saveTravellerFeatures(traveller);
+                    this.saveTravellerFeatures(traveller,states.lat, states.long);
                 }
 
             })

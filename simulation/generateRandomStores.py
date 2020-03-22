@@ -23,17 +23,17 @@ all_tags = [
 ]
 def generate(id,name):
     store = {
-        "id": {"S":id},
+        "id": {"S":str(id)},
         "storeName": {"S": name},
         "description": {"S": "ABCDEFG"},
         "tags": {"SS": random.sample(all_tags,5)},
-        "lat": 0.0,
-        "long": 0.0,
-        "floor": random.randint(1,3),
-        "terminal": random.randint(1,2)
+        "lat": {"N":str(0.0)},
+        "long": {"N":str(0.0)},
+        "floor": {"N":str(random.randint(1,3))},
+        "terminal": {"N":str(random.randint(1,2))}
     }
 
-    return {"PutRequset":{"item":store}}
+    return {"PutRequest":{"Item":store}}
 
 stores = []
 for id in range(0,25):
