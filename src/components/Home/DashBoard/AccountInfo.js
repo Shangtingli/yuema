@@ -1,7 +1,7 @@
 import * as React from "react"
 import store from "../../../store"
 import PersonalInfo from "./AccountInfo/PersonalInfo";
-import HobbiesCloud from "./AccountInfo/HobbiesCloud";
+import CategoriesCloud from "./AccountInfo/CategoriesCloud";
 import TravelPlan from "./AccountInfo/TravelPlan";
 
 class AccountInfo extends React.Component{
@@ -24,10 +24,14 @@ class AccountInfo extends React.Component{
                 />
 
                 <br/>
-                <HobbiesCloud hobbies={data.hobbies}/>
+                <CategoriesCloud hobbies={data.hobbies}/>
 
                 <br/>
                 <TravelPlan flightTime={data.flightTime} flightDest={data.flightDest}/>
+
+                <br/>
+                <div> Lattitude: {data.lat}</div>
+                <div> Long: {data.long}</div>
             </div>
         );
     }

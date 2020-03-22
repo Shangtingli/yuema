@@ -6,8 +6,6 @@ export const getTraveller = /* GraphQL */ `
     getTraveller(email: $email) {
       firstName
       lastName
-      flightDest
-      flightTime
       email
       phoneNumber
       hobbies
@@ -47,8 +45,6 @@ export const listTravellers = /* GraphQL */ `
       items {
         firstName
         lastName
-        flightDest
-        flightTime
         email
         phoneNumber
         hobbies
@@ -89,8 +85,6 @@ export const getComment = /* GraphQL */ `
       traveller {
         firstName
         lastName
-        flightDest
-        flightTime
         email
         phoneNumber
         hobbies
@@ -132,8 +126,6 @@ export const listComments = /* GraphQL */ `
         traveller {
           firstName
           lastName
-          flightDest
-          flightTime
           email
           phoneNumber
           hobbies

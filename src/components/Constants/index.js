@@ -3,6 +3,7 @@ export const STORES_EACH_PAGE = 3;
 export const COMMENTS_EACH_PAGE = 4;
 export const TRAVELLERS_EACH_PAGE = 2;
 export const HOURS_CONSIDERED = 12;
+export const CACHE_DURATION_MINUTES= 10;
 // export const TRAVEL_PLAN_COOKIE_TOKEN_KEY="travel_plan_cookie_token_key_yuema_application_author_lst";
 // export const TRAVEL_PLAN_VALID_DURATION_HOURS = 6;
 export const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
@@ -19,56 +20,25 @@ for(let i=0; i< COLOR_SCHEMES1.length; ++i){
  * Reference : http://www.notsoboringlife.com/popular-hobbies/
  * @type {string[]}
  */
-export const ALL_HOBBIES = [
-    'Reading',
-    'Watching TV',
-    'Family Time',
+export const ALL_CATEGORIES = [
+    'Clothing',
+    'Shoes',
+    'Consumer Electronics',
+    'Books',
     'Movies',
-    'Fishing',
-    'Computer',
-    'Gardening',
-    'Walking',
-    'Exercise',
+    'Cosmetics',
+    'Food and Drinks',
+    'Sports',
     'Music',
     'Entertaining',
-    'Hunting',
-    'Team Sports',
-    'Shopping',
+    'DIY',
+    'Games',
     'Traveling',
-    'Sleeping',
-    'Socializing',
-    'Sewing',
-    'Golf',
-    'Church Activities',
-    'Relaxing',
-    'Playing Music',
-    'Housework',
-    'Crafts',
-    'Watching Sports',
-    'Bicycling',
-    'Playing Cards',
-    'Hiking',
-    'Cooking',
-    'Eating Out',
-    'Dating Online',
-    'Swimming',
-    'Camping',
-    'Skiing',
-    'Working on Cars',
-    'Writing',
-    'Boating',
-    'Motorcycling',
-    'Animal Care',
-    'Bowling',
-    'Painting',
-    'Running',
-    'Dancing',
-    'Horseback Riding',
-    'Tennis',
-    'Theater',
-    'Billiards',
-    'Beach',
-    'Volunteer Work',
+    'Electronics',
+    'Furniture',
+    'Accessories',
+    'Luxury',
+    'Economical'
 ]
 export const MAXIMUM_HOBBIES_SELECTED = 20;
 export const ALL_IATA = ['ABE',

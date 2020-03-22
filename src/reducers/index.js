@@ -1,5 +1,7 @@
 import {initState, startState} from './stateInit';
 import {ADMIN_ROLES} from "../components/Constants"
+import {Cache} from "aws-amplify";
+import {CACHE_DURATION_MINUTES} from "../components/Constants";
 
 function fillData(data,newState){
     const keys=Object.keys(data);
@@ -10,6 +12,21 @@ function fillData(data,newState){
     }
 }
 
+function setCache(newState){
+    const toCache = JSON.stringify({
+        email: newState.email,
+        flightDest: newState.flightDest,
+        flightTime: newState.flightTime,
+        lat: newState.lat,
+        long: newState.long
+    })
+
+    const now = new Date();
+    var d2 = new Date ( now );
+    d2.setMinutes ( now.getMinutes() + CACHE_DURATION_MINUTES );
+    Cache.setItem(newState.email,toCache,{ expires: d2.getTime() })
+    return;
+}
 const operations = (state = initState, action) => {
     const newState = {...state};
     switch(action.type){
@@ -47,7 +64,19 @@ const operations = (state = initState, action) => {
             if (ADMIN_ROLES.includes(action.email)){
                 newState.isAdmin = true;
             }
-            newState.flow = 2;
+            const record = Cache.getItem(newState.email);
+            if (record === null){
+                debugger;
+                newState.flow = 2;
+            }
+            else{
+                const json = JSON.parse(record);
+                newState.flightTime=json['flightTime'];
+                newState.flightDest = json['flightDest'];
+                newState.lat = json['lat'];
+                newState.long=json['long'];
+                newState.flow =  3;
+            }
             return newState;
 
         /**
@@ -97,7 +126,23 @@ const operations = (state = initState, action) => {
             if (newState.flow === 2){
                 newState.isLoggedIn = true;
             }
-            /*********************************/
+
+
+            if (newState.flow === 3){
+                if (newState['lat'] === undefined || newState['long'] === undefined){
+                    navigator.geolocation.getCurrentPosition((position) => {
+                        newState['lat'] = position.coords.latitude;
+                        newState['long'] = position.coords.longitude;
+                        setCache(newState);
+                        return newState;
+                    })
+                }
+                else{
+                    setCache(newState);
+                    return newState;
+                }
+            }
+
             return newState;
         default:
             return state;

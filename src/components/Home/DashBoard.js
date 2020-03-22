@@ -9,9 +9,9 @@ import Loading from "./DashBoard/Loading"
 import {fillFeatures} from "../../actions/index";
 import {createTraveller} from "../../graphql/mutations"
 import {API, graphqlOperation,Storage} from 'aws-amplify';
-import { updateTraveller} from "../../graphql/mutations";
 import AddStorePage from "./DashBoard/Admin/AddStorePage"
 import '../../styles/home/dashboard.scss';
+import {getTraveller} from "../../graphql/queries"
 
 function constructTraveller(states){
     const traveller = {};
@@ -25,8 +25,6 @@ function constructTraveller(states){
     traveller["country"] = states.country;
     traveller["ageRange"] = states.ageRange;
     traveller["avatarKey"]=states.avatarKey;
-    traveller["flightTime"] =states.flightTime;
-    traveller["flightDest"] = states.flightDest;
 
     return traveller;
 }
@@ -42,26 +40,35 @@ class DashBoard extends React.Component{
         })
     }
 
+
     componentDidMount() {
         const states = store.getState();
         const traveller = constructTraveller(states);
+        API.graphql(graphqlOperation(createTraveller,{input: traveller})).then((response) =>{
+            this.props.dispatch(fillFeatures(traveller));
+        })
         /**
          * If the user comes from login entry
          */
         if (states.hasFeaturesStored) {
-            /**
-             * GraphQL Update: Could only provide part that is being updated.
-             */
-
-            const travellerUpdate = {};
-            travellerUpdate['email'] = states.email;
-            travellerUpdate['flightTime'] = states.flightTime;
-            travellerUpdate['flightDest'] = states.flightDest;
-            API.graphql(graphqlOperation(updateTraveller,{input:travellerUpdate})).then((response) => {
-                debugger;
-                const traveller = response.data.updateTraveller;
-                this.props.dispatch(fillFeatures(traveller));
-            });
+            debugger;
+            API.graphql(graphqlOperation(getTraveller,{email: states.email})).then((response) =>{
+                const traveller = response.data.getTraveller;
+                traveller['flightTime'] = states.flightTime;
+                traveller['flightDest'] = states.flightDest;
+                if (states.lat === undefined || states.long === undefined){
+                    navigator.geolocation.getCurrentPosition((position) => {
+                        traveller['lat'] = position.coords.latitude;
+                        traveller['long'] = position.coords.longitude;
+                        this.props.dispatch(fillFeatures(traveller));
+                    })
+                }
+                else{
+                    traveller['lat'] = states.lat;
+                    traveller['long'] = states.long;
+                    this.props.dispatch(fillFeatures(traveller));
+                }
+            })
 
         }
         /**
@@ -71,7 +78,19 @@ class DashBoard extends React.Component{
             // saveTravelPlanToCookie(states.flightTime,states.flightTime);
             Storage.get(states.avatarKey).then((response) => {
                 traveller["avatarUrl"]=response;
-                this.saveTravellerFeatures(traveller);
+                if (states.lat === undefined || states.long === undefined){
+                    navigator.geolocation.getCurrentPosition((position) => {
+                        traveller['lat'] = position.coords.latitude;
+                        traveller['long'] = position.coords.longitude;
+                        this.saveTravellerFeatures(traveller);
+                    })
+                }
+                else{
+                    traveller['lat'] = states.lat;
+                    traveller['long'] = states.long;
+                    this.saveTravellerFeatures(traveller);
+                }
+
             })
         }
     }

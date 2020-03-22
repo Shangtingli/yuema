@@ -1,4 +1,4 @@
-import {Form, Button, Select} from 'antd';
+import {Form, Button, Select, Input} from 'antd';
 import React from 'react';
 import 'antd/dist/antd.css';
 import { connect } from 'react-redux';
@@ -15,7 +15,7 @@ function toString(time){
     return month + " " + date + " " + hour + ":00";
 }
 
-class CharacteristicForm extends React.Component {
+class TravelPlan extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
@@ -69,6 +69,22 @@ class CharacteristicForm extends React.Component {
                             </Select>
                             )}
                         </Form.Item>
+
+                        <Form.Item label="Latitude">
+                            {getFieldDecorator('lat', {
+                                rules: [{ required: false }],
+                            })(
+                                <Input placeholder="Left blank to use your default location"/>
+                            )}
+                        </Form.Item>
+
+                        <Form.Item label="Longitude">
+                            {getFieldDecorator('long', {
+                                rules: [{ required: false}],
+                            })(
+                                <Input placeholder="Left blank to use your default location"/>
+                            )}
+                        </Form.Item>
                         <Form.Item wrapperCol={{ span: 12, offset: 5 }}>
                             <Button type="primary" htmlType="submit">
                                 Submit
@@ -81,9 +97,9 @@ class CharacteristicForm extends React.Component {
     }
 }
 
-const WrappedCharacteristicForm= Form.create({ name: 'coordinated' })(CharacteristicForm);
+const WrappedTravelPlan= Form.create({ name: 'coordinated' })(TravelPlan);
 const mapStateToProps = (state) => ({
     flightDest: state.flightDest,
     flightTime: state.flightTime,
 });
-export default connect(mapStateToProps)(WrappedCharacteristicForm)
+export default connect(mapStateToProps)(WrappedTravelPlan)

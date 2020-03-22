@@ -12,7 +12,7 @@ export const startState = {
     isLoggedIn: false,
 
     /**
-     * Features
+     * Features in DynamoDB
      */
     id: '',
     sex: '',
@@ -24,10 +24,18 @@ export const startState = {
     country: '',
     flightTime: '',
     flightDest: '',
+    //TODO: Change hobbies to categories across all project
     hobbies: [],
+
     avatarUrl: null,
     avatarKey: null,
     intro: null,
+
+    /**
+     * Features in Cache
+     */
+    lat: undefined,
+    long: undefined,
     /**
      * NavBar
      */

@@ -1,5 +1,5 @@
 import * as React from "react"
-import {Auth,API, graphqlOperation} from 'aws-amplify';
+import {Auth,API, graphqlOperation, Cache} from 'aws-amplify';
 import {connect } from 'react-redux';
 import NavBar from "./NavBar"
 import {changeTab, logout, nextStep, switchLoginEntry, switchRegisterEntry} from "../../actions/index"
@@ -9,8 +9,7 @@ import Loading from "./DashBoard/Loading"
 import CharacteristicForm from "../Forms/CharacteristicForm"
 import TodayForm from "../Forms/TravelPlan"
 import {getTraveller} from "../../graphql/queries"
-import HobbyForm2 from "../Forms/HobbyForm2"
-import Queue from 'aws-amplify';
+import CategorieForm from "../Forms/CategoryForm"
 
 class Home extends React.Component{
     /**
@@ -50,7 +49,6 @@ class Home extends React.Component{
     }
 
     render(){
-        console.log(Queue);
         const states = store.getState();
         if (states.flow === -1){
             return (<Loading/>)
@@ -59,7 +57,7 @@ class Home extends React.Component{
             return (<CharacteristicForm nextStep={this.nextStep} email={states.email}/>);
         }
         else if (states.flow === 1){
-            return (<HobbyForm2 nextStep = {this.nextStep}/>)
+            return (<CategorieForm nextStep = {this.nextStep}/>)
         }
         else if (states.flow === 2){
             return (<TodayForm nextStep={this.nextStep}/>);

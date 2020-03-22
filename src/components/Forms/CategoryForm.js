@@ -1,15 +1,15 @@
 
 import * as React from "react";
-import {ALL_HOBBIES, COLOR_SCHEMES, MAXIMUM_HOBBIES_SELECTED} from "../Constants";
+import {ALL_CATEGORIES, COLOR_SCHEMES, MAXIMUM_HOBBIES_SELECTED} from "../Constants";
 import {Tag,Button} from "antd";
 import Logo from "../../assets/logo.svg";
 
-export default class HobbyForm2 extends React.Component{
+export default class CategoryForm extends React.Component{
 
     constructor(props) {
         super(props);
         this.state={
-            hobbiesPool: new Set(ALL_HOBBIES),
+            hobbiesPool: new Set(ALL_CATEGORIES),
             hobbies: new Set([])
         };
     }

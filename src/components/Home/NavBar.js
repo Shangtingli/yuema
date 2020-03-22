@@ -4,21 +4,15 @@ import {changeTab,logout} from '../../actions/index';
 import '../../styles/home/home.scss';
 import store from "../../store";
 import {connect} from "react-redux"
-import { Auth } from 'aws-amplify';
+import LogoutPopover from "./NavBar/LogoutPopover"
+
+
 class NavBar extends React.Component {
 
     handleClickTab = e => {
         this.props.dispatch(changeTab(e.key));
     };
 
-    handleLogout = e => {
-        /**
-         * TODO: Auth.signOut() might not be enough for clearing session and cookies
-         */
-        Auth.signOut({ global: true }).then(response => {
-            console.log(response);
-        });
-    }
     render() {
         const states=  store.getState();
 
@@ -45,7 +39,7 @@ class NavBar extends React.Component {
                 </Menu>
                 <div style={{float:'right', width: '20%',marginTop:"10px"}}>
                     <h3 style={{float:'left',marginTop:"5px"}}> {`Hello,${states.firstName}`}</h3>
-                    <Button className="navbar-logout-button" onClick={this.handleLogout} style={{float:'right'}}> Logout </Button>
+                    <LogoutPopover email={states.email}/>
                 </div>
             </div>
         );

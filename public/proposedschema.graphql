@@ -14,6 +14,8 @@ type Traveller @model @key(fields: ["email"]) {
   comments: [Comment!] @connection(name: "TravellerComments")
   avatarKey: String
   avatarUrl: String
+  lat: Float!
+  long: Float!
 }
 
 type Comment @model{

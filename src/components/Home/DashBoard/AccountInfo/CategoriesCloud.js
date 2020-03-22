@@ -1,9 +1,8 @@
 import * as React from "react";
 import {COLOR_SCHEMES} from "../../../Constants";
 import {Tag} from "antd";
-import Queue from 'aws-amplify';
 
-export default class HobbiesCloud extends React.Component{
+export default class CategoriesCloud extends React.Component{
 
     createTag = (entry) => {
         const index = entry[0] % COLOR_SCHEMES.length;
@@ -24,7 +23,7 @@ export default class HobbiesCloud extends React.Component{
              * should be enough to center the children
              */
             <div style={{border: "1px dashed black", height: "170px", width:"400px" ,textAlign:"center",margin:"auto"}}>
-                <h3> Favorite Hobbies :</h3>
+                <h3> Favorite Categories :</h3>
                 <div style={{margin:"auto"}}>
                     {hobbies_entries.map(this.createTag)}
                 </div>
