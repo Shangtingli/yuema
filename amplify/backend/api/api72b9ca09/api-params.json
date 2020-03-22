@@ -1,0 +1,41 @@
+{
+    "paths": [
+        {
+            "name": "/people",
+            "lambdaFunction": "yuemafrontend0bae533b",
+            "privacy": {
+                "open": true
+            }
+        },
+        {
+            "name": "/store",
+            "lambdaFunction": "yuemafrontend0bae533b",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "api72b9ca09",
+    "apiName": "api72b9ca09",
+    "functionArns": [
+        {
+            "lambdaFunction": "yuemafrontend0bae533b"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-yuema-frontend-dev-154456-authRole",
+        "unAuthRoleName": "amplify-yuema-frontend-dev-154456-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "yuemafrontend0bae533b",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

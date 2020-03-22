@@ -21,6 +21,20 @@
 					}
 				}
 			}
+		},
+		"api72b9ca09": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "yuemafrontend0bae533b",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
 		}
 	},
 	"storage": {
@@ -35,5 +49,11 @@
 			"providerPlugin": "awscloudformation"
 		}
 	},
-	"function": {}
+	"function": {
+		"yuemafrontend0bae533b": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true
+		}
+	}
 }
