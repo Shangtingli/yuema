@@ -73,7 +73,7 @@ export const getComment = /* GraphQL */ `
         description
         tags
         lat
-        lng
+        long
         floor
         terminal
         comments {
@@ -117,7 +117,7 @@ export const listComments = /* GraphQL */ `
           description
           tags
           lat
-          lng
+          long
           floor
           terminal
         }
@@ -150,7 +150,7 @@ export const getStore = /* GraphQL */ `
       description
       tags
       lat
-      lng
+      long
       floor
       terminal
       comments {
@@ -177,7 +177,7 @@ export const listStores = /* GraphQL */ `
         description
         tags
         lat
-        lng
+        long
         floor
         terminal
         comments {

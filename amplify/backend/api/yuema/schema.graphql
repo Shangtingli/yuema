@@ -27,8 +27,8 @@ type Store @model{
     storeName: String!
     description: String!
     tags: [String!]
-    lat: String
-    lng: String
+    lat: Float!
+    long: Float!
     floor: Int
     terminal: Int
     comments: [Comment!] @connection(name: "CommentStore")

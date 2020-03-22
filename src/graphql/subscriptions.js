@@ -89,7 +89,7 @@ export const onCreateComment = /* GraphQL */ `
         description
         tags
         lat
-        lng
+        long
         floor
         terminal
         comments {
@@ -128,7 +128,7 @@ export const onUpdateComment = /* GraphQL */ `
         description
         tags
         lat
-        lng
+        long
         floor
         terminal
         comments {
@@ -167,7 +167,7 @@ export const onDeleteComment = /* GraphQL */ `
         description
         tags
         lat
-        lng
+        long
         floor
         terminal
         comments {
@@ -204,7 +204,7 @@ export const onCreateStore = /* GraphQL */ `
       description
       tags
       lat
-      lng
+      long
       floor
       terminal
       comments {
@@ -226,7 +226,7 @@ export const onUpdateStore = /* GraphQL */ `
       description
       tags
       lat
-      lng
+      long
       floor
       terminal
       comments {
@@ -248,7 +248,7 @@ export const onDeleteStore = /* GraphQL */ `
       description
       tags
       lat
-      lng
+      long
       floor
       terminal
       comments {

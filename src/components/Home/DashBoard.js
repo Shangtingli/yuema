@@ -44,15 +44,16 @@ class DashBoard extends React.Component{
     componentDidMount() {
         const states = store.getState();
         const traveller = constructTraveller(states);
-        API.graphql(graphqlOperation(createTraveller,{input: traveller})).then((response) =>{
-            this.props.dispatch(fillFeatures(traveller));
-        })
+        // API.graphql(graphqlOperation(createTraveller,{input: traveller})).then((response) =>{
+        //     this.props.dispatch(fillFeatures(traveller));
+        // })
         /**
          * If the user comes from login entry
          */
         if (states.hasFeaturesStored) {
             debugger;
             API.graphql(graphqlOperation(getTraveller,{email: states.email})).then((response) =>{
+                debugger;
                 const traveller = response.data.getTraveller;
                 traveller['flightTime'] = states.flightTime;
                 traveller['flightDest'] = states.flightDest;
@@ -60,6 +61,7 @@ class DashBoard extends React.Component{
                     navigator.geolocation.getCurrentPosition((position) => {
                         traveller['lat'] = position.coords.latitude;
                         traveller['long'] = position.coords.longitude;
+                        debugger;
                         this.props.dispatch(fillFeatures(traveller));
                     })
                 }
