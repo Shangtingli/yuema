@@ -1,6 +1,7 @@
 import random
 import json
 
+# Could use  aws dynamodb batch-write-item     --request-items file://data.json
 all_tags = [
     'Clothing',
     'Shoes',
@@ -36,7 +37,7 @@ def generate(id,name):
     return {"PutRequest":{"Item":store}}
 
 stores = []
-for id in range(0,25):
+for id in range(0,10):
     stores.append(generate(id,chr(ord('a') + id)))
     
 with open('data.json','w') as file:

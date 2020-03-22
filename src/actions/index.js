@@ -35,10 +35,14 @@ export const changeTab = (tab) => ({
     tab : tab
 })
 
-
-export const writeStoresFromDatabase = (data) => ({
+export const writeFavoriteStoresFromDatabase = (data) => ({
+    type: "WRITE_FAVORITE_STORES_FROM_DATABASE",
+    data:data
+})
+export const writeStoresFromDatabase = (favoriteStoreData, notFavoriteStoreData) => ({
     type: "WRITE_STORES_FROM_DATABASE",
-    data: data
+    favoriteStoreData: favoriteStoreData,
+    notFavoriteStoreData: notFavoriteStoreData
 })
 
 export const writeCommentsFromDatabase = (data) => ({
@@ -50,3 +54,14 @@ export const writeTravellersFromDatabase = (data) => ({
     type: "WRITE_TRAVELLERS_FROM_DATABASE",
     data: data
 })
+
+export const addFavorite = (storeId) => ({
+    type: "ADD_FAVORITE",
+    storeId: storeId
+})
+
+export const removeFavorite = (storeId) => ({
+    type: "REMOVE_FAVORITE",
+    storeId: storeId
+})
+

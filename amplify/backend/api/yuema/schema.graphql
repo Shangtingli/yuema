@@ -12,13 +12,7 @@ type Traveller @model @key(fields: ["email"]) {
   comments: [Comment!] @connection(name: "TravellerComments")
   avatarKey: String
   avatarUrl: String
-  favorites: [Middle!] @connection(name: "TravellerMiddle")
-}
-
-type Middle @model{
-    id: ID!
-    store: Store! @connection(name: "StoreMiddle")
-    traveller: Traveller! @connection(name: "TravellerMiddle")
+  favorites: [String!]
 }
 
 type Comment @model{
@@ -39,5 +33,4 @@ type Store @model{
     floor: Int
     terminal: Int
     comments: [Comment!] @connection(name: "CommentStore")
-    travellers: [Middle!] @connection(name:"StoreMiddle")
 }

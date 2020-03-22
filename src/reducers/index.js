@@ -27,9 +27,51 @@ function setCache(newState){
     Cache.setItem(newState.email,toCache,{ expires: d2.getTime() })
     return;
 }
+
+
+
 const operations = (state = initState, action) => {
     const newState = {...state};
     switch(action.type){
+
+        case "REMOVE_FAVORITE":
+            var filtered = newState['favorites'].filter(function(value, index, arr){
+                return value != action.storeId;
+            });
+            newState['favorites'] = filtered;
+
+            var filtered2 = newState.favoriteStoreData.filter(function(value,index,arr){
+                return value['id'] != action.storeId;
+            })
+
+
+            for (let data of newState.favoriteStoreData){
+                if (data.id === action.storeId){
+                    newState.notFavoriteStoreData.push(data);
+                    break;
+                }
+            }
+
+            newState.favoriteStoreData = filtered2;
+            return newState;
+
+        case "ADD_FAVORITE":
+            newState['favorites'].push(action.storeId);
+            for (let data of newState.notFavoriteStoreData){
+                if (data.id === action.storeId){
+                    newState.favoriteStoreData.push(data);
+                    break;
+                }
+            }
+
+            var filtered = newState.notFavoriteStoreData.filter(function(value, index, arr){
+                return value['id'] != action.storeId;
+            });
+
+
+            newState.notFavoriteStoreData = filtered;
+            debugger;
+            return newState;
         /**
          * Write the traveller information from database to the redux store
          */
@@ -48,7 +90,8 @@ const operations = (state = initState, action) => {
          * Write the store data information from database to the redux store
          */
         case "WRITE_STORES_FROM_DATABASE":
-            newState.storeData = action.data;
+            newState.favoriteStoreData = action.favoriteStoreData;
+            newState.notFavoriteStoreData = action.notFavoriteStoreData;
             return newState;
 
         /**
@@ -75,6 +118,7 @@ const operations = (state = initState, action) => {
                 newState.flightDest = json['flightDest'];
                 newState.lat = json['lat'];
                 newState.long=json['long'];
+                fillData(json,newState);
                 newState.flow =  3;
             }
             return newState;

@@ -25,7 +25,7 @@ function constructTraveller(states){
     traveller["country"] = states.country;
     traveller["ageRange"] = states.ageRange;
     traveller["avatarKey"]=states.avatarKey;
-
+    traveller["favorites"] = states.favorites;
     return traveller;
 }
 class DashBoard extends React.Component{
@@ -53,9 +53,7 @@ class DashBoard extends React.Component{
          * If the user comes from login entry
          */
         if (states.hasFeaturesStored) {
-            debugger;
             API.graphql(graphqlOperation(getTraveller,{email: states.email})).then((response) =>{
-                debugger;
                 const traveller = response.data.getTraveller;
                 traveller['flightTime'] = states.flightTime;
                 traveller['flightDest'] = states.flightDest;
@@ -81,6 +79,7 @@ class DashBoard extends React.Component{
             // saveTravelPlanToCookie(states.flightTime,states.flightTime);
             Storage.get(states.avatarKey).then((response) => {
                 traveller["avatarUrl"]=response;
+                traveller['favorites'] = []
                 if (states.lat === undefined || states.long === undefined){
                     navigator.geolocation.getCurrentPosition((position) => {
                         this.saveTravellerFeatures(traveller,position.coords.latitude,position.coords.longitude);
@@ -107,7 +106,7 @@ class DashBoard extends React.Component{
                 case "store":
                     return (<StoreRecommendation traveller={traveller}/>);
                 case "account":
-                    return (<AccountInfo/>);
+                    return (<AccountInfo traveller={traveller}/>);
                 case "addStore":
                     return (<AddStorePage/>);
                 default:

@@ -1,8 +1,8 @@
 import React from "react"
-import {STORES_EACH_PAGE,COMMENTS_EACH_PAGE} from "../../../Constants"
+import {STORES_EACH_PAGE} from "../../../Constants"
 import {Pagination} from "antd"
 import Store from "./Store"
-import Store2 from "./Store2"
+import {connect} from "react-redux"
 
 class StoreList extends React.Component{
 
@@ -10,12 +10,23 @@ class StoreList extends React.Component{
         super(props);
         this.state = {
             currPage:1,
+            storeData: this.props.storeData
         };
     }
 
+    filterStoreData = (storeId) => {
+        const newStoreData = []
+        for (let data of this.state.storeData){
+            if (data.id !== storeId){
+                newStoreData.push(data);
+            }
+        }
+
+        this.setState({storeData: newStoreData});
+    }
 
     createStores = (data) => {
-        return <Store2 data={data} key={data.storeName} traveller={this.props.traveller}/>
+        return <Store data={data} key={data.storeName} traveller={this.props.traveller} filterStoreData={this.filterStoreData} favorite={this.props.favorite}/>
     }
     onChange = (e) => {
         this.setState({currPage: e});
@@ -25,11 +36,12 @@ class StoreList extends React.Component{
         // const states = store.getState();
         const start = this.state.currPage;
         const storeData = this.props.storeData;
+        debugger;
         const storePageData = storeData.slice((start - 1) * STORES_EACH_PAGE, start * STORES_EACH_PAGE);
         // const totalPage = storeData.length/STORES_EACH_PAGE + (storeData.length % STORES_EACH_PAGE === 0 ? 0: 1);
 
         return (
-            <div style={{height: "100%", width: "100%"}}>
+            <div style={{height: "70%", width: "100%"}}>
                 <div style={{height: "80%", width: "100%",display: 'flex'}}>
                 {storePageData.map(this.createStores)}
                 </div>
@@ -40,5 +52,6 @@ class StoreList extends React.Component{
 
     }
 }
+
 
 export default StoreList;

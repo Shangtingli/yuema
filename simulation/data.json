@@ -14,11 +14,11 @@
                     },
                     "tags": {
                         "SS": [
-                            "Shoes",
+                            "Furniture",
+                            "Luxury",
                             "Movies",
-                            "Music",
                             "Electronics",
-                            "Books"
+                            "Economical"
                         ]
                     },
                     "lat": {
@@ -28,10 +28,10 @@
                         "N": "0.0"
                     },
                     "floor": {
-                        "N": "3"
+                        "N": "2"
                     },
                     "terminal": {
-                        "N": "2"
+                        "N": "1"
                     }
                 }
             }
@@ -50,11 +50,11 @@
                     },
                     "tags": {
                         "SS": [
-                            "Luxury",
-                            "Food and Drinks",
+                            "Games",
+                            "Electronics",
+                            "Cosmetics",
                             "Shoes",
-                            "Entertaining",
-                            "Electronics"
+                            "Food and Drinks"
                         ]
                     },
                     "lat": {
@@ -64,7 +64,7 @@
                         "N": "0.0"
                     },
                     "floor": {
-                        "N": "2"
+                        "N": "3"
                     },
                     "terminal": {
                         "N": "2"
@@ -86,11 +86,11 @@
                     },
                     "tags": {
                         "SS": [
-                            "Luxury",
-                            "Furniture",
-                            "Electronics",
+                            "Entertaining",
+                            "Consumer Electronics",
                             "Shoes",
-                            "Entertaining"
+                            "Economical",
+                            "Cosmetics"
                         ]
                     },
                     "lat": {
@@ -103,7 +103,7 @@
                         "N": "2"
                     },
                     "terminal": {
-                        "N": "2"
+                        "N": "1"
                     }
                 }
             }
@@ -122,11 +122,11 @@
                     },
                     "tags": {
                         "SS": [
-                            "Sports",
-                            "DIY",
+                            "Clothing",
+                            "Luxury",
                             "Economical",
-                            "Furniture",
-                            "Accessories"
+                            "Shoes",
+                            "Movies"
                         ]
                     },
                     "lat": {
@@ -136,7 +136,7 @@
                         "N": "0.0"
                     },
                     "floor": {
-                        "N": "1"
+                        "N": "2"
                     },
                     "terminal": {
                         "N": "2"
@@ -158,11 +158,11 @@
                     },
                     "tags": {
                         "SS": [
-                            "Books",
-                            "Luxury",
-                            "Furniture",
-                            "Food and Drinks",
-                            "DIY"
+                            "Games",
+                            "Electronics",
+                            "Sports",
+                            "Traveling",
+                            "Movies"
                         ]
                     },
                     "lat": {
@@ -172,7 +172,7 @@
                         "N": "0.0"
                     },
                     "floor": {
-                        "N": "3"
+                        "N": "2"
                     },
                     "terminal": {
                         "N": "2"
@@ -194,11 +194,11 @@
                     },
                     "tags": {
                         "SS": [
-                            "Sports",
-                            "Shoes",
-                            "Games",
+                            "Furniture",
+                            "Food and Drinks",
                             "Consumer Electronics",
-                            "Luxury"
+                            "Cosmetics",
+                            "Shoes"
                         ]
                     },
                     "lat": {
@@ -208,7 +208,7 @@
                         "N": "0.0"
                     },
                     "floor": {
-                        "N": "2"
+                        "N": "1"
                     },
                     "terminal": {
                         "N": "1"
@@ -230,11 +230,11 @@
                     },
                     "tags": {
                         "SS": [
-                            "Food and Drinks",
                             "Games",
-                            "Movies",
-                            "Traveling",
-                            "Luxury"
+                            "Music",
+                            "Furniture",
+                            "Sports",
+                            "Books"
                         ]
                     },
                     "lat": {
@@ -244,10 +244,10 @@
                         "N": "0.0"
                     },
                     "floor": {
-                        "N": "1"
+                        "N": "2"
                     },
                     "terminal": {
-                        "N": "2"
+                        "N": "1"
                     }
                 }
             }
@@ -266,11 +266,11 @@
                     },
                     "tags": {
                         "SS": [
-                            "DIY",
-                            "Books",
-                            "Economical",
-                            "Movies",
-                            "Cosmetics"
+                            "Entertaining",
+                            "Traveling",
+                            "Sports",
+                            "Electronics",
+                            "Food and Drinks"
                         ]
                     },
                     "lat": {
@@ -280,7 +280,7 @@
                         "N": "0.0"
                     },
                     "floor": {
-                        "N": "2"
+                        "N": "3"
                     },
                     "terminal": {
                         "N": "1"
@@ -303,10 +303,10 @@
                     "tags": {
                         "SS": [
                             "Food and Drinks",
-                            "Economical",
+                            "Furniture",
                             "DIY",
-                            "Entertaining",
-                            "Cosmetics"
+                            "Sports",
+                            "Consumer Electronics"
                         ]
                     },
                     "lat": {
@@ -316,10 +316,10 @@
                         "N": "0.0"
                     },
                     "floor": {
-                        "N": "3"
+                        "N": "1"
                     },
                     "terminal": {
-                        "N": "2"
+                        "N": "1"
                     }
                 }
             }
@@ -338,11 +338,11 @@
                     },
                     "tags": {
                         "SS": [
-                            "Furniture",
+                            "Movies",
+                            "Shoes",
                             "Accessories",
                             "Sports",
-                            "Games",
-                            "DIY"
+                            "Economical"
                         ]
                     },
                     "lat": {
@@ -356,546 +356,6 @@
                     },
                     "terminal": {
                         "N": "1"
-                    }
-                }
-            }
-        },
-        {
-            "PutRequest": {
-                "Item": {
-                    "id": {
-                        "S": "10"
-                    },
-                    "storeName": {
-                        "S": "k"
-                    },
-                    "description": {
-                        "S": "ABCDEFG"
-                    },
-                    "tags": {
-                        "SS": [
-                            "Entertaining",
-                            "Cosmetics",
-                            "Shoes",
-                            "Movies",
-                            "Books"
-                        ]
-                    },
-                    "lat": {
-                        "N": "0.0"
-                    },
-                    "long": {
-                        "N": "0.0"
-                    },
-                    "floor": {
-                        "N": "3"
-                    },
-                    "terminal": {
-                        "N": "2"
-                    }
-                }
-            }
-        },
-        {
-            "PutRequest": {
-                "Item": {
-                    "id": {
-                        "S": "11"
-                    },
-                    "storeName": {
-                        "S": "l"
-                    },
-                    "description": {
-                        "S": "ABCDEFG"
-                    },
-                    "tags": {
-                        "SS": [
-                            "Clothing",
-                            "Food and Drinks",
-                            "Traveling",
-                            "Sports",
-                            "DIY"
-                        ]
-                    },
-                    "lat": {
-                        "N": "0.0"
-                    },
-                    "long": {
-                        "N": "0.0"
-                    },
-                    "floor": {
-                        "N": "2"
-                    },
-                    "terminal": {
-                        "N": "2"
-                    }
-                }
-            }
-        },
-        {
-            "PutRequest": {
-                "Item": {
-                    "id": {
-                        "S": "12"
-                    },
-                    "storeName": {
-                        "S": "m"
-                    },
-                    "description": {
-                        "S": "ABCDEFG"
-                    },
-                    "tags": {
-                        "SS": [
-                            "Shoes",
-                            "Traveling",
-                            "Economical",
-                            "Cosmetics",
-                            "Consumer Electronics"
-                        ]
-                    },
-                    "lat": {
-                        "N": "0.0"
-                    },
-                    "long": {
-                        "N": "0.0"
-                    },
-                    "floor": {
-                        "N": "1"
-                    },
-                    "terminal": {
-                        "N": "1"
-                    }
-                }
-            }
-        },
-        {
-            "PutRequest": {
-                "Item": {
-                    "id": {
-                        "S": "13"
-                    },
-                    "storeName": {
-                        "S": "n"
-                    },
-                    "description": {
-                        "S": "ABCDEFG"
-                    },
-                    "tags": {
-                        "SS": [
-                            "Music",
-                            "Electronics",
-                            "DIY",
-                            "Traveling",
-                            "Entertaining"
-                        ]
-                    },
-                    "lat": {
-                        "N": "0.0"
-                    },
-                    "long": {
-                        "N": "0.0"
-                    },
-                    "floor": {
-                        "N": "3"
-                    },
-                    "terminal": {
-                        "N": "1"
-                    }
-                }
-            }
-        },
-        {
-            "PutRequest": {
-                "Item": {
-                    "id": {
-                        "S": "14"
-                    },
-                    "storeName": {
-                        "S": "o"
-                    },
-                    "description": {
-                        "S": "ABCDEFG"
-                    },
-                    "tags": {
-                        "SS": [
-                            "Movies",
-                            "Accessories",
-                            "DIY",
-                            "Entertaining",
-                            "Shoes"
-                        ]
-                    },
-                    "lat": {
-                        "N": "0.0"
-                    },
-                    "long": {
-                        "N": "0.0"
-                    },
-                    "floor": {
-                        "N": "1"
-                    },
-                    "terminal": {
-                        "N": "2"
-                    }
-                }
-            }
-        },
-        {
-            "PutRequest": {
-                "Item": {
-                    "id": {
-                        "S": "15"
-                    },
-                    "storeName": {
-                        "S": "p"
-                    },
-                    "description": {
-                        "S": "ABCDEFG"
-                    },
-                    "tags": {
-                        "SS": [
-                            "Food and Drinks",
-                            "Luxury",
-                            "DIY",
-                            "Clothing",
-                            "Traveling"
-                        ]
-                    },
-                    "lat": {
-                        "N": "0.0"
-                    },
-                    "long": {
-                        "N": "0.0"
-                    },
-                    "floor": {
-                        "N": "3"
-                    },
-                    "terminal": {
-                        "N": "2"
-                    }
-                }
-            }
-        },
-        {
-            "PutRequest": {
-                "Item": {
-                    "id": {
-                        "S": "16"
-                    },
-                    "storeName": {
-                        "S": "q"
-                    },
-                    "description": {
-                        "S": "ABCDEFG"
-                    },
-                    "tags": {
-                        "SS": [
-                            "Entertaining",
-                            "Music",
-                            "Traveling",
-                            "Economical",
-                            "Furniture"
-                        ]
-                    },
-                    "lat": {
-                        "N": "0.0"
-                    },
-                    "long": {
-                        "N": "0.0"
-                    },
-                    "floor": {
-                        "N": "2"
-                    },
-                    "terminal": {
-                        "N": "1"
-                    }
-                }
-            }
-        },
-        {
-            "PutRequest": {
-                "Item": {
-                    "id": {
-                        "S": "17"
-                    },
-                    "storeName": {
-                        "S": "r"
-                    },
-                    "description": {
-                        "S": "ABCDEFG"
-                    },
-                    "tags": {
-                        "SS": [
-                            "Food and Drinks",
-                            "Economical",
-                            "Furniture",
-                            "Traveling",
-                            "Electronics"
-                        ]
-                    },
-                    "lat": {
-                        "N": "0.0"
-                    },
-                    "long": {
-                        "N": "0.0"
-                    },
-                    "floor": {
-                        "N": "2"
-                    },
-                    "terminal": {
-                        "N": "2"
-                    }
-                }
-            }
-        },
-        {
-            "PutRequest": {
-                "Item": {
-                    "id": {
-                        "S": "18"
-                    },
-                    "storeName": {
-                        "S": "s"
-                    },
-                    "description": {
-                        "S": "ABCDEFG"
-                    },
-                    "tags": {
-                        "SS": [
-                            "Economical",
-                            "Luxury",
-                            "DIY",
-                            "Food and Drinks",
-                            "Accessories"
-                        ]
-                    },
-                    "lat": {
-                        "N": "0.0"
-                    },
-                    "long": {
-                        "N": "0.0"
-                    },
-                    "floor": {
-                        "N": "2"
-                    },
-                    "terminal": {
-                        "N": "1"
-                    }
-                }
-            }
-        },
-        {
-            "PutRequest": {
-                "Item": {
-                    "id": {
-                        "S": "19"
-                    },
-                    "storeName": {
-                        "S": "t"
-                    },
-                    "description": {
-                        "S": "ABCDEFG"
-                    },
-                    "tags": {
-                        "SS": [
-                            "Entertaining",
-                            "Clothing",
-                            "Electronics",
-                            "Music",
-                            "Accessories"
-                        ]
-                    },
-                    "lat": {
-                        "N": "0.0"
-                    },
-                    "long": {
-                        "N": "0.0"
-                    },
-                    "floor": {
-                        "N": "2"
-                    },
-                    "terminal": {
-                        "N": "1"
-                    }
-                }
-            }
-        },
-        {
-            "PutRequest": {
-                "Item": {
-                    "id": {
-                        "S": "20"
-                    },
-                    "storeName": {
-                        "S": "u"
-                    },
-                    "description": {
-                        "S": "ABCDEFG"
-                    },
-                    "tags": {
-                        "SS": [
-                            "Traveling",
-                            "Luxury",
-                            "Sports",
-                            "Music",
-                            "Consumer Electronics"
-                        ]
-                    },
-                    "lat": {
-                        "N": "0.0"
-                    },
-                    "long": {
-                        "N": "0.0"
-                    },
-                    "floor": {
-                        "N": "1"
-                    },
-                    "terminal": {
-                        "N": "2"
-                    }
-                }
-            }
-        },
-        {
-            "PutRequest": {
-                "Item": {
-                    "id": {
-                        "S": "21"
-                    },
-                    "storeName": {
-                        "S": "v"
-                    },
-                    "description": {
-                        "S": "ABCDEFG"
-                    },
-                    "tags": {
-                        "SS": [
-                            "Entertaining",
-                            "Games",
-                            "Sports",
-                            "Movies",
-                            "Books"
-                        ]
-                    },
-                    "lat": {
-                        "N": "0.0"
-                    },
-                    "long": {
-                        "N": "0.0"
-                    },
-                    "floor": {
-                        "N": "1"
-                    },
-                    "terminal": {
-                        "N": "2"
-                    }
-                }
-            }
-        },
-        {
-            "PutRequest": {
-                "Item": {
-                    "id": {
-                        "S": "22"
-                    },
-                    "storeName": {
-                        "S": "w"
-                    },
-                    "description": {
-                        "S": "ABCDEFG"
-                    },
-                    "tags": {
-                        "SS": [
-                            "Clothing",
-                            "Shoes",
-                            "Sports",
-                            "Music",
-                            "Movies"
-                        ]
-                    },
-                    "lat": {
-                        "N": "0.0"
-                    },
-                    "long": {
-                        "N": "0.0"
-                    },
-                    "floor": {
-                        "N": "1"
-                    },
-                    "terminal": {
-                        "N": "1"
-                    }
-                }
-            }
-        },
-        {
-            "PutRequest": {
-                "Item": {
-                    "id": {
-                        "S": "23"
-                    },
-                    "storeName": {
-                        "S": "x"
-                    },
-                    "description": {
-                        "S": "ABCDEFG"
-                    },
-                    "tags": {
-                        "SS": [
-                            "DIY",
-                            "Books",
-                            "Movies",
-                            "Luxury",
-                            "Food and Drinks"
-                        ]
-                    },
-                    "lat": {
-                        "N": "0.0"
-                    },
-                    "long": {
-                        "N": "0.0"
-                    },
-                    "floor": {
-                        "N": "2"
-                    },
-                    "terminal": {
-                        "N": "2"
-                    }
-                }
-            }
-        },
-        {
-            "PutRequest": {
-                "Item": {
-                    "id": {
-                        "S": "24"
-                    },
-                    "storeName": {
-                        "S": "y"
-                    },
-                    "description": {
-                        "S": "ABCDEFG"
-                    },
-                    "tags": {
-                        "SS": [
-                            "Economical",
-                            "Games",
-                            "Cosmetics",
-                            "Sports",
-                            "Traveling"
-                        ]
-                    },
-                    "lat": {
-                        "N": "0.0"
-                    },
-                    "long": {
-                        "N": "0.0"
-                    },
-                    "floor": {
-                        "N": "1"
-                    },
-                    "terminal": {
-                        "N": "2"
                     }
                 }
             }

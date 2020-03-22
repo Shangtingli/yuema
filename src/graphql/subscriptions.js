@@ -24,12 +24,7 @@ export const onCreateTraveller = /* GraphQL */ `
       }
       avatarKey
       avatarUrl
-      favorites {
-        items {
-          id
-        }
-        nextToken
-      }
+      favorites
     }
   }
 `;
@@ -56,12 +51,7 @@ export const onUpdateTraveller = /* GraphQL */ `
       }
       avatarKey
       avatarUrl
-      favorites {
-        items {
-          id
-        }
-        nextToken
-      }
+      favorites
     }
   }
 `;
@@ -88,141 +78,7 @@ export const onDeleteTraveller = /* GraphQL */ `
       }
       avatarKey
       avatarUrl
-      favorites {
-        items {
-          id
-        }
-        nextToken
-      }
-    }
-  }
-`;
-export const onCreateMiddle = /* GraphQL */ `
-  subscription OnCreateMiddle {
-    onCreateMiddle {
-      id
-      store {
-        id
-        storeName
-        description
-        tags
-        lat
-        long
-        floor
-        terminal
-        comments {
-          nextToken
-        }
-        travellers {
-          nextToken
-        }
-      }
-      traveller {
-        firstName
-        lastName
-        email
-        phoneNumber
-        hobbies
-        sex
-        ageRange
-        country
-        macid
-        intro
-        comments {
-          nextToken
-        }
-        avatarKey
-        avatarUrl
-        favorites {
-          nextToken
-        }
-      }
-    }
-  }
-`;
-export const onUpdateMiddle = /* GraphQL */ `
-  subscription OnUpdateMiddle {
-    onUpdateMiddle {
-      id
-      store {
-        id
-        storeName
-        description
-        tags
-        lat
-        long
-        floor
-        terminal
-        comments {
-          nextToken
-        }
-        travellers {
-          nextToken
-        }
-      }
-      traveller {
-        firstName
-        lastName
-        email
-        phoneNumber
-        hobbies
-        sex
-        ageRange
-        country
-        macid
-        intro
-        comments {
-          nextToken
-        }
-        avatarKey
-        avatarUrl
-        favorites {
-          nextToken
-        }
-      }
-    }
-  }
-`;
-export const onDeleteMiddle = /* GraphQL */ `
-  subscription OnDeleteMiddle {
-    onDeleteMiddle {
-      id
-      store {
-        id
-        storeName
-        description
-        tags
-        lat
-        long
-        floor
-        terminal
-        comments {
-          nextToken
-        }
-        travellers {
-          nextToken
-        }
-      }
-      traveller {
-        firstName
-        lastName
-        email
-        phoneNumber
-        hobbies
-        sex
-        ageRange
-        country
-        macid
-        intro
-        comments {
-          nextToken
-        }
-        avatarKey
-        avatarUrl
-        favorites {
-          nextToken
-        }
-      }
+      favorites
     }
   }
 `;
@@ -240,9 +96,6 @@ export const onCreateComment = /* GraphQL */ `
         floor
         terminal
         comments {
-          nextToken
-        }
-        travellers {
           nextToken
         }
       }
@@ -264,9 +117,7 @@ export const onCreateComment = /* GraphQL */ `
         }
         avatarKey
         avatarUrl
-        favorites {
-          nextToken
-        }
+        favorites
       }
     }
   }
@@ -287,9 +138,6 @@ export const onUpdateComment = /* GraphQL */ `
         comments {
           nextToken
         }
-        travellers {
-          nextToken
-        }
       }
       content
       rate
@@ -309,9 +157,7 @@ export const onUpdateComment = /* GraphQL */ `
         }
         avatarKey
         avatarUrl
-        favorites {
-          nextToken
-        }
+        favorites
       }
     }
   }
@@ -332,9 +178,6 @@ export const onDeleteComment = /* GraphQL */ `
         comments {
           nextToken
         }
-        travellers {
-          nextToken
-        }
       }
       content
       rate
@@ -354,9 +197,7 @@ export const onDeleteComment = /* GraphQL */ `
         }
         avatarKey
         avatarUrl
-        favorites {
-          nextToken
-        }
+        favorites
       }
     }
   }
@@ -377,12 +218,6 @@ export const onCreateStore = /* GraphQL */ `
           id
           content
           rate
-        }
-        nextToken
-      }
-      travellers {
-        items {
-          id
         }
         nextToken
       }
@@ -408,12 +243,6 @@ export const onUpdateStore = /* GraphQL */ `
         }
         nextToken
       }
-      travellers {
-        items {
-          id
-        }
-        nextToken
-      }
     }
   }
 `;
@@ -433,12 +262,6 @@ export const onDeleteStore = /* GraphQL */ `
           id
           content
           rate
-        }
-        nextToken
-      }
-      travellers {
-        items {
-          id
         }
         nextToken
       }

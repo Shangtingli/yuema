@@ -24,12 +24,7 @@ export const getTraveller = /* GraphQL */ `
       }
       avatarKey
       avatarUrl
-      favorites {
-        items {
-          id
-        }
-        nextToken
-      }
+      favorites
     }
   }
 `;
@@ -64,90 +59,7 @@ export const listTravellers = /* GraphQL */ `
         }
         avatarKey
         avatarUrl
-        favorites {
-          nextToken
-        }
-      }
-      nextToken
-    }
-  }
-`;
-export const getMiddle = /* GraphQL */ `
-  query GetMiddle($id: ID!) {
-    getMiddle(id: $id) {
-      id
-      store {
-        id
-        storeName
-        description
-        tags
-        lat
-        long
-        floor
-        terminal
-        comments {
-          nextToken
-        }
-        travellers {
-          nextToken
-        }
-      }
-      traveller {
-        firstName
-        lastName
-        email
-        phoneNumber
-        hobbies
-        sex
-        ageRange
-        country
-        macid
-        intro
-        comments {
-          nextToken
-        }
-        avatarKey
-        avatarUrl
-        favorites {
-          nextToken
-        }
-      }
-    }
-  }
-`;
-export const listMiddles = /* GraphQL */ `
-  query ListMiddles(
-    $filter: ModelMiddleFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listMiddles(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        store {
-          id
-          storeName
-          description
-          tags
-          lat
-          long
-          floor
-          terminal
-        }
-        traveller {
-          firstName
-          lastName
-          email
-          phoneNumber
-          hobbies
-          sex
-          ageRange
-          country
-          macid
-          intro
-          avatarKey
-          avatarUrl
-        }
+        favorites
       }
       nextToken
     }
@@ -169,9 +81,6 @@ export const getComment = /* GraphQL */ `
         comments {
           nextToken
         }
-        travellers {
-          nextToken
-        }
       }
       content
       rate
@@ -191,9 +100,7 @@ export const getComment = /* GraphQL */ `
         }
         avatarKey
         avatarUrl
-        favorites {
-          nextToken
-        }
+        favorites
       }
     }
   }
@@ -232,6 +139,7 @@ export const listComments = /* GraphQL */ `
           intro
           avatarKey
           avatarUrl
+          favorites
         }
       }
       nextToken
@@ -257,12 +165,6 @@ export const getStore = /* GraphQL */ `
         }
         nextToken
       }
-      travellers {
-        items {
-          id
-        }
-        nextToken
-      }
     }
   }
 `;
@@ -283,9 +185,6 @@ export const listStores = /* GraphQL */ `
         floor
         terminal
         comments {
-          nextToken
-        }
-        travellers {
           nextToken
         }
       }

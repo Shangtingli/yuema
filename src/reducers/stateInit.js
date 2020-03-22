@@ -26,7 +26,7 @@ export const startState = {
     flightDest: '',
     //TODO: Change hobbies to categories across all project
     hobbies: [],
-
+    favorites: [],
     avatarUrl: null,
     avatarKey: null,
     intro: null,
@@ -54,7 +54,8 @@ export const startState = {
     /**
      * StoreRecommendation
      */
-    storeData: null,
+    favoriteStoreData: null,
+    notFavoriteStoreData: null,
     /**
      * Comments
      */

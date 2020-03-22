@@ -27,12 +27,7 @@ export const createTraveller = /* GraphQL */ `
       }
       avatarKey
       avatarUrl
-      favorites {
-        items {
-          id
-        }
-        nextToken
-      }
+      favorites
     }
   }
 `;
@@ -62,12 +57,7 @@ export const updateTraveller = /* GraphQL */ `
       }
       avatarKey
       avatarUrl
-      favorites {
-        items {
-          id
-        }
-        nextToken
-      }
+      favorites
     }
   }
 `;
@@ -97,150 +87,7 @@ export const deleteTraveller = /* GraphQL */ `
       }
       avatarKey
       avatarUrl
-      favorites {
-        items {
-          id
-        }
-        nextToken
-      }
-    }
-  }
-`;
-export const createMiddle = /* GraphQL */ `
-  mutation CreateMiddle(
-    $input: CreateMiddleInput!
-    $condition: ModelMiddleConditionInput
-  ) {
-    createMiddle(input: $input, condition: $condition) {
-      id
-      store {
-        id
-        storeName
-        description
-        tags
-        lat
-        long
-        floor
-        terminal
-        comments {
-          nextToken
-        }
-        travellers {
-          nextToken
-        }
-      }
-      traveller {
-        firstName
-        lastName
-        email
-        phoneNumber
-        hobbies
-        sex
-        ageRange
-        country
-        macid
-        intro
-        comments {
-          nextToken
-        }
-        avatarKey
-        avatarUrl
-        favorites {
-          nextToken
-        }
-      }
-    }
-  }
-`;
-export const updateMiddle = /* GraphQL */ `
-  mutation UpdateMiddle(
-    $input: UpdateMiddleInput!
-    $condition: ModelMiddleConditionInput
-  ) {
-    updateMiddle(input: $input, condition: $condition) {
-      id
-      store {
-        id
-        storeName
-        description
-        tags
-        lat
-        long
-        floor
-        terminal
-        comments {
-          nextToken
-        }
-        travellers {
-          nextToken
-        }
-      }
-      traveller {
-        firstName
-        lastName
-        email
-        phoneNumber
-        hobbies
-        sex
-        ageRange
-        country
-        macid
-        intro
-        comments {
-          nextToken
-        }
-        avatarKey
-        avatarUrl
-        favorites {
-          nextToken
-        }
-      }
-    }
-  }
-`;
-export const deleteMiddle = /* GraphQL */ `
-  mutation DeleteMiddle(
-    $input: DeleteMiddleInput!
-    $condition: ModelMiddleConditionInput
-  ) {
-    deleteMiddle(input: $input, condition: $condition) {
-      id
-      store {
-        id
-        storeName
-        description
-        tags
-        lat
-        long
-        floor
-        terminal
-        comments {
-          nextToken
-        }
-        travellers {
-          nextToken
-        }
-      }
-      traveller {
-        firstName
-        lastName
-        email
-        phoneNumber
-        hobbies
-        sex
-        ageRange
-        country
-        macid
-        intro
-        comments {
-          nextToken
-        }
-        avatarKey
-        avatarUrl
-        favorites {
-          nextToken
-        }
-      }
+      favorites
     }
   }
 `;
@@ -263,9 +110,6 @@ export const createComment = /* GraphQL */ `
         comments {
           nextToken
         }
-        travellers {
-          nextToken
-        }
       }
       content
       rate
@@ -285,9 +129,7 @@ export const createComment = /* GraphQL */ `
         }
         avatarKey
         avatarUrl
-        favorites {
-          nextToken
-        }
+        favorites
       }
     }
   }
@@ -311,9 +153,6 @@ export const updateComment = /* GraphQL */ `
         comments {
           nextToken
         }
-        travellers {
-          nextToken
-        }
       }
       content
       rate
@@ -333,9 +172,7 @@ export const updateComment = /* GraphQL */ `
         }
         avatarKey
         avatarUrl
-        favorites {
-          nextToken
-        }
+        favorites
       }
     }
   }
@@ -359,9 +196,6 @@ export const deleteComment = /* GraphQL */ `
         comments {
           nextToken
         }
-        travellers {
-          nextToken
-        }
       }
       content
       rate
@@ -381,9 +215,7 @@ export const deleteComment = /* GraphQL */ `
         }
         avatarKey
         avatarUrl
-        favorites {
-          nextToken
-        }
+        favorites
       }
     }
   }
@@ -407,12 +239,6 @@ export const createStore = /* GraphQL */ `
           id
           content
           rate
-        }
-        nextToken
-      }
-      travellers {
-        items {
-          id
         }
         nextToken
       }
@@ -441,12 +267,6 @@ export const updateStore = /* GraphQL */ `
         }
         nextToken
       }
-      travellers {
-        items {
-          id
-        }
-        nextToken
-      }
     }
   }
 `;
@@ -469,12 +289,6 @@ export const deleteStore = /* GraphQL */ `
           id
           content
           rate
-        }
-        nextToken
-      }
-      travellers {
-        items {
-          id
         }
         nextToken
       }
