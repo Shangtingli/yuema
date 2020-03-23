@@ -63,7 +63,7 @@ class Store extends React.Component{
         const currentLong = location.long;
         const storeLat = data.lat;
         const storeLong = data.long;
-        debugger;
+
         const kilometers = distance(currentLat,currentLong,storeLat,storeLong,"K");
 
         const tags_entries = []
