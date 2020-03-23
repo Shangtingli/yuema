@@ -42,13 +42,6 @@ const operations = (state = initState, action) => {
             var filtered2 = newState.favoriteStoreData.filter(function(value,index,arr){
                 return value['id'] != action.storeId;
             })
-            //
-            // for (let data of newState.favoriteStoreData){
-            //     if (data.id === action.storeId){
-            //         newState.notFavoriteStoreData.push(data);
-            //         break;
-            //     }
-            // }
 
             newState.favoriteStoreData = filtered2;
             return newState;

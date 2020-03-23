@@ -95,9 +95,7 @@ class DashBoard extends React.Component{
                         this.saveTravellerFeatures(traveller,position.coords.latitude,position.coords.longitude);
                     },(err) => {
                         alert(err);
-                        traveller['lat'] = DEFAULT_LATTITUDE;
-                        traveller['long'] = DEFAULT_LONGITUDE;
-                        this.props.dispatch(fillFeatures(traveller));
+                        this.saveTravellerFeatures(traveller,DEFAULT_LATTITUDE,DEFAULT_LONGITUDE);
                     })
                 }
                 else{

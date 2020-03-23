@@ -35,7 +35,7 @@ export default class LogoutPopover extends React.Component {
 
 class LogoutOptions extends React.Component{
     authSignOut = () => {
-        Auth.signOut({ global: true }).then(response => {
+        Auth.signOut().then(response => {
             console.log(response);
         });
     }
