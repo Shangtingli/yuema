@@ -23,11 +23,6 @@ export default class Traveller extends React.Component{
                 sex={data.sex}
                 age={data.ageRange}
             />
-            <br/><br/>
-            <TravelPlan
-                flightDest={data.flightDest}
-                flightTime={data.flightTime}
-            />
             </div>
         )
     }

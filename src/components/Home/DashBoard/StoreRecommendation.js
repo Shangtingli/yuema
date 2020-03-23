@@ -9,18 +9,39 @@ import StoreList from "./StoreRecommendation/StoreList"
 
 class StoreRecommendation extends React.Component{
 
+
     componentDidMount(){
         const states = store.getState();
+
+
+
+        const dataToMLService = {};
+        dataToMLService['flag'] = true;
+        dataToMLService['gender'] = states.sex;
+        dataToMLService['country'] = states.country;
+        dataToMLService['categories'] = states.hobbies;
+        dataToMLService['age_range'] = states.ageRange;
+        dataToMLService['location'] = {};
+        dataToMLService['location']['lat'] = states.lat;
+        dataToMLService['location']['long'] = states.long;
+        dataToMLService['favorites'] = Array.from(states.favorites);
+
+        const readyTogoData = JSON.stringify(dataToMLService);
+
+        /**
+         * TODO: Debugger here to see the store recommendation data
+         */
         API.graphql(graphqlOperation(listStores)).then((response) =>{
             /**
              * Insert Store Recommendation Here!!!
              */
             const allStoreData = response.data.listStores.items;
-            debugger;
+
             const favoriteStoreData = [];
             const notFavoriteStoreData = [];
             for (let store of allStoreData){
-                if (states.favorites.includes(store.id) === false){
+
+                if (states.favorites.has(store.id) === false){
                      notFavoriteStoreData.push(store)
                 }
                 else{
@@ -41,12 +62,12 @@ class StoreRecommendation extends React.Component{
                 <div>
                     <div className="dashboard-content-container" style={{width:"80%", height:"100%"}}>
                         <h3> Some interesting stores you might like: </h3>
-                        <StoreList storeData={states.notFavoriteStoreData} traveller={this.props.traveller} favorite={false}/>
+                        <StoreList storeData={states.notFavoriteStoreData} traveller={this.props.traveller} location={this.props.location} favorite={false}/>
                     </div>
 
                     <div className="dashboard-content-container" style={{width:"80%", height:"100%"}}>
                         <h3> Your Favorite Places: </h3>
-                        <StoreList storeData={states.favoriteStoreData} traveller={this.props.traveller} favorite={true}/>
+                        <StoreList storeData={states.favoriteStoreData} traveller={this.props.traveller} location={this.props.location} favorite={true}/>
                     </div>
                 </div>
 

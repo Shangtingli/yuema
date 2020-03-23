@@ -9,6 +9,25 @@ import {connect} from "react-redux";
 class PeopleRecommendation extends React.Component{
 
     componentDidMount() {
+
+        const states = store.getState();
+        const dataToMLService = {};
+        dataToMLService['flag'] = true;
+        dataToMLService['gender'] = states.sex;
+        dataToMLService['country'] = states.country;
+        // dataToMLService['categories'] = states.categories;
+        dataToMLService['age_range'] = states.ageRange;
+        dataToMLService['location'] = {};
+        dataToMLService['location']['lat'] = states.lat;
+        dataToMLService['location']['long'] = states.long;
+        dataToMLService['favorites'] = Array.from(states.favorites);
+
+
+        const readyTogoData = JSON.stringify(dataToMLService);
+
+        /**
+         * TODO: Could use debugger to see the data for ML Service, Ready to connect to the ML Microservice
+         */
         API.graphql(graphqlOperation(listTravellers)).then((response) =>{
             const allTravellersData = response.data.listTravellers.items;
             this.props.dispatch(writeTravellersFromDatabase(allTravellersData));

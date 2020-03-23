@@ -41,7 +41,7 @@ class LogoutOptions extends React.Component{
     }
 
     handleClearCacheThenSignOut = () => {
-        debugger;
+
         Cache.removeItem(this.props.email);
         this.authSignOut();
     }

@@ -8,6 +8,9 @@ function fillData(data,newState){
     for (let key of keys){
         if (key in newState){
             newState[key] = data[key];
+            if (key === 'favorites'){
+                newState[key] = new Set(data[key]);
+            }
         }
     }
 }
@@ -35,28 +38,24 @@ const operations = (state = initState, action) => {
     switch(action.type){
 
         case "REMOVE_FAVORITE":
-            var filtered = newState['favorites'].filter(function(value, index, arr){
-                return value != action.storeId;
-            });
-            newState['favorites'] = filtered;
-
+            newState['favorites'].delete(action.storeId)
             var filtered2 = newState.favoriteStoreData.filter(function(value,index,arr){
                 return value['id'] != action.storeId;
             })
-
-
-            for (let data of newState.favoriteStoreData){
-                if (data.id === action.storeId){
-                    newState.notFavoriteStoreData.push(data);
-                    break;
-                }
-            }
+            //
+            // for (let data of newState.favoriteStoreData){
+            //     if (data.id === action.storeId){
+            //         newState.notFavoriteStoreData.push(data);
+            //         break;
+            //     }
+            // }
 
             newState.favoriteStoreData = filtered2;
             return newState;
 
         case "ADD_FAVORITE":
-            newState['favorites'].push(action.storeId);
+            newState['favorites'].add(action.storeId)
+
             for (let data of newState.notFavoriteStoreData){
                 if (data.id === action.storeId){
                     newState.favoriteStoreData.push(data);
@@ -70,7 +69,7 @@ const operations = (state = initState, action) => {
 
 
             newState.notFavoriteStoreData = filtered;
-            debugger;
+
             return newState;
         /**
          * Write the traveller information from database to the redux store
@@ -109,7 +108,7 @@ const operations = (state = initState, action) => {
             }
             const record = Cache.getItem(newState.email);
             if (record === null){
-                debugger;
+
                 newState.flow = 2;
             }
             else{

@@ -26,7 +26,7 @@ export const startState = {
     flightDest: '',
     //TODO: Change hobbies to categories across all project
     hobbies: [],
-    favorites: [],
+    favorites: new Set(),
     avatarUrl: null,
     avatarKey: null,
     intro: null,

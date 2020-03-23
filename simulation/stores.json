@@ -14,24 +14,24 @@
                     },
                     "tags": {
                         "SS": [
-                            "Furniture",
-                            "Luxury",
-                            "Movies",
+                            "Sports",
+                            "Games",
                             "Electronics",
-                            "Economical"
+                            "Entertaining",
+                            "Furniture"
                         ]
                     },
                     "lat": {
-                        "N": "0.0"
+                        "N": "26.28401465308542"
                     },
                     "long": {
-                        "N": "0.0"
+                        "N": "-50.82274597896816"
                     },
                     "floor": {
                         "N": "2"
                     },
                     "terminal": {
-                        "N": "1"
+                        "N": "2"
                     }
                 }
             }
@@ -50,18 +50,18 @@
                     },
                     "tags": {
                         "SS": [
-                            "Games",
-                            "Electronics",
-                            "Cosmetics",
-                            "Shoes",
-                            "Food and Drinks"
+                            "Food and Drinks",
+                            "Furniture",
+                            "Traveling",
+                            "Music",
+                            "Sports"
                         ]
                     },
                     "lat": {
-                        "N": "0.0"
+                        "N": "159.38219979986252"
                     },
                     "long": {
-                        "N": "0.0"
+                        "N": "-113.84836905137665"
                     },
                     "floor": {
                         "N": "3"
@@ -86,24 +86,24 @@
                     },
                     "tags": {
                         "SS": [
-                            "Entertaining",
-                            "Consumer Electronics",
+                            "Games",
                             "Shoes",
-                            "Economical",
+                            "Sports",
+                            "Clothing",
                             "Cosmetics"
                         ]
                     },
                     "lat": {
-                        "N": "0.0"
+                        "N": "5.990780531756826"
                     },
                     "long": {
-                        "N": "0.0"
+                        "N": "146.27759462546123"
                     },
                     "floor": {
-                        "N": "2"
+                        "N": "1"
                     },
                     "terminal": {
-                        "N": "1"
+                        "N": "2"
                     }
                 }
             }
@@ -122,21 +122,21 @@
                     },
                     "tags": {
                         "SS": [
-                            "Clothing",
-                            "Luxury",
+                            "Movies",
                             "Economical",
-                            "Shoes",
-                            "Movies"
+                            "Accessories",
+                            "Traveling",
+                            "Consumer Electronics"
                         ]
                     },
                     "lat": {
-                        "N": "0.0"
+                        "N": "166.60354689716883"
                     },
                     "long": {
-                        "N": "0.0"
+                        "N": "-126.74416801262808"
                     },
                     "floor": {
-                        "N": "2"
+                        "N": "3"
                     },
                     "terminal": {
                         "N": "2"
@@ -158,24 +158,24 @@
                     },
                     "tags": {
                         "SS": [
-                            "Games",
-                            "Electronics",
-                            "Sports",
-                            "Traveling",
-                            "Movies"
+                            "Consumer Electronics",
+                            "Economical",
+                            "Cosmetics",
+                            "Shoes",
+                            "Food and Drinks"
                         ]
                     },
                     "lat": {
-                        "N": "0.0"
+                        "N": "144.9513666182787"
                     },
                     "long": {
-                        "N": "0.0"
+                        "N": "-109.7792196563368"
                     },
                     "floor": {
-                        "N": "2"
+                        "N": "3"
                     },
                     "terminal": {
-                        "N": "2"
+                        "N": "1"
                     }
                 }
             }
@@ -194,21 +194,21 @@
                     },
                     "tags": {
                         "SS": [
+                            "Movies",
                             "Furniture",
-                            "Food and Drinks",
-                            "Consumer Electronics",
-                            "Cosmetics",
-                            "Shoes"
+                            "Entertaining",
+                            "Books",
+                            "Accessories"
                         ]
                     },
                     "lat": {
-                        "N": "0.0"
+                        "N": "-77.0496279744357"
                     },
                     "long": {
-                        "N": "0.0"
+                        "N": "132.0572714971695"
                     },
                     "floor": {
-                        "N": "1"
+                        "N": "3"
                     },
                     "terminal": {
                         "N": "1"
@@ -231,17 +231,17 @@
                     "tags": {
                         "SS": [
                             "Games",
-                            "Music",
+                            "Traveling",
                             "Furniture",
                             "Sports",
-                            "Books"
+                            "Movies"
                         ]
                     },
                     "lat": {
-                        "N": "0.0"
+                        "N": "6.9017358814578245"
                     },
                     "long": {
-                        "N": "0.0"
+                        "N": "23.860019383341836"
                     },
                     "floor": {
                         "N": "2"
@@ -266,24 +266,24 @@
                     },
                     "tags": {
                         "SS": [
-                            "Entertaining",
-                            "Traveling",
-                            "Sports",
                             "Electronics",
-                            "Food and Drinks"
+                            "Traveling",
+                            "DIY",
+                            "Economical",
+                            "Cosmetics"
                         ]
                     },
                     "lat": {
-                        "N": "0.0"
+                        "N": "100.49798011119805"
                     },
                     "long": {
-                        "N": "0.0"
+                        "N": "-106.38869500403625"
                     },
                     "floor": {
-                        "N": "3"
+                        "N": "2"
                     },
                     "terminal": {
-                        "N": "1"
+                        "N": "2"
                     }
                 }
             }
@@ -302,21 +302,21 @@
                     },
                     "tags": {
                         "SS": [
+                            "Economical",
+                            "Clothing",
+                            "Luxury",
                             "Food and Drinks",
-                            "Furniture",
-                            "DIY",
-                            "Sports",
-                            "Consumer Electronics"
+                            "Electronics"
                         ]
                     },
                     "lat": {
-                        "N": "0.0"
+                        "N": "36.64793287990244"
                     },
                     "long": {
-                        "N": "0.0"
+                        "N": "-25.082515494729392"
                     },
                     "floor": {
-                        "N": "1"
+                        "N": "3"
                     },
                     "terminal": {
                         "N": "1"
@@ -338,21 +338,21 @@
                     },
                     "tags": {
                         "SS": [
+                            "Entertaining",
+                            "Books",
+                            "Traveling",
                             "Movies",
-                            "Shoes",
-                            "Accessories",
-                            "Sports",
-                            "Economical"
+                            "Food and Drinks"
                         ]
                     },
                     "lat": {
-                        "N": "0.0"
+                        "N": "114.77357374344183"
                     },
                     "long": {
-                        "N": "0.0"
+                        "N": "-119.79295297186623"
                     },
                     "floor": {
-                        "N": "3"
+                        "N": "1"
                     },
                     "terminal": {
                         "N": "1"

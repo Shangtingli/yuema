@@ -3,7 +3,6 @@ import store from "../../../store"
 import PersonalInfo from "./AccountInfo/PersonalInfo";
 import CategoriesCloud from "./AccountInfo/CategoriesCloud";
 import TravelPlan from "./AccountInfo/TravelPlan";
-import MyFavorite from "./AccountInfo/MyFavorites"
 
 class AccountInfo extends React.Component{
 
@@ -11,7 +10,7 @@ class AccountInfo extends React.Component{
         const data = store.getState();
         return(
             <div className="dashboard-content-container" style={{textAlign:"center", width: "60%", height: "100%"}}>
-                <div style={{width: "50%", height: "90%"}}>
+                <div style={{width: "70%", height: "90%"}}>
                     <h3> Personal Information: </h3>
                     <PersonalInfo
                         avatarUrl={data.avatarUrl}
@@ -35,10 +34,6 @@ class AccountInfo extends React.Component{
                     <div> Long: {data.long}</div>
                 </div>
 
-                {/*<div style={{width: "61%", border: "1px black solid", height: "90%",float:"right"}}>*/}
-                    {/*<h3> My Favorite Stores:</h3>*/}
-                    {/*<MyFavorite traveller={this.props.traveller}/>*/}
-                {/*</div>*/}
             </div>
         );
     }

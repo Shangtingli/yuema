@@ -25,7 +25,7 @@ function constructTraveller(states){
     traveller["country"] = states.country;
     traveller["ageRange"] = states.ageRange;
     traveller["avatarKey"]=states.avatarKey;
-    traveller["favorites"] = states.favorites;
+    traveller["favorites"] = Array.from(states.favorites);
     return traveller;
 }
 class DashBoard extends React.Component{
@@ -38,6 +38,9 @@ class DashBoard extends React.Component{
         API.graphql(graphqlOperation(createTraveller,{input: traveller})).then((response) =>{
             traveller['lat'] = lat;
             traveller['long'] = long;
+            // const newTraveller = traveller.slice();
+            // newTraveller.favorites = Array.from(newTraveller.favorites);
+
             this.props.dispatch(fillFeatures(traveller));
         })
     }
@@ -79,8 +82,9 @@ class DashBoard extends React.Component{
             // saveTravelPlanToCookie(states.flightTime,states.flightTime);
             Storage.get(states.avatarKey).then((response) => {
                 traveller["avatarUrl"]=response;
-                traveller['favorites'] = []
+                // traveller['favorites'] = new Set();
                 if (states.lat === undefined || states.long === undefined){
+
                     navigator.geolocation.getCurrentPosition((position) => {
                         this.saveTravellerFeatures(traveller,position.coords.latitude,position.coords.longitude);
                     })
@@ -104,7 +108,7 @@ class DashBoard extends React.Component{
                 case "people":
                     return (<PeopleRecommendation/>);
                 case "store":
-                    return (<StoreRecommendation traveller={traveller}/>);
+                    return (<StoreRecommendation traveller={traveller} location={{lat:states.lat, long:states.long}}/>);
                 case "account":
                     return (<AccountInfo traveller={traveller}/>);
                 case "addStore":

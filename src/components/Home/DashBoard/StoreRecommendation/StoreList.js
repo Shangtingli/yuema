@@ -26,7 +26,14 @@ class StoreList extends React.Component{
     }
 
     createStores = (data) => {
-        return <Store data={data} key={data.storeName} traveller={this.props.traveller} filterStoreData={this.filterStoreData} favorite={this.props.favorite}/>
+        return <Store
+            data={data}
+            key={data.storeName}
+            traveller={this.props.traveller}
+            filterStoreData={this.filterStoreData}
+            favorite={this.props.favorite}
+            location={this.props.location}
+        />
     }
     onChange = (e) => {
         this.setState({currPage: e});
@@ -36,7 +43,7 @@ class StoreList extends React.Component{
         // const states = store.getState();
         const start = this.state.currPage;
         const storeData = this.props.storeData;
-        debugger;
+
         const storePageData = storeData.slice((start - 1) * STORES_EACH_PAGE, start * STORES_EACH_PAGE);
         // const totalPage = storeData.length/STORES_EACH_PAGE + (storeData.length % STORES_EACH_PAGE === 0 ? 0: 1);
 
