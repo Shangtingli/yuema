@@ -12,6 +12,7 @@ import {API, graphqlOperation,Storage} from 'aws-amplify';
 import AddStorePage from "./DashBoard/Admin/AddStorePage"
 import '../../styles/home/dashboard.scss';
 import {getTraveller} from "../../graphql/queries"
+import {DEFAULT_LATTITUDE, DEFAULT_LONGITUDE} from "../Constants"
 
 function constructTraveller(states){
     const traveller = {};
@@ -65,6 +66,11 @@ class DashBoard extends React.Component{
                         traveller['lat'] = position.coords.latitude;
                         traveller['long'] = position.coords.longitude;
                         this.props.dispatch(fillFeatures(traveller));
+                    },(err) => {
+                        alert(err);
+                        traveller['lat'] = DEFAULT_LATTITUDE;
+                        traveller['long'] = DEFAULT_LONGITUDE;
+                        this.props.dispatch(fillFeatures(traveller));
                     })
                 }
                 else{
@@ -87,6 +93,11 @@ class DashBoard extends React.Component{
 
                     navigator.geolocation.getCurrentPosition((position) => {
                         this.saveTravellerFeatures(traveller,position.coords.latitude,position.coords.longitude);
+                    },(err) => {
+                        alert(err);
+                        traveller['lat'] = DEFAULT_LATTITUDE;
+                        traveller['long'] = DEFAULT_LONGITUDE;
+                        this.props.dispatch(fillFeatures(traveller));
                     })
                 }
                 else{
