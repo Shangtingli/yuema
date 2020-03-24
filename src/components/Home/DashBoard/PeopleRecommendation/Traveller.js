@@ -1,10 +1,6 @@
 
 import React from 'react';
-import {Collapse} from "antd";
-import CommentsPopOver from "../StoreRecommendation/CommentsPopOver";
-import AddCommentPopOver from "../StoreRecommendation/AddCommentPopOver";
 import PersonalInfo from "../AccountInfo/PersonalInfo";
-import TravelPlan from "../AccountInfo/TravelPlan";
 
 export default class Traveller extends React.Component{
 

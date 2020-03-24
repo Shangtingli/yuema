@@ -9,7 +9,7 @@ import Loading from "./DashBoard/Loading"
 import CharacteristicForm from "../Forms/CharacteristicForm"
 import TodayForm from "../Forms/TravelPlan"
 import {getTraveller} from "../../graphql/queries"
-import CategorieForm from "../Forms/CategoryForm"
+import CategoriesForm from "../Forms/CategoryForm"
 
 class Home extends React.Component{
     /**
@@ -57,7 +57,7 @@ class Home extends React.Component{
             return (<CharacteristicForm nextStep={this.nextStep} email={states.email}/>);
         }
         else if (states.flow === 1){
-            return (<CategorieForm nextStep = {this.nextStep}/>)
+            return (<CategoriesForm nextStep = {this.nextStep}/>)
         }
         else if (states.flow === 2){
             return (<TodayForm nextStep={this.nextStep}/>);

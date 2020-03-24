@@ -47,9 +47,9 @@ class LogoutOptions extends React.Component{
     }
     render(){
         return(
-            <div>
-                <Button onClick={this.handleClearCacheThenSignOut}>Yes</Button>
-                <Button onClick={this.authSignOut}>No</Button>
+            <div style={{height:"40px"}}>
+                <Button onClick={this.handleClearCacheThenSignOut} style={{float:"left"}}>Yes</Button>
+                <Button onClick={this.authSignOut} type="primary" style={{float:"right"}}>No</Button>
             </div>
         )
     }

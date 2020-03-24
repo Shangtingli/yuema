@@ -2,7 +2,7 @@
 import { Form, Select, Input, Button } from 'antd';
 import React from 'react';
 import 'antd/dist/antd.css';
-import '../../styles/loginflow/form.scss';
+import '../../styles/styles.scss';
 import Logo from '../../assets/logo.svg';
 import ImageUpload from "./ImageUpload";
 

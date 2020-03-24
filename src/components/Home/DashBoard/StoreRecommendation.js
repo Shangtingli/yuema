@@ -6,6 +6,7 @@ import store from '../../../store';
 import StoreLoading from "./StoreRecommendation/StoreLoading"
 import {connect} from "react-redux"
 import StoreList from "./StoreRecommendation/StoreList"
+import '../../../styles/styles.scss';
 
 class StoreRecommendation extends React.Component{
 
@@ -60,13 +61,13 @@ class StoreRecommendation extends React.Component{
         else{
             return(
                 <div>
-                    <div className="dashboard-content-container" style={{width:"80%", height:"100%"}}>
-                        <h3> Some interesting stores you might like: </h3>
+                    <div className="stores-dashboard-content-container">
+                        <h2 style={{marginBottom: "20px"}}> Some interesting stores you might like: </h2>
                         <StoreList storeData={states.notFavoriteStoreData} traveller={this.props.traveller} location={this.props.location} favorite={false}/>
                     </div>
 
-                    <div className="dashboard-content-container" style={{width:"80%", height:"100%"}}>
-                        <h3> Your Favorite Places: </h3>
+                    <div className="stores-dashboard-content-container">
+                        <h2 style={{marginBottom: "20px"}}> Your Favorite Places: </h2>
                         <StoreList storeData={states.favoriteStoreData} traveller={this.props.traveller} location={this.props.location} favorite={true}/>
                     </div>
                 </div>

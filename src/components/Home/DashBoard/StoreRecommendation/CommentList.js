@@ -1,11 +1,9 @@
 import React from "react"
 import {connect} from 'react-redux';
-import {Popover, Button, Input} from 'antd';
 import {writeCommentsFromDatabase} from "../../../../actions"
 import store from '../../../../store';
 import {API, graphqlOperation} from 'aws-amplify';
 import {listComments} from "../../../../graphql/queries"
-import Comment from './Comment';
 import Loading from "../Loading"
 import CommentPage from "./CommentPage"
 

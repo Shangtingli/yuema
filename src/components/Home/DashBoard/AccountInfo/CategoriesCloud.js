@@ -22,7 +22,7 @@ export default class CategoriesCloud extends React.Component{
              * display: inline-block OR margin:auto => on child block
              * should be enough to center the children
              */
-            <div style={{border: "1px dashed black", height: "170px", width:"400px" ,textAlign:"center",margin:"auto"}}>
+            <div style={{boxShadow: "0 1px 15px 5px rgba(228,115,67,0.6)", height: "170px", width:"400px" ,textAlign:"center",margin:"auto"}}>
                 <h3> Favorite Categories :</h3>
                 <div style={{margin:"auto"}}>
                     {hobbies_entries.map(this.createTag)}

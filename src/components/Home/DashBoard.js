@@ -10,9 +10,10 @@ import {fillFeatures} from "../../actions/index";
 import {createTraveller} from "../../graphql/mutations"
 import {API, graphqlOperation,Storage} from 'aws-amplify';
 import AddStorePage from "./DashBoard/Admin/AddStorePage"
-import '../../styles/home/dashboard.scss';
+import '../../styles/styles.scss';
 import {getTraveller} from "../../graphql/queries"
 import {DEFAULT_LATTITUDE, DEFAULT_LONGITUDE} from "../Constants"
+
 
 function constructTraveller(states){
     const traveller = {};
@@ -71,7 +72,7 @@ class DashBoard extends React.Component{
                         traveller['lat'] = DEFAULT_LATTITUDE;
                         traveller['long'] = DEFAULT_LONGITUDE;
                         this.props.dispatch(fillFeatures(traveller));
-                    })
+                    },{maximumAge:60000, timeout:5000, enableHighAccuracy:true})
                 }
                 else{
                     traveller['lat'] = states.lat;
@@ -86,7 +87,7 @@ class DashBoard extends React.Component{
          */
         else{
             // saveTravelPlanToCookie(states.flightTime,states.flightTime);
-            Storage.get(states.avatarKey).then((response) => {
+            Storage.get(states.avatarKey,{level: 'public'}).then((response) => {
                 traveller["avatarUrl"]=response;
                 // traveller['favorites'] = new Set();
                 if (states.lat === undefined || states.long === undefined){
@@ -96,7 +97,7 @@ class DashBoard extends React.Component{
                     },(err) => {
                         alert(err);
                         this.saveTravellerFeatures(traveller,DEFAULT_LATTITUDE,DEFAULT_LONGITUDE);
-                    })
+                    },{maximumAge:60000, timeout:5000, enableHighAccuracy:true})
                 }
                 else{
                     this.saveTravellerFeatures(traveller,states.lat, states.long);

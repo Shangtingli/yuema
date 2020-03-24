@@ -1,0 +1,190 @@
+.store-list-container{
+  text-align:center;
+}
+
+.comments-container{
+  width: 400px;
+  height: 600px;
+}
+.add-comment-form-container{
+  width: 200px;
+  height: 400px;
+}
+
+.store-card{
+  width: 100px;
+  height: 90%;
+  margin-left: 5px;
+  margin-right: 5px;
+  flex:auto;
+}
+
+.comment-card{
+  height: 30%;
+}
+
+.button-inside-store-rec{
+  width: 120px;
+  margin: 5px;
+}
+
+.home-container{
+  width: 95%;
+  height: 95%;
+  text-align:center;
+  margin:auto;
+}
+
+
+.working-area{
+  height: 120%;
+}
+
+.dashboard-content-container{
+  display: inline-block;
+  box-shadow: 0 1px 15px 5px rgba(0,0,255,0.35);
+  text-align: center;
+  height: 900px;
+  width: 900px;
+  margin-top: 30px;
+  background-color: rgb(235,237,230);
+}
+
+
+.navbar-container{
+  height: 50px;
+  position:fixed;
+  width:90%;
+  top: 0;
+  z-index: 1;
+}
+
+
+.ads-area-left{
+  float: left;
+  border: dashed 2px black;
+  height: 90%;
+  width: 10%;
+}
+
+.ads-area-right{
+  float:right;
+  border: dashed 2px black;
+  height: 90%;
+  width: 10%;
+}
+
+.loading-container{
+  text-align: center;
+  margin-top: 200px;
+}
+.store-rec-loading-card{
+  display:inline-block;
+}
+
+
+#login-form {
+  max-width: 400px;
+}
+.login-form-forgot {
+  float: right;
+}
+.login-form-button {
+  width: 100%;
+}
+
+.form-container{
+  text-align: center;
+  width: 100%;
+}
+
+.form-dashboard-container{
+  text-align: center;
+  width: 700px;
+  height: 850px;
+  margin: auto;
+  box-shadow: 0 1px 15px 5px rgba(163,163,163,.44);
+  background-color: rgb(235,237,230);
+}
+
+
+.initial-form{
+  text-align: center;
+  display: inline-block;
+  width: 60%;
+}
+
+#button-container{
+  display: inline-block;
+  width: 60%;
+}
+
+#button-container > .submit-button{
+  float: left;
+}
+
+#button-container > .back-button{
+  float: right;
+}
+
+.hobby-tags:hover{
+  cursor:pointer
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rating-star:hover{
+  cursor:pointer;
+}
+
+.stores-dashboard-content-container{
+  width:1050px;
+  height:650px;
+  display: block;
+  box-shadow: 0 1px 15px 5px rgba(0,0,255,0.35);
+  text-align: center;
+  margin: 15px auto 15px;
+  background-color: rgb(235,237,230);
+}
+
+//h2{
+//  margin-top:20px;
+//  margin-bottom:20px;
+//}

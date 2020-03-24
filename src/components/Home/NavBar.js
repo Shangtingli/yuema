@@ -1,7 +1,7 @@
 import * as React from "react"
-import {Menu, Icon, Button} from 'antd';
-import {changeTab,logout} from '../../actions/index';
-import '../../styles/home/home.scss';
+import {Menu} from 'antd';
+import {changeTab} from '../../actions/index';
+import '../../styles/styles.scss';
 import store from "../../store";
 import {connect} from "react-redux"
 import LogoutPopover from "./NavBar/LogoutPopover"
@@ -20,7 +20,7 @@ class NavBar extends React.Component {
 
         return (
             <div className='navbar-container'>
-                <Menu onClick={this.handleClickTab} selectedKeys={[current]} mode="horizontal" style={{float:'left',width:'80%', display:"flex"}}>
+                <Menu onClick={this.handleClickTab} selectedKeys={[current]} mode="horizontal" style={{float:'left',width:'60%', display:"flex"}}>
                     <Menu.Item key="account">
                         My Account
                     </Menu.Item>

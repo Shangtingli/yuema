@@ -60,7 +60,7 @@ export const startState = {
      * Comments
      */
     commentsData: null,
-
+    updateStoreFlag: true,
     /**
      * People Recommendation
      */

@@ -1,7 +1,8 @@
 import random
 import json
 
-# Could use  aws dynamodb batch-write-item     --request-items file://stores.json
+# Could use  
+# aws dynamodb batch-write-item     --request-items file://storesToDynamoDB.json
 all_tags = [
     'Clothing',
     'Shoes',
@@ -42,5 +43,5 @@ stores = []
 for id in range(0,10):
     stores.append(generate(id,chr(ord('a') + id)))
     
-with open('stores.json','w') as file:
+with open('storesToDynamoDB.json','w') as file:
     json.dump({"Store-fy4gih74dzaw3fznmgahrq5knu-dev": stores}, file, indent=4)

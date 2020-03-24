@@ -1,5 +1,4 @@
 import React from 'react';
-import Comments from "./CommentList"
 import {Button, Popover} from "antd"
 import AddCommentForm from "./AddCommentForm"
 
@@ -22,7 +21,7 @@ class AddCommentPopOver extends React.Component{
     render(){
         return (
             <Popover
-                content={<AddCommentForm traveller={this.props.traveller} store={this.props.store}/>}
+                content={<AddCommentForm traveller={this.props.traveller} store={this.props.store} hide={this.hide}/>}
                 title="Add your Comments"
                 trigger="click"
                 visible={this.state.visible}

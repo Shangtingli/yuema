@@ -1,364 +1,188 @@
 {
-    "Store-fy4gih74dzaw3fznmgahrq5knu-dev": [
+    "stores": [
         {
-            "PutRequest": {
-                "Item": {
-                    "id": {
-                        "S": "0"
-                    },
-                    "storeName": {
-                        "S": "a"
-                    },
-                    "description": {
-                        "S": "ABCDEFG"
-                    },
-                    "tags": {
-                        "SS": [
-                            "Sports",
-                            "Games",
-                            "Electronics",
-                            "Entertaining",
-                            "Furniture"
-                        ]
-                    },
-                    "lat": {
-                        "N": "26.28401465308542"
-                    },
-                    "long": {
-                        "N": "-50.82274597896816"
-                    },
-                    "floor": {
-                        "N": "2"
-                    },
-                    "terminal": {
-                        "N": "2"
-                    }
-                }
-            }
+            "shop_name": "Britt Shop",
+            "lat": "-22.814785",
+            "lon": "-43.246648",
+            "terminal": "2",
+            "level": "2",
+            "category": "mall"
         },
         {
-            "PutRequest": {
-                "Item": {
-                    "id": {
-                        "S": "1"
-                    },
-                    "storeName": {
-                        "S": "b"
-                    },
-                    "description": {
-                        "S": "ABCDEFG"
-                    },
-                    "tags": {
-                        "SS": [
-                            "Food and Drinks",
-                            "Furniture",
-                            "Traveling",
-                            "Music",
-                            "Sports"
-                        ]
-                    },
-                    "lat": {
-                        "N": "159.38219979986252"
-                    },
-                    "long": {
-                        "N": "-113.84836905137665"
-                    },
-                    "floor": {
-                        "N": "3"
-                    },
-                    "terminal": {
-                        "N": "2"
-                    }
-                }
-            }
+            "shop_name": "Chilli Beans",
+            "lat": "-22.810656",
+            "lon": "-43.251344",
+            "terminal": "2",
+            "level": "1",
+            "category": "fashion_accessories"
         },
         {
-            "PutRequest": {
-                "Item": {
-                    "id": {
-                        "S": "2"
-                    },
-                    "storeName": {
-                        "S": "c"
-                    },
-                    "description": {
-                        "S": "ABCDEFG"
-                    },
-                    "tags": {
-                        "SS": [
-                            "Games",
-                            "Shoes",
-                            "Sports",
-                            "Clothing",
-                            "Cosmetics"
-                        ]
-                    },
-                    "lat": {
-                        "N": "5.990780531756826"
-                    },
-                    "long": {
-                        "N": "146.27759462546123"
-                    },
-                    "floor": {
-                        "N": "1"
-                    },
-                    "terminal": {
-                        "N": "2"
-                    }
-                }
-            }
+            "shop_name": "Dufry",
+            "lat": "-22.814478",
+            "lon": "-43.246993",
+            "terminal": "2",
+            "level": "1",
+            "category": "mall"
         },
         {
-            "PutRequest": {
-                "Item": {
-                    "id": {
-                        "S": "3"
-                    },
-                    "storeName": {
-                        "S": "d"
-                    },
-                    "description": {
-                        "S": "ABCDEFG"
-                    },
-                    "tags": {
-                        "SS": [
-                            "Movies",
-                            "Economical",
-                            "Accessories",
-                            "Traveling",
-                            "Consumer Electronics"
-                        ]
-                    },
-                    "lat": {
-                        "N": "166.60354689716883"
-                    },
-                    "long": {
-                        "N": "-126.74416801262808"
-                    },
-                    "floor": {
-                        "N": "3"
-                    },
-                    "terminal": {
-                        "N": "2"
-                    }
-                }
-            }
+            "shop_name": "Empório do Aço",
+            "lat": "-22.814102",
+            "lon": "-43.247083",
+            "terminal": "2",
+            "level": "1",
+            "category": "undecided"
         },
         {
-            "PutRequest": {
-                "Item": {
-                    "id": {
-                        "S": "4"
-                    },
-                    "storeName": {
-                        "S": "e"
-                    },
-                    "description": {
-                        "S": "ABCDEFG"
-                    },
-                    "tags": {
-                        "SS": [
-                            "Consumer Electronics",
-                            "Economical",
-                            "Cosmetics",
-                            "Shoes",
-                            "Food and Drinks"
-                        ]
-                    },
-                    "lat": {
-                        "N": "144.9513666182787"
-                    },
-                    "long": {
-                        "N": "-109.7792196563368"
-                    },
-                    "floor": {
-                        "N": "3"
-                    },
-                    "terminal": {
-                        "N": "1"
-                    }
-                }
-            }
+            "shop_name": "FOM",
+            "lat": "-22.815046",
+            "lon": "-43.246425",
+            "terminal": "2",
+            "level": "0",
+            "category": "undecided"
         },
         {
-            "PutRequest": {
-                "Item": {
-                    "id": {
-                        "S": "5"
-                    },
-                    "storeName": {
-                        "S": "f"
-                    },
-                    "description": {
-                        "S": "ABCDEFG"
-                    },
-                    "tags": {
-                        "SS": [
-                            "Movies",
-                            "Furniture",
-                            "Entertaining",
-                            "Books",
-                            "Accessories"
-                        ]
-                    },
-                    "lat": {
-                        "N": "-77.0496279744357"
-                    },
-                    "long": {
-                        "N": "132.0572714971695"
-                    },
-                    "floor": {
-                        "N": "3"
-                    },
-                    "terminal": {
-                        "N": "1"
-                    }
-                }
-            }
+            "shop_name": "MAC Cosmetics",
+            "lat": "-22.815055",
+            "lon": "-43.245235",
+            "terminal": "2",
+            "level": "0",
+            "category": "beauty_cosmetics"
         },
         {
-            "PutRequest": {
-                "Item": {
-                    "id": {
-                        "S": "6"
-                    },
-                    "storeName": {
-                        "S": "g"
-                    },
-                    "description": {
-                        "S": "ABCDEFG"
-                    },
-                    "tags": {
-                        "SS": [
-                            "Games",
-                            "Traveling",
-                            "Furniture",
-                            "Sports",
-                            "Movies"
-                        ]
-                    },
-                    "lat": {
-                        "N": "6.9017358814578245"
-                    },
-                    "long": {
-                        "N": "23.860019383341836"
-                    },
-                    "floor": {
-                        "N": "2"
-                    },
-                    "terminal": {
-                        "N": "1"
-                    }
-                }
-            }
+            "shop_name": "O Boticário",
+            "lat": "-22.815241",
+            "lon": "-43.245805",
+            "terminal": "2",
+            "level": "0",
+            "category": "undecided"
         },
         {
-            "PutRequest": {
-                "Item": {
-                    "id": {
-                        "S": "7"
-                    },
-                    "storeName": {
-                        "S": "h"
-                    },
-                    "description": {
-                        "S": "ABCDEFG"
-                    },
-                    "tags": {
-                        "SS": [
-                            "Electronics",
-                            "Traveling",
-                            "DIY",
-                            "Economical",
-                            "Cosmetics"
-                        ]
-                    },
-                    "lat": {
-                        "N": "100.49798011119805"
-                    },
-                    "long": {
-                        "N": "-106.38869500403625"
-                    },
-                    "floor": {
-                        "N": "2"
-                    },
-                    "terminal": {
-                        "N": "2"
-                    }
-                }
-            }
+            "shop_name": "Sunglass Hut",
+            "lat": "-22.815092",
+            "lon": "-43.246551",
+            "terminal": "2",
+            "level": "2",
+            "category": "undecided"
         },
         {
-            "PutRequest": {
-                "Item": {
-                    "id": {
-                        "S": "8"
-                    },
-                    "storeName": {
-                        "S": "i"
-                    },
-                    "description": {
-                        "S": "ABCDEFG"
-                    },
-                    "tags": {
-                        "SS": [
-                            "Economical",
-                            "Clothing",
-                            "Luxury",
-                            "Food and Drinks",
-                            "Electronics"
-                        ]
-                    },
-                    "lat": {
-                        "N": "36.64793287990244"
-                    },
-                    "long": {
-                        "N": "-25.082515494729392"
-                    },
-                    "floor": {
-                        "N": "3"
-                    },
-                    "terminal": {
-                        "N": "1"
-                    }
-                }
-            }
+            "shop_name": "Granado Pharmacias",
+            "lat": "-22.814334",
+            "lon": "-43.245584",
+            "terminal": "2",
+            "level": "1",
+            "category": "beauty_cosmetics"
         },
         {
-            "PutRequest": {
-                "Item": {
-                    "id": {
-                        "S": "9"
-                    },
-                    "storeName": {
-                        "S": "j"
-                    },
-                    "description": {
-                        "S": "ABCDEFG"
-                    },
-                    "tags": {
-                        "SS": [
-                            "Entertaining",
-                            "Books",
-                            "Traveling",
-                            "Movies",
-                            "Food and Drinks"
-                        ]
-                    },
-                    "lat": {
-                        "N": "114.77357374344183"
-                    },
-                    "long": {
-                        "N": "-119.79295297186623"
-                    },
-                    "floor": {
-                        "N": "1"
-                    },
-                    "terminal": {
-                        "N": "1"
-                    }
-                }
-            }
+            "shop_name": "L'Occitane",
+            "lat": "-22.81408",
+            "lon": "-43.246212",
+            "terminal": "2",
+            "level": "1",
+            "category": "beauty_cosmetics"
+        },
+        {
+            "shop_name": "Maybelline New York",
+            "lat": "-22.813864",
+            "lon": "-43.247713",
+            "terminal": "2",
+            "level": "2",
+            "category": "beauty_cosmetics"
+        },
+        {
+            "shop_name": "Livraria Leitura",
+            "lat": "-22.815175",
+            "lon": "-43.244505",
+            "terminal": "2",
+            "level": "1",
+            "category": "books_magazines"
+        },
+        {
+            "shop_name": "WH Smith",
+            "lat": "-22.8183",
+            "lon": "-43.243186",
+            "terminal": "2",
+            "level": "2",
+            "category": "books_magazines"
+        },
+        {
+            "shop_name": "Hudson News",
+            "lat": "-22.814523",
+            "lon": "-43.247492",
+            "terminal": "2",
+            "level": "2",
+            "category": "mall"
+        },
+        {
+            "shop_name": "Air Farma",
+            "lat": "-22.814707",
+            "lon": "-43.246452",
+            "terminal": "2",
+            "level": "2",
+            "category": "pharmacy"
+        },
+        {
+            "shop_name": "Polo Ralph Lauren",
+            "lat": "-22.815023",
+            "lon": "-43.244533",
+            "terminal": "2",
+            "level": "1",
+            "category": "fashion_accessories"
+        },
+        {
+            "shop_name": "Amsterdam Sauer",
+            "lat": "-22.815071",
+            "lon": "-43.245252",
+            "terminal": "2",
+            "level": "1",
+            "category": "fashion_accessories"
+        },
+        {
+            "shop_name": "ARTY Rio",
+            "lat": "-22.815",
+            "lon": "-43.246107",
+            "terminal": "2",
+            "level": "2",
+            "category": "fashion_accessories"
+        },
+        {
+            "shop_name": "Bola Show",
+            "lat": "-22.813626",
+            "lon": "-43.247551",
+            "terminal": "2",
+            "level": "2",
+            "category": "fashion_accessories"
+        },
+        {
+            "shop_name": "Ehven Pedras",
+            "lat": "-22.81446",
+            "lon": "-43.245811",
+            "terminal": "2",
+            "level": "1",
+            "category": "fashion_accessories"
+        },
+        {
+            "shop_name": "Energia Natural",
+            "lat": "-22.814684",
+            "lon": "-43.247149",
+            "terminal": "2",
+            "level": "2",
+            "category": "fashion_accessories"
+        },
+        {
+            "shop_name": "Mr.Cat",
+            "lat": "-22.815476",
+            "lon": "-43.245408",
+            "terminal": "2",
+            "level": "1",
+            "category": "fashion_accessories"
+        },
+        {
+            "shop_name": "Track & Field",
+            "lat": "-22.811347",
+            "lon": "-43.251649",
+            "terminal": "1",
+            "level": "0",
+            "category": "fashion_accessories"
         }
     ]
 }

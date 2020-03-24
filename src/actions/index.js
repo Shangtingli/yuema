@@ -65,3 +65,7 @@ export const removeFavorite = (storeId) => ({
     storeId: storeId
 })
 
+export const triggerUpdateStore = () => ({
+    type: "TRIGGER_UPDATE_STORE"
+})
+

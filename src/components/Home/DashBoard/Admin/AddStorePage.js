@@ -4,7 +4,6 @@ import { Form, Select, Input, Button } from 'antd';
 import {connect} from "react-redux"
 import {createStore} from "../../../../graphql/mutations"
 import {API, graphqlOperation} from 'aws-amplify';
-import TagsInput from "./TagsInput";
 
 const { Option } = Select;
 const { TextArea } = Input;

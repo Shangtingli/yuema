@@ -38,7 +38,7 @@
 		}
 	},
 	"storage": {
-		"s33bddcabf": {
+		"yuemastorage": {
 			"service": "S3",
 			"providerPlugin": "awscloudformation"
 		}

@@ -86,7 +86,7 @@ export default class CategoryForm extends React.Component{
         return(
             <div className='form-dashboard-container'>
                 <img src={Logo} className="logo-image"/>
-                <h3> {`Please choose some things you like (Maximum ${MAXIMUM_HOBBIES_SELECTED})`}</h3>
+                <h2> {`Please choose some things you like (Maximum ${MAXIMUM_HOBBIES_SELECTED})`}</h2>
                 <div style={{width: "500px",margin:'auto'}}>
                     {entryPool.map(this.createTag)}
                 </div>

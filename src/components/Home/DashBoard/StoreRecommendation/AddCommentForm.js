@@ -1,10 +1,10 @@
 import React from 'react';
-import {Button, Input, Popover} from "antd"
+import {Button, Input} from "antd"
 import {faStar as lightStar} from '@fortawesome/free-regular-svg-icons';
 import {faStar as darkStar} from "@fortawesome/free-solid-svg-icons"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-import '../../../../styles/home/dashboard.scss';
-import {API, graphqlOperation, Auth} from 'aws-amplify';
+import '../../../../styles/styles.scss';
+import {API, graphqlOperation} from 'aws-amplify';
 import {createComment} from "../../../../graphql/mutations";
 
 const { TextArea } = Input;
@@ -28,10 +28,7 @@ class AddCommentForm extends React.Component{
         comment['commentTravellerId'] = this.state.traveller.email;
         API.graphql(graphqlOperation(createComment,{input: comment})).then((response) => {
             alert("Comment added successfully");
-            /**
-             * TODO: Emm.......
-             */
-            this.forceUpdate();
+            this.props.hide();
         })
 
     }

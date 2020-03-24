@@ -9,6 +9,7 @@ import {addFavorite, removeFavorite} from "../../../../actions"
 import {connect} from "react-redux"
 import {COLOR_SCHEMES} from "../../../Constants";
 import {distance} from "../../../Util";
+import StoreImage from "./StoreImage"
 
 const { Panel } = Collapse;
 class Store extends React.Component{
@@ -70,27 +71,32 @@ class Store extends React.Component{
         for (let i=0; i<tags.length; ++i){
             tags_entries.push([i,tags[i]]);
         }
-        return(
-            <Card title={data.storeName} key={data.storeName} bordered={true} className="store-card" style={{width: "300px"}}>
-                <img src={`helloworld.com`} width={`200px`} height={`200px`}/>
+        return <Card title={data.storeName} key={data.storeName} bordered={true} className="store-card" style={{
+            boxShadow: "0 1px 15px 5px rgba(0,0,255,0.35)",
+            width: "300px",
+            height: "500px",
+            maxWidth: "300px",
+            marginLeft: "10px",
+            marginRight: "10px"
+        }}>
+            <StoreImage imageNumber={this.props.imageNumber}/>
 
-                {/*<p>Tags : {data.tags.map((tag) => {return `${tag} || `})}</p>*/}
-                <div>
-                    {tags_entries.map(this.createTag)}
-                </div>
-                <p>At {`Terminal ${data.terminal} Floor ${data.floor}`}</p>
-                <p> {`Distance: ${kilometers} km`} </p>
-                <CommentsPopOver store={data} traveller={traveller}/>
-                <AddCommentPopOver traveller={traveller} store={data}/>
-                {
-                    this.props.favorite ?
-                        <Button onClick={this.handleRemove}> Remove </Button> :
-                        <Button onClick={this.handleFavorite}> Add To Favorites </Button>
-                }
+            <div>
+                {tags_entries.map(this.createTag)}
+            </div>
+            <p>At {`Terminal ${data.terminal} Floor ${data.floor}`}</p>
+            <p> {`Distance: ${kilometers} km`} </p>
+            <CommentsPopOver store={data} traveller={traveller}/>
+            <AddCommentPopOver traveller={traveller} store={data}/>
+            {
+                this.props.favorite ?
+                    <Button onClick={this.handleRemove}> Remove </Button> :
+                    <Button onClick={this.handleFavorite}> Add To Favorites </Button>
+            }
 
-            </Card>
-        )
+        </Card>
     }
 }
 
+const mapStateToProps = (state)=>({updateStoreFlag: state.updateStoreFlag})
 export default connect()(Store);

@@ -18,10 +18,7 @@ for(let i=0; i< COLOR_SCHEMES1.length; ++i){
     COLOR_SCHEMES.push(COLOR_SCHEMES2[i]);
     COLOR_SCHEMES.push(COLOR_SCHEMES3[i]);
 }
-/**
- * Reference : http://www.notsoboringlife.com/popular-hobbies/
- * @type {string[]}
- */
+
 export const ALL_CATEGORIES = [
     'Clothing',
     'Shoes',

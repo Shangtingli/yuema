@@ -3,7 +3,7 @@ import {Button, Card} from "antd";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faStar as darkStar} from "@fortawesome/free-solid-svg-icons"
 import {faStar as lightStar} from "@fortawesome/free-regular-svg-icons"
-import '../../../../styles/home/dashboard.scss';
+import '../../../../styles/styles.scss';
 import {listComments} from "../../../../graphql/queries"
 
 import {API, graphqlOperation} from 'aws-amplify';

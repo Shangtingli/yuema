@@ -8,10 +8,11 @@ class AccountInfo extends React.Component{
 
     render(){
         const data = store.getState();
+
         return(
-            <div className="dashboard-content-container" style={{textAlign:"center", width: "60%", height: "100%"}}>
-                <div style={{width: "70%", height: "90%"}}>
-                    <h3> Personal Information: </h3>
+            <div className="dashboard-content-container" style={{textAlign:"center", width: "500px", height: "700px",backgroundColor:"rgb(235,237,230)"}}>
+                <div style={{width: "400px", height: "700px",margin:"auto", textAlign: "center"}}>
+                    <h2 style={{marginBottom:"20px"}}> Personal Information: </h2>
                     <PersonalInfo
                         avatarUrl={data.avatarUrl}
                         intro={data.intro}
@@ -30,8 +31,8 @@ class AccountInfo extends React.Component{
                     <TravelPlan flightTime={data.flightTime} flightDest={data.flightDest}/>
 
                     <br/>
-                    <div> Latitude: {data.lat}</div>
-                    <div> Long: {data.long}</div>
+                    {/*<div> Latitude: {data.lat}</div>*/}
+                    {/*<div> Long: {data.long}</div>*/}
                 </div>
 
             </div>

@@ -36,11 +36,13 @@ function setCache(newState){
 const operations = (state = initState, action) => {
     const newState = {...state};
     switch(action.type){
+        case "TRIGGER_UPDATE_STORE":
+            newState.updateStoreFlag = !newState.updateStoreFlag;
 
         case "REMOVE_FAVORITE":
             newState['favorites'].delete(action.storeId)
             var filtered2 = newState.favoriteStoreData.filter(function(value,index,arr){
-                return value['id'] != action.storeId;
+                return value['id'] !== action.storeId;
             })
 
             newState.favoriteStoreData = filtered2;
@@ -57,7 +59,7 @@ const operations = (state = initState, action) => {
             }
 
             var filtered = newState.notFavoriteStoreData.filter(function(value, index, arr){
-                return value['id'] != action.storeId;
+                return value['id'] !== action.storeId;
             });
 
 

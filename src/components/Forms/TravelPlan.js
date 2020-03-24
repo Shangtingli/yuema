@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import Logo from '../../assets/logo.svg';
 import {ALL_IATA,HOURS_CONSIDERED,MONTHS} from "../Constants"
-import '../../styles/loginflow/form.scss';
+import '../../styles/styles.scss';
 const { Option } = Select;
 
 function toString(time){
