@@ -7,8 +7,14 @@ Application endpoint <a href=http://yuemahostingbucket-dev.s3-website-us-east-1.
 
 Some snapshots:
 
-![readme image](./images/Account.png "Readme Image")
+![readme image](./images/AccountInformation.png "Readme Image")
 
-![readme image](./images/StoreRecommendation.png "Readme Image")
+![readme image](./images/PeopleRecommendation.png "Readme Image")
+
+![readme image](./images/RecommendedStore.png "Readme Image")
+
+![readme image](./images/favoriteStores.png "Readme Image")
+
+
 
 
