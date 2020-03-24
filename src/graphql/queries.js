@@ -23,7 +23,6 @@ export const getTraveller = /* GraphQL */ `
         nextToken
       }
       avatarKey
-      avatarUrl
       favorites
     }
   }
@@ -58,7 +57,6 @@ export const listTravellers = /* GraphQL */ `
           nextToken
         }
         avatarKey
-        avatarUrl
         favorites
       }
       nextToken
@@ -99,7 +97,6 @@ export const getComment = /* GraphQL */ `
           nextToken
         }
         avatarKey
-        avatarUrl
         favorites
       }
     }
@@ -138,7 +135,6 @@ export const listComments = /* GraphQL */ `
           macid
           intro
           avatarKey
-          avatarUrl
           favorites
         }
       }

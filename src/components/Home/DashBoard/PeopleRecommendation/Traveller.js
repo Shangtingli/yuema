@@ -10,7 +10,6 @@ export default class Traveller extends React.Component{
         return(
             <div style={{marginLeft:"5px", marginRight:"5px", textAlign:"center"}}>
             <PersonalInfo
-                avatarUrl={data.avatarUrl}
                 intro={data.intro}
                 name={`${data.firstName} ${data.lastName}`}
                 email={data.email}
@@ -18,6 +17,7 @@ export default class Traveller extends React.Component{
                 phoneNumber={data.phoneNumber}
                 sex={data.sex}
                 age={data.ageRange}
+                avatarKey={data.avatarKey}
             />
             </div>
         )

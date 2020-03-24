@@ -26,7 +26,6 @@ export const createTraveller = /* GraphQL */ `
         nextToken
       }
       avatarKey
-      avatarUrl
       favorites
     }
   }
@@ -56,7 +55,6 @@ export const updateTraveller = /* GraphQL */ `
         nextToken
       }
       avatarKey
-      avatarUrl
       favorites
     }
   }
@@ -86,7 +84,6 @@ export const deleteTraveller = /* GraphQL */ `
         nextToken
       }
       avatarKey
-      avatarUrl
       favorites
     }
   }
@@ -128,7 +125,6 @@ export const createComment = /* GraphQL */ `
           nextToken
         }
         avatarKey
-        avatarUrl
         favorites
       }
     }
@@ -171,7 +167,6 @@ export const updateComment = /* GraphQL */ `
           nextToken
         }
         avatarKey
-        avatarUrl
         favorites
       }
     }
@@ -214,7 +209,6 @@ export const deleteComment = /* GraphQL */ `
           nextToken
         }
         avatarKey
-        avatarUrl
         favorites
       }
     }

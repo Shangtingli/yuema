@@ -27,7 +27,7 @@ class AddCommentForm extends React.Component{
         comment['commentStoreId'] = this.state.store.id;
         comment['commentTravellerId'] = this.state.traveller.email;
         API.graphql(graphqlOperation(createComment,{input: comment})).then((response) => {
-            alert("Comment added successfully");
+            alert("Your comment is added successfully");
             this.props.hide();
         })
 

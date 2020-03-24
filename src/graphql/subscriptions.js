@@ -23,7 +23,6 @@ export const onCreateTraveller = /* GraphQL */ `
         nextToken
       }
       avatarKey
-      avatarUrl
       favorites
     }
   }
@@ -50,7 +49,6 @@ export const onUpdateTraveller = /* GraphQL */ `
         nextToken
       }
       avatarKey
-      avatarUrl
       favorites
     }
   }
@@ -77,7 +75,6 @@ export const onDeleteTraveller = /* GraphQL */ `
         nextToken
       }
       avatarKey
-      avatarUrl
       favorites
     }
   }
@@ -116,7 +113,6 @@ export const onCreateComment = /* GraphQL */ `
           nextToken
         }
         avatarKey
-        avatarUrl
         favorites
       }
     }
@@ -156,7 +152,6 @@ export const onUpdateComment = /* GraphQL */ `
           nextToken
         }
         avatarKey
-        avatarUrl
         favorites
       }
     }
@@ -196,7 +191,6 @@ export const onDeleteComment = /* GraphQL */ `
           nextToken
         }
         avatarKey
-        avatarUrl
         favorites
       }
     }

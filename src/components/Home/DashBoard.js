@@ -86,12 +86,8 @@ class DashBoard extends React.Component{
          * Else if the user comes from register entry
          */
         else{
-            // saveTravelPlanToCookie(states.flightTime,states.flightTime);
-            Storage.get(states.avatarKey,{level: 'public'}).then((response) => {
-                traveller["avatarUrl"]=response;
-                // traveller['favorites'] = new Set();
+            debugger;
                 if (states.lat === undefined || states.long === undefined){
-
                     navigator.geolocation.getCurrentPosition((position) => {
                         this.saveTravellerFeatures(traveller,position.coords.latitude,position.coords.longitude);
                     },(err) => {
@@ -103,9 +99,8 @@ class DashBoard extends React.Component{
                     this.saveTravellerFeatures(traveller,states.lat, states.long);
                 }
 
-            })
+            }
         }
-    }
 
 
     render(){

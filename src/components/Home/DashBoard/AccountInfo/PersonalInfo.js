@@ -1,14 +1,14 @@
 import * as React from "react";
-
+import {Storage} from 'aws-amplify';
+import Avatar from "./Avatar"
 export default class PersonalInfo extends React.Component{
-
     render(){
-
         return(
                 <div style={{boxShadow: "0 1px 15px 5px rgba(228,115,67,0.6)", height: "250px", width:"400px",margin:"auto"}}>
 
                     <div style={{float:'left'}}>
-                        <img src={this.props.avatarUrl} style={{width:"100px",height:"100px"}}/><br/><br/>
+                        <Avatar avatarKey={this.props.avatarKey}/>
+                        <br/><br/>
                         <p style={{width: "150px"}}> <i> {this.props.intro} </i></p>
                     </div>
                     <div style={{float:'right', width: "200px"}}>

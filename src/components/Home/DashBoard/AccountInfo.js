@@ -14,7 +14,7 @@ class AccountInfo extends React.Component{
                 <div style={{width: "400px", height: "700px",margin:"auto", textAlign: "center"}}>
                     <h2 style={{marginBottom:"20px"}}> Personal Information: </h2>
                     <PersonalInfo
-                        avatarUrl={data.avatarUrl}
+                        avatarKey={data.avatarKey}
                         intro={data.intro}
                         name={`${data.firstName} ${data.lastName}`}
                         email={data.email}

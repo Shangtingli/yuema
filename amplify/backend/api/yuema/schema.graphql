@@ -11,7 +11,6 @@ type Traveller @model @key(fields: ["email"]) {
   intro: String
   comments: [Comment!] @connection(name: "TravellerComments")
   avatarKey: String
-  avatarUrl: String
   favorites: [String!]
 }
 
