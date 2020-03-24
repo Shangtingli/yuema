@@ -3,7 +3,7 @@ import {writeStoresFromDatabase} from "../../../actions"
 import {API, graphqlOperation} from 'aws-amplify';
 import {listStores} from "../../../graphql/queries";
 import store from '../../../store';
-import StoreLoading from "./StoreRecommendation/StoreLoading"
+import LoadingCard from "../../Loadings/LoadingCard"
 import {connect} from "react-redux"
 import StoreList from "./StoreRecommendation/StoreList"
 import '../../../styles/styles.scss';
@@ -56,7 +56,7 @@ class StoreRecommendation extends React.Component{
     render(){
         const states = store.getState();
         if (states.favoriteStoreData === null && states.notFavoriteStoreData === null){
-            return <StoreLoading/>
+            return <LoadingCard/>
         }
         else{
             return(

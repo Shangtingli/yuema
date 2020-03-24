@@ -5,7 +5,7 @@ import NavBar from "./NavBar"
 import {changeTab, logout, nextStep, switchLoginEntry, switchRegisterEntry} from "../../actions/index"
 import DashBoard from "./DashBoard";
 import store from '../../store';
-import Loading from "./DashBoard/Loading"
+import PageLoading from "../Loadings/PageLoading"
 import CharacteristicForm from "../Forms/CharacteristicForm"
 import TodayForm from "../Forms/TravelPlan"
 import {getTraveller} from "../../graphql/queries"
@@ -51,7 +51,7 @@ class Home extends React.Component{
     render(){
         const states = store.getState();
         if (states.flow === -1){
-            return (<Loading/>)
+            return (<PageLoading/>)
         }
         else if (states.flow === 0){
             return (<CharacteristicForm nextStep={this.nextStep} email={states.email}/>);

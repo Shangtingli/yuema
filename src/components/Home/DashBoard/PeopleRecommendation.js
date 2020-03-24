@@ -3,7 +3,7 @@ import {listTravellers} from "../../../graphql/queries";
 import {writeTravellersFromDatabase} from "../../../actions";
 import {API, graphqlOperation} from 'aws-amplify';
 import store from '../../../store';
-import StoreLoading from "./StoreRecommendation/StoreLoading";
+import LoadingCard from "../../Loadings/LoadingCard";
 import TravellerList from "./PeopleRecommendation/TravellerList";
 import {connect} from "react-redux";
 class PeopleRecommendation extends React.Component{
@@ -38,7 +38,8 @@ class PeopleRecommendation extends React.Component{
         const states= store.getState();
         const travellers= states.travellerData;
         if (travellers === null){
-            return <StoreLoading/>
+            debugger;
+            return <LoadingCard/>
         }
         else{
             return(

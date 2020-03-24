@@ -5,10 +5,10 @@ import StoreRecommendation from "./DashBoard/StoreRecommendation"
 import AccountInfo from "./DashBoard/AccountInfo"
 import {connect} from "react-redux"
 import AboutUs from "./DashBoard/AboutUs"
-import Loading from "./DashBoard/Loading"
+import PageLoading from "../Loadings/PageLoading"
 import {fillFeatures} from "../../actions/index";
 import {createTraveller} from "../../graphql/mutations"
-import {API, graphqlOperation,Storage} from 'aws-amplify';
+import {API, graphqlOperation} from 'aws-amplify';
 import AddStorePage from "./DashBoard/Admin/AddStorePage"
 import '../../styles/styles.scss';
 import {getTraveller} from "../../graphql/queries"
@@ -123,7 +123,7 @@ class DashBoard extends React.Component{
             }
         }
         else{
-            return <Loading/>;
+            return <PageLoading/>;
         }
 
     }

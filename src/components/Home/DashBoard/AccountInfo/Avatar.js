@@ -1,6 +1,6 @@
 import React from 'react';
 import {Storage} from 'aws-amplify';
-import Loading from "../Loading"
+import {Icon} from "antd";
 
 export default class Avatar extends React.Component{
 
@@ -17,10 +17,10 @@ export default class Avatar extends React.Component{
 
     render(){
         if (this.state.avatarUrl === null){
-            return <Loading/>
+            debugger;
+            return <Icon type="sync" spin className='spin-icon'/>
         }
         else{
-            debugger;
             return(
                 <img src={this.state.avatarUrl} style={{width:"100px",height:"100px"}}/>
             )

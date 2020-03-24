@@ -3,7 +3,7 @@ import React from "react"
 
 const { Meta } = Card;
 
-class StoreLoading extends React.Component {
+class LoadingCard extends React.Component {
     state = {
         loading: true,
     };
@@ -32,4 +32,4 @@ class StoreLoading extends React.Component {
     }
 }
 
-export default StoreLoading;
+export default LoadingCard;

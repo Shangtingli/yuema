@@ -66,13 +66,14 @@ class Store extends React.Component{
         const storeLong = data.long;
 
         const kilometers = distance(currentLat,currentLong,storeLat,storeLong,"K");
-
+        const actual_number = kilometers < 1 ? (Math.floor((kilometers * 1000) * 100)) / 100 : Math.floor(kilometers * 100) / 100;
+        const actual_unit = kilometers < 1 ? 'm' : 'km';
         const tags_entries = []
         for (let i=0; i<tags.length; ++i){
             tags_entries.push([i,tags[i]]);
         }
         return <Card title={data.storeName} key={data.storeName} bordered={true} className="store-card" style={{
-            boxShadow: "0 1px 15px 5px rgba(0,0,255,0.35)",
+            boxShadow: "0 1px 15px 5px rgba(228,115,67,0.6)",
             width: "300px",
             height: "500px",
             maxWidth: "300px",
@@ -85,7 +86,7 @@ class Store extends React.Component{
                 {tags_entries.map(this.createTag)}
             </div>
             <p>At {`Terminal ${data.terminal} Floor ${data.floor}`}</p>
-            <p> {`Distance: ${kilometers} km`} </p>
+            <p> {`Distance: ${actual_number} ${actual_unit}`} </p>
             <CommentsPopOver store={data} traveller={traveller}/>
             <AddCommentPopOver traveller={traveller} store={data}/>
             {
@@ -98,5 +99,4 @@ class Store extends React.Component{
     }
 }
 
-const mapStateToProps = (state)=>({updateStoreFlag: state.updateStoreFlag})
 export default connect()(Store);

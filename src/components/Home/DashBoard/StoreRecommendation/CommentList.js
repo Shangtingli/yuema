@@ -4,7 +4,7 @@ import {writeCommentsFromDatabase} from "../../../../actions"
 import store from '../../../../store';
 import {API, graphqlOperation} from 'aws-amplify';
 import {listComments} from "../../../../graphql/queries"
-import Loading from "../Loading"
+import PageLoading from "../../../Loadings/PageLoading"
 import CommentPage from "./CommentPage"
 
 class CommentList extends React.Component {
@@ -37,7 +37,7 @@ class CommentList extends React.Component {
             );
         }
         else{
-            return <Loading/>
+            return <PageLoading/>
         }
 
     }
