@@ -28,6 +28,29 @@ export function getRandomInt(max) {
 }
 
 
-export function cleanEmail(email){
+export function verifyTraveller(traveller,validAge,validGender){
+    if (validAge !== 'none' && traveller['ageRange'] !== validAge){
+        return false;
+    }
+    if (validGender !== 'none' && traveller['sex'] !== validGender){
+        return false;
+    }
 
+    return true;
+}
+
+export function filterTravellers(travellerData,validAge,validGender){
+    const filtered = travellerData.filter(function(traveller){
+        return verifyTraveller(traveller,validAge,validGender);
+    })
+
+    return filtered;
+}
+
+export function filterTravellersGen(travellerData,validAge,validGender){
+    const filtered = travellerData.filter(function(traveller){
+        return verifyTraveller(traveller,validAge,validGender);
+    })
+
+    return filtered;
 }

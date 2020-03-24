@@ -2,6 +2,7 @@ import {initState, startState} from './stateInit';
 import {ADMIN_ROLES} from "../components/Constants"
 import {Cache} from "aws-amplify";
 import {CACHE_DURATION_MINUTES} from "../components/Constants";
+import {filterTravellers} from "../components/Util"
 
 function fillData(data,newState){
     const keys=Object.keys(data);
@@ -36,11 +37,26 @@ function setCache(newState){
 const operations = (state = initState, action) => {
     const newState = {...state};
     switch(action.type){
-        case "TRIGGER_UPDATE_STORE":
-            newState.updateStoreFlag = !newState.updateStoreFlag;
+        case "FILTER_TRAVELLERS_AGE":
+            debugger;
+            newState.travellerData = filterTravellers(newState.allTravellerData, action.ageRange,newState.genderFilter)
+            newState.ageFilter = action.ageRange;
+            return newState;
+
+        case "FILTER_TRAVELLERS_GENDER":
+            debugger;
+            newState.travellerData = filterTravellers(newState.allTravellerData, newState.ageFilter,action.gender)
+            newState.genderFilter = action.gender;
+            return newState;
+
+
+        // case "TRIGGER_UPDATE_STORE":
+        //     newState.updateStoreFlag = !newState.updateStoreFlag;
+        //     return newState;
 
         case "REMOVE_FAVORITE":
-            newState['favorites'].delete(action.storeId)
+            newState['favorites'].delete(action.storeId);
+
             var filtered2 = newState.favoriteStoreData.filter(function(value,index,arr){
                 return value['id'] !== action.storeId;
             })
@@ -70,7 +86,9 @@ const operations = (state = initState, action) => {
          * Write the traveller information from database to the redux store
          */
         case "WRITE_TRAVELLERS_FROM_DATABASE":
-            newState.travellerData= action.data;
+
+            newState.allTravellerData= action.data;
+            newState.travellerData = action.data;
             return newState;
 
         /**

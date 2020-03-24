@@ -1,12 +1,24 @@
 import * as React from "react"
 import {listTravellers} from "../../../graphql/queries";
-import {writeTravellersFromDatabase} from "../../../actions";
+import {writeTravellersFromDatabase, filterTravellersAge, filterTravellersGender} from "../../../actions";
 import {API, graphqlOperation} from 'aws-amplify';
 import store from '../../../store';
 import LoadingCard from "../../Loadings/LoadingCard";
 import TravellerList from "./PeopleRecommendation/TravellerList";
 import {connect} from "react-redux";
+
+
 class PeopleRecommendation extends React.Component{
+
+    handleFilterAge = (ageRange) => {
+        debugger;
+        this.props.dispatch(filterTravellersAge(ageRange));
+    }
+
+    handleFilterGender = (gender) => {
+        this.props.dispatch(filterTravellersGender(gender));
+    }
+
 
     componentDidMount() {
 
@@ -29,7 +41,10 @@ class PeopleRecommendation extends React.Component{
          * TODO: Could use debugger to see the data for ML Service, Ready to connect to the ML Microservice
          */
         API.graphql(graphqlOperation(listTravellers)).then((response) =>{
-            const allTravellersData = response.data.listTravellers.items;
+            const allTravellersData = response.data.listTravellers.items
+                .filter(
+                    function(e){ return e.email !== states.email}
+                );
             this.props.dispatch(writeTravellersFromDatabase(allTravellersData));
         });
     }
@@ -38,14 +53,20 @@ class PeopleRecommendation extends React.Component{
         const states= store.getState();
         const travellers= states.travellerData;
         if (travellers === null){
-            debugger;
             return <LoadingCard/>
         }
         else{
+
             return(
                 <div className="dashboard-content-container">
                     <h2 style={{marginBottom: "20px" , marginTop: "20px"}}> Some interesting people you might like to chat with: </h2>
-                    <TravellerList travellerData={travellers}/>
+                    <TravellerList
+                        travellerData={travellers}
+                        handleFilterAge={this.handleFilterAge}
+                        handleFilterGender={this.handleFilterGender}
+                        ageRange={states.ageFilter}
+                        gender ={states.genderFilter}
+                    />
                 </div>
             );
         }
@@ -53,5 +74,5 @@ class PeopleRecommendation extends React.Component{
     }
 }
 
-const mapStateToProps = (state) => ({travellerData: state.travellerData});
+const mapStateToProps = (state) => ({alltravellerData: state.allTravellerData,travellerData: state.travellerData, genderFilter: state.genderFilter, ageRangeFilter: state.ageRangeFilter});
 export default connect(mapStateToProps)(PeopleRecommendation);

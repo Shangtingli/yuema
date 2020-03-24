@@ -37,7 +37,7 @@ export const startState = {
     /**
      * NavBar
      */
-    currentTab: 'account',
+    currentTab: 'people',
 
     /**
      * Dashboard
@@ -62,7 +62,10 @@ export const startState = {
     /**
      * People Recommendation
      */
+    allTravellerData: null,
     travellerData: null,
+    genderFilter: "none",
+    ageFilter: "none"
 };
 
 // export const initState= isLoggedIn ?

@@ -43,5 +43,5 @@ stores = []
 for id in range(0,10):
     stores.append(generate(id,chr(ord('a') + id)))
     
-with open('storesToDynamoDB.json','w') as file:
+with open('toS3/storesToDynamoDB.json','w') as file:
     json.dump({"Store-fy4gih74dzaw3fznmgahrq5knu-dev": stores}, file, indent=4)

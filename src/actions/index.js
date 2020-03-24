@@ -3,6 +3,18 @@
  * For the meaning of each action, see the reducers/index.js
  **/
 
+export const filterTravellersAge = (ageRange) => ({
+    type: "FILTER_TRAVELLERS_AGE",
+    ageRange: ageRange
+
+})
+
+export const filterTravellersGender = (gender) => ({
+    type: "FILTER_TRAVELLERS_GENDER",
+    gender: gender
+
+})
+
 export const nextStep = (data) => ({
     type: "NEXT_STEP",
     data: data
@@ -64,8 +76,8 @@ export const removeFavorite = (storeId) => ({
     type: "REMOVE_FAVORITE",
     storeId: storeId
 })
-
-export const triggerUpdateStore = () => ({
-    type: "TRIGGER_UPDATE_STORE"
-})
+//
+// export const triggerUpdateStore = () => ({
+//     type: "TRIGGER_UPDATE_STORE"
+// })
 

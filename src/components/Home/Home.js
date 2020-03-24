@@ -7,7 +7,7 @@ import DashBoard from "./DashBoard";
 import store from '../../store';
 import PageLoading from "../Loadings/PageLoading"
 import CharacteristicForm from "../Forms/CharacteristicForm"
-import TodayForm from "../Forms/TravelPlan"
+import TodayForm from "../Forms/TravelPlanForm"
 import {getTraveller} from "../../graphql/queries"
 import CategoriesForm from "../Forms/CategoryForm"
 

@@ -9,16 +9,14 @@ export default class Avatar extends React.Component{
     }
 
     componentDidMount(){
-        debugger;
         Storage.get(this.props.avatarKey).then((url) => {
-            debugger;
           this.setState({avatarUrl :url});
         })
     }
 
     render(){
         if (this.state.avatarUrl === null){
-            debugger;
+
             return <Icon type="sync" spin className='spin-icon'/>
         }
         else{
