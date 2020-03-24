@@ -26,9 +26,12 @@ class CharacteristicForm extends React.Component{
     constructor(props){
         super(props);
         this.child = React.createRef();
+        this.state = {
+            fileUploading: false
+        }
     }
-    handleSubmit = e => {
-        e.preventDefault();
+
+    handleSubmit = () => {
         this.props.form.validateFields((err, values) => {
 
             if (!err) {
@@ -40,6 +43,7 @@ class CharacteristicForm extends React.Component{
              * TODO: Obviously not safe since if the registration flow abrupts then rubbish
              * avatar would be stored in S3 buckets
              */
+            this.setState({fileUploading:true});
             this.child.current.handleUpload(this.props.email).then((response)=>{
                 newValues['avatarKey'] = response.key;
                 this.props.nextStep(newValues);
@@ -126,10 +130,24 @@ class CharacteristicForm extends React.Component{
                         </Form.Item>
 
                         <Form.Item {...tailFormItemLayout}>
-                            <Button type="primary" htmlType="submit" onClick={this.handleSubmit}>
-                                Submit
-                            </Button>
+
+                        {
+                            this.state.fileUploading  ? (
+
+                                    <Button type="primary" loading>
+                                        Loading
+                                    </Button>
+                                ) :
+                                (
+
+                                        <Button type="primary" htmlType="submit" onClick={this.handleSubmit}>
+                                            Submit
+                                        </Button>
+
+                                )
+                        }
                         </Form.Item>
+
                     </Form>
                 </div>
             </div>
