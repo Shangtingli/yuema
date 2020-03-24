@@ -1,7 +1,8 @@
 export const ADMIN_ROLES = ["shangtingli@outlook.com","shangtingli@gmail.com","yenchenc@usc.edu","liuzhife@usc.edu"]
 export const STORES_EACH_PAGE = 3;
 export const COMMENTS_EACH_PAGE = 4;
-export const TRAVELLERS_EACH_PAGE = 2;
+export const TRAVELLERS_EACH_PAGE = 4;
+export const TRAVELLERS_EACH_ROW = 2;
 export const HOURS_CONSIDERED = 12;
 export const CACHE_DURATION_MINUTES= 10;
 export const DEFAULT_LATTITUDE = -22.814785;

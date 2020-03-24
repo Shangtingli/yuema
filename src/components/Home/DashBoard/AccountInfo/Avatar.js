@@ -9,6 +9,7 @@ export default class Avatar extends React.Component{
     }
 
     componentDidMount(){
+        debugger;
         Storage.get(this.props.avatarKey).then((url) => {
             debugger;
           this.setState({avatarUrl :url});
