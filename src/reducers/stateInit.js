@@ -4,7 +4,7 @@
 export const startState = {
 
     /**
-     * Login/Register Webflow and features
+     * Login/Register Webflow and Features
      */
     flow:-1,
     hasFeaturesStored: false,
@@ -37,7 +37,7 @@ export const startState = {
     /**
      * NavBar
      */
-    currentTab: 'people',
+    currentTab: 'account',
 
     /**
      * Dashboard

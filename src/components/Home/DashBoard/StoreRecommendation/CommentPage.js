@@ -39,7 +39,7 @@ export default class CommentList extends React.Component {
 
         return(
             <div className="comments-container">
-                <div style={{height:'80%'}}>
+                <div>
                     {this.createComments(pageComments)}
                 </div>
                 <Pagination defaultCurrent={this.state.currPage} total={pageComments.length} defaultPageSize={COMMENTS_EACH_PAGE} onChange={this.onChange}/>

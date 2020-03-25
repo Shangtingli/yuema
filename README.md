@@ -23,7 +23,7 @@ Some snapshots:
 
 
 ## Favorite Stores:
-![readme image](./images/favoriteStores.png "Readme Image")
+![readme image](images/FavoriteStores.png "Readme Image")
 
 
 

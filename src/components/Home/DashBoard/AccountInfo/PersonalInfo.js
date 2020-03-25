@@ -7,7 +7,11 @@ export default class PersonalInfo extends React.Component{
                 <div style={{boxShadow: "0 1px 15px 5px rgba(228,115,67,0.6)", height: "250px", width:"400px",margin:"auto"}}>
 
                     <div style={{float:'left'}}>
-                        <Avatar avatarKey={this.props.avatarKey}/>
+                        <Avatar
+                            avatarKey={this.props.avatarKey}
+                            width={"100px"}
+                            height={"100px"}
+                        />
                         <br/><br/>
                         <p style={{width: "150px"}}> <i> {this.props.intro} </i></p>
                     </div>

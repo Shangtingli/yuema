@@ -21,7 +21,7 @@ export default class Avatar extends React.Component{
         }
         else{
             return(
-                <img src={this.state.avatarUrl} style={{width:"100px",height:"100px"}}/>
+                <img src={this.state.avatarUrl} style={{width:`${this.props.width}`,height:`${this.props.height}`}}/>
             )
         }
 

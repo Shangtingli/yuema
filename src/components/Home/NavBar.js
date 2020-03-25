@@ -31,7 +31,7 @@ class NavBar extends React.Component {
                         My Account
                     </Menu.Item>
                     <Menu.Item key="about">
-                        About
+                        About Us
                     </Menu.Item>
                     <Menu.Item key="addStore" className='admin-role-element' style={{display : states.isAdmin ? "block":"none"}}>
                         Add Store
