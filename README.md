@@ -3,7 +3,7 @@
 Cloud form of this application, still under development
 
 
-Application endpoint <a href=http://yuemahostingbucket-dev.s3-website-us-east-1.amazonaws.com/> click here </a>
+Application endpoint <a href=http://yuema-dev.s3-website-us-east-1.amazonaws.com/> click here </a>
 
 Some snapshots:
 
@@ -23,7 +23,7 @@ Some snapshots:
 
 
 ## Favorite Stores:
-![readme image](images/FavoriteStores.png "Readme Image")
+![readme image](./images/FavoriteStores.png "Readme Image")
 
 
 
