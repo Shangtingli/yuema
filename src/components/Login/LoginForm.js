@@ -1,79 +1,145 @@
-import React  from 'react';
-import Form from './Form';
-import { Hub, Auth } from 'aws-amplify';
-import store from '../../store';
-import {connect} from "react-redux"
-import {loadedWhenFail,logout, setUser} from "../../actions"
-import Home from "../Home";
+import React, { useState, useReducer } from 'react'
+
+import { Auth } from 'aws-amplify'
+import {Button, Form, Input, Select} from "antd"
+import ConfirmSignUp from './ConfirmSignUp';
+import SignUp from './SignUp';
+import SignIn from './SignIn';
 import Logo from "../../assets/logo.svg"
 
+const initialFormState = {username: '', password: '', email: '', confirmationCode: '', formType: 'signIn'}
 
-class LoginForm extends React.Component{
 
-    constructor(props){
-        super(props);
-        this.checkUser = this.checkUser.bind(this);
-        // this.signOut = this.signOut.bind(this);
-    }
-    // signOut() {
-    //     Auth.signOut()
-    //         .then(data => {
-    //             console.log('signed out: ', data)
-    //         })
-    //         .catch(err => console.log(err));
-    // }
-    async checkUser(){
+class LoginForm extends React.Component {
+
+  state = initialFormState;
+
+  constructor(props){
+    super(props);
+    this.state = initialFormState;
+    this.signUp=this.signUp.bind(this);
+    this.signIn=this.signIn.bind(this);
+    this.confirmSignUp = this.confirmSignUp.bind(this);
+  }
+
+  updateFormType = (e) => {
+    this.setState({...this.state, formType: e})
+  }
+  updateFormState = (e) => {
+      this.setState({...this.state, [e.target.name]: e.target.value});
+  }
+    async signUp({ username, password, email, phone_number}, updateFormType) {
         try {
-            const user = await Auth.currentAuthenticatedUser()
-            this.props.dispatch(setUser(user))
+            debugger;
+            await Auth.signUp({
+                username, password, attributes: { email,phone_number }
+            })
+            console.log('sign up success!')
+            updateFormType('confirmSignUp')
         } catch (err) {
-            console.log('err: ', err)
-            this.props.dispatch(loadedWhenFail())
+            debugger;
+            console.log(err)
         }
     }
-        effect = () => {
-            {
-                Hub.listen('auth', (data) => {
-                    const { payload } = data
-                    if (payload.event === 'signIn') {
-                        setImmediate(() => this.props.dispatch(setUser(payload.data)));
-                    }
-                    // this listener is needed for form sign ups since the OAuth will redirect & reload
-                    if (payload.event === 'signOut') {
 
-                        setTimeout(() => this.props.dispatch(this.props.dispatch(logout())), 350);
-                    }
-                })
-                // we check for the current user unless there is a redirect to ?signedIn=true
-                if (!window.location.search.includes('?signedin=true')) {
-                    this.checkUser()
-                }
-            }
+    async confirmSignUp({ username, confirmationCode }, updateFormType) {
+        try {
+            await Auth.confirmSignUp(username, confirmationCode)
+            console.log('confirm sign up success!')
+            updateFormType('signIn')
+        } catch (err) {
+            debugger;
+            console.log('error signing up..', err)
         }
+    }
 
-        componentDidMount(){
-            this.effect();
+    async signIn({ username, password }) {
+      debugger;
+        try {
+            await Auth.signIn(username, password)
+            console.log('sign in success!')
+        } catch (err) {
+            debugger;
+            console.log('error signing up..', err)
         }
+    }
+  renderForm = () =>{
+    switch(this.state.formType) {
+        case 'signUp':
+            return (
+                <SignUp
+                    signUp={(data) => this.signUp(data,this.updateFormType)}
+                />
+            )
+        case 'confirmSignUp':
+            return (
+                <ConfirmSignUp
+                    confirmSignUp={
+                        (data) => this.confirmSignUp(
+                        data,
+                        this.updateFormType
+                    )}
+                />
+            )
+      case 'signIn':
+        return (
+          <SignIn
+            signIn={this.signIn}
+            updateFormState={e => this.updateFormState(e)}
+          />
+        )
+      default:
+        return null
+    }
+  }
 
-        render(){
-            if (store.getState().email === ''){
-                return (
-                    <div className='form-dashboard-container'>
-                        <img src={Logo} className="logo-image"/>
-                        <Form />
-                    </div>
 
-                )
-            }
-            else{
-                return <Home/>
-            }
+  render(){
+      return (
+          <div className='form-dashboard-container'>
+              <img src={Logo} className="logo-image"/>
+              {this.renderForm()}
+              <br/><br/>
+              {
+                  this.state.formType === 'signUp' && (
+                      <p style={styles.footer}>
+                          Already have an account? <span
+                          style={styles.anchor}
+                          onClick={() => this.updateFormType('signIn')}
+                      >Sign In</span>
+                      </p>
+                  )
+              }
+              {
+                  this.state.formType === 'signIn' && (
+                      <p style={styles.footer}>
+                          Need an account? <span
+                          style={styles.anchor}
+                          onClick={() => this.updateFormType('signUp')}
+                      >Sign Up</span>
+                      </p>
+                  )
+              }
+          </div>
+      )
+  }
 
-        }
+
 }
 
-const mapStateToProps = (state) => ({loading: state.loading, email: state.email});
-export default connect(mapStateToProps)(LoginForm);
+
+
+
+
+const WrappedForm = Form.create({ name: 'characteristic' })(LoginForm);
+export default WrappedForm;
+
+
+
+
+
+
+
 
 
 
@@ -82,49 +148,15 @@ export default connect(mapStateToProps)(LoginForm);
 
 
 const styles = {
-    appContainer: {
-        paddingTop: 85,
-    },
-    loading: {
-
-    },
-    button: {
-        marginTop: 15,
-        width: '100%',
-        maxWidth: 250,
-        marginBottom: 10,
-        display: 'flex',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        padding: '0px 16px',
-        borderRadius: 2,
-        boxShadow: '0px 1px 3px rgba(0, 0, 0, .3)',
-        cursor: 'pointer',
-        outline: 'none',
-        border: 'none',
-        minHeight: 40
-    },
-    text: {
-        color: 'white',
-        fontSize: 14,
-        marginLeft: 10,
-        fontWeight: 'bold'
-    },
-    signOut: {
-        backgroundColor: 'black'
-    },
-    footer: {
+      footer: {
+        // marginTop: "10px",
         fontWeight: '600',
         padding: '0px 25px',
-        textAlign: 'right',
-        color: 'rgba(0, 0, 0, 0.6)'
-    },
-    anchor: {
-        color: 'rgb(255, 153, 0)',
-        textDecoration: 'none'
-    },
-    body: {
-        padding: '0px 30px',
-        height: '78vh'
-    }
+        textAlign: 'center',
+        color: 'rgba(0, 0, 0, 0.6)',
+      },
+      anchor: {
+        color: '#006bfc',
+        cursor: 'pointer'
+      }
 }

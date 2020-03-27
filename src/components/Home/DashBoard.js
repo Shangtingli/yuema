@@ -130,5 +130,6 @@ class DashBoard extends React.Component{
     }
 }
 
+
 const mapStateToProps = (state) => ({currentTab: state.currentTab, clientDataReady: state.clientDataReady});
 export default connect(mapStateToProps)(DashBoard);
