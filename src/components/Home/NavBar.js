@@ -37,8 +37,8 @@ class NavBar extends React.Component {
                         Add Store
                     </Menu.Item>
                 </Menu>
-                <div style={{float:'right', width: '20%',marginTop:"10px"}}>
-                    <h3 style={{float:'left',marginTop:"5px"}}> {`Hello,${states.firstName}`}</h3>
+                <div style={{float:'right', width: '400px', height: '45px' ,backgroundColor: "white"}}>
+                    <h3 style={{float:'left',marginTop:"10px", marginLeft: "50px"}}> {`Hello,${states.firstName}`}</h3>
                     <LogoutPopover email={states.email}/>
                 </div>
             </div>

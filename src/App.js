@@ -15,29 +15,8 @@ import Home from "./components/Home/Home"
 Amplify.configure(aws_exports);
 
 class App extends React.Component{
-    // componentDidMount(){
-    //     let myInit = {
-    //         body: {}, // replace this with attributes you need
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         } // OPTIONAL
-    //     }
-    //
-    //     API.post('yuemaRestApi','/content-based/user',myInit).then((response)=>{
-    //
-    //         this.setState({text:response.statusCode})
-    //     })
-    // }
-    // state = {
-    //     text: null
-    // }
     render(){
         return <Home/>;
-        // return(
-        //     <div>
-        //         <p>{this.state.text}</p>
-        //     </div>
-        // )
 
     }
 }

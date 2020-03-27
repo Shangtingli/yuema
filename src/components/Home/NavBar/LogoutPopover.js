@@ -27,7 +27,7 @@ export default class LogoutPopover extends React.Component {
                 visible={this.state.visible}
                 onVisibleChange={this.handleVisibleChange}
             >
-                <Button type="primary">Logout</Button>
+                <Button type="primary" style={{marginTop: "7px"}}>Logout</Button>
             </Popover>
         );
     }
