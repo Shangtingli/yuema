@@ -37,8 +37,14 @@ function setCache(newState){
 const operations = (state = initState, action) => {
     const newState = {...state};
     switch(action.type){
-        case "FILTER_TRAVELLERS_AGE":
+        case "LOADED_WHEN_FAIL":
+            newState.loading = false;
+            return newState;
+        case "SET_USER":
             debugger;
+            newState.email = action.email;
+            return newState;
+        case "FILTER_TRAVELLERS_AGE":
             newState.travellerData = filterTravellers(newState.allTravellerData, action.ageRange,newState.genderFilter)
             newState.ageFilter = action.ageRange;
             return newState;
@@ -166,7 +172,6 @@ const operations = (state = initState, action) => {
          * When user logout from the system
          */
         case "LOGOUT":
-            // localStorage.removeItem(TOKEN_KEY);
             return {...startState};
 
         /**

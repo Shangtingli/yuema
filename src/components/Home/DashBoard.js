@@ -86,8 +86,9 @@ class DashBoard extends React.Component{
          * Else if the user comes from register entry
          */
         else{
+            debugger;
                 if (states.lat === undefined || states.long === undefined){
-
+                    debugger;
                     navigator.geolocation.getCurrentPosition((position) => {
                         this.saveTravellerFeatures(traveller,position.coords.latitude,position.coords.longitude);
                     },(err) => {

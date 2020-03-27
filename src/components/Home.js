@@ -1,15 +1,15 @@
 import * as React from "react"
 import {Auth,API, graphqlOperation, Cache} from 'aws-amplify';
 import {connect } from 'react-redux';
-import NavBar from "./NavBar"
-import {changeTab, logout, nextStep, switchLoginEntry, switchRegisterEntry} from "../../actions/index"
-import DashBoard from "./DashBoard";
-import store from '../../store';
-import PageLoading from "../Loadings/PageLoading"
-import CharacteristicForm from "../Forms/CharacteristicForm"
-import TodayForm from "../Forms/TravelPlanForm"
-import {getTraveller} from "../../graphql/queries"
-import CategoriesForm from "../Forms/CategoryForm"
+import NavBar from "./Home/NavBar"
+import {changeTab, logout, nextStep, switchLoginEntry, switchRegisterEntry} from "../actions/index"
+import DashBoard from "./Home/DashBoard";
+import store from '../store';
+import PageLoading from "./Loadings/PageLoading"
+import CharacteristicForm from "./Forms/CharacteristicForm"
+import TodayForm from "./Forms/TravelPlanForm"
+import {getTraveller} from "../graphql/queries"
+import CategoriesForm from "./Forms/CategoryForm"
 
 class Home extends React.Component{
     /**
@@ -21,6 +21,7 @@ class Home extends React.Component{
      */
     componentDidMount(){
         Auth.currentSession().then((response) => {
+            debugger;
             const email = response.idToken.payload.email;
             const phoneNumber = response.idToken.payload.phone_number;
             API.graphql(graphqlOperation(getTraveller,{email:email})).then((response)=>{
@@ -65,7 +66,7 @@ class Home extends React.Component{
         else if (states.flow ===3){
             return(
                 <div className='home-container'>
-                    <NavBar handleLogout={this.handleLogout} handleChangeTab={this.handleChangeTab} />
+                    <NavBar handleLogout={this.handleLogout} handleChangeTab={this.handleChangeTab}/>
                     <br/><br/>
                     <div className='working-area'>
                         {/*<div className={'ads-area-left'}> Ads Area </div>*/}
@@ -83,6 +84,6 @@ class Home extends React.Component{
     }
 }
 
-const mapStateToProps = (state) =>({flow: state.flow, isLoggedIn: state.isLoggedIn});
+const mapStateToProps = (state) =>({flow: state.flow});
 export default connect(mapStateToProps)(Home);
 // export default connect()(Home);

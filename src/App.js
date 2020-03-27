@@ -5,7 +5,8 @@ import { withAuthenticator } from 'aws-amplify-react';
 import Amplify from 'aws-amplify';
 import aws_exports from './aws-exports';
 import {connect} from "react-redux"
-import Home from "./components/Home/Home"
+import Home from "./components/Home"
+import LoginForm from "./components/Login/LoginForm"
 
 
 
@@ -16,9 +17,10 @@ Amplify.configure(aws_exports);
 
 class App extends React.Component{
     render(){
-        return <Home/>;
-
+        // return <Home/>;
+        return <LoginForm/>;
     }
 }
 
-export default withAuthenticator(connect()(App), { includeGreetings: false});
+// export default withAuthenticator(connect()(App), { includeGreetings: false});
+export default App;

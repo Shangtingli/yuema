@@ -8,8 +8,8 @@ export const startState = {
      */
     flow:-1,
     hasFeaturesStored: false,
-    isLoggedIn: false,
-
+    formState: 'base',
+    loading: true,
     /**
      * Features in DynamoDB
      */
@@ -23,6 +23,7 @@ export const startState = {
     country: '',
     flightTime: '',
     flightDest: '',
+
     //TODO: Change hobbies to categories across all project
     hobbies: [],
     favorites: new Set(),

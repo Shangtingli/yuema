@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Auth } from 'aws-amplify';
-import { Popover, Button } from 'antd';
+import {Popover, Button} from 'antd';
 import {Cache} from 'aws-amplify';
 export default class LogoutPopover extends React.Component {
     state = {
@@ -27,7 +27,7 @@ export default class LogoutPopover extends React.Component {
                 visible={this.state.visible}
                 onVisibleChange={this.handleVisibleChange}
             >
-                <Button type="primary" style={{marginTop: "7px"}}>Logout</Button>
+                <Button style={{marginTop: "7px"}}>Logout</Button>
             </Popover>
         );
     }
@@ -41,15 +41,15 @@ class LogoutOptions extends React.Component{
     }
 
     handleClearCacheThenSignOut = () => {
-
         Cache.removeItem(this.props.email);
         this.authSignOut();
     }
+
     render(){
         return(
             <div style={{height:"40px"}}>
                 <Button onClick={this.handleClearCacheThenSignOut} style={{float:"left"}}>Yes</Button>
-                <Button onClick={this.authSignOut} type="primary" style={{float:"right"}}>No</Button>
+                <Button onClick={this.authSignOut} style={{float:"right"}}>No</Button>
             </div>
         )
     }

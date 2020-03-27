@@ -3,6 +3,13 @@
  * For the meaning of each action, see the reducers/index.js
  **/
 
+export const loadedWhenFail = () => ({
+    type: "LOADED_WHEN_FAIL"
+})
+export const setUser = (user) => ({
+    type: "SET_USER",
+    email: user
+})
 export const filterTravellersAge = (ageRange) => ({
     type: "FILTER_TRAVELLERS_AGE",
     ageRange: ageRange
@@ -38,9 +45,9 @@ export const switchLoginEntry = (email,phoneNumber) => ({
     phoneNumber: phoneNumber
 })
 
-export const logout = {
+export const logout = () => ({
     type: "LOGOUT"
-};
+})
 
 export const changeTab = (tab) => ({
     type: "CHANGE_TAB",
