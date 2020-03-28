@@ -5,14 +5,12 @@ import {faStar as darkStar} from "@fortawesome/free-solid-svg-icons"
 import {faStar as lightStar} from "@fortawesome/free-regular-svg-icons"
 import '../../../../styles/styles.scss';
 import {listComments} from "../../../../graphql/queries"
-
+import Avatar from '../../DashBoard/AccountInfo/Avatar';
 import {API, graphqlOperation} from 'aws-amplify';
 import {deleteComment} from "../../../../graphql/mutations"
 
-/**
- * TODO: Possible linkage errors at backend ??
- */
 class Comment extends React.Component{
+
     handleRemove = (e) => {
         e.preventDefault();
         const commentid=e.target.getAttribute('related');
@@ -65,6 +63,7 @@ class Comment extends React.Component{
     }
     render(){
         const commentData = this.props.data;
+        debugger;
         const travellerName = commentData.traveller.firstName + " " + commentData.traveller.lastName;
         const userEmail = this.props.traveller.email;
         const rate = commentData.rate;
@@ -73,11 +72,21 @@ class Comment extends React.Component{
         return(
             <div id={`comment-${commentId}`} >
                 <Card title={travellerName} size="small" className="comment-card">
-                    {this.createDarkStars(rate)}
-                    {this.createLightStars(rate)}
-                    <br/>
-                    <p> {content} </p>
-                    {this.getRemoveButton(commentData.traveller.email,userEmail, commentId)}
+                    <div style={{
+                        float:"right",
+                        boxShadow: "0 1px 15px 5px rgba(228,115,67,0.6)",
+                        width: "250px",
+                        height: "100px"
+                    }}>
+                        <div style={{float:"right"}}>
+                            {this.createDarkStars(rate)}
+                            {this.createLightStars(rate)}
+                        </div>
+                        <br/>
+                        <p> {content} </p>
+                        {this.getRemoveButton(commentData.traveller.email,userEmail, commentId)}
+                    </div>
+                    <Avatar avatarKey={commentData.traveller.avatarKey} width={"100px"} height={"100px"}/>
                 </Card>
             </div>
         )

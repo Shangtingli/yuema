@@ -3,11 +3,32 @@ import {Input, Form, Button} from "antd"
 
 class SignIn extends React.Component {
 
+    state = {
+        submitted: false
+    }
     handleSubmit = (e) =>{
         e.preventDefault();
         const email = e.target[0].value;
         const password = e.target[1].value;
+        this.setState({submitted: true});
         this.props.signIn({username:email, password: password});
+    }
+
+    renderButton = () => {
+        if (this.state.submitted){
+            return (
+                <Button type="primary" loading>
+                    Loading
+                </Button>
+            )
+        }
+        else{
+            return (
+                <Button type="primary" htmlType="submit">
+                    Sign In
+                </Button>
+            );
+        }
     }
     render(){
         const { getFieldDecorator } = this.props.form;
@@ -29,9 +50,7 @@ class SignIn extends React.Component {
                     )}
                 </Form.Item>
 
-                <Button type="primary" htmlType="submit">
-                    Sign In
-                </Button>
+                {this.renderButton()}
 
 
             </Form>

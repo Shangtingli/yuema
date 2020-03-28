@@ -6,12 +6,15 @@ import {API, graphqlOperation} from 'aws-amplify';
 import {listComments} from "../../../../graphql/queries"
 import PageLoading from "../../../Loadings/PageLoading"
 import CommentPage from "./CommentPage"
+import LoadingCard from "../../../Loadings/LoadingCard"
+import {Icon} from "antd"
 
 class CommentList extends React.Component {
 
 
     componentDidMount(){
         API.graphql(graphqlOperation(listComments)).then((response) => {
+            debugger;
             this.writeAPIDataToState(response);
         })
     }
@@ -37,7 +40,7 @@ class CommentList extends React.Component {
             );
         }
         else{
-            return <PageLoading/>
+            return <Icon type="sync" spin className='spin-icon'/>
         }
 
     }

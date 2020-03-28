@@ -1,6 +1,7 @@
 import React from 'react';
 import {Storage} from 'aws-amplify';
 import {Icon} from "antd";
+import PropTypes from 'prop-types';
 
 export default class Avatar extends React.Component{
 
@@ -28,3 +29,9 @@ export default class Avatar extends React.Component{
     }
 
 }
+
+Avatar.propTypes = {
+    width: PropTypes.string,
+    height: PropTypes.string,
+    avatarKey: PropTypes.string
+};

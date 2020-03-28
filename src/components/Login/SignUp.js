@@ -3,6 +3,26 @@ import {Button, Form, Input} from "antd"
 
 class SignUp extends React.Component{
 
+    state = {
+        submitted: false,
+    }
+
+    renderButton = () => {
+        if (this.state.submitted){
+            return (
+                <Button type="primary" loading>
+                    Loading
+                </Button>
+            )
+        }
+        else{
+            return (
+                <Button type="primary" htmlType="submit">
+                    Sign Up
+                </Button>
+            );
+        }
+    }
     handleSubmit = (e) => {
         e.preventDefault();
         const username = e.target[0].value;
@@ -10,12 +30,15 @@ class SignUp extends React.Component{
         const email = e.target[2].value;
         const phoneNumber = "+1" + e.target[3].value;
 
+        this.setState({submitted: true});
         this.props.signUp({
             username:username,
             password:password,
             email: email,
             phone_number: phoneNumber
         });
+
+
     }
     render(){
         const { getFieldDecorator } = this.props.form;
@@ -51,9 +74,7 @@ class SignUp extends React.Component{
                     )}
                 </Form.Item>
 
-                <Button type="primary" htmlType="submit">
-                    Sign Up
-                </Button>
+                {this.renderButton()}
             </Form>
         )
     }
