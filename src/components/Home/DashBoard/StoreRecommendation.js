@@ -7,14 +7,13 @@ import LoadingCard from "../../Loadings/LoadingCard"
 import {connect} from "react-redux"
 import StoreList from "./StoreRecommendation/StoreList"
 import '../../../styles/styles.scss';
+import {MAX_STORES_LISTED} from "../../Constants";
 
 class StoreRecommendation extends React.Component{
 
 
     componentDidMount(){
         const states = store.getState();
-
-
 
         const dataToMLService = {};
         dataToMLService['flag'] = true;
@@ -32,7 +31,7 @@ class StoreRecommendation extends React.Component{
         /**
          * TODO: Debugger here to see the store recommendation data
          */
-        API.graphql(graphqlOperation(listStores)).then((response) =>{
+        API.graphql(graphqlOperation(listStores,{limit: MAX_STORES_LISTED})).then((response) =>{
             /**
              * Insert Store Recommendation Here!!!
              */

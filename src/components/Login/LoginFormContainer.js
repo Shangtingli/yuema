@@ -5,7 +5,6 @@ import store from '../../store';
 import {connect} from "react-redux"
 import {loadedWhenFail,logout, setUser} from "../../actions"
 import Home from "../Home";
-import Logo from "../../assets/logo.svg"
 
 
 class LoginFormContainer extends React.Component{

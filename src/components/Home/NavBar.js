@@ -13,6 +13,17 @@ class NavBar extends React.Component {
         this.props.dispatch(changeTab(e.key));
     };
 
+    renderGreetingsAndLogout(user,firstName){
+        if (firstName === '' || firstName === null){
+            return null;
+        }
+        return (
+            <div style={{float:'right', width: '400px', height: '45px' ,backgroundColor: "white"}}>
+                <h3 style={{float:'left', marginLeft: "50px"}}> {`Hello,${firstName}`}</h3>
+                <LogoutPopover email={user}/>
+            </div>
+        )
+    }
     render() {
         const states=  store.getState();
 
@@ -20,7 +31,7 @@ class NavBar extends React.Component {
 
         return (
             <div className='navbar-container'>
-                <Menu onClick={this.handleClickTab} selectedKeys={[current]} mode="horizontal" style={{float:'left',width:'1000px', display:"flex"}}>
+                <Menu onClick={this.handleClickTab} selectedKeys={[current]} mode="horizontal" style={{float:'left',width:'100%', display:"flex",justifyContent: "space-between"}}>
                     <Menu.Item key="store">
                         Intersting Store
                     </Menu.Item>
@@ -36,11 +47,10 @@ class NavBar extends React.Component {
                     <Menu.Item key="addStore" className='admin-role-element' style={{display : states.isAdmin ? "block":"none"}}>
                         Add Store
                     </Menu.Item>
+
+                    {this.renderGreetingsAndLogout(states.email,states.firstName)}
                 </Menu>
-                <div style={{float:'right', width: '400px', height: '45px' ,backgroundColor: "white"}}>
-                    <h3 style={{float:'left',marginTop:"10px", marginLeft: "50px"}}> {`Hello,${states.firstName}`}</h3>
-                    <LogoutPopover email={states.email}/>
-                </div>
+
             </div>
         );
     }

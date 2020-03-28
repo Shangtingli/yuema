@@ -1,6 +1,6 @@
 
 import * as React from "react";
-import {ALL_CATEGORIES, COLOR_SCHEMES, MAXIMUM_HOBBIES_SELECTED} from "../Constants";
+import {ALL_CATEGORIES, COLOR_SCHEMES, MAXIMUM_CATEGORIES_SELECTED} from "../Constants";
 import {Tag,Button} from "antd";
 import Logo from "../../assets/logo.svg";
 
@@ -35,8 +35,8 @@ export default class CategoryForm extends React.Component{
     }
 
     addHobby = (hobby) => {
-        if (this.state.hobbies.size === MAXIMUM_HOBBIES_SELECTED){
-            alert("Maximum hobbies selected is " + MAXIMUM_HOBBIES_SELECTED);
+        if (this.state.hobbies.size === MAXIMUM_CATEGORIES_SELECTED){
+            alert("Maximum hobbies selected is " + MAXIMUM_CATEGORIES_SELECTED);
             return;
         }
         const newHobbies = new Set(this.state.hobbies);
@@ -86,7 +86,7 @@ export default class CategoryForm extends React.Component{
         return(
             <div className='form-dashboard-container'>
                 <img src={Logo} className="logo-image"/>
-                <h2> {`Please choose some things you like (Maximum ${MAXIMUM_HOBBIES_SELECTED})`}</h2>
+                <h2> {`Please choose some things you like (Maximum ${MAXIMUM_CATEGORIES_SELECTED})`}</h2>
                 <div style={{width: "500px",margin:'auto'}}>
                     {entryPool.map(this.createTag)}
                 </div>

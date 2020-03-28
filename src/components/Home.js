@@ -21,7 +21,6 @@ class Home extends React.Component{
      */
     componentDidMount(){
         Auth.currentSession().then((response) => {
-            debugger;
             const email = response.idToken.payload.email;
             const phoneNumber = response.idToken.payload.phone_number;
             API.graphql(graphqlOperation(getTraveller,{email:email})).then((response)=>{

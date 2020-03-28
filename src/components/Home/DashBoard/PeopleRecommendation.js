@@ -6,6 +6,7 @@ import store from '../../../store';
 import LoadingCard from "../../Loadings/LoadingCard";
 import TravellerList from "./PeopleRecommendation/TravellerList";
 import {connect} from "react-redux";
+import {MAX_USERS_LISTED} from "../../Constants";
 
 
 class PeopleRecommendation extends React.Component{
@@ -40,7 +41,7 @@ class PeopleRecommendation extends React.Component{
         /**
          * TODO: Could use debugger to see the data for ML Service, Ready to connect to the ML Microservice
          */
-        API.graphql(graphqlOperation(listTravellers)).then((response) =>{
+        API.graphql(graphqlOperation(listTravellers,{limit: MAX_USERS_LISTED})).then((response) =>{
             const allTravellersData = response.data.listTravellers.items
                 .filter(
                     function(e){ return e.email !== states.email}
