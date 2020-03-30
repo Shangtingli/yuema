@@ -28,12 +28,12 @@
 				"FunctionName": {
 					"Fn::If": [
 						"ShouldNotCreateEnvResources",
-						"yuemawlambda",
+						"yuemaLambda",
 						{
 							"Fn::Join": [
 								"",
 								[
-									"yuemawlambda",
+									"yuemaLambda",
 									"-",
 									{
 										"Ref": "env"
@@ -63,7 +63,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "amplify-yuema-dev-75530-deployment",
-					"S3Key": "amplify-builds/yuemawlambda-4a4b6542626a73575561-build.zip"
+					"S3Key": "amplify-builds/yuemaLambda-70613969454969774249-build.zip"
 				}
 			}
 		},
@@ -73,12 +73,12 @@
 				"RoleName": {
 					"Fn::If": [
 						"ShouldNotCreateEnvResources",
-						"yuemaLambdaRole5cb64e1c",
+						"yuemaLambdaRolebbb0b783",
 						{
 							"Fn::Join": [
 								"",
 								[
-									"yuemaLambdaRole5cb64e1c",
+									"yuemaLambdaRolebbb0b783",
 									"-",
 									{
 										"Ref": "env"

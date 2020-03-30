@@ -21,20 +21,6 @@
 					}
 				}
 			}
-		},
-		"yuemaRestApi": {
-			"service": "API Gateway",
-			"providerPlugin": "awscloudformation",
-			"dependsOn": [
-				{
-					"category": "function",
-					"resourceName": "yuemawlambda",
-					"attributes": [
-						"Name",
-						"Arn"
-					]
-				}
-			]
 		}
 	},
 	"storage": {
@@ -44,7 +30,7 @@
 		}
 	},
 	"function": {
-		"yuemawlambda": {
+		"yuemaLambda": {
 			"service": "Lambda",
 			"providerPlugin": "awscloudformation",
 			"build": true

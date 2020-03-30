@@ -1,3 +1,8 @@
+type Query{
+    getUser: String! @function(name: "yuemaLambda-${env}")
+    getStore2: String! @function(name: "yuemaLambda-${env}")
+}
+
 type Traveller @model @key(fields: ["email"]) {
   firstName: String!
   lastName: String!
