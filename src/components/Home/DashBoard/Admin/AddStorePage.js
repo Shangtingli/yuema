@@ -138,7 +138,6 @@ const tailFormItemLayout = {
     },
 };
 
-const options = ['musics','books','travel','culinary','coding','romance','computerGame','movies','pets'];
 
 const mapStateToProps = (state) => ({isAdmin: state.isAdmin, isStoreAdded: state.isStoreAdded});
 const WrappedAddStorePage = Form.create({ name: 'addStorePage' })(AddStorePage);

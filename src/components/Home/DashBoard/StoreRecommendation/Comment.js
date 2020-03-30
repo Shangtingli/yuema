@@ -4,7 +4,6 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faStar as darkStar} from "@fortawesome/free-solid-svg-icons"
 import {faStar as lightStar} from "@fortawesome/free-regular-svg-icons"
 import '../../../../styles/styles.scss';
-import {listComments} from "../../../../graphql/queries"
 import Avatar from '../../DashBoard/AccountInfo/Avatar';
 import {API, graphqlOperation} from 'aws-amplify';
 import {deleteComment} from "../../../../graphql/mutations"
@@ -71,12 +70,7 @@ class Comment extends React.Component{
         return(
             <div id={`comment-${commentId}`} >
                 <Card title={travellerName} size="small" className="comment-card">
-                    <div style={{
-                        float:"right",
-                        boxShadow: "0 1px 15px 5px rgba(228,115,67,0.6)",
-                        width: "250px",
-                        height: "100px"
-                    }}>
+                    <div style={styles.commentContainer}>
                         <div style={{float:"right"}}>
                             {this.createDarkStars(rate)}
                             {this.createLightStars(rate)}
@@ -94,3 +88,13 @@ class Comment extends React.Component{
 }
 
 export default Comment
+
+
+const styles = {
+    commentContainer:{
+        float:"right",
+        boxShadow: "0 1px 15px 5px rgba(228,115,67,0.6)",
+        width: "250px",
+        height: "100px"
+    }
+}

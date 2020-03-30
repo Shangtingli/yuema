@@ -56,8 +56,8 @@ class StoreList extends React.Component{
         // const totalPage = storeData.length/STORES_EACH_PAGE + (storeData.length % STORES_EACH_PAGE === 0 ? 0: 1);
 
         return (
-            <div style={{height: "650px", width: "1000px",margin:"auto"}}>
-                <div style={{height: "550px", width: "1000px",display: 'flex'}}>
+            <div style={styles.storesContainer}>
+                <div style={styles.storePage}>
                 {storeEntries.map(this.createStores)}
                 </div>
                 <Pagination defaultCurrent={this.state.currPage} total={storeData.length} defaultPageSize={STORES_EACH_PAGE} onChange={this.onChange}/>
@@ -70,3 +70,16 @@ class StoreList extends React.Component{
 
 
 export default StoreList;
+
+const styles = {
+    storePage: {
+        height: "550px",
+        width: "1000px",
+        display: 'flex'
+    },
+    storesContainer:{
+        height: "650px",
+        width: "1000px",
+        margin:"auto"
+    }
+}

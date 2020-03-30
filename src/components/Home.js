@@ -1,5 +1,5 @@
 import * as React from "react"
-import {Auth,API, graphqlOperation, Cache} from 'aws-amplify';
+import {Auth,API, graphqlOperation} from 'aws-amplify';
 import {connect } from 'react-redux';
 import NavBar from "./Home/NavBar"
 import {changeTab, logout, nextStep, switchLoginEntry, switchRegisterEntry} from "../actions/index"

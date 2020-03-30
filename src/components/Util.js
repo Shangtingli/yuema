@@ -46,11 +46,3 @@ export function filterTravellers(travellerData,validAge,validGender){
 
     return filtered;
 }
-
-export function filterTravellersGen(travellerData,validAge,validGender){
-    const filtered = travellerData.filter(function(traveller){
-        return verifyTraveller(traveller,validAge,validGender);
-    })
-
-    return filtered;
-}

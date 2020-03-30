@@ -1,7 +1,7 @@
-import React, { useState, useReducer } from 'react'
+import React from 'react'
 
-import { Auth } from 'aws-amplify'
-import {Button, Form, Input, Select} from "antd"
+import {Auth} from 'aws-amplify'
+import {Form} from "antd"
 import ConfirmSignUp from './ConfirmSignUp';
 import SignUp from './SignUp';
 import SignIn from './SignIn';

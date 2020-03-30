@@ -43,7 +43,7 @@ class SignUp extends React.Component{
     render(){
         const { getFieldDecorator } = this.props.form;
         return (
-            <Form labelCol={{ span: 5 }} wrapperCol={{ span: 12 }} onSubmit={this.handleSubmit} style={{margin:"50px auto auto", width:"600px"}}>
+            <Form labelCol={{ span: 5 }} wrapperCol={{ span: 12 }} onSubmit={this.handleSubmit} style={styles.formContainer}>
                 <Form.Item label="Username">
                     {getFieldDecorator('username', {
                         rules: [{ required: true, message: 'Username' }],
@@ -82,4 +82,11 @@ class SignUp extends React.Component{
 
 const WrappedSignUp = Form.create({ name: 'signup' })(SignUp);
 export default WrappedSignUp;
+
+const styles = {
+    formContainer:{
+        margin:"50px auto auto",
+        width:"600px"
+    }
+}
 

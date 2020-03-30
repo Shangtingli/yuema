@@ -3,7 +3,6 @@ import {TRAVELLERS_EACH_PAGE, TRAVELLERS_EACH_ROW} from "../../../Constants";
 import {Pagination} from "antd";
 import TravellerRow from "./TravellerRow"
 import Filter from "./Filter"
-import {filterTravellers} from "../../../Util"
 
 export default class TravellerList extends React.Component{
     constructor(props) {
@@ -48,7 +47,7 @@ export default class TravellerList extends React.Component{
 
 
         return (
-            <div style={{height: "100%", width: "100%",textAlgin:"center",margin:"auto"}}>
+            <div style={styles.travelPlanContainer}>
 
                 <Filter
                     filterAge={this.props.handleFilterAge}
@@ -57,10 +56,29 @@ export default class TravellerList extends React.Component{
                     gender={this.props.gender}
                 />
                     {travellerRowDatas.map(this.createTravellerRow)}
-                <Pagination defaultCurrent={this.state.currPage} total={travellerData.length} defaultPageSize={TRAVELLERS_EACH_PAGE} onChange={this.onChange} style={{display:'inline-block'}}/>
+                <Pagination
+                    defaultCurrent={this.state.currPage}
+                    total={travellerData.length}
+                    defaultPageSize={TRAVELLERS_EACH_PAGE}
+                    onChange={this.onChange}
+                    style={styles.pagination}
+                />
             </div>
         )
 
 
+    }
+
+}
+
+const styles = {
+    travellerListContainer:{
+        height: "100%",
+        width: "100%",
+        textAlgin:"center",
+        margin:"auto"
+    },
+    pagination:{
+        display:'inline-block'
     }
 }

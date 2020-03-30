@@ -24,13 +24,28 @@ export default class TravellerRow extends React.Component{
 
 
         return (
-            <div style={{height: "40%", width: "100%",textAlgin:"center", margin:"auto"}}>
-                <div style={{height: "80%", width: "100%",display: 'flex',margin:"auto"}}>
+            <div style={styles.rowContainer}>
+                <div style={styles.travellerContainer}>
                     {data.map(this.createTraveller)}
                 </div>
             </div>
         )
 
 
+    }
+}
+
+const styles = {
+    rowContainer: {
+        height: "40%",
+        width: "100%",
+        textAlgin:"center",
+        margin:"auto"
+    },
+    travellerContainer:{
+        height: "80%",
+        width: "100%",
+        display: 'flex',
+        margin:"auto"
     }
 }

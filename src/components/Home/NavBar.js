@@ -18,8 +18,8 @@ class NavBar extends React.Component {
             return null;
         }
         return (
-            <div style={{float:'right', width: '400px', height: '45px' ,backgroundColor: "white"}}>
-                <h3 style={{float:'left', marginLeft: "50px"}}> {`Hello,${firstName}`}</h3>
+            <div style={styles.logoutContainer}>
+                <h3 style={styles.greetings}> {`Hello,${firstName}`}</h3>
                 <LogoutPopover email={user}/>
             </div>
         )
@@ -31,7 +31,7 @@ class NavBar extends React.Component {
 
         return (
             <div className='navbar-container'>
-                <Menu onClick={this.handleClickTab} selectedKeys={[current]} mode="horizontal" style={{float:'left',width:'100%', display:"flex",justifyContent: "space-between"}}>
+                <Menu onClick={this.handleClickTab} selectedKeys={[current]} mode="horizontal" style={styles.menu}>
                     <Menu.Item key="store">
                         Intersting Store
                     </Menu.Item>
@@ -59,3 +59,22 @@ class NavBar extends React.Component {
 
 const mapStateToProps = (state) => ({currentTab: state.currentTab,firstName: state.firstName, lastName: state.lastName});
 export default connect(mapStateToProps)(NavBar);
+
+const styles = {
+    menu: {
+        float:'left',
+        width:'100%',
+        display:"flex",
+        justifyContent: "space-between"
+    },
+    greetings:{
+        float:'left',
+        marginLeft: "50px"
+    },
+    logoutContainer:{
+        float:'right',
+        width: '400px',
+        height: '45px' ,
+        backgroundColor: "white"
+    }
+}

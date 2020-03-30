@@ -33,7 +33,7 @@ class SignIn extends React.Component {
     render(){
         const { getFieldDecorator } = this.props.form;
         return(
-            <Form labelCol={{ span: 5 }} wrapperCol={{ span: 12 }} onSubmit={this.handleSubmit} style={{margin:"50px auto auto", width:"600px"}}>
+            <Form labelCol={{ span: 5 }} wrapperCol={{ span: 12 }} onSubmit={this.handleSubmit} style={styles.formContainer}>
                 <Form.Item label="Username">
                     {getFieldDecorator('username', {
                         rules: [{ required: true, message: 'Username' }],
@@ -59,3 +59,10 @@ class SignIn extends React.Component {
 }
 
 export default Form.create({ name: 'signin' })(SignIn);
+
+const styles = {
+    formContainer:{
+        margin:"50px auto auto",
+        width:"600px"
+    }
+}

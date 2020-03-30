@@ -2,7 +2,6 @@ import {Form, Button, Select, Input} from 'antd';
 import React from 'react';
 import 'antd/dist/antd.css';
 import {Storage} from 'aws-amplify';
-
 import Logo from '../../assets/logo.svg';
 import {HOURS_CONSIDERED,MONTHS} from "../Constants"
 import '../../styles/styles.scss';

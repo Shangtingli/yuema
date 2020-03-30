@@ -68,8 +68,14 @@ export default class ImageUpload extends React.Component {
                     beforeUpload={beforeUpload}
                     onChange={this.handleChange}
                 >
-                    {imageUrl ? <img className="avatar-real" src={imageUrl} alt="avatar" style={{ width: '100%' }} /> : uploadButton}
+                    {imageUrl ? <img className="avatar-real" src={imageUrl} alt="avatar" style={styles.image} /> : uploadButton}
                 </Upload>
         );
+    }
+}
+
+const styles = {
+    image:{
+        width: '100%'
     }
 }

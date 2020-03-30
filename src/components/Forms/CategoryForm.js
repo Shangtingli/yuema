@@ -87,11 +87,12 @@ export default class CategoryForm extends React.Component{
             <div className='form-dashboard-container'>
                 <img src={Logo} className="logo-image"/>
                 <h2> {`Please choose some things you like (Maximum ${MAXIMUM_CATEGORIES_SELECTED})`}</h2>
-                <div style={{width: "500px",margin:'auto'}}>
+                <div style={styles.tagCloud}>
                     {entryPool.map(this.createTag)}
                 </div>
                 <br/><br/>
-                <div style={{border: "1px solid black", width: "80%", height: "20%",margin:"auto"}}>
+                <div style={styles.tagContainer}>
+                    <br/>
                     {list.map(this.createTag)}
                 </div>
                 <br/>
@@ -99,4 +100,19 @@ export default class CategoryForm extends React.Component{
             </div>
         )
     }
+}
+
+const styles = {
+    tagCloud: {
+        width: "500px",
+        margin:'auto'
+    },
+    tagContainer:{
+        border: "1px solid black",
+        width: "80%",
+        height: "20%",
+        margin:"auto"
+    },
+
+
 }

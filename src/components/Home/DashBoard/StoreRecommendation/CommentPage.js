@@ -20,7 +20,7 @@ export default class CommentList extends React.Component {
                 data={data} key={data.id}
                 traveller={this.props.traveller}
                 setData={this.props.setData}
-                style={{height:'25%'}}
+                style={styles.comment}
             />)
         });
     }
@@ -39,5 +39,11 @@ export default class CommentList extends React.Component {
                 <Pagination defaultCurrent={this.state.currPage} total={commentsData.length} defaultPageSize={COMMENTS_EACH_PAGE} onChange={this.onChange}/>
             </div>
         )
+    }
+}
+
+const styles = {
+    comment:{
+        height:'25%'
     }
 }

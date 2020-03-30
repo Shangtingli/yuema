@@ -14,7 +14,6 @@ Amplify.configure(aws_exports);
 
 class App extends React.Component{
     render(){
-        // return <Home/>;
         return <LoginFormContainer/>;
     }
 }

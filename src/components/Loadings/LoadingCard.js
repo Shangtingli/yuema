@@ -17,7 +17,7 @@ class LoadingCard extends React.Component {
 
         return (
             <div className="store-rec-loading-container">
-                <Card style={{ width: 300, marginTop: 16 }} loading={loading} className="store-rec-loading-card">
+                <Card style={styles.card} loading={loading} className="store-rec-loading-card">
 
                     <Meta
                         avatar={
@@ -33,3 +33,7 @@ class LoadingCard extends React.Component {
 }
 
 export default LoadingCard;
+
+const styles = {
+    card:{ width: 300, marginTop: 16 }
+}

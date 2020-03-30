@@ -69,8 +69,5 @@ export const startState = {
     ageFilter: "none"
 };
 
-// export const initState= isLoggedIn ?
-//     JSON.parse(localStorage.getItem(TOKEN_KEY)) : startState;
-
 export const initState= {...startState};
 

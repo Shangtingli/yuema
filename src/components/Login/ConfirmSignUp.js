@@ -13,7 +13,7 @@ class ConfirmSignUp extends React.Component {
     render(){
         const {getFieldDecorator} = this.props.form;
         return(
-                <Form labelCol={{ span: 5 }} wrapperCol={{ span: 12 }} onSubmit={this.handleSubmit} style={{margin:"50px auto auto", width:"600px"}}>
+                <Form labelCol={{ span: 5 }} wrapperCol={{ span: 12 }} onSubmit={this.handleSubmit} style={styles.formContainer}>
                     <h2> Please Verify your identity </h2>
                     <h4> You should receive an email containing the confirmation code very soon </h4>
                     <Form.Item label="Username">
@@ -45,3 +45,7 @@ class ConfirmSignUp extends React.Component {
 
 
 export default Form.create({ name: 'confirmsignup'})(ConfirmSignUp);
+
+const styles = {
+    formContainer:{margin:"50px auto auto", width:"600px"}
+}

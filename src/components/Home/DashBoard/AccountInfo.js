@@ -10,8 +10,8 @@ class AccountInfo extends React.Component{
         const data = store.getState();
 
         return(
-            <div className="dashboard-content-container" style={{textAlign:"center", width: "500px", height: "700px",backgroundColor:"rgb(235,237,230)"}}>
-                <div style={{width: "400px", height: "700px",margin:"auto", textAlign: "center"}}>
+            <div className="dashboard-content-container" style={styles.accountInfoContainer}>
+                <div style={styles.nextContainer}>
                     <h2 style={{marginBottom:"20px"}}> Personal Information: </h2>
                     <PersonalInfo
                         avatarKey={data.avatarKey}
@@ -31,8 +31,6 @@ class AccountInfo extends React.Component{
                     <TravelPlan flightTime={data.flightTime} flightDest={data.flightDest}/>
 
                     <br/>
-                    {/*<div> Latitude: {data.lat}</div>*/}
-                    {/*<div> Long: {data.long}</div>*/}
                 </div>
 
             </div>
@@ -41,3 +39,20 @@ class AccountInfo extends React.Component{
 }
 
 export default AccountInfo;
+
+const styles = {
+    accountInfoContainer:{
+        textAlign:"center",
+        width: "500px",
+        height: "700px",
+        backgroundColor:"rgb(235,237,230)"
+    },
+    nextContainer:{
+        width: "400px",
+        height: "700px",
+        margin:"auto",
+        textAlign: "center"
+    },
+
+
+}

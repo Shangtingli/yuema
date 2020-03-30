@@ -22,12 +22,26 @@ export default class CategoriesCloud extends React.Component{
              * display: inline-block OR margin:auto => on child block
              * should be enough to center the children
              */
-            <div style={{boxShadow: "0 1px 15px 5px rgba(228,115,67,0.6)", height: "170px", width:"400px" ,textAlign:"center",margin:"auto"}}>
+            <div style={styles.categories}>
                 <h3> Favorite Categories :</h3>
-                <div style={{margin:"auto"}}>
+                <div style={styles.tagCloud}>
                     {hobbies_entries.map(this.createTag)}
                 </div>
             </div>
         )
+    }
+}
+
+const styles = {
+    categories: {
+        boxShadow: "0 1px 15px 5px rgba(228,115,67,0.6)",
+        height: "170px",
+        width:"400px" ,
+        textAlign:"center",
+        margin:"auto"
+    },
+
+    tagCloud:{
+        margin:"auto"
     }
 }

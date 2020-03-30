@@ -1,6 +1,5 @@
-
 import React from "react"
-import {Button, Card, Collapse, Popover, Tag} from "antd"
+import {Button, Card, Tag} from "antd"
 import CommentsPopOver from "./CommentsPopOver"
 import AddCommentPopOver from "./AddCommentPopOver"
 import {API, graphqlOperation} from 'aws-amplify';
@@ -11,7 +10,6 @@ import {COLOR_SCHEMES} from "../../../Constants";
 import {distance} from "../../../Util";
 import StoreImage from "./StoreImage"
 
-const { Panel } = Collapse;
 class Store extends React.Component{
 
     createTag = (entry) => {
@@ -72,14 +70,8 @@ class Store extends React.Component{
         for (let i=0; i<tags.length; ++i){
             tags_entries.push([i,tags[i]]);
         }
-        return <Card title={data.storeName} key={data.storeName} bordered={true} className="store-card" style={{
-            boxShadow: "0 1px 15px 5px rgba(228,115,67,0.6)",
-            width: "300px",
-            height: "500px",
-            maxWidth: "300px",
-            marginLeft: "10px",
-            marginRight: "10px"
-        }}>
+        return (
+            <Card title={data.storeName} key={data.storeName} bordered={true} className="store-card" style={styles.card}>
             <StoreImage imageNumber={this.props.imageNumber}/>
 
             <div>
@@ -95,8 +87,20 @@ class Store extends React.Component{
                     <Button onClick={this.handleFavorite}> Add To Favorites </Button>
             }
 
-        </Card>
+            </Card>
+        );
     }
 }
 
 export default connect()(Store);
+
+const styles = {
+    card:{
+        boxShadow: "0 1px 15px 5px rgba(228,115,67,0.6)",
+        width: "300px",
+        height: "500px",
+        maxWidth: "300px",
+        marginLeft: "10px",
+        marginRight: "10px"
+    }
+}

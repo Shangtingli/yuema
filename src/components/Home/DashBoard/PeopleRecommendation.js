@@ -60,7 +60,7 @@ class PeopleRecommendation extends React.Component{
 
             return(
                 <div className="dashboard-content-container">
-                    <h2 style={{marginBottom: "20px" , marginTop: "20px"}}> Some interesting people you might like to chat with: </h2>
+                    <h2 style={styles.travellerTitle}> Some interesting people you might like to chat with: </h2>
                     <TravellerList
                         travellerData={travellers}
                         handleFilterAge={this.handleFilterAge}
@@ -75,5 +75,17 @@ class PeopleRecommendation extends React.Component{
     }
 }
 
-const mapStateToProps = (state) => ({alltravellerData: state.allTravellerData,travellerData: state.travellerData, genderFilter: state.genderFilter, ageRangeFilter: state.ageRangeFilter});
+const mapStateToProps = (state) => ({
+    alltravellerData: state.allTravellerData,
+    travellerData: state.travellerData,
+    genderFilter: state.genderFilter,
+    ageRangeFilter: state.ageRangeFilter
+});
 export default connect(mapStateToProps)(PeopleRecommendation);
+
+const styles = {
+    travellerTitle:{
+        marginBottom: "20px" ,
+        marginTop: "20px"
+    }
+}

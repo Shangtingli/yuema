@@ -21,8 +21,9 @@ export default class Avatar extends React.Component{
             return <Icon type="sync" spin className='spin-icon'/>
         }
         else{
+            const style = {width:`${this.props.width}`,height:`${this.props.height}`};
             return(
-                <img src={this.state.avatarUrl} style={{width:`${this.props.width}`,height:`${this.props.height}`}}/>
+                <img src={this.state.avatarUrl} style={style}/>
             )
         }
 
