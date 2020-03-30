@@ -63,7 +63,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "amplify-yuema-dev-75530-deployment",
-					"S3Key": "amplify-builds/yuemawlambda-6c2f4c55503452644d42-build.zip"
+					"S3Key": "amplify-builds/yuemawlambda-4a4b6542626a73575561-build.zip"
 				}
 			}
 		},

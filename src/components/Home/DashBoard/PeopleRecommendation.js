@@ -12,7 +12,7 @@ import {MAX_USERS_LISTED} from "../../Constants";
 class PeopleRecommendation extends React.Component{
 
     handleFilterAge = (ageRange) => {
-        debugger;
+
         this.props.dispatch(filterTravellersAge(ageRange));
     }
 

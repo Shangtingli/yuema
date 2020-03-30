@@ -5,3 +5,4 @@
 * Add prefix for the phoneNumber column
 * Solve CORS Problem when calling ML Sesrvice
 * Write all styles to "const style" format
+* Page size is not right

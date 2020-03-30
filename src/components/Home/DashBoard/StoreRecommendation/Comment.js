@@ -8,6 +8,7 @@ import {listComments} from "../../../../graphql/queries"
 import Avatar from '../../DashBoard/AccountInfo/Avatar';
 import {API, graphqlOperation} from 'aws-amplify';
 import {deleteComment} from "../../../../graphql/mutations"
+import {getStoreComments} from "../../../../graphql/customQueries"
 
 class Comment extends React.Component{
 
@@ -16,11 +17,9 @@ class Comment extends React.Component{
         const commentid=e.target.getAttribute('related');
         const comment = {}
         comment['id'] = commentid;
-        // comment['commentStoreId'] = this.props.store.id;
-        // comment['commentTravellerId'] = this.props.traveller.id;
         API.graphql(graphqlOperation(deleteComment,{input:comment})).then((response) => {
-            API.graphql(graphqlOperation(listComments)).then((response) => {
-                this.props.writeAPIDataToState(response);
+            API.graphql(graphqlOperation(getStoreComments,{id:this.props.store.id})).then((response) => {
+                this.props.setData(response.data.getStore.comments.items);
             })
         })
     }
@@ -63,7 +62,7 @@ class Comment extends React.Component{
     }
     render(){
         const commentData = this.props.data;
-        debugger;
+
         const travellerName = commentData.traveller.firstName + " " + commentData.traveller.lastName;
         const userEmail = this.props.traveller.email;
         const rate = commentData.rate;

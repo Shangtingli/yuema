@@ -41,7 +41,7 @@ const operations = (state = initState, action) => {
             newState.loading = false;
             return newState;
         case "SET_USER":
-            debugger;
+
             newState.email = action.email;
             return newState;
         case "FILTER_TRAVELLERS_AGE":
@@ -50,7 +50,7 @@ const operations = (state = initState, action) => {
             return newState;
 
         case "FILTER_TRAVELLERS_GENDER":
-            debugger;
+
             newState.travellerData = filterTravellers(newState.allTravellerData, newState.ageFilter,action.gender)
             newState.genderFilter = action.gender;
             return newState;

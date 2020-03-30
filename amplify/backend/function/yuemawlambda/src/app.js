@@ -38,6 +38,15 @@ app.use(function(req, res, next) {
 
 
 
+app.get('/',function(req,res){
+    var response = {
+        statusCode: 200,
+        headers: HEADERS,
+        body: JSON.stringify({success: 'post call succeed!', url: req.url, body: req.body})
+    };
+
+    res.json(response);
+})
 /****************************
 * Example post method *
 ****************************/
@@ -54,33 +63,29 @@ app.post('/', function(req, res) {
 });
 
 app.post('/content-based/user', function(req, res) {
-
-    fetch(`${ML_EC2_ENDPOINT}:${ML_EC2_PORT}`,
+    console.log(req.body)
+    fetch("https://100mg1npwb.execute-api.us-east-1.amazonaws.com/test/predict",
         {
-            method: 'GET', // *GET, POST, PUT, DELETE, etc.
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
             headers: HEADERS,
+            body: req.body
         }).then((response)=>{
-        // Add your code here
-        var response = {
-            statusCode: 200,
-            headers: HEADERS,
-            // body: JSON.stringify({success: 'post call succeed!', url: req.url, body: response})
-        };
-
-        res.json(response);
-    })
+            res.json(response);
+        })
 
 });
 
 app.post('/user-based/store', function(req, res) {
-  // Add your code here
-    var response = {
-        statusCode: 200,
-        headers: HEADERS,
-        body: JSON.stringify({success: 'post call succeed!', url: req.url, body: req.body})
-    };
 
-    res.json(response);
+  // Add your code here
+    return "Hello";
+    // var response = {
+    //     statusCode: 200,
+    //     headers: HEADERS,
+    //     body: JSON.stringify({success: 'post call succeed!', url: req.url, body: req.body})
+    // };
+    //
+    // res.json(response);
 });
 
 app.listen(3000, function() {

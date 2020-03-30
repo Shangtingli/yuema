@@ -38,7 +38,7 @@ export const startState = {
     /**
      * NavBar
      */
-    currentTab: 'account',
+    currentTab: 'store',
 
     /**
      * Dashboard

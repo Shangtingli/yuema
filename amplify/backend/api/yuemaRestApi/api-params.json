@@ -1,14 +1,14 @@
 {
     "paths": [
         {
-            "name": "/user-based/store",
+            "name": "/content-based/user",
             "lambdaFunction": "yuemawlambda",
             "privacy": {
                 "open": true
             }
         },
         {
-            "name": "/content-based/user",
+            "name": "/user-based/store",
             "lambdaFunction": "yuemawlambda",
             "privacy": {
                 "open": true
@@ -37,5 +37,6 @@
                 "Arn"
             ]
         }
-    ]
+    ],
+    "uuid": "e2cc6799"
 }

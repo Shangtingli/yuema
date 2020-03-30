@@ -10,7 +10,7 @@ export default class Filter extends React.Component{
     }
 
     handleOnGenderClick = (e) => {
-        debugger;
+
         this.props.filterGender(e.target.getAttribute('tabvalue'))
         // this.setState({genderSelection: e.target.getAttribute('tabvalue')});
     }

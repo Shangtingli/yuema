@@ -30,14 +30,14 @@ class LoginForm extends React.Component {
   }
     async signUp({ username, password, email, phone_number}, updateFormType) {
         try {
-            debugger;
+
             await Auth.signUp({
                 username, password, attributes: { email,phone_number }
             })
             console.log('sign up success!')
             updateFormType('confirmSignUp')
         } catch (err) {
-            debugger;
+
             console.log(err)
         }
     }
@@ -48,18 +48,18 @@ class LoginForm extends React.Component {
             console.log('confirm sign up success!')
             updateFormType('signIn')
         } catch (err) {
-            debugger;
+
             console.log('error signing up..', err)
         }
     }
 
     async signIn({ username, password }) {
-      debugger;
+
         try {
             await Auth.signIn(username, password)
             console.log('sign in success!')
         } catch (err) {
-            debugger;
+
             console.log('error signing up..', err)
         }
     }

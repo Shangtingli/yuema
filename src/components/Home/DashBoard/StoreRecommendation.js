@@ -28,6 +28,23 @@ class StoreRecommendation extends React.Component{
 
         const readyTogoData = JSON.stringify(dataToMLService);
 
+
+
+        //
+        // fetch("https://100mg1npwb.execute-api.us-east-1.amazonaws.com/test/predict",{
+        //     method: "POST",
+        //     body: dataToMLService,
+        //     headers: {
+        //         "Access-Control-Allow-Origin": "*",
+        //         'Content-Type': 'application/json',
+        //     }
+        // }).then((response) => {
+        //
+        //     return response.text();
+        // }).then((response) => {
+        //
+        // })
+
         /**
          * TODO: Debugger here to see the store recommendation data
          */
@@ -40,7 +57,6 @@ class StoreRecommendation extends React.Component{
             const favoriteStoreData = [];
             const notFavoriteStoreData = [];
             for (let store of allStoreData){
-
                 if (states.favorites.has(store.id) === false){
                      notFavoriteStoreData.push(store)
                 }

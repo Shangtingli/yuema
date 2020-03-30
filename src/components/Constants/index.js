@@ -29,6 +29,7 @@ export const CACHE_DURATION_MINUTES= 10;
  */
 export const MAX_STORES_LISTED = 50;
 export const MAX_USERS_LISTED = 50;
+export const MAX_COMMENTS_LISTED = 50;
 
 /**
  * Months

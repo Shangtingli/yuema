@@ -40,8 +40,6 @@ class DashBoard extends React.Component{
         API.graphql(graphqlOperation(createTraveller,{input: traveller})).then((response) =>{
             traveller['lat'] = lat;
             traveller['long'] = long;
-            // const newTraveller = traveller.slice();
-            // newTraveller.favorites = Array.from(newTraveller.favorites);
 
             this.props.dispatch(fillFeatures(traveller));
         })
@@ -86,9 +84,9 @@ class DashBoard extends React.Component{
          * Else if the user comes from register entry
          */
         else{
-            debugger;
+
                 if (states.lat === undefined || states.long === undefined){
-                    debugger;
+
                     navigator.geolocation.getCurrentPosition((position) => {
                         this.saveTravellerFeatures(traveller,position.coords.latitude,position.coords.longitude);
                     },(err) => {
