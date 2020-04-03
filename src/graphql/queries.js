@@ -1,6 +1,11 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getRecommendedUser = /* GraphQL */ `
+  query GetRecommendedUser {
+    getRecommendedUser
+  }
+`;
 export const getTraveller = /* GraphQL */ `
   query GetTraveller($email: String!) {
     getTraveller(email: $email) {
