@@ -54,25 +54,34 @@ for(let i=0; i< COLOR_SCHEMES1.length; ++i){
  * All shopping categories to consider about
  * @type {string[]}
  */
+// export const ALL_CATEGORIES = [
+//     'Clothing',
+//     'Shoes',
+//     'Consumer Electronics',
+//     'Books',
+//     'Movies',
+//     'Cosmetics',
+//     'Food and Drinks',
+//     'Sports',
+//     'Music',
+//     'Entertaining',
+//     'DIY',
+//     'Games',
+//     'Traveling',
+//     'Electronics',
+//     'Furniture',
+//     'Accessories',
+//     'Luxury',
+//     'Economical'
+// ]
+
 export const ALL_CATEGORIES = [
-    'Clothing',
-    'Shoes',
-    'Consumer Electronics',
-    'Books',
-    'Movies',
-    'Cosmetics',
-    'Food and Drinks',
-    'Sports',
-    'Music',
-    'Entertaining',
-    'DIY',
-    'Games',
-    'Traveling',
-    'Electronics',
-    'Furniture',
-    'Accessories',
-    'Luxury',
-    'Economical'
+    'beauty_cosmetics',
+    'books_magazines',
+    'fashion_accessories',
+    'mall',
+    'pharmacy',
+    'undecided'
 ]
 
 /**

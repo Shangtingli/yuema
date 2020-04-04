@@ -14,25 +14,6 @@ export default class CategoryForm extends React.Component{
         };
     }
 
-    handleOnClose = (e) => {
-        e.preventDefault();
-        const newHobbies=new Set(this.state.hobbies);
-        const newHobbiesPool = new Set(this.state.hobbiesPool);
-        newHobbies.delete(e.target.innerText);
-        newHobbiesPool.add(e.target.innerText);
-        this.setState({hobbies:newHobbies,hobbiesPool: newHobbiesPool});
-    };
-
-    createTag = (entry) => {
-        const index = entry[0] % COLOR_SCHEMES.length;
-        const tag = entry[1];
-        return <Tag
-            color={COLOR_SCHEMES[index]}
-            onClick={this.handleOnClose}
-            key={tag}
-            className="hobby-tags"
-        > {tag} </Tag>
-    }
 
     addHobby = (hobby) => {
         if (this.state.hobbies.size === MAXIMUM_CATEGORIES_SELECTED){
@@ -43,34 +24,60 @@ export default class CategoryForm extends React.Component{
         const newHobbiesPool = new Set(this.state.hobbiesPool);
         newHobbies.add(hobby);
         newHobbiesPool.delete(hobby);
-        ;
         this.setState({hobbies:newHobbies, hobbiesPool : newHobbiesPool});
     };
 
+    removeHobby = (hobby) => {
+        const newHobbies = new Set(this.state.hobbies);
+        const newHobbiesPool = new Set(this.state.hobbiesPool);
+        newHobbiesPool.add(hobby);
+        newHobbies.delete(hobby);
+        this.setState({hobbies:newHobbies, hobbiesPool : newHobbiesPool});
+    }
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.nextStep({hobbies: Array.from(this.state.hobbies)});
     }
 
 
-    handleOnClick = (e) => {
+    handleOnClickAdd = (e) => {
         e.preventDefault();
         this.addHobby(e.target.innerText);
     }
 
-    createTag = (entry) => {
+    createTagAdd = (entry) => {
         const index = entry[0] % COLOR_SCHEMES.length;
         const tag = entry[1];
 
         return(
             <Tag
                 color={COLOR_SCHEMES[index]}
-                onClick={this.handleOnClick}
+                onClick={this.handleOnClickAdd}
                 key={tag}
                 className="hobby-tags"
             > {tag} </Tag>
         )
     }
+
+    handleOnClickRemove = (e) => {
+        e.preventDefault();
+        this.removeHobby(e.target.innerText);
+    }
+
+    createTagRemove = (entry) => {
+        const index = entry[0] % COLOR_SCHEMES.length;
+        const tag = entry[1];
+
+        return(
+            <Tag
+                color={COLOR_SCHEMES[index]}
+                onClick={this.handleOnClickRemove}
+                key={tag}
+                className="hobby-tags"
+            > {tag} </Tag>
+        )
+    }
+
     render(){
         const hobbies=Array.from(this.state.hobbies);
         const hobbiesPool = Array.from(this.state.hobbiesPool);
@@ -88,12 +95,12 @@ export default class CategoryForm extends React.Component{
                 <img src={Logo} className="logo-image"/>
                 <h2> {`Please choose some things you like (Maximum ${MAXIMUM_CATEGORIES_SELECTED})`}</h2>
                 <div style={styles.tagCloud}>
-                    {entryPool.map(this.createTag)}
+                    {entryPool.map(this.createTagAdd)}
                 </div>
                 <br/><br/>
                 <div style={styles.tagContainer}>
                     <br/>
-                    {list.map(this.createTag)}
+                    {list.map(this.createTagRemove)}
                 </div>
                 <br/>
                 <Button onClick={this.handleSubmit} type="primary"> Submit </Button>
