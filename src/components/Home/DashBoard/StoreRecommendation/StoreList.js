@@ -73,12 +73,12 @@ export default StoreList;
 
 const styles = {
     storePage: {
-        height: "550px",
+        height: "600px",
         width: "1000px",
         display: 'flex'
     },
     storesContainer:{
-        height: "650px",
+        height: "700px",
         width: "1000px",
         margin:"auto"
     }

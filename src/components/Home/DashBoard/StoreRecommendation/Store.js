@@ -52,6 +52,15 @@ class Store extends React.Component{
         });
 
     }
+
+    handleChat = (e) => {
+        e.preventDefault();
+
+        /**
+         *  TODO: : Huyufei ==> Should Open a new chat room webpage supporting online group chat
+         */
+
+    }
     render(){
         const data = this.data;
         const tags = data.tags;
@@ -79,13 +88,18 @@ class Store extends React.Component{
             </div>
             <p>At {`Terminal ${data.terminal} Floor ${data.floor}`}</p>
             <p> {`Distance: ${actual_number} ${actual_unit}`} </p>
+                {/*TODO: : Huyufei ==> Should Open a new chat room webpage supporting online group chat*/}
+                <Button onClick={this.handleChat} type={"primary"}> Enter Chat Room </Button>
+
             <CommentsPopOver store={data} traveller={traveller}/>
             <AddCommentPopOver traveller={traveller} store={data}/>
+
             {
                 this.props.favorite ?
                     <Button onClick={this.handleRemove}> Remove </Button> :
                     <Button onClick={this.handleFavorite}> Add To Favorites </Button>
             }
+            <br/>
 
             </Card>
         );
@@ -98,7 +112,7 @@ const styles = {
     card:{
         boxShadow: "0 1px 15px 5px rgba(228,115,67,0.6)",
         width: "300px",
-        height: "500px",
+        height: "550px",
         maxWidth: "300px",
         marginLeft: "10px",
         marginRight: "10px"

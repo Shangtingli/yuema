@@ -68,15 +68,15 @@
     <session id="-1969891601">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.5" value="2" />
-          <entry key="project.open.time.6" value="2" />
-          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.6" value="3" />
+          <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -85,11 +85,11 @@
           <entry key="gitignore" value="50" />
           <entry key="graphql" value="1244" />
           <entry key="html" value="10" />
-          <entry key="js" value="30772" />
+          <entry key="js" value="31125" />
           <entry key="json" value="62" />
           <entry key="md" value="460" />
           <entry key="py" value="43" />
-          <entry key="scss" value="344" />
+          <entry key="scss" value="346" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -97,11 +97,11 @@
           <entry key="CSS" value="30" />
           <entry key="HTML" value="10" />
           <entry key="JSON" value="62" />
-          <entry key="JavaScript" value="30772" />
+          <entry key="JavaScript" value="31125" />
           <entry key="Markdown" value="460" />
           <entry key="PLAIN_TEXT" value="1294" />
           <entry key="Python" value="43" />
-          <entry key="SCSS" value="344" />
+          <entry key="SCSS" value="346" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -111,12 +111,12 @@
           <entry key="graphql" value="13" />
           <entry key="html" value="2" />
           <entry key="ico" value="1" />
-          <entry key="js" value="432" />
+          <entry key="js" value="434" />
           <entry key="json" value="25" />
           <entry key="md" value="11" />
           <entry key="png" value="3" />
           <entry key="py" value="14" />
-          <entry key="scss" value="19" />
+          <entry key="scss" value="20" />
           <entry key="vtl" value="3" />
         </counts>
       </usages-collector>
@@ -126,11 +126,11 @@
           <entry key="HTML" value="2" />
           <entry key="Image" value="4" />
           <entry key="JSON" value="25" />
-          <entry key="JavaScript" value="432" />
+          <entry key="JavaScript" value="434" />
           <entry key="Markdown" value="11" />
           <entry key="PLAIN_TEXT" value="18" />
           <entry key="Python" value="14" />
-          <entry key="SCSS" value="19" />
+          <entry key="SCSS" value="20" />
         </counts>
       </usages-collector>
     </session>
@@ -138,49 +138,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Forms/CharacteristicForm.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Forms/TravelPlanForm.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="28" column="62" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
+            <state relative-caret-position="237">
+              <caret line="61" column="70" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="70" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation/StoreList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="936">
+              <caret line="80" column="19" selection-start-line="80" selection-start-column="19" selection-end-line="80" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/styles/styles.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="179" column="11" selection-start-line="179" selection-start-column="11" selection-end-line="179" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation/Store.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="91" column="5" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
+            <state relative-caret-position="147">
+              <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation/CommentsPopOver.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="30" column="80" selection-start-line="30" selection-start-column="80" selection-end-line="30" selection-end-column="80" />
             </state>
           </provider>
         </entry>
@@ -188,8 +185,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation/StoreImage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="36" column="1" lean-forward="true" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+            <state relative-caret-position="403">
+              <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -200,17 +197,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Constants/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="73" column="16" lean-forward="true" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="16" />
+            <state relative-caret-position="403">
+              <caret line="73" column="16" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Forms/CategoryForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+            <state relative-caret-position="105">
+              <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -242,7 +239,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>React App</find>
       <find>Footer</find>
       <find>signOut={this.signOut}</find>
       <find>this.props.signOut</find>
@@ -272,6 +268,7 @@
       <find>getSTORE</find>
       <find>styles.</find>
       <find>getUser</find>
+      <find>store</find>
     </findStrings>
     <replaceStrings>
       <replace>categories</replace>
@@ -289,7 +286,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/components/Login/ConfirmSignin.js" />
-        <option value="$PROJECT_DIR$/src/styles/styles.scss" />
         <option value="$PROJECT_DIR$/src/components/Home/NavBar/LogoutPopover.js" />
         <option value="$PROJECT_DIR$/amplify/backend/function/yuemawlambda/src/app.js" />
         <option value="$PROJECT_DIR$/documents/TODOS.md" />
@@ -298,7 +294,6 @@
         <option value="$PROJECT_DIR$/src/graphql/queries.js" />
         <option value="$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation/CommentList2.js" />
         <option value="$PROJECT_DIR$/src/graphql/customQueries.js" />
-        <option value="$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation/CommentsPopOver.js" />
         <option value="$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation/CommentList.js" />
         <option value="$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation/AddCommentForm.js" />
         <option value="$PROJECT_DIR$/src/components/Home/DashBoard.js" />
@@ -318,8 +313,6 @@
         <option value="$PROJECT_DIR$/src/components/Home/DashBoard/PeopleRecommendation/TravellerRow.js" />
         <option value="$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation/Comment.js" />
         <option value="$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation/CommentPage.js" />
-        <option value="$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation/Store.js" />
-        <option value="$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation/StoreList.js" />
         <option value="$PROJECT_DIR$/src/components/Home/DashBoard/AboutUs.js" />
         <option value="$PROJECT_DIR$/src/components/Home/DashBoard/AccountInfo.js" />
         <option value="$PROJECT_DIR$/src/components/Home/DashBoard/PeopleRecommendation.js" />
@@ -339,6 +332,10 @@
         <option value="$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation/StoreImage.js" />
         <option value="$PROJECT_DIR$/src/components/Constants/index.js" />
         <option value="$PROJECT_DIR$/src/components/Forms/CategoryForm.js" />
+        <option value="$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation/CommentsPopOver.js" />
+        <option value="$PROJECT_DIR$/src/styles/styles.scss" />
+        <option value="$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation/StoreList.js" />
+        <option value="$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation/Store.js" />
       </list>
     </option>
   </component>
@@ -376,6 +373,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -408,11 +406,40 @@
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Forms" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="yuema" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yuema" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yuema" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yuema" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Home" type="462c0819:PsiDirectoryNode" />
+              <item name="DashBoard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yuema" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yuema" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Home" type="462c0819:PsiDirectoryNode" />
+              <item name="DashBoard" type="462c0819:PsiDirectoryNode" />
+              <item name="StoreRecommendation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yuema" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yuema" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -425,7 +452,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586038493078" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586052588426" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -519,12 +546,14 @@
       <workItem from="1585520849016" duration="2830000" />
       <workItem from="1585527670721" duration="9612000" />
       <workItem from="1585547117913" duration="3966000" />
-      <workItem from="1585874753789" duration="6879000" />
+      <workItem from="1585874753789" duration="7994000" />
+      <workItem from="1586144459125" duration="531000" />
+      <workItem from="1586218981167" duration="743000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156952000" />
+    <option name="totallyTimeSpent" value="159341000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -539,7 +568,7 @@
     <frame x="0" y="23" width="1440" height="806" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49686846" visible="true" weight="0.30972818" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49686846" visible="true" weight="0.31831187" />
       <window_info id="Structure" order="1" sideWeight="0.5031315" side_tool="true" weight="0.27825466" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -637,13 +666,6 @@
     <state x="315" y="56" width="670" height="676" key="search.everywhere.popup/0.23.1280.709@0.23.1280.709" timestamp="1582477959593" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/Home/DashBoard/AccountInfo/CategoriesCloud.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Home/DashBoard/AccountInfo/TravelPlan.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -717,20 +739,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation/CommentsPopOver.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation/StoreList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="59" column="44" selection-start-line="59" selection-start-column="44" selection-end-line="59" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Home/DashBoard/AboutUs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -790,9 +798,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="15" column="127" selection-start-line="15" selection-start-column="127" selection-end-line="15" selection-end-column="127" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -814,35 +819,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="45" column="123" selection-start-line="45" selection-start-column="123" selection-end-line="45" selection-end-column="123" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/amplify/backend/function/yuemaLambda/function-parameters.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/amplify/backend/function/yuemaLambda/function-parameters.json" />
     <entry file="file://$PROJECT_DIR$/src/graphql/queries.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="975">
           <caret line="70" column="16" selection-start-line="70" selection-start-column="16" selection-end-line="70" selection-end-column="16" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/amplify/backend/function/yuemaLambda/yuemaLambda-cloudformation-template.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/amplify/backend/function/yuemaLambda/src/event.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/amplify/backend/function/yuemaLambda/yuemaLambda-cloudformation-template.json" />
+    <entry file="file://$PROJECT_DIR$/amplify/backend/function/yuemaLambda/src/event.json" />
     <entry file="file://$PROJECT_DIR$/src/components/Home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -857,20 +846,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/amplify/backend/function/yuemaLambda/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="45" column="17" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/amplify/backend/function/yuemaLambda/src/index.js" />
     <entry file="file://$PROJECT_DIR$/src/components/Login/SignIn.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -889,13 +869,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/simulation/generateRandomStores.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/simulation/generateStoreFromFiles.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -904,19 +878,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simulation/toS3/storesToDynamoDB.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/simulation/toS3/json/airports.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-        </state>
+        <state relative-caret-position="-3542" />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simulation/airports.json">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
+        <state relative-caret-position="150">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -933,54 +905,77 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Forms/TravelPlanForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
+        <state relative-caret-position="45">
           <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation.js">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="28" column="62" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
+        <state relative-caret-position="240">
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation/Store.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="91" column="5" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simulation/toS3/json/airports.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3542" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simulation/airports.json">
+    <entry file="file://$PROJECT_DIR$/simulation/toS3/storesToDynamoDB.json">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Forms/CategoryForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation/CommentsPopOver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="30" column="80" selection-start-line="30" selection-start-column="80" selection-end-line="30" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Constants/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="73" column="16" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="16" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation/StoreImage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="36" column="1" lean-forward="true" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+        <state relative-caret-position="403">
+          <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Constants/index.js">
+    <entry file="file://$PROJECT_DIR$/src/styles/styles.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="73" column="16" lean-forward="true" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="16" />
+        <state relative-caret-position="165">
+          <caret line="179" column="11" selection-start-line="179" selection-start-column="11" selection-end-line="179" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Forms/CategoryForm.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+        <state relative-caret-position="237">
+          <caret line="61" column="70" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation/StoreList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="936">
+          <caret line="80" column="19" selection-start-line="80" selection-start-column="19" selection-end-line="80" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation/Store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
         </state>
       </provider>
     </entry>

@@ -28,10 +28,16 @@ class CommentsPopOver extends React.Component {
                     onVisibleChange={this.handleVisibleChange}
                     placement="left"
                 >
-                    <Button type="primary" className={"button-inside-store-rec"}>See Comment</Button>
+                    <Button type="primary" className={"button-inside-store-rec"}>
+                        See Comment
+                    </Button>
                 </Popover>
         );
     }
 }
 
+
+const styles = {
+    button:{width: "100px", fontSize:"11.5px"}
+}
 export default CommentsPopOver;
