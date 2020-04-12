@@ -55,12 +55,10 @@ class Store extends React.Component{
 
     handleChat = (e) => {
         e.preventDefault();
-
-        /**
-         *  TODO: : Huyufei ==> Should Open a new chat room webpage supporting online group chat
-         */
-
+        const storeURL = "http://localhost:4000/room/" + this.data.storeName;
+        window.open(storeURL, "_blank");
     }
+
     render(){
         const data = this.data;
         const tags = data.tags;
