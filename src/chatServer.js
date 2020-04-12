@@ -9,14 +9,13 @@ app.use(express.static(path.join(__dirname, 'components/Chatroom/')));
 app.set('views', path.join(__dirname, 'components/Chatroom/views'));
 app.set('view engine', 'hbs');
 
-
 var socketIO = IO(server);
 var roomInfo = {};
 
 socketIO.on('connection', function (socket) {
     var url = socket.request.headers.referer;
     var splited = url.split('/');
-    var roomID = splited[splited.length - 1];   // 获取房间ID
+    var roomID = splited[splited.length - 1]; 
     var user = '';
 
     socket.on('join', function (userName) {
@@ -45,9 +44,8 @@ socketIO.on('connection', function (socket) {
         socketIO.to(roomID).emit('sys', user + ': Exit Chatroom', roomInfo[roomID]);
         console.log(user + ' Exit ' + roomID);
     });
-
+    
     socket.on('message', function (msg) {
-
         if (roomInfo[roomID].indexOf(user) === -1) {
             return false;
         }
