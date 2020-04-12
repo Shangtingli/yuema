@@ -20,15 +20,14 @@ socketIO.on('connection', function (socket) {
 
     socket.on('join', function (userName) {
         user = userName;
-
         if (!roomInfo[roomID]) {
             roomInfo[roomID] = [];
         }
         roomInfo[roomID].push(user);
 
         socket.join(roomID);
-        socketIO.to(roomID).emit('sys', user + '--enter chatroom', roomInfo[roomID]);
-        console.log(user + '--enter' + roomID);
+        socketIO.to(roomID).emit('sys', user + ': Enter Chatroom', roomInfo[roomID]);
+        console.log(user + ' Enter ' + roomID);
     });
 
     socket.on('leave', function () {
@@ -42,10 +41,10 @@ socketIO.on('connection', function (socket) {
         }
 
         socket.leave(roomID);
-        socketIO.to(roomID).emit('sys', user + '--exit chatroom', roomInfo[roomID]);
-        console.log(user + '--exit' + roomID);
+        socketIO.to(roomID).emit('sys', user + ': Exit Chatroom', roomInfo[roomID]);
+        console.log(user + ' Exit ' + roomID);
     });
-
+    
     socket.on('message', function (msg) {
         if (roomInfo[roomID].indexOf(user) === -1) {
             return false;
@@ -56,12 +55,12 @@ socketIO.on('connection', function (socket) {
 });
 
 // room page
-router.get('/:roomID', function (req, res) {
+router.get('/room/:roomID', function (req, res) {
     var roomID = req.params.roomID;
 
     res.render('room', {
         roomID: roomID,
-        users: roomInfo[roomID]
+        users: roomInfo[roomID],
     });
 });
 

@@ -26,10 +26,14 @@
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "express": "^4.13.3",
+    "hbs": "^3.1.0",
+    "path": "^0.11.14",
+    "socket.io": "^1.3.6"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start & node ./src/chatServer.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
