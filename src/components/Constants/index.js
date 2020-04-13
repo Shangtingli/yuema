@@ -89,3 +89,6 @@ export const ALL_CATEGORIES = [
  * @type {number}
  */
 export const MAXIMUM_CATEGORIES_SELECTED = 5;
+
+export const CHATROOM_HOST = "http://3.94.86.240";
+export const CHATROOM_PORT = "4000";

@@ -1,13 +1,13 @@
 {
 	"auth": {
-		"yuemaef0cb47b": {
+		"yuema7ae82fc9": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": []
 		}
 	},
 	"api": {
-		"yuema": {
+		"yuemaAPI": {
 			"service": "AppSync",
 			"providerPlugin": "awscloudformation",
 			"output": {
@@ -16,7 +16,7 @@
 					"defaultAuthentication": {
 						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
 						"userPoolConfig": {
-							"userPoolId": "authyuemaef0cb47b"
+							"userPoolId": "authyuema7ae82fc9"
 						}
 					}
 				}
@@ -24,8 +24,14 @@
 		}
 	},
 	"storage": {
-		"yufeiStore": {
+		"yuemaStorage": {
 			"service": "S3",
+			"providerPlugin": "awscloudformation"
+		}
+	},
+	"hosting": {
+		"S3AndCloudFront": {
+			"service": "S3AndCloudFront",
 			"providerPlugin": "awscloudformation"
 		}
 	}

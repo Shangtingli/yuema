@@ -6,7 +6,7 @@ import {API, graphqlOperation} from 'aws-amplify';
 import {updateTraveller} from "../../../../graphql/mutations"
 import {addFavorite, removeFavorite} from "../../../../actions"
 import {connect} from "react-redux"
-import {COLOR_SCHEMES} from "../../../Constants";
+import {CHATROOM_HOST, CHATROOM_PORT, COLOR_SCHEMES} from "../../../Constants";
 import {distance} from "../../../Util";
 import StoreImage from "./StoreImage"
 
@@ -55,7 +55,7 @@ class Store extends React.Component{
 
     handleChat = (e) => {
         e.preventDefault();
-        const storeURL = "http://localhost:4000/room/" + this.data.storeName;
+        const storeURL = CHATROOM_HOST + ":" + CHATROOM_PORT + "/room/" +   this.data.storeName;
         window.open(storeURL, "_blank");
     }
 
@@ -86,7 +86,6 @@ class Store extends React.Component{
             </div>
             <p>At {`Terminal ${data.terminal} Floor ${data.floor}`}</p>
             <p> {`Distance: ${actual_number} ${actual_unit}`} </p>
-                {/*TODO: : Huyufei ==> Should Open a new chat room webpage supporting online group chat*/}
                 <Button onClick={this.handleChat} type={"primary"}> Enter Chat Room </Button>
 
             <CommentsPopOver store={data} traveller={traveller}/>

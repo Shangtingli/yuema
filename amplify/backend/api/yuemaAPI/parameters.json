@@ -1,10 +1,10 @@
 {
-    "AppSyncApiName": "yuema",
+    "AppSyncApiName": "yuemaAPI",
     "DynamoDBBillingMode": "PAY_PER_REQUEST",
     "DynamoDBEnableServerSideEncryption": "false",
     "AuthCognitoUserPoolId": {
         "Fn::GetAtt": [
-            "authyuemaef0cb47b",
+            "authyuema7ae82fc9",
             "Outputs.UserPoolId"
         ]
     }

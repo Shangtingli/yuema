@@ -1,5 +1,5 @@
 projects:
-  yuema:
+  yuemaAPI:
     schemaPath: src/graphql/schema.json
     includes:
       - src/graphql/**/*.js
