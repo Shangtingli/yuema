@@ -193,3 +193,35 @@ export const listStores = /* GraphQL */ `
     }
   }
 `;
+export const storeByName = /* GraphQL */ `
+  query StoreByName(
+    $storeName: String
+    $sortDirection: ModelSortDirection
+    $filter: ModelStoreFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    storeByName(
+      storeName: $storeName
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        storeName
+        description
+        tags
+        lat
+        long
+        floor
+        terminal
+        comments {
+          nextToken
+        }
+      }
+      nextToken
+    }
+  }
+`;

@@ -14,7 +14,10 @@ export default class TravellerList extends React.Component{
 
     createTravellerRow = (data) => {
         return (
+            <div>
             <TravellerRow data={data[1]} key={data[0]}/>
+            <br/>
+            </div>
         )
     }
 

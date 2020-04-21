@@ -9,7 +9,7 @@ export default class StoreImage extends React.Component{
 
     componentDidMount(){
         const key = `store_images/image${this.props.imageNumber}.png`;
-        debugger;
+
         Storage.get(key).then((url) => {
             this.setState({imageUrl:url});
         })

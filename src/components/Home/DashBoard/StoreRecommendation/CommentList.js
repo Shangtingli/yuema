@@ -16,7 +16,7 @@ class CommentList extends React.Component {
 
     componentDidMount(){
         API.graphql(graphqlOperation(getStoreComments,{id:this.props.store.id})).then((response) => {
-            debugger;
+
             this.setData(response.data.getStore.comments.items)
         })
     }

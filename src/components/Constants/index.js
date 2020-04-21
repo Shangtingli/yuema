@@ -1,5 +1,6 @@
 export const ADMIN_ROLES = ["shangtingli@outlook.com","shangtingli@gmail.com","yenchenc@usc.edu","liuzhife@usc.edu"]
-
+export const STORE_API = "https://v1prxjgru5.execute-api.us-east-1.amazonaws.com/test/reco-predict"
+export const PEOPLE_API = "https://5nknlam6uf.execute-api.us-east-1.amazonaws.com/test/reco-predict-people"
 /**
  * Pagination Settings
  * @type {number}
@@ -76,12 +77,12 @@ for(let i=0; i< COLOR_SCHEMES1.length; ++i){
 // ]
 
 export const ALL_CATEGORIES = [
-    'beauty_cosmetics',
-    'books_magazines',
-    'fashion_accessories',
-    'mall',
-    'pharmacy',
-    'undecided'
+    'Beauty_cosmetics',
+    'Books_magazines',
+    'Fashion_accessories',
+    'Mall',
+    'Pharmacy',
+    'Undecided'
 ]
 
 /**
@@ -90,5 +91,5 @@ export const ALL_CATEGORIES = [
  */
 export const MAXIMUM_CATEGORIES_SELECTED = 5;
 
-export const CHATROOM_HOST = "http://3.94.86.240";
+export const CHATROOM_HOST = "http://3.84.150.95";
 export const CHATROOM_PORT = "4000";

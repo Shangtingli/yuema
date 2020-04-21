@@ -46,3 +46,34 @@ export function filterTravellers(travellerData,validAge,validGender){
 
     return filtered;
 }
+
+function choose(choices) {
+    const index = Math.floor(Math.random() * choices.length);
+    return choices[index];
+}
+
+export function generateTraveller(data){
+    const macid = Object.keys(data)[0];
+    const ageRange = data[macid][0][1];
+    const gender = data[macid][0][0];
+    const country = data[macid][0][2];
+
+    const firstNames = ["James","Jason","Tim","Steven","Jimmy"]
+    const lastNames = ["Timwood","WoodField","Lee","Jack"]
+    const traveller = {};
+
+    const first = String.fromCharCode(Math.floor(Math.random() * 26));
+    const second = String.fromCharCode(Math.floor(Math.random() * 26));
+    const third = String.fromCharCode(Math.floor(Math.random() * 26));
+
+    traveller["firstName"] = choose(firstNames);
+    traveller["lastName"] = choose(lastNames);
+    traveller["ageRange"] = ageRange;
+    traveller["sex"] = gender;
+    traveller["country"] = country;
+    traveller["email"] = first + second + third + "@usc.edu";
+    traveller["avatarKey"] = "avatars/defaultAvatar.png";
+    traveller["phoneNumber"] = "1234567890";
+    traveller["hobbies"] = "undecided"
+    return traveller;
+}

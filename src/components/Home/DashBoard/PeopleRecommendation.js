@@ -6,7 +6,8 @@ import store from '../../../store';
 import LoadingCard from "../../Loadings/LoadingCard";
 import TravellerList from "./PeopleRecommendation/TravellerList";
 import {connect} from "react-redux";
-import {MAX_USERS_LISTED} from "../../Constants";
+import {MAX_USERS_LISTED, PEOPLE_API} from "../../Constants";
+import {generateTraveller} from "../../Util"
 
 
 class PeopleRecommendation extends React.Component{
@@ -25,29 +26,66 @@ class PeopleRecommendation extends React.Component{
 
         const states = store.getState();
         const dataToMLService = {};
-        dataToMLService['flag'] = true;
-        dataToMLService['gender'] = states.sex;
-        dataToMLService['country'] = states.country;
-        // dataToMLService['categories'] = states.categories;
-        dataToMLService['age_range'] = states.ageRange;
-        dataToMLService['location'] = {};
-        dataToMLService['location']['lat'] = states.lat;
-        dataToMLService['location']['long'] = states.long;
-        dataToMLService['favorites'] = Array.from(states.favorites);
+        dataToMLService['Flag'] = "True";
+        dataToMLService['Gender'] = states.sex;
+        dataToMLService['Country'] = states.country;
+        // debugger;
+        dataToMLService['Category'] = states.hobbies[0];
+        dataToMLService['Age_range'] = states.ageRange;
+        dataToMLService['Location'] = {};
+        dataToMLService['Location']['Lat'] = states.lat.toString();
+        dataToMLService['Location']['Lon'] = states.long.toString();
+        dataToMLService['Favorite'] = Array.from(states.favorites);
 
 
         const readyTogoData = JSON.stringify(dataToMLService);
-
-        /**
-         * TODO: Could use debugger to see the data for ML Service, Ready to connect to the ML Microservice
-         */
-        API.graphql(graphqlOperation(listTravellers,{limit: MAX_USERS_LISTED})).then((response) =>{
-            const allTravellersData = response.data.listTravellers.items
-                .filter(
-                    function(e){ return e.email !== states.email}
-                );
-            this.props.dispatch(writeTravellersFromDatabase(allTravellersData));
+        const promise1 = fetch(PEOPLE_API,{
+            method:"post",
+            body: readyTogoData
+        }).then((response)=>{
+            return response.json();
         });
+
+        const promise2 = API.graphql(graphqlOperation(listTravellers,{limit: MAX_USERS_LISTED}));
+
+        Promise.all([promise1,promise2]).then((response) => {
+            const dataPiece1 = response[0].map(generateTraveller);
+            const dataPiece2 = response[1].data.listTravellers.items.filter(function(e){ return e.email !== states.email});
+            const allTravellersData = dataPiece1.concat(dataPiece2);
+            this.props.dispatch(writeTravellersFromDatabase(allTravellersData));
+            return response;
+        })
+        // fetch(PEOPLE_API,{
+        //     method:"post",
+        //     body: readyTogoData
+        // }).then((response)=>{
+        //     return response.json();
+        // }).then((response)=>{
+        //     const travellerData1 = response.map(generateTraveller);
+        //     API.graphql(graphqlOperation(listTravellers,{limit: MAX_USERS_LISTED})).then((response) =>{
+        //         const travellerData2 = response.data.listTravellers.items
+        //             .filter(
+        //                 function(e){ return e.email !== states.email}
+        //             );
+        //         const allTravellersData = travellerData1.concat(travellerData2);
+        //         debugger;
+        //         this.props.dispatch(writeTravellersFromDatabase(allTravellersData));
+        //     });
+        //
+        // })
+        /**
+        //  * TODO: Could use debugger to see the data for ML Service, Ready to connect to the ML Microservice
+        // //  */
+        //
+        // API.graphql(graphqlOperation(listTravellers,{limit: MAX_USERS_LISTED})).then((response) =>{
+        //     const allTravellersData = response.data.listTravellers.items
+        //         .filter(
+        //             function(e){ return e.email !== states.email}
+        //         );
+        //
+        //     debugger;
+        //     this.props.dispatch(writeTravellersFromDatabase(allTravellersData));
+        // });
     }
 
     render(){

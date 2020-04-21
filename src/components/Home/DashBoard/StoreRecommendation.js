@@ -7,48 +7,79 @@ import LoadingCard from "../../Loadings/LoadingCard"
 import {connect} from "react-redux"
 import StoreList from "./StoreRecommendation/StoreList"
 import '../../../styles/styles.scss';
-import {MAX_STORES_LISTED} from "../../Constants";
+import {MAX_STORES_LISTED, STORE_API} from "../../Constants";
 
 class StoreRecommendation extends React.Component{
 
 
     componentDidMount(){
         const states = store.getState();
-
         const dataToMLService = {};
-        dataToMLService['flag'] = true;
-        dataToMLService['gender'] = states.sex;
-        dataToMLService['country'] = states.country;
-        dataToMLService['categories'] = states.hobbies;
-        dataToMLService['age_range'] = states.ageRange;
-        dataToMLService['location'] = {};
-        dataToMLService['location']['lat'] = states.lat;
-        dataToMLService['location']['long'] = states.long;
-        dataToMLService['favorites'] = Array.from(states.favorites);
+        dataToMLService['Flag'] = "False";
+        dataToMLService['Gender'] = states.sex;
+        dataToMLService['Country'] = states.country;
+        // debugger;
+        dataToMLService['Category'] = states.hobbies[0];
+        dataToMLService['Age_range'] = states.ageRange;
+        dataToMLService['Location'] = {};
+        dataToMLService['Location']['Lat'] = states.lat;
+        dataToMLService['Location']['Lon'] = states.long;
+        dataToMLService['Favorite'] = Array.from(states.favorites);
 
         const readyTogoData = JSON.stringify(dataToMLService);
 
-        /**
-         * TODO: Debugger here to see the store recommendation data
-         */
-        API.graphql(graphqlOperation(listStores,{limit: MAX_STORES_LISTED})).then((response) =>{
-            /**
-             * Insert Store Recommendation Here!!!
-             */
-            const allStoreData = response.data.listStores.items;
+        debugger;
 
-            const favoriteStoreData = [];
-            const notFavoriteStoreData = [];
-            for (let store of allStoreData){
-                if (states.favorites.has(store.id) === false){
-                     notFavoriteStoreData.push(store)
+
+        fetch(STORE_API,{
+            method:"post",
+            body: readyTogoData,
+        }).then((response)=>{
+            return response.json();
+        }).then((storeNames)=>{
+            API.graphql(graphqlOperation(listStores,{limit: MAX_STORES_LISTED})).then((response)=>{
+                const allStoreData = response.data.listStores.items;
+                const chosenStoreData = [];
+                for (let store of allStoreData){
+                    if (storeNames.includes(store.storeName)){
+                        chosenStoreData.push(store);
+                    }
                 }
-                else{
-                    favoriteStoreData.push(store);
+                const favoriteStoreData = [];
+                const notFavoriteStoreData = [];
+                for (let store of chosenStoreData){
+                    if (states.favorites.has(store.id) === false){
+                        notFavoriteStoreData.push(store)
+                    }
+                    else{
+                        favoriteStoreData.push(store);
+                    }
                 }
-            }
-            this.props.dispatch(writeStoresFromDatabase(favoriteStoreData,notFavoriteStoreData));
-        });
+                this.props.dispatch(writeStoresFromDatabase(favoriteStoreData,notFavoriteStoreData));
+
+            })
+        })
+        // /**
+        //  * TODO: Debugger here to see the store recommendation data
+        //  */
+        // API.graphql(graphqlOperation(listStores,{limit: MAX_STORES_LISTED})).then((response) =>{
+        //     /**
+        //      * Insert Store Recommendation Here!!!
+        //      */
+        //     const allStoreData = response.data.listStores.items;
+        //
+        //     const favoriteStoreData = [];
+        //     const notFavoriteStoreData = [];
+        //     for (let store of allStoreData){
+        //         if (states.favorites.has(store.id) === false){
+        //              notFavoriteStoreData.push(store)
+        //         }
+        //         else{
+        //             favoriteStoreData.push(store);
+        //         }
+        //     }
+        //     this.props.dispatch(writeStoresFromDatabase(favoriteStoreData,notFavoriteStoreData));
+        // });
     }
 
     render(){

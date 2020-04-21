@@ -21,7 +21,7 @@ export default class TravellerRow extends React.Component{
 
     render() {
         const data = this.props.data;
-
+        debugger;
 
         return (
             <div style={styles.rowContainer}>
