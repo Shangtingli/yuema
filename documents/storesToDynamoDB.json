@@ -1,0 +1,740 @@
+{
+    "Store-wnn4jgv2pvdaxadpcoanf5tdri-dev": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "id": {
+                        "S": "1"
+                    },
+                    "storeName": {
+                        "S": "Britt Shop"
+                    },
+                    "description": {
+                        "S": "ABCDEFG"
+                    },
+                    "tags": {
+                        "SS": [
+                            "mall"
+                        ]
+                    },
+                    "lat": {
+                        "N": "-22.814785"
+                    },
+                    "long": {
+                        "N": "-43.246648"
+                    },
+                    "floor": {
+                        "N": "2"
+                    },
+                    "terminal": {
+                        "N": "2"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "id": {
+                        "S": "2"
+                    },
+                    "storeName": {
+                        "S": "Chilli Beans"
+                    },
+                    "description": {
+                        "S": "ABCDEFG"
+                    },
+                    "tags": {
+                        "SS": [
+                            "fashion_accessories"
+                        ]
+                    },
+                    "lat": {
+                        "N": "-22.810656"
+                    },
+                    "long": {
+                        "N": "-43.251344"
+                    },
+                    "floor": {
+                        "N": "1"
+                    },
+                    "terminal": {
+                        "N": "2"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "id": {
+                        "S": "3"
+                    },
+                    "storeName": {
+                        "S": "Dufry"
+                    },
+                    "description": {
+                        "S": "ABCDEFG"
+                    },
+                    "tags": {
+                        "SS": [
+                            "mall"
+                        ]
+                    },
+                    "lat": {
+                        "N": "-22.814478"
+                    },
+                    "long": {
+                        "N": "-43.246993"
+                    },
+                    "floor": {
+                        "N": "1"
+                    },
+                    "terminal": {
+                        "N": "2"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "id": {
+                        "S": "4"
+                    },
+                    "storeName": {
+                        "S": "Emp\u00f3rio do A\u00e7o"
+                    },
+                    "description": {
+                        "S": "ABCDEFG"
+                    },
+                    "tags": {
+                        "SS": [
+                            "undecided"
+                        ]
+                    },
+                    "lat": {
+                        "N": "-22.814102"
+                    },
+                    "long": {
+                        "N": "-43.247083"
+                    },
+                    "floor": {
+                        "N": "1"
+                    },
+                    "terminal": {
+                        "N": "2"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "id": {
+                        "S": "5"
+                    },
+                    "storeName": {
+                        "S": "FOM"
+                    },
+                    "description": {
+                        "S": "ABCDEFG"
+                    },
+                    "tags": {
+                        "SS": [
+                            "undecided"
+                        ]
+                    },
+                    "lat": {
+                        "N": "-22.815046"
+                    },
+                    "long": {
+                        "N": "-43.246425"
+                    },
+                    "floor": {
+                        "N": "0"
+                    },
+                    "terminal": {
+                        "N": "2"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "id": {
+                        "S": "6"
+                    },
+                    "storeName": {
+                        "S": "MAC Cosmetics"
+                    },
+                    "description": {
+                        "S": "ABCDEFG"
+                    },
+                    "tags": {
+                        "SS": [
+                            "beauty_cosmetics"
+                        ]
+                    },
+                    "lat": {
+                        "N": "-22.815055"
+                    },
+                    "long": {
+                        "N": "-43.245235"
+                    },
+                    "floor": {
+                        "N": "0"
+                    },
+                    "terminal": {
+                        "N": "2"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "id": {
+                        "S": "7"
+                    },
+                    "storeName": {
+                        "S": "O Botic\u00e1rio"
+                    },
+                    "description": {
+                        "S": "ABCDEFG"
+                    },
+                    "tags": {
+                        "SS": [
+                            "undecided"
+                        ]
+                    },
+                    "lat": {
+                        "N": "-22.815241"
+                    },
+                    "long": {
+                        "N": "-43.245805"
+                    },
+                    "floor": {
+                        "N": "0"
+                    },
+                    "terminal": {
+                        "N": "2"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "id": {
+                        "S": "8"
+                    },
+                    "storeName": {
+                        "S": "Sunglass Hut"
+                    },
+                    "description": {
+                        "S": "ABCDEFG"
+                    },
+                    "tags": {
+                        "SS": [
+                            "undecided"
+                        ]
+                    },
+                    "lat": {
+                        "N": "-22.815092"
+                    },
+                    "long": {
+                        "N": "-43.246551"
+                    },
+                    "floor": {
+                        "N": "2"
+                    },
+                    "terminal": {
+                        "N": "2"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "id": {
+                        "S": "9"
+                    },
+                    "storeName": {
+                        "S": "Granado Pharmacias"
+                    },
+                    "description": {
+                        "S": "ABCDEFG"
+                    },
+                    "tags": {
+                        "SS": [
+                            "beauty_cosmetics"
+                        ]
+                    },
+                    "lat": {
+                        "N": "-22.814334"
+                    },
+                    "long": {
+                        "N": "-43.245584"
+                    },
+                    "floor": {
+                        "N": "1"
+                    },
+                    "terminal": {
+                        "N": "2"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "id": {
+                        "S": "10"
+                    },
+                    "storeName": {
+                        "S": "L'Occitane"
+                    },
+                    "description": {
+                        "S": "ABCDEFG"
+                    },
+                    "tags": {
+                        "SS": [
+                            "beauty_cosmetics"
+                        ]
+                    },
+                    "lat": {
+                        "N": "-22.81408"
+                    },
+                    "long": {
+                        "N": "-43.246212"
+                    },
+                    "floor": {
+                        "N": "1"
+                    },
+                    "terminal": {
+                        "N": "2"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "id": {
+                        "S": "11"
+                    },
+                    "storeName": {
+                        "S": "Maybelline New York"
+                    },
+                    "description": {
+                        "S": "ABCDEFG"
+                    },
+                    "tags": {
+                        "SS": [
+                            "beauty_cosmetics"
+                        ]
+                    },
+                    "lat": {
+                        "N": "-22.813864"
+                    },
+                    "long": {
+                        "N": "-43.247713"
+                    },
+                    "floor": {
+                        "N": "2"
+                    },
+                    "terminal": {
+                        "N": "2"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "id": {
+                        "S": "12"
+                    },
+                    "storeName": {
+                        "S": "Livraria Leitura"
+                    },
+                    "description": {
+                        "S": "ABCDEFG"
+                    },
+                    "tags": {
+                        "SS": [
+                            "books_magazines"
+                        ]
+                    },
+                    "lat": {
+                        "N": "-22.815175"
+                    },
+                    "long": {
+                        "N": "-43.244505"
+                    },
+                    "floor": {
+                        "N": "1"
+                    },
+                    "terminal": {
+                        "N": "2"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "id": {
+                        "S": "13"
+                    },
+                    "storeName": {
+                        "S": "WH Smith"
+                    },
+                    "description": {
+                        "S": "ABCDEFG"
+                    },
+                    "tags": {
+                        "SS": [
+                            "books_magazines"
+                        ]
+                    },
+                    "lat": {
+                        "N": "-22.8183"
+                    },
+                    "long": {
+                        "N": "-43.243186"
+                    },
+                    "floor": {
+                        "N": "2"
+                    },
+                    "terminal": {
+                        "N": "2"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "id": {
+                        "S": "14"
+                    },
+                    "storeName": {
+                        "S": "Hudson News"
+                    },
+                    "description": {
+                        "S": "ABCDEFG"
+                    },
+                    "tags": {
+                        "SS": [
+                            "mall"
+                        ]
+                    },
+                    "lat": {
+                        "N": "-22.814523"
+                    },
+                    "long": {
+                        "N": "-43.247492"
+                    },
+                    "floor": {
+                        "N": "2"
+                    },
+                    "terminal": {
+                        "N": "2"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "id": {
+                        "S": "15"
+                    },
+                    "storeName": {
+                        "S": "Air Farma"
+                    },
+                    "description": {
+                        "S": "ABCDEFG"
+                    },
+                    "tags": {
+                        "SS": [
+                            "pharmacy"
+                        ]
+                    },
+                    "lat": {
+                        "N": "-22.814707"
+                    },
+                    "long": {
+                        "N": "-43.246452"
+                    },
+                    "floor": {
+                        "N": "2"
+                    },
+                    "terminal": {
+                        "N": "2"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "id": {
+                        "S": "16"
+                    },
+                    "storeName": {
+                        "S": "Polo Ralph Lauren"
+                    },
+                    "description": {
+                        "S": "ABCDEFG"
+                    },
+                    "tags": {
+                        "SS": [
+                            "fashion_accessories"
+                        ]
+                    },
+                    "lat": {
+                        "N": "-22.815023"
+                    },
+                    "long": {
+                        "N": "-43.244533"
+                    },
+                    "floor": {
+                        "N": "1"
+                    },
+                    "terminal": {
+                        "N": "2"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "id": {
+                        "S": "17"
+                    },
+                    "storeName": {
+                        "S": "Amsterdam Sauer"
+                    },
+                    "description": {
+                        "S": "ABCDEFG"
+                    },
+                    "tags": {
+                        "SS": [
+                            "fashion_accessories"
+                        ]
+                    },
+                    "lat": {
+                        "N": "-22.815071"
+                    },
+                    "long": {
+                        "N": "-43.245252"
+                    },
+                    "floor": {
+                        "N": "1"
+                    },
+                    "terminal": {
+                        "N": "2"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "id": {
+                        "S": "18"
+                    },
+                    "storeName": {
+                        "S": "ARTY Rio"
+                    },
+                    "description": {
+                        "S": "ABCDEFG"
+                    },
+                    "tags": {
+                        "SS": [
+                            "fashion_accessories"
+                        ]
+                    },
+                    "lat": {
+                        "N": "-22.815"
+                    },
+                    "long": {
+                        "N": "-43.246107"
+                    },
+                    "floor": {
+                        "N": "2"
+                    },
+                    "terminal": {
+                        "N": "2"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "id": {
+                        "S": "19"
+                    },
+                    "storeName": {
+                        "S": "Bola Show"
+                    },
+                    "description": {
+                        "S": "ABCDEFG"
+                    },
+                    "tags": {
+                        "SS": [
+                            "fashion_accessories"
+                        ]
+                    },
+                    "lat": {
+                        "N": "-22.813626"
+                    },
+                    "long": {
+                        "N": "-43.247551"
+                    },
+                    "floor": {
+                        "N": "2"
+                    },
+                    "terminal": {
+                        "N": "2"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "id": {
+                        "S": "20"
+                    },
+                    "storeName": {
+                        "S": "Ehven Pedras"
+                    },
+                    "description": {
+                        "S": "ABCDEFG"
+                    },
+                    "tags": {
+                        "SS": [
+                            "fashion_accessories"
+                        ]
+                    },
+                    "lat": {
+                        "N": "-22.81446"
+                    },
+                    "long": {
+                        "N": "-43.245811"
+                    },
+                    "floor": {
+                        "N": "1"
+                    },
+                    "terminal": {
+                        "N": "2"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "id": {
+                        "S": "21"
+                    },
+                    "storeName": {
+                        "S": "Energia Natural"
+                    },
+                    "description": {
+                        "S": "ABCDEFG"
+                    },
+                    "tags": {
+                        "SS": [
+                            "fashion_accessories"
+                        ]
+                    },
+                    "lat": {
+                        "N": "-22.814684"
+                    },
+                    "long": {
+                        "N": "-43.247149"
+                    },
+                    "floor": {
+                        "N": "2"
+                    },
+                    "terminal": {
+                        "N": "2"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "id": {
+                        "S": "22"
+                    },
+                    "storeName": {
+                        "S": "Mr.Cat"
+                    },
+                    "description": {
+                        "S": "ABCDEFG"
+                    },
+                    "tags": {
+                        "SS": [
+                            "fashion_accessories"
+                        ]
+                    },
+                    "lat": {
+                        "N": "-22.815476"
+                    },
+                    "long": {
+                        "N": "-43.245408"
+                    },
+                    "floor": {
+                        "N": "1"
+                    },
+                    "terminal": {
+                        "N": "2"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "id": {
+                        "S": "23"
+                    },
+                    "storeName": {
+                        "S": "Track & Field"
+                    },
+                    "description": {
+                        "S": "ABCDEFG"
+                    },
+                    "tags": {
+                        "SS": [
+                            "fashion_accessories"
+                        ]
+                    },
+                    "lat": {
+                        "N": "-22.811347"
+                    },
+                    "long": {
+                        "N": "-43.251649"
+                    },
+                    "floor": {
+                        "N": "0"
+                    },
+                    "terminal": {
+                        "N": "1"
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -62,10 +62,11 @@ export function generateTraveller(data){
     const lastNames = ["Timwood","WoodField","Lee","Jack"]
     const traveller = {};
 
-    const first = String.fromCharCode(Math.floor(Math.random() * 26));
-    const second = String.fromCharCode(Math.floor(Math.random() * 26));
-    const third = String.fromCharCode(Math.floor(Math.random() * 26));
+    const first = String.fromCharCode(97 + Math.floor(Math.random() * 26));
+    const second = String.fromCharCode(97 + Math.floor(Math.random() * 26));
+    const third = String.fromCharCode(97 + Math.floor(Math.random() * 26));
 
+    debugger;
     traveller["firstName"] = choose(firstNames);
     traveller["lastName"] = choose(lastNames);
     traveller["ageRange"] = ageRange;

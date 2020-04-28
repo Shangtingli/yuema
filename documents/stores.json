@@ -1,0 +1,234 @@
+{
+    "stores": [
+      {
+        "1": {
+          "shop_name": "Britt Shop",
+          "lat": "-22.814785",
+          "lon": "-43.246648",
+          "terminal": "2",
+          "level": "2",
+          "category": "mall"
+        }
+      },
+      {
+        "2": {
+          "shop_name": "Chilli Beans",
+          "lat": "-22.810656",
+          "lon": "-43.251344",
+          "terminal": "2",
+          "level": "1",
+          "category": "fashion_accessories"
+        }
+      },
+      {
+        "3": {
+          "shop_name": "Dufry",
+          "lat": "-22.814478",
+          "lon": "-43.246993",
+          "terminal": "2",
+          "level": "1",
+          "category": "mall"
+        }
+      },
+      {
+        "4": {
+          "shop_name": "Empório do Aço",
+          "lat": "-22.814102",
+          "lon": "-43.247083",
+          "terminal": "2",
+          "level": "1",
+          "category": "undecided"
+        }
+      },
+      {
+        "5": {
+          "shop_name": "FOM",
+          "lat": "-22.815046",
+          "lon": "-43.246425",
+          "terminal": "2",
+          "level": "0",
+          "category": "undecided"
+        }
+      },
+      {
+        "6": {
+          "shop_name": "MAC Cosmetics",
+          "lat": "-22.815055",
+          "lon": "-43.245235",
+          "terminal": "2",
+          "level": "0",
+          "category": "beauty_cosmetics"
+        }
+      },
+      {
+        "7": {
+          "shop_name": "O Boticário",
+          "lat": "-22.815241",
+          "lon": "-43.245805",
+          "terminal": "2",
+          "level": "0",
+          "category": "undecided"
+        }
+      },
+      {
+        "8": {
+          "shop_name": "Sunglass Hut",
+          "lat": "-22.815092",
+          "lon": "-43.246551",
+          "terminal": "2",
+          "level": "2",
+          "category": "undecided"
+        }
+      },
+      {
+        "9": {
+          "shop_name": "Granado Pharmacias",
+          "lat": "-22.814334",
+          "lon": "-43.245584",
+          "terminal": "2",
+          "level": "1",
+          "category": "beauty_cosmetics"
+        }
+      },
+      {
+        "10": {
+          "shop_name": "L'Occitane",
+          "lat": "-22.81408",
+          "lon": "-43.246212",
+          "terminal": "2",
+          "level": "1",
+          "category": "beauty_cosmetics"
+        }
+      },
+      {
+        "11": {
+          "shop_name": "Maybelline New York",
+          "lat": "-22.813864",
+          "lon": "-43.247713",
+          "terminal": "2",
+          "level": "2",
+          "category": "beauty_cosmetics"
+        }
+      },
+      {
+        "12": {
+          "shop_name": "Livraria Leitura",
+          "lat": "-22.815175",
+          "lon": "-43.244505",
+          "terminal": "2",
+          "level": "1",
+          "category": "books_magazines"
+        }
+      },
+      {
+        "13": {
+          "shop_name": "WH Smith",
+          "lat": "-22.8183",
+          "lon": "-43.243186",
+          "terminal": "2",
+          "level": "2",
+          "category": "books_magazines"
+        }
+      },
+      {
+        "14": {
+          "shop_name": "Hudson News",
+          "lat": "-22.814523",
+          "lon": "-43.247492",
+          "terminal": "2",
+          "level": "2",
+          "category": "mall"
+        }
+      },
+      {
+        "15": {
+          "shop_name": "Air Farma",
+          "lat": "-22.814707",
+          "lon": "-43.246452",
+          "terminal": "2",
+          "level": "2",
+          "category": "pharmacy"
+        }
+      },
+      {
+        "16": {
+          "shop_name": "Polo Ralph Lauren",
+          "lat": "-22.815023",
+          "lon": "-43.244533",
+          "terminal": "2",
+          "level": "1",
+          "category": "fashion_accessories"
+        }
+      },
+      {
+        "17": {
+          "shop_name": "Amsterdam Sauer",
+          "lat": "-22.815071",
+          "lon": "-43.245252",
+          "terminal": "2",
+          "level": "1",
+          "category": "fashion_accessories"
+        }
+      },
+      {
+        "18": {
+          "shop_name": "ARTY Rio",
+          "lat": "-22.815",
+          "lon": "-43.246107",
+          "terminal": "2",
+          "level": "2",
+          "category": "fashion_accessories"
+        }
+      },
+      {
+        "19": {
+          "shop_name": "Bola Show",
+          "lat": "-22.813626",
+          "lon": "-43.247551",
+          "terminal": "2",
+          "level": "2",
+          "category": "fashion_accessories"
+        }
+      },
+      {
+        "20": {
+          "shop_name": "Ehven Pedras",
+          "lat": "-22.81446",
+          "lon": "-43.245811",
+          "terminal": "2",
+          "level": "1",
+          "category": "fashion_accessories"
+        }
+      },
+      {
+        "21": {
+          "shop_name": "Energia Natural",
+          "lat": "-22.814684",
+          "lon": "-43.247149",
+          "terminal": "2",
+          "level": "2",
+          "category": "fashion_accessories"
+        }
+      },
+      {
+        "22": {
+          "shop_name": "Mr.Cat",
+          "lat": "-22.815476",
+          "lon": "-43.245408",
+          "terminal": "2",
+          "level": "1",
+          "category": "fashion_accessories"
+        }
+      },
+      {
+        "23": {
+          "shop_name": "Track & Field",
+          "lat": "-22.811347",
+          "lon": "-43.251649",
+          "terminal": "1",
+          "level": "0",
+          "category": "fashion_accessories"
+        }
+      }
+    ]
+  }
