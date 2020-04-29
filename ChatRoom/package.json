@@ -1,0 +1,25 @@
+{
+  "name": "chatroom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "chatServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shangtingli/flask-server-ml.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shangtingli/flask-server-ml/issues"
+  },
+  "homepage": "https://github.com/Shangtingli/flask-server-ml#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "path": "^0.12.7",
+    "socket.io": "^2.3.0"
+  }
+}
