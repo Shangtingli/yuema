@@ -8,7 +8,6 @@ class AccountInfo extends React.Component{
 
     render(){
         const data = store.getState();
-
         return(
             <div className="dashboard-content-container" style={styles.accountInfoContainer}>
                 <div style={styles.nextContainer}>

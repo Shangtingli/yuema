@@ -7,7 +7,7 @@ import SignUp from './SignUp';
 import SignIn from './SignIn';
 import Logo from "../../assets/logo.svg"
 
-const initialFormState = {username: '', password: '', email: '', confirmationCode: '', formType: 'signIn'}
+const initialFormState = {username: '', password: '', email: '', confirmationCode: '', formType: 'signUp'}
 
 
 class LoginForm extends React.Component {
@@ -20,6 +20,7 @@ class LoginForm extends React.Component {
     this.signUp=this.signUp.bind(this);
     this.signIn=this.signIn.bind(this);
     this.confirmSignUp = this.confirmSignUp.bind(this);
+
   }
 
   updateFormType = (e) => {
@@ -37,12 +38,14 @@ class LoginForm extends React.Component {
             console.log('sign up success!')
             updateFormType('confirmSignUp')
         } catch (err) {
+            alert("Invalid Format Detected \n Phone number should be numbers and username should be email")
 
             console.log(err)
         }
     }
 
     async confirmSignUp({ username, confirmationCode }, updateFormType) {
+      debugger;
         try {
             await Auth.confirmSignUp(username, confirmationCode)
             console.log('confirm sign up success!')
@@ -59,7 +62,7 @@ class LoginForm extends React.Component {
             await Auth.signIn(username, password)
             console.log('sign in success!')
         } catch (err) {
-
+            alert("Login Unsuccessful \n Please check you username and password")
             console.log('error signing up..', err)
         }
     }

@@ -26,7 +26,7 @@ class AboutUs extends React.Component{
                         height={"150px"}
                     />
                     <div style={styles.informationContainer}>
-                        <h3> Yanchen Zhou </h3>
+                        <h3> Yenchen Chou </h3>
                         <p> MS Data Science student at USC. Sharing real-world data science problems related to your daily life and explore new ideas through data science.</p>
                     </div>
                 </div>

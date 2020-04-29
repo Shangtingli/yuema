@@ -1,13 +1,14 @@
 {
 	"auth": {
-		"yuema7ae82fc9": {
+		"yuema6d4e9e5d": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
-			"dependsOn": []
+			"dependsOn": [],
+			"customAuth": false
 		}
 	},
 	"api": {
-		"yuemaAPI": {
+		"yuema": {
 			"service": "AppSync",
 			"providerPlugin": "awscloudformation",
 			"output": {
@@ -16,7 +17,7 @@
 					"defaultAuthentication": {
 						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
 						"userPoolConfig": {
-							"userPoolId": "authyuema7ae82fc9"
+							"userPoolId": "authyuema6d4e9e5d"
 						}
 					}
 				}

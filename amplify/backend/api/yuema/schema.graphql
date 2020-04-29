@@ -1,7 +1,3 @@
-type Query{
-    getRecommendedUser: String! @function(name: "yuemaLambda-${env}")
-}
-
 type Traveller @model @key(fields: ["email"]) {
   firstName: String!
   lastName: String!

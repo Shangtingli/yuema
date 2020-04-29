@@ -66,7 +66,7 @@ class DashBoard extends React.Component{
                         traveller['long'] = position.coords.longitude;
                         this.props.dispatch(fillFeatures(traveller));
                     },(err) => {
-                        alert(err);
+                        // alert(err);
                         traveller['lat'] = DEFAULT_LATTITUDE;
                         traveller['long'] = DEFAULT_LONGITUDE;
                         this.props.dispatch(fillFeatures(traveller));
@@ -90,7 +90,7 @@ class DashBoard extends React.Component{
                     navigator.geolocation.getCurrentPosition((position) => {
                         this.saveTravellerFeatures(traveller,position.coords.latitude,position.coords.longitude);
                     },(err) => {
-                        alert(err);
+                        // alert(err);
                         this.saveTravellerFeatures(traveller,DEFAULT_LATTITUDE,DEFAULT_LONGITUDE);
                     },{maximumAge:60000, timeout:5000, enableHighAccuracy:true})
                 }

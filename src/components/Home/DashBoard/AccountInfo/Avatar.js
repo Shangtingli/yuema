@@ -10,9 +10,16 @@ export default class Avatar extends React.Component{
     }
 
     componentDidMount(){
-        Storage.get(this.props.avatarKey).then((url) => {
-          this.setState({avatarUrl :url});
-        })
+        if (this.props.avatarKey ===null){
+            Storage.get("avatars/defaultAvatar.png").then((url) => {
+                this.setState({avatarUrl :url});
+            })
+        }
+        else{
+            Storage.get(this.props.avatarKey).then((url) => {
+                this.setState({avatarUrl :url});
+            })
+        }
     }
 
     render(){

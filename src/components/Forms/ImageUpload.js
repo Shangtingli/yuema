@@ -44,6 +44,10 @@ export default class ImageUpload extends React.Component {
     };
 
     async handleUpload(userEmail){
+
+        if (this.state.file === null){
+            return "avatars/defaultAvatar.png";
+        }
         const response = await Storage.put(`avatars/${userEmail}-avatar.png`, this.state.file, {
             contentType: 'image/png',
         })

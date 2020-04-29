@@ -7,8 +7,8 @@ class SignUp extends React.Component{
         submitted: false,
     }
 
-    renderButton = () => {
-        if (this.state.submitted){
+    renderButton = (submitted) => {
+        if (submitted){
             return (
                 <Button type="primary" loading>
                     Loading
@@ -23,14 +23,17 @@ class SignUp extends React.Component{
             );
         }
     }
+
+
     handleSubmit = (e) => {
         e.preventDefault();
         const username = e.target[0].value;
+        const email = username;
         const password = e.target[1].value;
-        const email = e.target[2].value;
-        const phoneNumber = "+1" + e.target[3].value;
+        const phoneNumber = "+1" + e.target[2].value;
 
         this.setState({submitted: true});
+        debugger;
         this.props.signUp({
             username:username,
             password:password,
@@ -59,13 +62,13 @@ class SignUp extends React.Component{
                         <Input.Password/>
                     )}
                 </Form.Item>
-                <Form.Item label="Email">
-                    {getFieldDecorator('email', {
-                        rules: [{ required: true, message: 'Email' }],
-                    })(
-                        <Input/>
-                    )}
-                </Form.Item>
+                {/*<Form.Item label="Email">*/}
+                    {/*{getFieldDecorator('email', {*/}
+                        {/*rules: [{ required: true, message: 'Email' }],*/}
+                    {/*})(*/}
+                        {/*<Input/>*/}
+                    {/*)}*/}
+                {/*</Form.Item>*/}
                 <Form.Item label="PhoneNumber">
                     {getFieldDecorator('phone_number', {
                         rules: [{ required: true, message: 'Phone Number' }],
@@ -74,7 +77,7 @@ class SignUp extends React.Component{
                     )}
                 </Form.Item>
 
-                {this.renderButton()}
+                {this.renderButton(this.state.submitted)}
             </Form>
         )
     }
