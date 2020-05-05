@@ -1,8 +1,8 @@
 import * as React from "react"
-import store from "../../../store"
-import PersonalInfo from "./AccountInfo/PersonalInfo";
-import CategoriesCloud from "./AccountInfo/CategoriesCloud";
-import TravelPlan from "./AccountInfo/TravelPlan";
+import store from "../../../../store"
+import PersonalInfo from "./PersonalInfo";
+import CategoriesCloud from "./CategoriesCloud";
+import TravelPlan from "./TravelPlan";
 
 class AccountInfo extends React.Component{
 
@@ -11,7 +11,7 @@ class AccountInfo extends React.Component{
         return(
             <div className="dashboard-content-container" style={styles.accountInfoContainer}>
                 <div style={styles.nextContainer}>
-                    <h2 style={{marginBottom:"20px"}}> Personal Information: </h2>
+                    <h2 style={{marginBottom:"20px"}}> Account Information: </h2>
                     <PersonalInfo
                         avatarKey={data.avatarKey}
                         intro={data.intro}
@@ -31,7 +31,6 @@ class AccountInfo extends React.Component{
 
                     <br/>
                 </div>
-
             </div>
         );
     }
@@ -44,10 +43,12 @@ const styles = {
         textAlign:"center",
         width: "500px",
         height: "700px",
-        backgroundColor:"rgb(235,237,230)"
+        backgroundColor:"rgb(235,237,230)",
+        margin: "50px,auto,10px",
+        float: "right"
     },
     nextContainer:{
-        width: "400px",
+        width: "500px",
         height: "700px",
         margin:"auto",
         textAlign: "center"

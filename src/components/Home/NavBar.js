@@ -32,14 +32,14 @@ class NavBar extends React.Component {
         return (
             <div className='navbar-container'>
                 <Menu onClick={this.handleClickTab} selectedKeys={[current]} mode="horizontal" style={styles.menu}>
+                    <Menu.Item key="account">
+                        Basic Information
+                    </Menu.Item>
                     <Menu.Item key="store">
                         Intersting Store
                     </Menu.Item>
                     <Menu.Item key="people">
                         Intersting People
-                    </Menu.Item>
-                    <Menu.Item key="account">
-                        My Account
                     </Menu.Item>
                     <Menu.Item key="about">
                         About Us

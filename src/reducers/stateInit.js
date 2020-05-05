@@ -2,7 +2,6 @@
  * State default initialization for the entire project. Used in reducers/index.js to initialize the states.
  */
 export const startState = {
-
     /**
      * Login/Register Webflow and Features
      */
@@ -38,7 +37,7 @@ export const startState = {
     /**
      * NavBar
      */
-    currentTab: 'people',
+    currentTab: 'account',
 
     /**
      * Dashboard

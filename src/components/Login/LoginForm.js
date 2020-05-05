@@ -7,7 +7,7 @@ import SignUp from './SignUp';
 import SignIn from './SignIn';
 import Logo from "../../assets/logo.svg"
 
-const initialFormState = {username: '', password: '', email: '', confirmationCode: '', formType: 'signUp'}
+const initialFormState = {username: '', password: '', email: '', confirmationCode: '', formType: 'signIn'}
 
 
 class LoginForm extends React.Component {

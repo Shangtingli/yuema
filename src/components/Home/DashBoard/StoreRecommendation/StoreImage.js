@@ -8,7 +8,11 @@ export default class StoreImage extends React.Component{
     }
 
     componentDidMount(){
-        const key = `store_images/image${this.props.imageNumber}.png`;
+        /**
+         * TODO: Huyufei, change this function to change image to the correct ones
+         * @type {string}
+         */
+        const key = `s3/store_images/default_images/image${this.props.imageNumber}.png`;
 
         Storage.get(key).then((url) => {
             this.setState({imageUrl:url});

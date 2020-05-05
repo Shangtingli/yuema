@@ -1,5 +1,5 @@
 import * as React from "react";
-import PersonalInfo from "../AccountInfo/PersonalInfo"
+import PersonalInfo from "../BasicInfo/PersonalInfo"
 
 export default class TravellerRow extends React.Component{
 

@@ -2,7 +2,7 @@ import * as React from "react"
 import store from '../../store';
 import PeopleRecommendation from "./DashBoard/PeopleRecommendation"
 import StoreRecommendation from "./DashBoard/StoreRecommendation"
-import AccountInfo from "./DashBoard/AccountInfo"
+import BasicInfo from "./DashBoard/BasicInfo"
 import {connect} from "react-redux"
 import AboutUs from "./DashBoard/AboutUs"
 import PageLoading from "../Loadings/PageLoading"
@@ -114,7 +114,7 @@ class DashBoard extends React.Component{
                 case "store":
                     return (<StoreRecommendation traveller={traveller} location={{lat:states.lat, long:states.long}}/>);
                 case "account":
-                    return (<AccountInfo traveller={traveller}/>);
+                    return (<BasicInfo/>);
                 case "addStore":
                     return (<AddStorePage/>);
                 default:

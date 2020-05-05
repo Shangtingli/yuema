@@ -4,7 +4,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faStar as darkStar} from "@fortawesome/free-solid-svg-icons"
 import {faStar as lightStar} from "@fortawesome/free-regular-svg-icons"
 import '../../../../styles/styles.scss';
-import Avatar from '../../DashBoard/AccountInfo/Avatar';
+import Avatar from '../BasicInfo/Avatar';
 import {API, graphqlOperation} from 'aws-amplify';
 import {deleteComment} from "../../../../graphql/mutations"
 import {getStoreComments} from "../../../../graphql/customQueries"

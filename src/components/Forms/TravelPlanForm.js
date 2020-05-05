@@ -22,7 +22,7 @@ class TravelPlanForm extends React.Component {
     }
 
     componentDidMount(){
-        Storage.get(`json/airports.json`).then((url)=> {
+        Storage.get(`s3/airports.json`).then((url)=> {
            fetch(url).then((response) => {
                return response.json();
            }).then((response) => {

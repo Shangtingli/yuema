@@ -1,5 +1,5 @@
 import * as React from "react"
-import Avatar from "./AccountInfo/Avatar"
+import Avatar from "./BasicInfo/Avatar"
 
 class AboutUs extends React.Component{
 
