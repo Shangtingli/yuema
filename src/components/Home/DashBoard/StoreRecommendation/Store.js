@@ -79,7 +79,7 @@ class Store extends React.Component{
         }
         return (
             <Card title={data.storeName} key={data.storeName} bordered={true} className="store-card" style={styles.card}>
-            <StoreImage imageNumber={this.props.imageNumber}/>
+            <StoreImage imageIndex={data.storeName}/>
 
             <div>
                 {tags_entries.map(this.createTag)}

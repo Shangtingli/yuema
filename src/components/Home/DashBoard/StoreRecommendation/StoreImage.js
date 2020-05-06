@@ -3,6 +3,7 @@ import {Icon} from "antd"
 import {Storage} from 'aws-amplify';
 
 export default class StoreImage extends React.Component{
+
     state = {
         imageUrl:null
     }
@@ -12,7 +13,7 @@ export default class StoreImage extends React.Component{
          * TODO: Huyufei, change this function to change image to the correct ones
          * @type {string}
          */
-        const key = `s3/store_images/default_images/image${this.props.imageNumber}.png`;
+        const key = `s3/store_images/default_images/${this.props.imageIndex}.jpg`;
 
         Storage.get(key).then((url) => {
             this.setState({imageUrl:url});
@@ -31,7 +32,7 @@ export default class StoreImage extends React.Component{
         else{
             return(
                 <div>
-                    <img src={this.state.imageUrl} width={`200px`} height={`200px`}/>
+                    <img src={this.state.imageUrl} width={`200px`} height={`112px`}/>
                 </div>
             )
         }
