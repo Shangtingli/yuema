@@ -51,7 +51,7 @@ class PeopleRecommendation extends React.Component{
         Promise.all([promise1,promise2]).then((response) => {
             const dataPiece1 = response[0].map(generateTraveller);
             const dataPiece2 = response[1].data.listTravellers.items.filter(function(e){ return e.email !== states.email});
-            const allTravellersData = dataPiece1.concat(dataPiece2);
+            const allTravellersData = dataPiece2.concat(dataPiece1);
             this.props.dispatch(writeTravellersFromDatabase(allTravellersData));
             return response;
         })

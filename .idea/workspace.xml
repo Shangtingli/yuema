@@ -40,13 +40,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="883" />
+          <entry key="js" value="885" />
           <entry key="scss" value="50" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="883" />
+          <entry key="JavaScript" value="885" />
           <entry key="SCSS" value="50" />
         </counts>
       </usages-collector>
@@ -117,11 +117,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Home/DashBoard/PeopleRecommendation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="940">
-              <caret line="129" column="8" selection-start-line="129" selection-start-column="8" selection-end-line="129" selection-end-column="42" />
+            <state relative-caret-position="264">
+              <caret line="53" column="66" selection-start-line="53" selection-start-column="66" selection-end-line="53" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -147,7 +147,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="321">
@@ -257,7 +257,6 @@
         <option value="$PROJECT_DIR$/src/components/Util.js" />
         <option value="$PROJECT_DIR$/src/components/Home/DashBoard/BasicInfo/PersonalInfo.js" />
         <option value="$PROJECT_DIR$/src/components/Home/DashBoard/PeopleRecommendation/TravellerRow.js" />
-        <option value="$PROJECT_DIR$/src/components/Home/DashBoard/PeopleRecommendation.js" />
         <option value="$PROJECT_DIR$/src/components/Home/DashBoard/PeopleRecommendation/Filter.js" />
         <option value="$PROJECT_DIR$/src/styles/styles.scss" />
         <option value="$PROJECT_DIR$/src/components/Home/DashBoard/StoreRecommendation.js" />
@@ -266,6 +265,7 @@
         <option value="$PROJECT_DIR$/src/components/Home/NavBar/LogoutPopover.js" />
         <option value="$PROJECT_DIR$/src/components/Home/DashBoard/BasicInfo/AboutAirport.js" />
         <option value="$PROJECT_DIR$/src/index.scss" />
+        <option value="$PROJECT_DIR$/src/components/Home/DashBoard/PeopleRecommendation.js" />
       </list>
     </option>
   </component>
@@ -505,12 +505,12 @@
       <workItem from="1588638620884" duration="4012000" />
       <workItem from="1588722385857" duration="1310000" />
       <workItem from="1588724278817" duration="1544000" />
-      <workItem from="1588892850415" duration="5056000" />
+      <workItem from="1588892850415" duration="5411000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203702000" />
+    <option name="totallyTimeSpent" value="204057000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -525,7 +525,7 @@
     <frame x="0" y="23" width="1440" height="806" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49686846" visible="true" weight="0.37553647" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49686846" visible="true" weight="0.37553647" />
       <window_info id="Structure" order="1" sideWeight="0.5031315" side_tool="true" weight="0.27825466" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -541,7 +541,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49928468" weight="0.32913166" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49570817" visible="true" weight="0.29551822" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49570817" visible="true" weight="0.29551822" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50500715" side_tool="true" weight="0.29551822" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
@@ -912,13 +912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Home/DashBoard/PeopleRecommendation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="940">
-          <caret line="129" column="8" selection-start-line="129" selection-start-column="8" selection-end-line="129" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Home/DashBoard/PeopleRecommendation/Filter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1395">
@@ -991,6 +984,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
           <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Home/DashBoard/PeopleRecommendation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="53" column="66" selection-start-line="53" selection-start-column="66" selection-end-line="53" selection-end-column="66" />
         </state>
       </provider>
     </entry>
