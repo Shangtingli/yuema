@@ -11,11 +11,11 @@ Application endpoint [click here](http://yuemahost-dev.s3-website-us-east-1.amaz
 
 [Shangting Li](https://github.com/Shangtingli)
 
-[Runze Liu] (https://github.com/RenzoLiu0209)
+[Runze Liu](https://github.com/RenzoLiu0209)
 
-[Yenchen Chou] (https://github.com/yenchenchou)
+[Yenchen Chou](https://github.com/yenchenchou)
 
-[Yufei Hu] (https://github.com/Leo-hyf)
+[Yufei Hu](https://github.com/Leo-hyf)
 
 [Zhifeng Liu]
 
