@@ -17,7 +17,7 @@ Application endpoint [click here](http://yuemahost-dev.s3-website-us-east-1.amaz
 
 [Yufei Hu](https://github.com/Leo-hyf)
 
-[Zhifeng Liu]
+Zhifeng Liu
 
 
 
