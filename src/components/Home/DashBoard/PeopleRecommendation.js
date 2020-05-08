@@ -97,7 +97,7 @@ class PeopleRecommendation extends React.Component{
         else{
 
             return(
-                <div className="dashboard-content-container">
+                <div className="dashboard-content-container" style={styles.dashBoardSpecific}>
                     <h2 style={styles.travellerTitle}> Some interesting people you might like to chat with: </h2>
                     <TravellerList
                         travellerData={travellers}
@@ -119,11 +119,16 @@ const mapStateToProps = (state) => ({
     genderFilter: state.genderFilter,
     ageRangeFilter: state.ageRangeFilter
 });
-export default connect(mapStateToProps)(PeopleRecommendation);
 
 const styles = {
     travellerTitle:{
         marginBottom: "20px" ,
-        marginTop: "20px"
+        marginTop: "20px",
+        color: "white"
+    },
+    dashBoardSpecific:{
+        backgroundColor:"rgba(0,0,0,0.5)",
     }
 }
+export default connect(mapStateToProps)(PeopleRecommendation);
+

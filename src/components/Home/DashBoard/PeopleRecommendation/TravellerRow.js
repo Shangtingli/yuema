@@ -46,6 +46,6 @@ const styles = {
         height: "80%",
         width: "100%",
         display: 'flex',
-        margin:"auto"
+        margin:"auto",
     }
 }

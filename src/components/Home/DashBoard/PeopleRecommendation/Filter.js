@@ -24,7 +24,7 @@ export default class Filter extends React.Component{
 
         return(
             <div style={{display:"flex"}}>
-                <h2 style={{margin: "15px 10px 10px"}}> Filter by: </h2>
+                <h2 style={{margin: "15px 10px 10px", color:"white"}}> Filter by: </h2>
                 <Dropdown  overlay={
                     <Menu>
                         <Menu.Item key="male">
@@ -46,7 +46,7 @@ export default class Filter extends React.Component{
                 } >
 
                         <a className="ant-dropdown-link" onClick={e => e.preventDefault()} style={{margin: "17px 10px 10px"}}>
-                            <h3 style={{color:"blue"}}>{`Gender: ${this.props.gender}`}<DownOutlined /></h3>
+                            <h3 style={{color:"rgb(41,191,214)"}}>{`Gender: ${this.props.gender}`}<DownOutlined /></h3>
                         </a>
                 </Dropdown>
 
@@ -91,7 +91,7 @@ export default class Filter extends React.Component{
                 }>
 
                         <a className="ant-dropdown-link" onClick={e => e.preventDefault()} style={{margin: "17px 10px 10px"}}>
-                            <h3 style={{color:"blue"}} >{`Age Range: ${this.props.ageRange}`}<DownOutlined /></h3>
+                            <h3 style={{color:"rgb(41,191,214)"}} >{`Age Range: ${this.props.ageRange}`}<DownOutlined /></h3>
                         </a>
                 </Dropdown>
             </div>

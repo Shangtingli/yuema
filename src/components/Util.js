@@ -66,14 +66,13 @@ export function generateTraveller(data){
     const second = String.fromCharCode(97 + Math.floor(Math.random() * 26));
     const third = String.fromCharCode(97 + Math.floor(Math.random() * 26));
 
-    debugger;
     traveller["firstName"] = choose(firstNames);
     traveller["lastName"] = choose(lastNames);
     traveller["ageRange"] = ageRange;
     traveller["sex"] = gender;
     traveller["country"] = country;
     traveller["email"] = first + second + third + "@usc.edu";
-    traveller["avatarKey"] = "avatars/defaultAvatar.png";
+    traveller["avatarKey"] = "s3/avatars/defaultAvatar.png";
     traveller["phoneNumber"] = "1234567890";
     traveller["hobbies"] = "undecided"
     return traveller;

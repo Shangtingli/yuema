@@ -44,7 +44,7 @@
 
 .dashboard-content-container{
   display: inline-block;
-  box-shadow: 0 1px 15px 5px rgba(0,0,255,0.35);
+  //box-shadow: 0 1px 15px 5px rgba(0,0,255,0.35);
   text-align: center;
   height: 900px;
   width: 900px;
@@ -180,10 +180,9 @@
   width:1050px;
   height:700px;
   display: block;
-  box-shadow: 0 1px 15px 5px rgba(0,0,255,0.35);
   text-align: center;
   margin: 15px auto 15px;
-  background-color: rgb(235,237,230);
+  background-color:rgba(0,0,0,0.5);
 }
 
 //h2{

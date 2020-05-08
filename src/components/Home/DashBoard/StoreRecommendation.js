@@ -91,12 +91,12 @@ class StoreRecommendation extends React.Component{
             return(
                 <div>
                     <div className="stores-dashboard-content-container">
-                        <h2 style={{marginBottom: "20px"}}> Some interesting stores you might like: </h2>
+                        <h2 style={{marginBottom: "20px",color:"white"}}> Some interesting stores you might like: </h2>
                         <StoreList storeData={states.notFavoriteStoreData} traveller={this.props.traveller} location={this.props.location} favorite={false}/>
                     </div>
 
                     <div className="stores-dashboard-content-container">
-                        <h2 style={{marginBottom: "20px"}}> Your Favorite Places: </h2>
+                        <h2 style={{marginBottom: "20px",color:"white"}}> Your Favorite Places: </h2>
                         <StoreList storeData={states.favoriteStoreData} traveller={this.props.traveller} location={this.props.location} favorite={true}/>
                     </div>
                 </div>

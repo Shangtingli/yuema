@@ -8,10 +8,11 @@ class AccountInfo extends React.Component{
 
     render(){
         const data = store.getState();
+        debugger;
         return(
             <div className="dashboard-content-container" style={styles.accountInfoContainer}>
                 <div style={styles.nextContainer}>
-                    <h2 style={{marginBottom:"20px"}}> Account Information: </h2>
+                    <h2 style={{marginBottom:"20px", color:"white"}}> Account Information: </h2>
                     <PersonalInfo
                         avatarKey={data.avatarKey}
                         intro={data.intro}
@@ -43,7 +44,7 @@ const styles = {
         textAlign:"center",
         width: "500px",
         height: "700px",
-        backgroundColor:"rgb(235,237,230)",
+        backgroundColor:"rgba(0,0,0,0.5)",
         margin: "50px,auto,10px",
         float: "right"
     },
@@ -53,6 +54,7 @@ const styles = {
         margin:"auto",
         textAlign: "center"
     },
+
 
 
 }

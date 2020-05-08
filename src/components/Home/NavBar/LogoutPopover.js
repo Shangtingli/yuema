@@ -27,7 +27,7 @@ export default class LogoutPopover extends React.Component {
                 visible={this.state.visible}
                 onVisibleChange={this.handleVisibleChange}
             >
-                <Button style={{marginTop: "7px"}}>Logout</Button>
+                <Button style={{marginTop: "7px"}} type="primary">Logout</Button>
             </Popover>
         );
     }
@@ -48,7 +48,7 @@ class LogoutOptions extends React.Component{
     render(){
         return(
             <div style={{height:"40px"}}>
-                <Button onClick={this.handleClearCacheThenSignOut} style={{float:"left"}}>Yes</Button>
+                <Button onClick={this.handleClearCacheThenSignOut} style={{float:"left",backgroundColor:"lightgrey"}}>Yes</Button>
                 <Button onClick={this.authSignOut} style={{float:"right"}} type="primary">No</Button>
             </div>
         )

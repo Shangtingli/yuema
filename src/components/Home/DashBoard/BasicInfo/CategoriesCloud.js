@@ -7,7 +7,9 @@ export default class CategoriesCloud extends React.Component{
     createTag = (entry) => {
         const index = entry[0] % COLOR_SCHEMES.length;
         const tag = entry[1];
-        return <Tag color={COLOR_SCHEMES[index]} key={tag}> {tag}</Tag>
+        // return <Tag color={COLOR_SCHEMES[index]} key={tag}> {tag}</Tag>
+        return <Tag color={"rgb(41,191,214)"} key={tag}> {tag}</Tag>
+
     }
     render(){
         const hobbies = this.props.hobbies;
@@ -23,7 +25,7 @@ export default class CategoriesCloud extends React.Component{
              * should be enough to center the children
              */
             <div style={styles.categories}>
-                <h3> Favorite Categories :</h3>
+                <h3 style={{color:"white"}}> Favorite Categories :</h3>
                 <div style={styles.tagCloud}>
                     {hobbies_entries.map(this.createTag)}
                 </div>
@@ -34,8 +36,8 @@ export default class CategoriesCloud extends React.Component{
 
 const styles = {
     categories: {
-        boxShadow: "0 1px 15px 5px rgba(228,115,67,0.6)",
         height: "170px",
+        backgroundColor: "rgba(255,255,255,0.7)",
         width:"400px" ,
         textAlign:"center",
         margin:"auto"
